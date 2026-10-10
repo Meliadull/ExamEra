@@ -865,4 +865,5 @@ export const ru: Record<string, string> = {
   'myClass.assignmentsHint': "Тесты, назначенные классу всеми преподавателями, и сколько учащихся их уже сдали.",
   'myClass.completedOf': "Сдали {done} из {total}",
   'errors.not_class_leader': "Вы не классный руководитель этой группы",
+  'errors.already_assigned': "Этот тест уже назначен и ещё не завершён: {names}",
 };

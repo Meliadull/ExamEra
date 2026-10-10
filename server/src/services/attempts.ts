@@ -72,11 +72,13 @@ export const STUDENT_ASSIGNMENTS_SQL = `
          s.name AS subject_name, s.id AS subject_id,
          g.name AS group_name,
          (SELECT COUNT(*) FROM questions q WHERE q.test_id = t.id) AS question_count,
-         (SELECT COUNT(*) FROM attempts a WHERE a.assignment_id = asg.id AND a.user_id = :uid) AS attempts_used,
-         (SELECT COUNT(*) FROM attempts a WHERE a.assignment_id = asg.id AND a.user_id = :uid AND a.status = 'completed') AS attempts_completed,
-         (SELECT a.id FROM attempts a WHERE a.assignment_id = asg.id AND a.user_id = :uid AND a.status = 'in_progress' LIMIT 1) AS active_attempt_id,
-         (SELECT MAX(a.percentage) FROM attempts a WHERE a.assignment_id = asg.id AND a.user_id = :uid AND a.status = 'completed') AS best_percentage,
-         (SELECT a.id FROM attempts a WHERE a.assignment_id = asg.id AND a.user_id = :uid AND a.status = 'completed' ORDER BY a.completed_at DESC LIMIT 1) AS last_attempt_id
+         -- Attempts are counted per test, not per assignment: the same test assigned twice
+         -- (e.g. to two groups the student belongs to) must not grant extra attempts.
+         (SELECT COUNT(*) FROM attempts a WHERE a.test_id = t.id AND a.user_id = :uid) AS attempts_used,
+         (SELECT COUNT(*) FROM attempts a WHERE a.test_id = t.id AND a.user_id = :uid AND a.status = 'completed') AS attempts_completed,
+         (SELECT a.id FROM attempts a WHERE a.test_id = t.id AND a.user_id = :uid AND a.status = 'in_progress' LIMIT 1) AS active_attempt_id,
+         (SELECT MAX(a.percentage) FROM attempts a WHERE a.test_id = t.id AND a.user_id = :uid AND a.status = 'completed') AS best_percentage,
+         (SELECT a.id FROM attempts a WHERE a.test_id = t.id AND a.user_id = :uid AND a.status = 'completed' ORDER BY a.completed_at DESC LIMIT 1) AS last_attempt_id
   FROM assignments asg
   JOIN tests t ON t.id = asg.test_id
   JOIN subjects s ON s.id = t.subject_id
@@ -97,6 +99,8 @@ export function studentStatus(r: {
   test_status: string;
 }): StudentTestStatus {
   const t = now();
+  // All allowed attempts already finished: the test is done even if an extra attempt was opened earlier.
+  if (r.attempts_completed >= r.attempts_limit) return 'completed';
   if (r.active_attempt_id) return 'available';
   if (t < r.starts_at) return 'scheduled';
   const open = t <= r.ends_at && r.test_status === 'published' && r.attempts_used < r.attempts_limit;

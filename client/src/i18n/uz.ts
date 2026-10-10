@@ -848,4 +848,5 @@ export const uz: Record<string, string> = {
   'myClass.assignmentsHint': "Sinfga barcha o'qituvchilar bergan testlar va ularni nechta o'quvchi topshirgani.",
   'myClass.completedOf': "Topshirdi: {done} / {total}",
   'errors.not_class_leader': "Siz bu guruhning sinf rahbari emassiz",
+  'errors.already_assigned': "Bu test allaqachon topshirilgan va hali tugamagan: {names}",
 };

@@ -62,6 +62,24 @@ assignmentsRouter.post('/', (req, res) => {
   if (test.status !== 'published') throw conflict('test_not_published');
   if (!b.groupIds.length && !b.userIds.length) throw badRequest('no_targets');
   for (const gid of b.groupIds) if (!canManageGroup(me, gid)) throw forbidden('group_forbidden');
+  // The same test must not be handed to a group (or student) twice while an earlier assignment is still open.
+  const dupGroups = all<{ name: string }>(
+    `SELECT DISTINCT g.name FROM assignments asg JOIN study_groups g ON g.id = asg.group_id
+     WHERE asg.test_id = ? AND asg.ends_at >= ? AND asg.group_id IN (${inList(b.groupIds)})`,
+    test.id,
+    now(),
+    ...b.groupIds,
+  );
+  const dupStudents = all<{ name: string }>(
+    `SELECT DISTINCT u.last_name || ' ' || u.first_name AS name FROM assignments asg JOIN users u ON u.id = asg.user_id
+     WHERE asg.test_id = ? AND asg.ends_at >= ? AND asg.user_id IN (${inList(b.userIds)})`,
+    test.id,
+    now(),
+    ...b.userIds,
+  );
+  if (dupGroups.length || dupStudents.length) {
+    throw conflict('already_assigned', { names: [...dupGroups, ...dupStudents].map((r) => r.name).join(', ') });
+  }
   const students = all<{ id: number }>(
     `SELECT id FROM users WHERE role = 'student' AND id IN (${inList(b.userIds)})`,
     ...b.userIds,

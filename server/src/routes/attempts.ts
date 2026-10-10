@@ -47,16 +47,19 @@ attemptsRouter.post('/', requireRole('student'), (req, res) => {
     const test = loadTest(asg.test_id);
     if (test.status !== 'published') throw conflict('test_not_available');
     const active = get<AttemptRow>(
-      "SELECT * FROM attempts WHERE assignment_id = ? AND user_id = ? AND status = 'in_progress'",
-      asg.id,
+      "SELECT * FROM attempts WHERE test_id = ? AND user_id = ? AND status = 'in_progress'",
+      asg.test_id,
       me.id,
     );
+    const completed = get<{ c: number }>("SELECT COUNT(*) AS c FROM attempts WHERE test_id = ? AND user_id = ? AND status = 'completed'", asg.test_id, me.id)!.c;
+    if (completed >= asg.attempts_limit) throw conflict('no_attempts_left');
     if (active && Date.parse(active.deadline_at) + GRACE_MS >= Date.now()) return { id: active.id, resumed: true };
     if (active) finalizeAttempt(active.id, 'timeout');
     const t = now();
     if (t < asg.starts_at) throw conflict('test_not_started');
     if (t > asg.ends_at) throw conflict('test_deadline_passed');
-    const used = get<{ c: number }>('SELECT COUNT(*) AS c FROM attempts WHERE assignment_id = ? AND user_id = ?', asg.id, me.id)!.c;
+    // Attempts count per test across all assignments of it.
+    const used = get<{ c: number }>('SELECT COUNT(*) AS c FROM attempts WHERE test_id = ? AND user_id = ?', asg.test_id, me.id)!.c;
     if (used >= asg.attempts_limit) throw conflict('no_attempts_left');
     const questions = loadQuestions(test.id);
     if (!questions.length) throw conflict('test_not_available');
@@ -197,7 +200,7 @@ attemptsRouter.get('/:id/result', (req, res) => {
   const subject = get<{ name: string }>('SELECT name FROM subjects WHERE id = ?', test.subject_id)!;
   const staff = !isOwner || me.role !== 'student';
 
-  const used = get<{ c: number }>('SELECT COUNT(*) AS c FROM attempts WHERE assignment_id = ? AND user_id = ?', asg.id, a.user_id)!.c;
+  const used = get<{ c: number }>('SELECT COUNT(*) AS c FROM attempts WHERE test_id = ? AND user_id = ?', a.test_id, a.user_id)!.c;
   const finishedForGood = used >= asg.attempts_limit || now() > asg.ends_at;
   const showResult = staff || !!asg.show_result;
   const showAnswers = staff || (!!asg.show_answers && finishedForGood);
@@ -279,12 +282,25 @@ attemptsRouter.patch('/:id/score', requireRole('admin'), (req, res) => {
 
 /* ---------- Student area ---------- */
 
+const STATUS_RANK: Record<string, number> = { available: 0, scheduled: 1, completed: 2, overdue: 3 };
+
+/** One entry per test: if a test reaches the student through several assignments, show the most relevant one. */
 function myAssignments(userId: number) {
-  return all<any>(STUDENT_ASSIGNMENTS_SQL, { uid: userId } as any).map((r) => {
+  const rows = all<any>(STUDENT_ASSIGNMENTS_SQL, { uid: userId } as any).map((r) => {
     const status = studentStatus(r);
     const hide = !r.show_result;
     return { ...r, status, best_percentage: hide ? null : r.best_percentage };
   });
+  const byTest = new Map<number, any>();
+  for (const r of rows) {
+    const cur = byTest.get(r.test_id);
+    const better =
+      !cur ||
+      STATUS_RANK[r.status] < STATUS_RANK[cur.status] ||
+      (STATUS_RANK[r.status] === STATUS_RANK[cur.status] && r.ends_at > cur.ends_at);
+    if (better) byTest.set(r.test_id, r);
+  }
+  return [...byTest.values()].sort((a, b) => (a.ends_at < b.ends_at ? -1 : 1));
 }
 
 studentRouter.get('/tests', (req, res) => {
