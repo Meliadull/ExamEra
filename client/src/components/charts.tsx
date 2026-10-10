@@ -108,7 +108,7 @@ export function ScoreRing({ value, size = 170, color }: { value: number; size?: 
   return (
     <div className="ring" style={{ width: size, height: size }}>
       <svg width={size} height={size} style={{ transform: 'rotate(-90deg)' }}>
-        <circle cx={size / 2} cy={size / 2} r={r} stroke="#edf1f7" strokeWidth={stroke} fill="none" />
+        <circle cx={size / 2} cy={size / 2} r={r} style={{ stroke: 'var(--track)' }} strokeWidth={stroke} fill="none" />
         <circle
           cx={size / 2}
           cy={size / 2}

@@ -119,7 +119,6 @@ const settingsBody = z.object({
   min_password_length: z.string().regex(/^\d+$/).refine((v) => +v >= 6 && +v <= 64),
   default_pass_score: z.string().regex(/^\d+$/).refine((v) => +v >= 0 && +v <= 100),
   session_days: z.string().regex(/^\d+$/).refine((v) => +v >= 1 && +v <= 90),
-  teacher_can_create_subjects: z.enum(['0', '1']),
   show_rating: z.enum(['0', '1']),
 });
 

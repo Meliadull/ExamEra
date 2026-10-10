@@ -26,7 +26,9 @@ import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-do
 import { api } from '../api';
 import { fullName, useAuth, useMe } from '../auth';
 import { LANGS, useI18n } from '../i18n';
+import { ThemeToggle } from '../theme';
 import type { Role } from '../types';
+import { Logo } from './Logo';
 import { Avatar } from './ui';
 
 interface NavItem {
@@ -238,9 +240,7 @@ export function Layout() {
     <div className={`app ${isStudent ? 'has-bottom-nav' : ''}`}>
       {open && <div className="backdrop" onClick={() => setOpen(false)} />}
       <aside className={`sidebar ${open ? 'open' : ''}`}>
-        <Link to="/app" className="brand">
-          <img src="/logo.svg" alt="" /> ExamEra
-        </Link>
+        <Logo />
         <nav className="nav">
           {items.map((i) => (
             <NavLink key={i.to} to={i.to} end={i.end}>
@@ -272,6 +272,7 @@ export function Layout() {
           </button>
           <GlobalSearch />
           <div className="top-actions">
+            <ThemeToggle />
             <LangSwitch />
             <Link to="/app/notifications" className="icon-btn" aria-label={t('nav.notifications')}>
               <Bell />

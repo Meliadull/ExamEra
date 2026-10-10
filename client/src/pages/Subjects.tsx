@@ -93,29 +93,29 @@ function SubjectForm({ subject, onClose, onDone }: { subject?: Subject; onClose:
 export function Subjects() {
   const { t } = useI18n();
   const me = useMe();
-  const list = useSubjects();
+  const list = useSubjects(me.role === 'teacher');
   const [editing, setEditing] = useState<Subject | 'new' | null>(null);
   const [deleting, setDeleting] = useState<Subject | null>(null);
-  const canCreate = me.role === 'admin' || me.role === 'teacher';
+  const isAdmin = me.role === 'admin';
   return (
     <>
       <PageHead
         title={t('nav.subjects')}
-        subtitle={t('subjects.subtitle')}
+        subtitle={me.role === 'teacher' ? t('subjects.teacherSubtitle') : t('subjects.subtitle')}
         actions={
-          canCreate && (
+          isAdmin && (
             <Button variant="primary" onClick={() => setEditing('new')}>
               <Plus /> {t('subjects.create')}
             </Button>
           )
         }
       />
+      {me.role === 'teacher' && <div className="alert info mb">{t('subjects.adminManaged')}</div>}
       <Loader state={list}>
         {(items) =>
           items.length ? (
             <div className="grid g3">
               {items.map((s) => {
-                const mine = me.role === 'admin' || (me.role === 'teacher' && s.teachers?.includes(`${me.first_name} ${me.last_name}`));
                 return (
                   <Card key={s.id}>
                     <div className="row between" style={{ alignItems: 'flex-start' }}>
@@ -144,12 +144,12 @@ export function Subjects() {
                       {s.teachers ? `${t('groups.teachers')}: ${s.teachers}` : ''}
                       {s.groups ? ` · ${s.groups}` : ''}
                     </div>
-                    {mine && me.role !== 'auditor' && (
+                    {isAdmin && (
                       <div className="row mt-sm" style={{ justifyContent: 'flex-end' }}>
                         <Button size="sm" variant="ghost" onClick={() => setEditing(s)}>
                           <Pencil /> {t('common.edit')}
                         </Button>
-                        {me.role === 'admin' && s.test_count === 0 && (
+                        {s.test_count === 0 && (
                           <Button size="sm" variant="ghost" onClick={() => setDeleting(s)}>
                             <Trash2 />
                           </Button>
@@ -162,7 +162,7 @@ export function Subjects() {
             </div>
           ) : (
             <Card>
-              <Empty title={t('subjects.empty')} />
+              <Empty title={me.role === 'teacher' ? t('subjects.noneAssigned') : t('subjects.empty')} />
             </Card>
           )
         }

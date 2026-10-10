@@ -322,7 +322,6 @@ export const DEFAULT_SETTINGS: Record<string, string> = {
   min_password_length: '8',
   default_pass_score: '60',
   session_days: '30',
-  teacher_can_create_subjects: '1',
   show_rating: '1',
 };
 

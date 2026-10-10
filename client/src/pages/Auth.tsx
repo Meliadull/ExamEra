@@ -4,8 +4,10 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { api } from '../api';
 import { useAuth } from '../auth';
 import { LangSwitch } from '../components/Layout';
+import { Logo } from '../components/Logo';
 import { Button, Check, ErrorBox, Field, Input } from '../components/ui';
 import { useI18n } from '../i18n';
+import { ThemeToggle } from '../theme';
 
 declare global {
   interface Window {
@@ -18,9 +20,7 @@ function AuthShell({ children }: { children: ReactNode }) {
   return (
     <div className="auth-page">
       <div className="auth-side">
-        <Link to="/" className="brand" style={{ color: '#fff', padding: 0 }}>
-          <img src="/logo.svg" alt="" /> ExamEra
-        </Link>
+        <Logo onDark style={{ padding: 0, position: 'relative', zIndex: 1 }} />
         <div style={{ position: 'relative', zIndex: 1 }}>
           <h2>{t('landing.heroTitle1')} {t('landing.heroTitle2')}</h2>
           <div className="stack" style={{ gap: 12, marginTop: 26 }}>
@@ -38,10 +38,11 @@ function AuthShell({ children }: { children: ReactNode }) {
       <div className="auth-form-wrap">
         <div className="auth-form">
           <div className="row between mb">
-            <Link to="/" className="brand" style={{ padding: 0 }}>
-              <img src="/logo.svg" alt="" /> ExamEra
-            </Link>
-            <LangSwitch />
+            <Logo style={{ padding: 0 }} />
+            <div className="row gap-sm">
+              <ThemeToggle />
+              <LangSwitch />
+            </div>
           </div>
           {children}
         </div>

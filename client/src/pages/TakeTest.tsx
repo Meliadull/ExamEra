@@ -6,6 +6,7 @@ import { OptionText } from '../components/common';
 import { RichText } from '../components/RichText';
 import { Button, Card, ErrorBox, Input, Modal, Progress, Spinner } from '../components/ui';
 import { useI18n } from '../i18n';
+import { ThemeToggle } from '../theme';
 import type { Question } from '../types';
 
 type Answer = number | number[] | string | null;
@@ -236,7 +237,8 @@ export function TakeTest() {
             )}
           </div>
         </div>
-        <div className={`timer ${remaining != null && remaining < 60 ? 'warn' : ''}`} title={t('take.timeLeft')}>
+        <ThemeToggle />
+        <div className={`timer ${remaining != null && remaining < 60 ? 'warn' : ''}`} title={t('take.timeLeft')} style={{ marginLeft: 8 }}>
           <Timer /> {timeText}
         </div>
       </header>

@@ -51,6 +51,15 @@ export function assertCanEditTest(u: AuthUser, t: TestRow) {
   throw forbidden();
 }
 
+/** Teachers may only work with subjects an administrator assigned to them. */
+export function assertTeachesSubject(u: AuthUser, subjectId: number) {
+  if (u.role !== 'teacher') return;
+  if (!get('SELECT 1 FROM subject_teachers WHERE subject_id = ? AND user_id = ?', subjectId, u.id)) {
+    throw forbidden('subject_not_assigned');
+  }
+}
+
+/** Admin, or a teacher assigned to the group (used for viewing it and assigning tests to it). */
 export function canManageGroup(u: AuthUser, groupId: number): boolean {
   if (u.role === 'admin') return true;
   if (u.role !== 'teacher') return false;

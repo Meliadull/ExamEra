@@ -75,10 +75,24 @@ api.use(() => {
 });
 app.use('/api', api);
 
-if (fs.existsSync(config.clientDist)) {
-  app.use(express.static(config.clientDist, { index: false, maxAge: '1h' }));
-  app.get(/^\/(?!api\/|uploads\/).*/, (_req, res) => res.sendFile(path.join(config.clientDist, 'index.html')));
-}
+// Serves the built client (production). The index file is checked per request so a missing
+// build yields a helpful page instead of a 500.
+const clientIndex = path.join(config.clientDist, 'index.html');
+app.use(express.static(config.clientDist, { index: false, maxAge: '1h' }));
+app.get(/^\/(?!api\/|uploads\/).*/, (_req, res) => {
+  if (fs.existsSync(clientIndex)) return res.sendFile(clientIndex);
+  res
+    .status(404)
+    .type('html')
+    .send(
+      `<!doctype html><meta charset="utf-8"><title>ExamEra API</title>
+       <body style="font-family:system-ui;padding:40px;line-height:1.6">
+       <h2>ExamEra API</h2>
+       <p>Это сервер API, а не интерфейс. / Bu API server, sayt emas.</p>
+       <p>Режим разработки / Ishlab chiqish rejimi: <a href="http://localhost:5173">http://localhost:5173</a></p>
+       <p>Production: <code>npm run build</code>, затем / so'ng <code>npm start</code>.</p></body>`,
+    );
+});
 
 app.use(errorHandler);
 

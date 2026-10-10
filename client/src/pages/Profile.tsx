@@ -43,7 +43,7 @@ export function Profile() {
               <div className="row mb">
                 <label style={{ position: 'relative', cursor: 'pointer' }} title={t('profile.changePhoto')}>
                   <Avatar name={`${p.first_name} ${p.last_name}`} url={p.avatar_url} size={72} />
-                  <span className="icon-btn" style={{ position: 'absolute', right: -4, bottom: -4, background: '#fff', width: 30, height: 30, boxShadow: 'var(--shadow)' }}>
+                  <span className="icon-btn" style={{ position: 'absolute', right: -4, bottom: -4, background: 'var(--surface)', width: 30, height: 30, boxShadow: 'var(--shadow)' }}>
                     <Camera size={15} />
                   </span>
                   <input type="file" accept="image/png,image/jpeg,image/webp" hidden onChange={(e) => onAvatar(e.target.files?.[0])} />
@@ -81,11 +81,18 @@ export function Profile() {
               <dl className="kv mt">
                 <dt>{t('nav.groups')}</dt>
                 <dd>{p.groups.map((g: any) => g.name).join(', ') || '—'}</dd>
+                {p.role === 'teacher' && (
+                  <>
+                    <dt>{t('users.subjectsTaught')}</dt>
+                    <dd>{p.subjects.map((s: any) => s.name).join(', ') || '—'}</dd>
+                  </>
+                )}
                 <dt>{t('profile.registered')}</dt>
                 <dd>{f.date(p.created_at)}</dd>
                 <dt>Google</dt>
                 <dd>{p.has_google ? t('profile.googleLinked') : t('common.no')}</dd>
               </dl>
+              {p.role === 'teacher' && <div className="alert info mt">{t('profile.assignedByAdmin')}</div>}
               <div className="row mt" style={{ justifyContent: 'flex-end' }}>
                 <Button
                   variant="primary"

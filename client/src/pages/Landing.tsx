@@ -2,8 +2,10 @@ import { BarChart3, CheckCircle2, Clock, FileSpreadsheet, ScrollText, Smartphone
 import { Link } from 'react-router-dom';
 import { useAuth } from '../auth';
 import { LangSwitch } from '../components/Layout';
+import { Logo } from '../components/Logo';
 import { Badge, Progress } from '../components/ui';
 import { useI18n } from '../i18n';
+import { ThemeToggle } from '../theme';
 
 export function Landing() {
   const { t } = useI18n();
@@ -18,12 +20,11 @@ export function Landing() {
   ];
   const flow = ['flow1', 'flow2', 'flow3', 'flow4', 'flow5', 'flow6'];
   return (
-    <div style={{ background: 'linear-gradient(180deg, #eef3ff 0%, #f5f7fb 420px)' }}>
+    <div className="landing">
       <nav className="landing-nav">
-        <Link to="/" className="brand" style={{ padding: 0 }}>
-          <img src="/logo.svg" alt="" /> ExamEra
-        </Link>
+        <Logo style={{ padding: 0 }} />
         <div className="row" style={{ marginLeft: 'auto' }}>
+          <ThemeToggle />
           <LangSwitch />
           {user ? (
             <Link to="/app" className="btn primary">

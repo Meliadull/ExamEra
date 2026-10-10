@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import { z } from 'zod';
-import { all, get, getSetting, inList, now, run, tx, Where } from '../db.js';
+import { all, get, inList, now, run, tx, Where } from '../db.js';
 import { badRequest, conflict, forbidden, int, notFound, parse, qstr, requireAuth, requireRole, user } from '../http.js';
-import { canManageGroup, canViewGroup, seesEverything } from '../services/access.js';
+import { canViewGroup, seesEverything } from '../services/access.js';
 import { audit } from '../services/audit.js';
 
 export const groupsRouter = Router();
@@ -69,7 +69,8 @@ groupsRouter.get('/:id', (req, res) => {
     id,
   );
   const subjects = all('SELECT s.id, s.name FROM group_subjects gs JOIN subjects s ON s.id = gs.subject_id WHERE gs.group_id = ?', id);
-  res.json({ ...g, students, teachers, subjects, canManage: canManageGroup(me, id) });
+  // Group composition and teacher/subject links are managed by administrators only.
+  res.json({ ...g, students, teachers, subjects, canManage: me.role === 'admin' });
 });
 
 groupsRouter.patch('/:id', requireRole('admin'), (req, res) => {
@@ -81,10 +82,8 @@ groupsRouter.patch('/:id', requireRole('admin'), (req, res) => {
   res.json({ ok: true });
 });
 
-groupsRouter.post('/:id/students', (req, res) => {
-  const me = user(req);
+groupsRouter.post('/:id/students', requireRole('admin'), (req, res) => {
   const id = int(req.params.id);
-  if (!canManageGroup(me, id)) throw forbidden();
   const { userIds } = parse(z.object({ userIds: z.array(z.number().int()).min(1).max(500) }), req.body);
   const valid = all<{ id: number }>(
     `SELECT id FROM users WHERE role = 'student' AND id IN (${inList(userIds)})`,
@@ -96,10 +95,8 @@ groupsRouter.post('/:id/students', (req, res) => {
   res.json({ added: valid.length });
 });
 
-groupsRouter.delete('/:id/students/:userId', (req, res) => {
-  const me = user(req);
+groupsRouter.delete('/:id/students/:userId', requireRole('admin'), (req, res) => {
   const id = int(req.params.id);
-  if (!canManageGroup(me, id)) throw forbidden();
   const uid = int(req.params.userId);
   run('DELETE FROM group_students WHERE group_id = ? AND user_id = ?', id, uid);
   audit(req, 'group.student_remove', { entityType: 'group', entityId: id, metadata: { userId: uid } });
@@ -140,47 +137,38 @@ const subjectBody = z.object({
   topics: z.array(z.string().trim().min(1).max(120)).max(100).default([]),
 });
 
-subjectsRouter.get('/', (_req, res) => {
+subjectsRouter.get('/', (req, res) => {
+  const me = user(req);
+  // ?mine=1 — only subjects assigned to the current teacher by an administrator
+  const mine = req.query.mine === '1' && me.role === 'teacher';
   const rows = all<any>(
     `SELECT s.*,
        (SELECT COUNT(*) FROM tests t WHERE t.subject_id = s.id AND t.status != 'archived') AS test_count,
        (SELECT GROUP_CONCAT(u.first_name || ' ' || u.last_name, ', ') FROM subject_teachers st JOIN users u ON u.id = st.user_id WHERE st.subject_id = s.id) AS teachers,
        (SELECT GROUP_CONCAT(g.name, ', ') FROM group_subjects gs JOIN study_groups g ON g.id = gs.group_id WHERE gs.subject_id = s.id) AS groups,
        (SELECT ROUND(AVG(a.percentage), 1) FROM attempts a JOIN tests t ON t.id = a.test_id WHERE t.subject_id = s.id AND a.status = 'completed') AS avg_percentage
-     FROM subjects s ORDER BY s.name`,
+     FROM subjects s ${mine ? 'WHERE s.id IN (SELECT subject_id FROM subject_teachers WHERE user_id = ?)' : ''} ORDER BY s.name`,
+    ...(mine ? [me.id] : []),
   );
   res.json(rows.map((r) => ({ ...r, topics: JSON.parse(r.topics) })));
 });
 
-function canEditSubject(u: Express.Request['user'], subjectId: number) {
-  if (!u) return false;
-  if (u.role === 'admin') return true;
-  return u.role === 'teacher' && !!get('SELECT 1 FROM subject_teachers WHERE subject_id = ? AND user_id = ?', subjectId, u.id);
-}
-
-subjectsRouter.post('/', requireRole('admin', 'teacher'), (req, res) => {
-  const me = user(req);
-  if (me.role === 'teacher' && getSetting('teacher_can_create_subjects') !== '1') throw forbidden();
+subjectsRouter.post('/', requireRole('admin'), (req, res) => {
   const b = parse(subjectBody, req.body);
   if (get('SELECT 1 FROM subjects WHERE LOWER(name) = LOWER(?)', b.name)) throw conflict('subject_exists');
-  const id = tx(() => {
-    const { id } = run(
-      'INSERT INTO subjects (name, description, topics, created_at) VALUES (?, ?, ?, ?)',
-      b.name,
-      b.description,
-      JSON.stringify(b.topics),
-      now(),
-    );
-    if (me.role === 'teacher') run('INSERT INTO subject_teachers (subject_id, user_id) VALUES (?, ?)', id, me.id);
-    return id;
-  });
+  const { id } = run(
+    'INSERT INTO subjects (name, description, topics, created_at) VALUES (?, ?, ?, ?)',
+    b.name,
+    b.description,
+    JSON.stringify(b.topics),
+    now(),
+  );
   audit(req, 'subject.create', { entityType: 'subject', entityId: id, metadata: { name: b.name } });
   res.status(201).json({ id });
 });
 
-subjectsRouter.patch('/:id', (req, res) => {
+subjectsRouter.patch('/:id', requireRole('admin'), (req, res) => {
   const id = int(req.params.id);
-  if (!canEditSubject(req.user, id)) throw forbidden();
   const b = parse(subjectBody, req.body);
   const r = run('UPDATE subjects SET name = ?, description = ?, topics = ? WHERE id = ?', b.name, b.description, JSON.stringify(b.topics), id);
   if (!r.changes) throw notFound();

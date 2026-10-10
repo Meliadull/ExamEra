@@ -71,6 +71,9 @@ export function errorHandler(err: any, _req: Request, res: Response, _next: Next
   }
   if (err?.type === 'entity.too.large') return res.status(413).json({ error: 'payload_too_large' });
   if (err?.type === 'entity.parse.failed') return res.status(400).json({ error: 'invalid_json' });
+  if (Number.isInteger(err?.status) && err.status >= 400 && err.status < 500) {
+    return res.status(err.status).json({ error: err.status === 404 ? 'not_found' : 'bad_request' });
+  }
   if (typeof err?.message === 'string' && err.message.includes('UNIQUE constraint failed')) {
     const field = err.message.split('.').pop();
     return res.status(409).json({ error: 'duplicate', details: { field } });

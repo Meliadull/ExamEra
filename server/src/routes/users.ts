@@ -50,17 +50,15 @@ usersRouter.get('/', (req, res) => {
   const w = new Where();
   if (me.role === 'student') throw forbidden();
   if (me.role === 'teacher') {
-    // Teachers see students only (their groups by default, everyone with scope=all to add to groups).
+    // Teachers see only students of their groups (and those who took their tests).
     w.add("u.role = 'student'");
-    if (q.scope !== 'all') {
-      const gids = teacherGroupIds(me.id);
-      w.add(
-        `(u.id IN (SELECT user_id FROM group_students WHERE group_id IN (${inList(gids)}))
-          OR u.id IN (SELECT a.user_id FROM attempts a JOIN tests t ON t.id = a.test_id WHERE t.teacher_id = ?))`,
-        ...gids,
-        me.id,
-      );
-    }
+    const gids = teacherGroupIds(me.id);
+    w.add(
+      `(u.id IN (SELECT user_id FROM group_students WHERE group_id IN (${inList(gids)}))
+        OR u.id IN (SELECT a.user_id FROM attempts a JOIN tests t ON t.id = a.test_id WHERE t.teacher_id = ?))`,
+      ...gids,
+      me.id,
+    );
   }
   const search = qstr(q.search);
   if (search) {
@@ -108,6 +106,7 @@ usersRouter.post('/', requireRole('admin'), async (req, res) => {
       role: z.enum(ROLES as [Role, ...Role[]]),
       password: z.string().max(128).optional(),
       groupIds: z.array(z.number().int()).optional(),
+      subjectIds: z.array(z.number().int()).optional(),
     }),
     req.body,
   );
@@ -133,6 +132,9 @@ usersRouter.post('/', requireRole('admin'), async (req, res) => {
     );
     const table = b.role === 'teacher' ? 'group_teachers' : 'group_students';
     for (const gid of b.groupIds ?? []) run(`INSERT OR IGNORE INTO ${table} (group_id, user_id) VALUES (?, ?)`, gid, id);
+    if (b.role === 'teacher') {
+      for (const sid of b.subjectIds ?? []) run('INSERT OR IGNORE INTO subject_teachers (subject_id, user_id) VALUES (?, ?)', sid, id);
+    }
     return id;
   });
   audit(req, 'user.create', { entityType: 'user', entityId: id, metadata: { role: b.role, name: `${b.firstName} ${b.lastName}` } });
@@ -153,7 +155,43 @@ usersRouter.get('/:id', (req, res) => {
     id,
     id,
   );
-  res.json({ ...u, groups });
+  const subjects = u.role === 'teacher' ? teacherSubjects(id) : [];
+  res.json({ ...u, groups, subjects });
+});
+
+function teacherSubjects(userId: number) {
+  return all<{ id: number; name: string }>(
+    'SELECT s.id, s.name FROM subject_teachers st JOIN subjects s ON s.id = st.subject_id WHERE st.user_id = ? ORDER BY s.name',
+    userId,
+  );
+}
+
+/** Administrator assigns which subjects a teacher teaches and which groups they lead. */
+usersRouter.put('/:id/teaching', requireRole('admin'), (req, res) => {
+  const id = int(req.params.id);
+  const b = parse(
+    z.object({ subjectIds: z.array(z.number().int()).max(100), groupIds: z.array(z.number().int()).max(100) }),
+    req.body,
+  );
+  const u = get<{ role: string }>('SELECT role FROM users WHERE id = ?', id);
+  if (!u) throw notFound();
+  if (u.role !== 'teacher') throw badRequest('not_a_teacher');
+  const before = {
+    subjectIds: teacherSubjects(id).map((s) => s.id),
+    groupIds: all<{ group_id: number }>('SELECT group_id FROM group_teachers WHERE user_id = ?', id).map((r) => r.group_id),
+  };
+  tx(() => {
+    run('DELETE FROM subject_teachers WHERE user_id = ?', id);
+    run('DELETE FROM group_teachers WHERE user_id = ?', id);
+    for (const sid of b.subjectIds) {
+      if (get('SELECT 1 FROM subjects WHERE id = ?', sid)) run('INSERT OR IGNORE INTO subject_teachers (subject_id, user_id) VALUES (?, ?)', sid, id);
+    }
+    for (const gid of b.groupIds) {
+      if (get('SELECT 1 FROM study_groups WHERE id = ?', gid)) run('INSERT OR IGNORE INTO group_teachers (group_id, user_id) VALUES (?, ?)', gid, id);
+    }
+  });
+  audit(req, 'user.teaching_update', { entityType: 'user', entityId: id, metadata: { before, after: b } });
+  res.json({ ok: true });
 });
 
 usersRouter.patch('/:id', requireRole('admin'), (req, res) => {
@@ -247,7 +285,7 @@ profileRouter.get('/', (req, res) => {
     me.id,
     me.id,
   );
-  res.json({ ...u, groups });
+  res.json({ ...u, groups, subjects: me.role === 'teacher' ? teacherSubjects(me.id) : [] });
 });
 
 profileRouter.patch('/', (req, res) => {

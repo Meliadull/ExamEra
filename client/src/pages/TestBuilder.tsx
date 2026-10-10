@@ -2,6 +2,7 @@ import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Check, CheckCircle2, Copy, D
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { api, downloadUrl, fileToBase64, patch, put, useApi } from '../api';
+import { useMe } from '../auth';
 import { useGroups, useSubjects } from '../components/common';
 import { RichText } from '../components/RichText';
 import { Badge, Button, Card, ErrorBox, Field, Input, Modal, PageHead, Select, Spinner, Textarea, ToggleRow, errorText, useAction, useToast } from '../components/ui';
@@ -227,7 +228,8 @@ export function TestBuilder() {
   const { t } = useI18n();
   const nav = useNavigate();
   const toast = useToast();
-  const subjects = useSubjects();
+  const me = useMe();
+  const subjects = useSubjects(me.role === 'teacher');
   const groups = useGroups();
   const existing = useApi<any>(id ? `/tests/${id}` : null);
   const [step, setStep] = useState(0);
@@ -295,7 +297,13 @@ export function TestBuilder() {
   }, [isNew, subjects.data, meta.subjectId]);
 
   const locked = !!existing.data?.has_attempts;
-  const subject = subjects.data?.find((s) => s.id === meta.subjectId);
+  // An older test may use a subject that is no longer assigned to the teacher — keep it selectable.
+  const subjectOptions = useMemo(() => {
+    const list = subjects.data ?? [];
+    const x = existing.data;
+    return x && !list.some((s) => s.id === x.subject_id) ? [...list, { id: x.subject_id, name: x.subject_name, topics: [] as string[] }] : list;
+  }, [subjects.data, existing.data]);
+  const subject = subjectOptions.find((s) => s.id === meta.subjectId);
   const maxScore = useMemo(() => questions.reduce((s, q) => s + (Number(q.score) || 0), 0), [questions]);
   const invalidCount = questions.filter((q) => questionErrors(q).length).length;
   const metaValid = meta.title.trim() && meta.subjectId !== '';
@@ -429,13 +437,14 @@ export function TestBuilder() {
 
       {step === 0 && (
         <Card title={t('builder.mainInfo')}>
+          {me.role === 'teacher' && subjects.data && !subjects.data.length && <div className="alert warning mb">{t('subjects.noneAssigned')}</div>}
           <div className="form-grid">
             <Field label={t('builder.title')} className="full" error={metaTouched && !meta.title.trim() ? t('errors.required') : undefined}>
               <Input value={meta.title} onChange={(e) => setM({ title: e.target.value })} placeholder={t('builder.titlePlaceholder')} maxLength={200} />
             </Field>
             <Field label={t('common.subject')}>
               <Select value={meta.subjectId} onChange={(e) => setM({ subjectId: Number(e.target.value) })}>
-                {subjects.data?.map((s) => (
+                {subjectOptions.map((s) => (
                   <option key={s.id} value={s.id}>
                     {s.name}
                   </option>
@@ -623,7 +632,8 @@ export function TestBuilder() {
 export function ImportModal({ onClose }: { onClose: () => void }) {
   const { t } = useI18n();
   const nav = useNavigate();
-  const subjects = useSubjects();
+  const me = useMe();
+  const subjects = useSubjects(me.role === 'teacher');
   const [preview, setPreview] = useState<any>(null);
   const [fileName, setFileName] = useState('');
   const [title, setTitle] = useState('');

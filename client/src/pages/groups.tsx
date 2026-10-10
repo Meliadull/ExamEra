@@ -71,6 +71,7 @@ export function Groups() {
           )
         }
       />
+      {me.role === 'teacher' && <div className="alert info mb">{t('groups.adminManaged')}</div>}
       <div className="filters">
         <Input className="search-input" placeholder={t('common.search')} value={search} onChange={(e) => setSearch(e.target.value)} />
       </div>

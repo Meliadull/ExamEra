@@ -25,8 +25,9 @@ export function OptionText({ type, text }: { type: QuestionType; text: string })
   return s === text ? <RichText text={text} inline /> : <span>{s}</span>;
 }
 
-export function useSubjects() {
-  return useApi<Subject[]>('/subjects');
+/** All subjects, or (mine) only those an administrator assigned to the current teacher. */
+export function useSubjects(mine = false) {
+  return useApi<Subject[]>('/subjects', mine ? { mine: 1 } : undefined);
 }
 
 export function useGroups() {

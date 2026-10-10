@@ -3,7 +3,7 @@ import { Router } from 'express';
 import { z } from 'zod';
 import { all, get, getSetting, now, run, tx, Where } from '../db.js';
 import { badRequest, conflict, forbidden, int, notFound, parse, qstr, requireAuth, requireRole, user } from '../http.js';
-import { assertCanEditTest, assertCanViewTest, loadTest, seesEverything } from '../services/access.js';
+import { assertCanEditTest, assertCanViewTest, assertTeachesSubject, loadTest, seesEverything } from '../services/access.js';
 import { audit } from '../services/audit.js';
 import { loadQuestions, questionInput, replaceQuestions, testHasAttempts, validateQuestion, type QuestionInput } from '../services/tests.js';
 import { decodeBase64, isXlsx, saveImage } from '../services/uploads.js';
@@ -92,6 +92,7 @@ testsRouter.post('/', requireRole('teacher', 'admin'), (req, res) => {
     req.body,
   );
   assertSubject(b.subjectId);
+  assertTeachesSubject(me, b.subjectId);
   const t = now();
   const id = tx(() => {
     const { id } = run(
@@ -253,6 +254,7 @@ testsRouter.patch('/:id', (req, res) => {
   if (t.status === 'archived') throw conflict('test_archived');
   const b = parse(testMeta, req.body);
   assertSubject(b.subjectId);
+  if (b.subjectId !== t.subject_id) assertTeachesSubject(me, b.subjectId);
   run(
     `UPDATE tests SET title = ?, subject_id = ?, topic = ?, description = ?, instruction = ?, duration_min = ?, attempts_limit = ?,
        pass_score = ?, shuffle_questions = ?, shuffle_options = ?, show_result = ?, show_answers = ?, multiple_scoring = ?,
@@ -317,6 +319,7 @@ testsRouter.post('/:id/copy', requireRole('teacher', 'admin'), (req, res) => {
   const t = loadTest(int(req.params.id));
   assertCanViewTest(me, t);
   if (me.role === 'teacher' && t.teacher_id !== me.id) throw forbidden();
+  assertTeachesSubject(me, t.subject_id);
   const qs = loadQuestions(t.id);
   const ts = now();
   const id = tx(() => {

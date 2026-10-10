@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { api, del, patch, put, useApi } from '../api';
 import { useMe } from '../auth';
-import { auditActionLabel, useGroups } from '../components/common';
+import { auditActionLabel, useGroups, useSubjects } from '../components/common';
 import { Avatar, Badge, Button, Card, Check, Confirm, Empty, ErrorBox, Field, Input, Loader, Modal, PageHead, Pager, Select, Stat, ToggleRow, useAction } from '../components/ui';
 import { useFormat, useI18n } from '../i18n';
 import type { Role } from '../types';
@@ -127,6 +127,8 @@ function TempPassword({ value, onClose }: { value: string; onClose: () => void }
 function UserForm({ u, onClose, onDone }: { u?: any; onClose: () => void; onDone: (temp?: string) => void }) {
   const { t } = useI18n();
   const groups = useGroups();
+  const subjects = useSubjects();
+  const [subjectIds, setSubjectIds] = useState<number[]>([]);
   const [form, setForm] = useState({
     firstName: u?.first_name ?? '',
     lastName: u?.last_name ?? '',
@@ -146,7 +148,7 @@ function UserForm({ u, onClose, onDone }: { u?: any; onClose: () => void; onDone
         await patch(`/users/${u.id}`, { firstName: form.firstName, lastName: form.lastName, phone: form.phone || null, email: form.email || null });
         onDone();
       } else {
-        const r = await api('/users', { body: { ...form, phone: form.phone || null, email: form.email || null, groupIds } });
+        const r = await api('/users', { body: { ...form, phone: form.phone || null, email: form.email || null, groupIds, subjectIds: form.role === 'teacher' ? subjectIds : [] } });
         onDone(r.tempPassword);
       }
     } catch (e) {
@@ -194,8 +196,17 @@ function UserForm({ u, onClose, onDone }: { u?: any; onClose: () => void; onDone
             <Field label={t('auth.password')} hint={t('users.passwordHint')}>
               <Input type="password" value={form.password} onChange={set('password')} autoComplete="new-password" />
             </Field>
+            {form.role === 'teacher' && (
+              <Field label={t('users.subjectsTaught')} className="full">
+                <div className="row wrap">
+                  {subjects.data?.map((s) => (
+                    <Check key={s.id} checked={subjectIds.includes(s.id)} onChange={() => setSubjectIds((x) => (x.includes(s.id) ? x.filter((v) => v !== s.id) : [...x, s.id]))} label={s.name} />
+                  ))}
+                </div>
+              </Field>
+            )}
             {(form.role === 'student' || form.role === 'teacher') && (
-              <Field label={t('nav.groups')} className="full">
+              <Field label={form.role === 'teacher' ? t('users.groupsLed') : t('nav.groups')} className="full">
                 <div className="row wrap">
                   {groups.data?.map((g) => (
                     <Check key={g.id} checked={groupIds.includes(g.id)} onChange={() => setGroupIds((s) => (s.includes(g.id) ? s.filter((x) => x !== g.id) : [...s, g.id]))} label={g.name} />
@@ -326,6 +337,70 @@ export function Users() {
   );
 }
 
+/** Admin-only: which subjects a teacher teaches and which groups they lead. */
+function TeachingCard({ teacher, readOnly, onSaved }: { teacher: any; readOnly: boolean; onSaved: () => void }) {
+  const { t } = useI18n();
+  const subjects = useSubjects();
+  const groups = useGroups();
+  const [sIds, setSIds] = useState<number[]>(teacher.subjects.map((s: any) => s.id));
+  const [gIds, setGIds] = useState<number[]>(teacher.groups.filter((g: any) => g.relation === 'teacher').map((g: any) => g.id));
+  const { busy, run } = useAction();
+  const toggle = (arr: number[], set: (v: number[]) => void, id: number) => set(arr.includes(id) ? arr.filter((v) => v !== id) : [...arr, id]);
+  return (
+    <Card title={t('users.teaching')} className="mt">
+      <p className="small muted" style={{ marginTop: 0 }}>
+        {t('users.teachingHint')}
+      </p>
+      <div className="grid g2">
+        <div>
+          <div className="label" style={{ marginBottom: 8 }}>
+            {t('users.subjectsTaught')}
+          </div>
+          <div className="stack" style={{ gap: 6 }}>
+            {subjects.data?.map((s) => (
+              <Check key={s.id} disabled={readOnly} checked={sIds.includes(s.id)} onChange={() => toggle(sIds, setSIds, s.id)} label={s.name} />
+            ))}
+          </div>
+        </div>
+        <div>
+          <div className="label" style={{ marginBottom: 8 }}>
+            {t('users.groupsLed')}
+          </div>
+          <div className="stack" style={{ gap: 6 }}>
+            {groups.data?.map((g) => (
+              <Check
+                key={g.id}
+                disabled={readOnly}
+                checked={gIds.includes(g.id)}
+                onChange={() => toggle(gIds, setGIds, g.id)}
+                label={
+                  <span>
+                    {g.name} <span className="small muted">{g.academic_year}</span>
+                  </span>
+                }
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+      {!readOnly && (
+        <div className="row mt" style={{ justifyContent: 'flex-end' }}>
+          <Button
+            variant="primary"
+            loading={busy}
+            onClick={async () => {
+              const ok = await run(() => put(`/users/${teacher.id}/teaching`, { subjectIds: sIds, groupIds: gIds }), t('common.saved'));
+              if (ok) onSaved();
+            }}
+          >
+            {t('common.save')}
+          </Button>
+        </div>
+      )}
+    </Card>
+  );
+}
+
 export function UserDetail() {
   const { id } = useParams();
   const { t } = useI18n();
@@ -428,6 +503,17 @@ export function UserDetail() {
               )}
             </Card>
           </div>
+          {x.role === 'teacher' && (
+            <TeachingCard
+              key={x.id + ':' + x.subjects.map((s: any) => s.id).join(',')}
+              teacher={x}
+              readOnly={!isAdmin}
+              onSaved={() => {
+                u.reload();
+                activity.reload();
+              }}
+            />
+          )}
           <Card title={t('users.activity')} className="mt">
             <Loader state={activity}>
               {(items) =>
@@ -714,7 +800,6 @@ export function SettingsPage() {
                 <Input type="number" min={0} max={100} value={s.default_pass_score} onChange={(e) => set('default_pass_score', e.target.value)} />
               </Field>
               <div>
-                <ToggleRow title={t('settings.teacherSubjects')} checked={bool('teacher_can_create_subjects')} onChange={(v) => set('teacher_can_create_subjects', v ? '1' : '0')} disabled={readOnly} />
                 <ToggleRow title={t('settings.showRating')} hint={t('settings.showRatingHint')} checked={bool('show_rating')} onChange={(v) => set('show_rating', v ? '1' : '0')} disabled={readOnly} />
               </div>
             </fieldset>
