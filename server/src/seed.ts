@@ -149,19 +149,19 @@ interface Person {
   last: string;
 }
 const STUDENTS: Record<string, Person[]> = {
-  '9-А класс': [
-    { first: 'Алексей', last: 'Иванов' }, { first: 'Мария', last: 'Смирнова' }, { first: 'Азиз', last: 'Рахимов' },
+  '01/25': [
+    { first: 'Gulbar', last: 'Ergashaliyeva' }, { first: 'Мария', last: 'Смирнова' }, { first: 'Азиз', last: 'Рахимов' },
     { first: 'Дильноза', last: 'Каримова' }, { first: 'Тимур', last: 'Юсупов' }, { first: 'Анна', last: 'Ким' },
     { first: 'Бекзод', last: 'Турсунов' }, { first: 'Камила', last: 'Ахмедова' }, { first: 'Сардор', last: 'Назаров' },
     { first: 'Елена', last: 'Попова' }, { first: 'Жасур', last: 'Исмоилов' }, { first: 'Малика', last: 'Холматова' },
   ],
-  '9-Б класс': [
+  '101/26': [
     { first: 'Шахзод', last: 'Алимов' }, { first: 'Ольга', last: 'Ли' }, { first: 'Улугбек', last: 'Мирзаев' },
     { first: 'Нилуфар', last: 'Собирова' }, { first: 'Даниил', last: 'Кузнецов' }, { first: 'Зарина', last: 'Усмонова' },
     { first: 'Фаррух', last: 'Джураев' }, { first: 'Севара', last: 'Абдуллаева' }, { first: 'Игорь', last: 'Пак' },
     { first: 'Мадина', last: 'Эргашева' }, { first: 'Акмал', last: 'Хасанов' },
   ],
-  '10-А класс': [
+  '102/26': [
     { first: 'Ислом', last: 'Каримов' }, { first: 'Виктория', last: 'Цой' }, { first: 'Отабек', last: 'Нуриддинов' },
     { first: 'Гулноза', last: 'Рашидова' }, { first: 'Артём', last: 'Волков' }, { first: 'Лола', last: 'Саидова' },
     { first: 'Рустам', last: 'Шарипов' }, { first: 'Диана', last: 'Мун' }, { first: 'Хуршид', last: 'Обидов' },
@@ -182,10 +182,10 @@ export async function seedDemo() {
         first, last, phone, email, hash, role, created, created,
       ).id;
 
-    const admin = user('Администратор', 'Системы', 'admin', '+998900000001', 'admin@examera.uz');
-    const teacher = user('Александр', 'Петров', 'teacher', '+998900000002', 'a.petrov@examera.uz');
+    const admin = user("O'quv", "bo'limi", 'admin', '+998900000001', 'admin@examera.uz');
+    const teacher = user('Nargiza', 'Xajimirzayeva', 'teacher', '+998900000002', 'n.xajimirzayeva@examera.uz');
     const teacher2 = user('Нигора', 'Каримова', 'teacher', '+998900000004', 'n.karimova@examera.uz');
-    user('Дилшод', 'Юсупов', 'auditor', '+998900000003', 'auditor@examera.uz');
+    user('Jahongir', 'Mirzarayimov', 'auditor', '+998900000003', 'auditor@examera.uz');
 
     run(
       "INSERT INTO academic_periods (name, starts_on, ends_on, is_current) VALUES ('2025–2026 учебный год', ?, ?, 1)",
@@ -213,11 +213,11 @@ export async function seedDemo() {
     for (const [gname, people] of Object.entries(STUDENTS)) {
       const gid = run('INSERT INTO study_groups (name, academic_year, status, created_at) VALUES (?, ?, ?, ?)', gname, year, 'active', created).id;
       groupIds[gname] = gid;
-      // One class leader per group: Petrov leads 9-А, Karimova leads 9-Б and 10-А.
-      run('INSERT INTO group_teachers (group_id, user_id) VALUES (?, ?)', gid, gname === '9-А класс' ? teacher : teacher2);
+      // One class leader per group: Xajimirzayeva leads 01/25, Karimova leads 101/26 and 102/26.
+      run('INSERT INTO group_teachers (group_id, user_id) VALUES (?, ?)', gid, gname === '01/25' ? teacher : teacher2);
       Object.values(subjects).slice(0, 5).forEach((sid) => run('INSERT INTO group_subjects (group_id, subject_id) VALUES (?, ?)', gid, sid));
       for (const p of people) {
-        const isDemo = p.first === 'Алексей' && p.last === 'Иванов';
+        const isDemo = p.first === 'Gulbar' && p.last === 'Ergashaliyeva';
         const phone = isDemo ? '+998901234567' : `+99890${String(phoneSeq++ + 1000).padStart(7, '0')}`;
         const email = isDemo ? 'alexey@example.com' : null;
         const uid = user(p.first, p.last, 'student', phone, email);
@@ -242,32 +242,32 @@ export async function seedDemo() {
     };
     const defs: TestDef[] = [
       { title: 'Контрольная работа №3', subject: 'Математика', topic: 'Квадратные уравнения', bank: 'quadratic', teacher, status: 'completed', duration: 40, difficulty: -0.12,
-        assignments: [{ groups: ['9-А класс', '9-Б класс'], start: at(-4, 9), end: at(-2, 18), complete: true, showAnswers: true }] },
+        assignments: [{ groups: ['01/25', '101/26'], start: at(-4, 9), end: at(-2, 18), complete: true, showAnswers: true }] },
       { title: 'Тест по истории', subject: 'История', topic: 'Древний мир', bank: 'ancient', teacher: teacher2, status: 'published', duration: 30,
-        assignments: [{ groups: ['9-А класс', '10-А класс'], start: at(-2, 8), end: at(5, 20), complete: true }] },
+        assignments: [{ groups: ['01/25', '102/26'], start: at(-2, 8), end: at(5, 20), complete: true }] },
       { title: 'Итоговый тест', subject: 'Физика', topic: 'Законы Ньютона', bank: 'newton', teacher, status: 'completed', duration: 45,
-        assignments: [{ groups: ['10-А класс', '9-Б класс'], start: at(-6, 9), end: at(-4, 18), complete: true, showAnswers: true }] },
+        assignments: [{ groups: ['102/26', '101/26'], start: at(-6, 9), end: at(-4, 18), complete: true, showAnswers: true }] },
       { title: 'Тест — Грамматика', subject: 'Английский язык', topic: 'Past Perfect', bank: 'pastperfect', teacher: teacher2, status: 'draft', duration: 25 },
       { title: 'Алгебра — Тема 5', subject: 'Математика', topic: 'Линейные уравнения', bank: 'linear', teacher, status: 'archived', duration: 20,
-        assignments: [{ groups: ['9-А класс'], start: at(-28, 9), end: at(-27, 18), complete: true }] },
+        assignments: [{ groups: ['01/25'], start: at(-28, 9), end: at(-27, 18), complete: true }] },
       { title: 'Самостоятельная работа: линейные уравнения', subject: 'Математика', topic: 'Линейные уравнения', bank: 'linear', teacher, status: 'completed', duration: 20,
-        assignments: [{ groups: ['9-Б класс', '10-А класс'], start: at(-25, 9), end: at(-24, 18), complete: true }] },
+        assignments: [{ groups: ['101/26', '102/26'], start: at(-25, 9), end: at(-24, 18), complete: true }] },
       { title: 'Кинематика — проверочная', subject: 'Физика', topic: 'Кинематика', bank: 'kinematics', teacher, status: 'completed', duration: 20, difficulty: 0.05,
-        assignments: [{ groups: ['9-А класс', '9-Б класс', '10-А класс'], start: at(-21, 9), end: at(-20, 18), complete: true }] },
+        assignments: [{ groups: ['01/25', '101/26', '102/26'], start: at(-21, 9), end: at(-20, 18), complete: true }] },
       { title: 'Средние века: Темуриды', subject: 'История', topic: 'Средние века', bank: 'medieval', teacher: teacher2, status: 'completed', duration: 25,
-        assignments: [{ groups: ['9-А класс', '9-Б класс'], start: at(-17, 9), end: at(-16, 18), complete: true }] },
+        assignments: [{ groups: ['01/25', '101/26'], start: at(-17, 9), end: at(-16, 18), complete: true }] },
       { title: 'Present Simple — quiz', subject: 'Английский язык', topic: 'Present Simple', bank: 'presentsimple', teacher: teacher2, status: 'completed', duration: 15, difficulty: 0.08,
-        assignments: [{ groups: ['9-А класс', '10-А класс'], start: at(-13, 9), end: at(-12, 18), complete: true }] },
+        assignments: [{ groups: ['01/25', '102/26'], start: at(-13, 9), end: at(-12, 18), complete: true }] },
       { title: 'Основы информатики', subject: 'Информатика', topic: 'Системы счисления', bank: 'informatics', teacher, status: 'completed', duration: 20,
-        assignments: [{ groups: ['9-А класс', '9-Б класс', '10-А класс'], start: at(-9, 9), end: at(-8, 18), complete: true }] },
+        assignments: [{ groups: ['01/25', '101/26', '102/26'], start: at(-9, 9), end: at(-8, 18), complete: true }] },
       { title: 'Проценты — контрольная', subject: 'Математика', topic: 'Проценты', bank: 'percent', teacher, status: 'completed', duration: 30, difficulty: -0.05,
-        assignments: [{ groups: ['10-А класс'], start: at(-7, 9), end: at(-6, 18), complete: true }] },
+        assignments: [{ groups: ['102/26'], start: at(-7, 9), end: at(-6, 18), complete: true }] },
       { title: 'Математика — Итоговый тест', subject: 'Математика', topic: 'Проценты', bank: 'percent', teacher, status: 'published', duration: 30, shuffle: true,
-        assignments: [{ groups: ['9-А класс', '9-Б класс'], start: at(-1, 8), end: at(6, 20), attempts: 2, showAnswers: true }] },
+        assignments: [{ groups: ['01/25', '101/26'], start: at(-1, 8), end: at(6, 20), attempts: 2, showAnswers: true }] },
       { title: 'Физика — Законы Ньютона', subject: 'Физика', topic: 'Законы Ньютона', bank: 'newton', teacher, status: 'published', duration: 30,
-        assignments: [{ groups: ['9-А класс'], start: at(1, 10), end: at(4, 18) }] },
+        assignments: [{ groups: ['01/25'], start: at(1, 10), end: at(4, 18) }] },
       { title: 'Английский — Grammar', subject: 'Английский язык', topic: 'Past Perfect', bank: 'pastperfect', teacher: teacher2, status: 'published', duration: 25,
-        assignments: [{ groups: ['9-А класс', '9-Б класс'], start: at(3, 12), end: at(7, 18) }] },
+        assignments: [{ groups: ['01/25', '101/26'], start: at(3, 12), end: at(7, 18) }] },
     ];
 
     for (const d of defs) {
@@ -352,7 +352,7 @@ export async function seedDemo() {
           }
         }
       }
-      auditAt(new Date(createdAt), d.teacher, d.teacher === teacher ? 'Александр Петров' : 'Нигора Каримова', 'teacher', 'test.create', 'test', testId, { title: d.title });
+      auditAt(new Date(createdAt), d.teacher, d.teacher === teacher ? 'Nargiza Xajimirzayeva' : 'Нигора Каримова', 'teacher', 'test.create', 'test', testId, { title: d.title });
     }
 
     // Notifications for the demo accounts
@@ -362,8 +362,8 @@ export async function seedDemo() {
     n(demo, 'test_assigned', { test: 'Математика — Итоговый тест', subject: 'Математика' }, '/app/my-tests', 1);
     n(demo, 'test_assigned', { test: 'Физика — Законы Ньютона', subject: 'Физика' }, '/app/my-tests', 0.5);
     n(teacher, 'attempt_completed', { student: 'Мария Смирнова', test: 'Контрольная работа №3', percentage: 92 }, '/app/tests', 2);
-    n(teacher, 'group_completed', { group: '10-А класс', test: 'Итоговый тест' }, '/app/tests', 4);
-    auditAt(days(-1), admin, 'Администратор Системы', 'admin', 'auth.login', 'user', admin, { method: 'phone' });
+    n(teacher, 'group_completed', { group: '102/26', test: 'Итоговый тест' }, '/app/tests', 4);
+    auditAt(days(-1), admin, "O'quv bo'limi", 'admin', 'auth.login', 'user', admin, { method: 'phone' });
   });
   console.log(`Demo data ready. Password for all demo accounts: ${DEMO_PASSWORD}`);
 }

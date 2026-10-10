@@ -133,7 +133,7 @@ export const uz: Record<string, string> = {
   'landing.start': 'Bepul boshlash',
   'landing.openApp': 'Platformani ochish',
   'landing.mockTitle': 'Matematika — Yakuniy test',
-  'landing.mockSub': '9-A sinf',
+  'landing.mockSub': '01/25 guruh',
   'landing.mockAvg': "O'rtacha",
   'landing.mockDone': 'Ishlar',
   'landing.f1Title': 'Test konstruktori',

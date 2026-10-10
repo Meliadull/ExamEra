@@ -137,7 +137,7 @@ export const ru: Record<string, string> = {
   'landing.start': 'Начать бесплатно',
   'landing.openApp': 'Открыть платформу',
   'landing.mockTitle': 'Математика — Итоговый тест',
-  'landing.mockSub': '9-А класс',
+  'landing.mockSub': 'Группа 01/25',
   'landing.mockAvg': 'Средний',
   'landing.mockDone': 'Работ',
   'landing.f1Title': 'Конструктор тестов',
