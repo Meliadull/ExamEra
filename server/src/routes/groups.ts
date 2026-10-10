@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { z } from 'zod';
 import { all, get, inList, now, run, tx, Where } from '../db.js';
 import { badRequest, conflict, forbidden, int, notFound, parse, qstr, requireAuth, requireRole, user } from '../http.js';
-import { canViewGroup, seesEverything } from '../services/access.js';
+import { canViewGroup, leadsGroup } from '../services/access.js';
 import { audit } from '../services/audit.js';
 
 export const groupsRouter = Router();
@@ -21,7 +21,8 @@ groupsRouter.get('/', (req, res) => {
   const me = user(req);
   if (me.role === 'student') throw forbidden();
   const w = new Where();
-  if (!seesEverything(me)) w.add('g.id IN (SELECT group_id FROM group_teachers WHERE user_id = ?)', me.id);
+  // Teachers see every group; averages count only their own tests unless they lead the group.
+  const tid = me.role === 'teacher' ? me.id : null;
   const search = qstr(req.query.search);
   if (search) w.add('LOWER(g.name) LIKE ?', `%${search.toLowerCase()}%`);
   if (req.query.status) w.add('g.status = ?', String(req.query.status));
@@ -30,9 +31,15 @@ groupsRouter.get('/', (req, res) => {
        (SELECT COUNT(*) FROM group_students gs WHERE gs.group_id = g.id) AS student_count,
        (SELECT GROUP_CONCAT(u.first_name || ' ' || u.last_name, ', ') FROM group_teachers gt JOIN users u ON u.id = gt.user_id WHERE gt.group_id = g.id) AS teachers,
        (SELECT GROUP_CONCAT(s.name, ', ') FROM group_subjects gsu JOIN subjects s ON s.id = gsu.subject_id WHERE gsu.group_id = g.id) AS subjects,
-       (SELECT ROUND(AVG(a.percentage), 1) FROM attempts a WHERE a.status = 'completed'
-          AND a.user_id IN (SELECT user_id FROM group_students WHERE group_id = g.id)) AS avg_percentage
-     FROM study_groups g ${w.sql} ORDER BY g.status, g.name`,
+       EXISTS (SELECT 1 FROM group_teachers gt WHERE gt.group_id = g.id AND gt.user_id = ?) AS is_leader,
+       (SELECT ROUND(AVG(a.percentage), 1) FROM attempts a JOIN tests t ON t.id = a.test_id WHERE a.status = 'completed'
+          AND a.user_id IN (SELECT user_id FROM group_students WHERE group_id = g.id)
+          AND (? IS NULL OR t.teacher_id = ? OR EXISTS (SELECT 1 FROM group_teachers gt WHERE gt.group_id = g.id AND gt.user_id = ?))) AS avg_percentage
+     FROM study_groups g ${w.sql} ORDER BY is_leader DESC, g.status, g.name`,
+    tid,
+    tid,
+    tid,
+    tid,
     ...w.params,
   );
   res.json(rows);
@@ -57,11 +64,20 @@ groupsRouter.get('/:id', (req, res) => {
   if (!canViewGroup(me, id)) throw forbidden();
   const g = get<any>('SELECT * FROM study_groups WHERE id = ?', id);
   if (!g) throw notFound();
+  const isLeader = leadsGroup(me, id);
+  // Not the class leader: per-student numbers cover only this teacher's own tests.
+  const own = me.role === 'teacher' && !isLeader ? me.id : null;
   const students = all(
     `SELECT u.id, u.first_name, u.last_name, u.phone, u.email, u.status, u.avatar_url,
-       (SELECT ROUND(AVG(a.percentage), 1) FROM attempts a WHERE a.user_id = u.id AND a.status = 'completed') AS avg_percentage,
-       (SELECT COUNT(*) FROM attempts a WHERE a.user_id = u.id AND a.status = 'completed') AS attempts_count
+       (SELECT ROUND(AVG(a.percentage), 1) FROM attempts a JOIN tests t ON t.id = a.test_id
+          WHERE a.user_id = u.id AND a.status = 'completed' AND (? IS NULL OR t.teacher_id = ?)) AS avg_percentage,
+       (SELECT COUNT(*) FROM attempts a JOIN tests t ON t.id = a.test_id
+          WHERE a.user_id = u.id AND a.status = 'completed' AND (? IS NULL OR t.teacher_id = ?)) AS attempts_count
      FROM group_students gs JOIN users u ON u.id = gs.user_id WHERE gs.group_id = ? ORDER BY u.last_name, u.first_name`,
+    own,
+    own,
+    own,
+    own,
     id,
   );
   const teachers = all(
@@ -70,7 +86,7 @@ groupsRouter.get('/:id', (req, res) => {
   );
   const subjects = all('SELECT s.id, s.name FROM group_subjects gs JOIN subjects s ON s.id = gs.subject_id WHERE gs.group_id = ?', id);
   // Group composition and teacher/subject links are managed by administrators only.
-  res.json({ ...g, students, teachers, subjects, canManage: me.role === 'admin' });
+  res.json({ ...g, students, teachers, subjects, isLeader, scope: me.role === 'teacher' && !isLeader ? 'own' : 'full', canManage: me.role === 'admin' });
 });
 
 groupsRouter.patch('/:id', requireRole('admin'), (req, res) => {

@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { all, get } from '../db.js';
 import { badRequest, forbidden, int, notFound, paging, requireAuth, requireRole, user } from '../http.js';
-import { assertCanViewTest, canViewGroup, canViewStudent, loadTest } from '../services/access.js';
+import { assertCanViewTest, canViewGroup, canViewStudent, leadsGroup, leadsStudent, loadTest, seesEverything } from '../services/access.js';
 import { ATTEMPT_FROM, attemptWhere, kpis, readFilters } from '../services/analytics.js';
 import { audit } from '../services/audit.js';
 import { COLS, fmtDate, fmtDuration, passedLabel, sendTable, type Lang } from '../services/export.js';
@@ -117,7 +117,7 @@ reportsRouter.get('/student/:id', async (req, res) => {
   const st = get<any>('SELECT first_name, last_name FROM users WHERE id = ?', sid);
   if (!st) throw notFound();
   const { format, lang } = fmt(req.query as Record<string, unknown>);
-  const w = attemptWhere(me, { ...readFilters(req.query as Record<string, unknown>), studentId: sid });
+  const w = attemptWhere(me, { ...readFilters(req.query as Record<string, unknown>), studentId: sid }, { fullScope: seesEverything(me) || leadsStudent(me, sid) });
   const rows = all(`${RESULT_SELECT} ${ATTEMPT_FROM} ${w.sql} ORDER BY at.completed_at DESC`, ...w.params);
   const k = kpis(w);
   audit(req, 'data.export', { entityType: 'user', entityId: sid, metadata: { format, report: 'student', rows: rows.length } });
@@ -138,7 +138,7 @@ reportsRouter.get('/group/:id', async (req, res) => {
   const g = get<any>('SELECT name, academic_year FROM study_groups WHERE id = ?', gid);
   if (!g) throw notFound();
   const { format, lang } = fmt(req.query as Record<string, unknown>);
-  const w = attemptWhere(me, { ...readFilters(req.query as Record<string, unknown>), groupId: gid });
+  const w = attemptWhere(me, { ...readFilters(req.query as Record<string, unknown>), groupId: gid }, { fullScope: seesEverything(me) || leadsGroup(me, gid) });
   const rows = all(`${RESULT_SELECT} ${ATTEMPT_FROM} ${w.sql} ORDER BY t.title, u.last_name`, ...w.params);
   const k = kpis(w);
   audit(req, 'data.export', { entityType: 'group', entityId: gid, metadata: { format, report: 'group', rows: rows.length } });

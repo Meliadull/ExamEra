@@ -13,6 +13,7 @@ export interface User {
   avatar_url: string | null;
   language: string | null;
   has_password: number;
+  requested_role: string | null;
 }
 
 export interface AuthConfig {

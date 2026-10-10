@@ -8,6 +8,7 @@ import { useFormat, useI18n, type Lang } from '../i18n';
 export function Profile() {
   const me = useMe();
   const { refresh } = useAuth();
+  const teacherReq = useAction();
   const { t, lang, setLang } = useI18n();
   const f = useFormat();
   const toast = useToast();
@@ -93,6 +94,24 @@ export function Profile() {
                 <dd>{p.has_google ? t('profile.googleLinked') : t('common.no')}</dd>
               </dl>
               {p.role === 'teacher' && <div className="alert info mt">{t('profile.assignedByAdmin')}</div>}
+              {p.role === 'student' &&
+                (me.requested_role === 'teacher' ? (
+                  <div className="alert warning mt">{t('student.teacherRequestPending')}</div>
+                ) : (
+                  <div className="alert info mt" style={{ alignItems: 'center' }}>
+                    <span className="grow">{t('profile.teacherRequestText')}</span>
+                    <Button
+                      size="sm"
+                      loading={teacherReq.busy}
+                      onClick={async () => {
+                        const r = await teacherReq.run(() => api('/profile/teacher-request', { method: 'POST' }), t('profile.teacherRequestSent'));
+                        if (r) refresh();
+                      }}
+                    >
+                      {t('profile.teacherRequestBtn')}
+                    </Button>
+                  </div>
+                ))}
               <div className="row mt" style={{ justifyContent: 'flex-end' }}>
                 <Button
                   variant="primary"

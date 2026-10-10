@@ -12,6 +12,7 @@ export interface AuthUser {
   avatar_url: string | null;
   language: string | null;
   has_password: number;
+  requested_role: string | null;
 }
 
 declare global {

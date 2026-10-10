@@ -78,8 +78,12 @@ export function Stat({ icon, tone = 'blue', value, label, delta, invertDelta }: 
   );
 }
 
-export function Badge({ tone = 'gray', children }: { tone?: Tone; children: ReactNode }) {
-  return <span className={`badge ${tone}`}>{children}</span>;
+export function Badge({ tone = 'gray', children, wrap }: { tone?: Tone; children: ReactNode; wrap?: boolean }) {
+  return (
+    <span className={`badge ${tone}`} style={wrap ? { whiteSpace: 'normal' } : undefined}>
+      {children}
+    </span>
+  );
 }
 
 export function PageHead({ title, subtitle, actions, back }: { title: ReactNode; subtitle?: ReactNode; actions?: ReactNode; back?: { to: string; label: string } }) {

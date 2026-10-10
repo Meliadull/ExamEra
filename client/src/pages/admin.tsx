@@ -1,11 +1,12 @@
 import { Activity, AlertTriangle, Ban, CheckCircle2, FileText, GraduationCap, Info, KeyRound, Pencil, Plus, ShieldCheck, Trash2, UserCheck, UserCog, Users as UsersIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { api, del, patch, put, useApi } from '../api';
 import { useMe } from '../auth';
-import { auditActionLabel, useGroups, useSubjects } from '../components/common';
-import { Avatar, Badge, Button, Card, Check, Confirm, Empty, ErrorBox, Field, Input, Loader, Modal, PageHead, Pager, Select, Stat, ToggleRow, useAction } from '../components/ui';
+import { auditActionLabel, GroupSelect, SubjectSelect, useGroups, useSubjects } from '../components/common';
+import { Picker } from '../components/Picker';
+import { Avatar, Badge, Button, Card, Check, Confirm, Empty, ErrorBox, Field, Input, Loader, Modal, PageHead, Pager, Select, Stat, Tabs, ToggleRow, useAction } from '../components/ui';
 import { useFormat, useI18n } from '../i18n';
 import type { Role } from '../types';
 
@@ -124,33 +125,18 @@ function TempPassword({ value, onClose }: { value: string; onClose: () => void }
   );
 }
 
-function UserForm({ u, onClose, onDone }: { u?: any; onClose: () => void; onDone: (temp?: string) => void }) {
+/** Edits contact details of an existing (self-registered) account. */
+function UserForm({ u, onClose, onDone }: { u: any; onClose: () => void; onDone: () => void }) {
   const { t } = useI18n();
-  const groups = useGroups();
-  const subjects = useSubjects();
-  const [subjectIds, setSubjectIds] = useState<number[]>([]);
-  const [form, setForm] = useState({
-    firstName: u?.first_name ?? '',
-    lastName: u?.last_name ?? '',
-    phone: u?.phone ?? '',
-    email: u?.email ?? '',
-    role: (u?.role ?? 'student') as Role,
-    password: '',
-  });
-  const [groupIds, setGroupIds] = useState<number[]>([]);
+  const [form, setForm] = useState({ firstName: u.first_name ?? '', lastName: u.last_name ?? '', phone: u.phone ?? '', email: u.email ?? '' });
   const [err, setErr] = useState<unknown>(null);
   const { busy, run } = useAction();
-  const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => setForm((s) => ({ ...s, [k]: e.target.value }));
+  const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement>) => setForm((s) => ({ ...s, [k]: e.target.value }));
   const submit = async () => {
     setErr(null);
     try {
-      if (u) {
-        await patch(`/users/${u.id}`, { firstName: form.firstName, lastName: form.lastName, phone: form.phone || null, email: form.email || null });
-        onDone();
-      } else {
-        const r = await api('/users', { body: { ...form, phone: form.phone || null, email: form.email || null, groupIds, subjectIds: form.role === 'teacher' ? subjectIds : [] } });
-        onDone(r.tempPassword);
-      }
+      await patch(`/users/${u.id}`, { firstName: form.firstName, lastName: form.lastName, phone: form.phone || null, email: form.email || null });
+      onDone();
     } catch (e) {
       setErr(e);
     }
@@ -158,7 +144,7 @@ function UserForm({ u, onClose, onDone }: { u?: any; onClose: () => void; onDone
   return (
     <Modal
       wide
-      title={u ? t('users.edit') : t('users.create')}
+      title={t('users.edit')}
       onClose={onClose}
       footer={
         <>
@@ -182,40 +168,6 @@ function UserForm({ u, onClose, onDone }: { u?: any; onClose: () => void; onDone
         <Field label="Email">
           <Input type="email" value={form.email} onChange={set('email')} />
         </Field>
-        {!u && (
-          <>
-            <Field label={t('users.role')}>
-              <Select value={form.role} onChange={set('role')}>
-                {ROLES.map((r) => (
-                  <option key={r} value={r}>
-                    {t(`role.${r}`)}
-                  </option>
-                ))}
-              </Select>
-            </Field>
-            <Field label={t('auth.password')} hint={t('users.passwordHint')}>
-              <Input type="password" value={form.password} onChange={set('password')} autoComplete="new-password" />
-            </Field>
-            {form.role === 'teacher' && (
-              <Field label={t('users.subjectsTaught')} className="full">
-                <div className="row wrap">
-                  {subjects.data?.map((s) => (
-                    <Check key={s.id} checked={subjectIds.includes(s.id)} onChange={() => setSubjectIds((x) => (x.includes(s.id) ? x.filter((v) => v !== s.id) : [...x, s.id]))} label={s.name} />
-                  ))}
-                </div>
-              </Field>
-            )}
-            {(form.role === 'student' || form.role === 'teacher') && (
-              <Field label={form.role === 'teacher' ? t('users.groupsLed') : t('nav.groups')} className="full">
-                <div className="row wrap">
-                  {groups.data?.map((g) => (
-                    <Check key={g.id} checked={groupIds.includes(g.id)} onChange={() => setGroupIds((s) => (s.includes(g.id) ? s.filter((x) => x !== g.id) : [...s, g.id]))} label={g.name} />
-                  ))}
-                </div>
-              </Field>
-            )}
-          </>
-        )}
       </div>
       {!!err && (
         <div className="mt">
@@ -226,48 +178,249 @@ function UserForm({ u, onClose, onDone }: { u?: any; onClose: () => void; onDone
   );
 }
 
+const isTeacherRequest = (u: any) => u?.requested_role === 'teacher' && u?.role === 'student';
+
+/** Duties depend on the role: teacher → subjects + groups led, student → groups. */
+function DutiesFields({
+  role,
+  subjectIds,
+  groupIds,
+  onSubjects,
+  onGroups,
+  disabled,
+}: {
+  role: Role;
+  subjectIds: number[];
+  groupIds: number[];
+  onSubjects: (v: number[]) => void;
+  onGroups: (v: number[]) => void;
+  disabled?: boolean;
+}) {
+  const { t } = useI18n();
+  const subjects = useSubjects();
+  const groups = useGroups();
+  const subjectOptions = (subjects.data ?? []).map((x) => ({ value: x.id, label: x.name }));
+  const groupOptions = (groups.data ?? []).map((g) => ({ value: g.id, label: g.name, hint: g.academic_year }));
+  if (role === 'teacher') {
+    return (
+      <>
+        <Field label={t('users.subjectsTaught')} className="full">
+          <Picker options={subjectOptions} value={subjectIds} onChange={onSubjects} placeholder={t('picker.chooseSubjects')} disabled={disabled} ariaLabel={t('users.subjectsTaught')} />
+        </Field>
+        <Field label={t('users.groupsLed')} className="full">
+          <Picker options={groupOptions} value={groupIds} onChange={onGroups} placeholder={t('picker.chooseGroups')} disabled={disabled} ariaLabel={t('users.groupsLed')} />
+        </Field>
+      </>
+    );
+  }
+  if (role === 'student') {
+    return (
+      <Field label={t('users.studentGroups')} className="full">
+        <Picker options={groupOptions} value={groupIds} onChange={onGroups} placeholder={t('picker.chooseGroups')} disabled={disabled} ariaLabel={t('users.studentGroups')} />
+      </Field>
+    );
+  }
+  return <div className="full small muted">{t('users.noDuties')}</div>;
+}
+
+function initialDuties(x: any, role: Role) {
+  const relation = role === 'teacher' ? 'teacher' : 'student';
+  return {
+    subjectIds: role === 'teacher' ? (x.subjects ?? []).map((s: any) => s.id) : [],
+    groupIds: (x.groups ?? []).filter((g: any) => g.relation === relation).map((g: any) => g.id),
+  };
+}
+
+async function saveDuties(x: any, role: Role, subjectIds: number[], groupIds: number[]) {
+  if (role !== x.role) await patch(`/users/${x.id}/role`, { role });
+  if (role === 'teacher') await put(`/users/${x.id}/teaching`, { subjectIds, groupIds });
+  else if (role === 'student') await put(`/users/${x.id}/groups`, { groupIds });
+}
+
+/** Role + duties editor shared by the "assign" dialog and the user card. */
+function useDutiesState(x: any | null) {
+  const [role, setRoleState] = useState<Role>('student');
+  const [subjectIds, setSubjectIds] = useState<number[]>([]);
+  const [groupIds, setGroupIds] = useState<number[]>([]);
+  const setRole = (r: Role) => {
+    setRoleState(r);
+    if (x) {
+      const d = initialDuties(x, r);
+      setSubjectIds(d.subjectIds);
+      setGroupIds(d.groupIds);
+    }
+  };
+  useEffect(() => {
+    if (!x) return;
+    // A self-registered teacher is proposed as "teacher" right away.
+    const r: Role = isTeacherRequest(x) ? 'teacher' : x.role;
+    setRoleState(r);
+    const d = initialDuties(x, r);
+    setSubjectIds(d.subjectIds);
+    setGroupIds(d.groupIds);
+  }, [x]);
+  return { role, setRole, subjectIds, setSubjectIds, groupIds, setGroupIds };
+}
+
+function RoleSelect({ value, onChange, disabled }: { value: Role; onChange: (r: Role) => void; disabled?: boolean }) {
+  const { t } = useI18n();
+  return (
+    <Select value={value} onChange={(e) => onChange(e.target.value as Role)} disabled={disabled}>
+      {ROLES.map((r) => (
+        <option key={r} value={r}>
+          {t(`role.${r}`)}
+        </option>
+      ))}
+    </Select>
+  );
+}
+
+/** Admin assigns a role and duties to a user who registered themselves — no credentials are entered here. */
+function AssignDutiesModal({ initialUserId, onClose, onDone }: { initialUserId?: number; onClose: () => void; onDone: () => void }) {
+  const { t } = useI18n();
+  const me = useMe();
+  const [q, setQ] = useState('');
+  const [dq, setDq] = useState('');
+  useEffect(() => {
+    const h = setTimeout(() => setDq(q), 250);
+    return () => clearTimeout(h);
+  }, [q]);
+  const users = useApi<any>(initialUserId ? null : '/users', { search: dq, pageSize: 30 });
+  const [userId, setUserId] = useState<number | null>(initialUserId ?? null);
+  const detail = useApi<any>(userId ? `/users/${userId}` : null);
+  const x = detail.data && detail.data.id === userId ? detail.data : null;
+  const d = useDutiesState(x);
+  const [confirm, setConfirm] = useState(false);
+  const { busy, run } = useAction();
+
+  const userOptions = (users.data?.items ?? [])
+    .filter((u: any) => u.id !== me.id)
+    .map((u: any) => ({
+      value: u.id,
+      label: `${u.last_name} ${u.first_name}`,
+      hint: [u.phone ?? u.email, t(`role.${u.role}`), isTeacherRequest(u) ? '⚑ ' + t('users.teacherRequest') : null].filter(Boolean).join(' · '),
+    }));
+
+  const save = async () => {
+    const ok = await run(async () => {
+      await saveDuties(x, d.role, d.subjectIds, d.groupIds);
+      return true;
+    }, t('common.saved'));
+    if (ok) onDone();
+  };
+
+  return (
+    <Modal
+      wide
+      title={t('users.assignTitle')}
+      onClose={onClose}
+      footer={
+        <>
+          <Button onClick={onClose}>{t('common.cancel')}</Button>
+          <Button variant="primary" loading={busy} disabled={!x} onClick={() => (x && d.role !== x.role ? setConfirm(true) : save())}>
+            {t('common.save')}
+          </Button>
+        </>
+      }
+    >
+      <div className="alert info mb">
+        <Info /> {t('users.assignInfo')}
+      </div>
+      <div className="form-grid">
+        <Field label={t('users.user')} className="full">
+          {initialUserId ? (
+            <div className="input" style={{ display: 'flex', alignItems: 'center', background: 'var(--surface-2)' }}>
+              {x ? `${x.last_name} ${x.first_name}` : '…'}
+            </div>
+          ) : (
+          <Picker
+            multiple={false}
+            options={userOptions}
+            value={userId ? [userId] : []}
+            onChange={(v) => setUserId(v[0] ?? null)}
+            onSearch={setQ}
+            placeholder={t('users.pickUser')}
+            ariaLabel={t('users.user')}
+          />
+          )}
+        </Field>
+        {x && (
+          <>
+            {isTeacherRequest(x) && <div className="full alert warning">{t('users.requestedTeacherNote')}</div>}
+            <Field label={t('users.role')}>
+              <RoleSelect value={d.role} onChange={d.setRole} />
+            </Field>
+            <Field label={t('users.contacts')}>
+              <div className="input" style={{ display: 'flex', alignItems: 'center', background: 'var(--surface-2)', color: 'var(--muted)' }}>
+                <span className="ellipsis">{[x.phone, x.email].filter(Boolean).join(' · ') || '—'}</span>
+              </div>
+            </Field>
+            <DutiesFields role={d.role} subjectIds={d.subjectIds} groupIds={d.groupIds} onSubjects={d.setSubjectIds} onGroups={d.setGroupIds} />
+          </>
+        )}
+      </div>
+      {confirm && x && (
+        <Confirm
+          title={t('users.changeRole')}
+          text={t('users.roleText', { role: t(`role.${d.role}`) })}
+          onClose={() => setConfirm(false)}
+          onConfirm={async () => {
+            await saveDuties(x, d.role, d.subjectIds, d.groupIds);
+            onDone();
+          }}
+        />
+      )}
+    </Modal>
+  );
+}
+
 export function Users() {
   const { t } = useI18n();
   const f = useFormat();
-  const me = useMe();
   const nav = useNavigate();
   const [search, setSearch] = useState('');
-  const [role, setRole] = useState('');
   const [status, setStatus] = useState('');
+  const [method, setMethod] = useState('');
+  const [sort, setSort] = useState('name');
   const [page, setPage] = useState(1);
-  const list = useApi<any>('/users', { search, role, status, page });
-  const [creating, setCreating] = useState(false);
-  const [temp, setTemp] = useState<string | null>(null);
+  const list = useApi<any>('/users', { search, status, method, sort, page });
+  const reset = <T,>(fn: (v: T) => void) => (v: T) => {
+    fn(v);
+    setPage(1);
+  };
   return (
     <>
       <PageHead
         title={t('nav.users')}
         subtitle={t('users.subtitle')}
         actions={
-          me.role === 'admin' && (
-            <Button variant="primary" onClick={() => setCreating(true)}>
-              <Plus /> {t('users.create')}
-            </Button>
-          )
+          <Link to="/app/roles" className="btn">
+            <ShieldCheck size={17} /> {t('roles.tabDuties')}
+          </Link>
         }
       />
+      <div className="alert info mb">
+        <Info /> {t('users.selfRegisterNote')}
+      </div>
       <div className="filters">
-        <Input className="search-input" placeholder={t('users.search')} value={search} onChange={(e) => { setSearch(e.target.value); setPage(1); }} />
-        <Select value={role} onChange={(e) => { setRole(e.target.value); setPage(1); }}>
-          <option value="">{t('audit.allRoles')}</option>
-          {ROLES.map((r) => (
-            <option key={r} value={r}>
-              {t(`role.${r}`)}
+        <Input className="search-input" placeholder={t('users.search')} value={search} onChange={(e) => reset(setSearch)(e.target.value)} />
+        <Select value={status} onChange={(e) => reset(setStatus)(e.target.value)}>
+          <option value="">{t('users.anyStatus')}</option>
+          {['active', 'blocked', 'archived'].map((x) => (
+            <option key={x} value={x}>
+              {t(`userStatus.${x}`)}
             </option>
           ))}
         </Select>
-        <Select value={status} onChange={(e) => { setStatus(e.target.value); setPage(1); }}>
-          <option value="">{t('users.anyStatus')}</option>
-          {['active', 'blocked', 'archived'].map((s) => (
-            <option key={s} value={s}>
-              {t(`userStatus.${s}`)}
-            </option>
-          ))}
+        <Select value={method} onChange={(e) => reset(setMethod)(e.target.value)}>
+          <option value="">{t('users.anyMethod')}</option>
+          <option value="phone">{t('users.methodPhone')}</option>
+          <option value="google">{t('users.methodGoogle')}</option>
+        </Select>
+        <Select value={sort} onChange={(e) => reset(setSort)(e.target.value)}>
+          <option value="name">{t('users.sortName')}</option>
+          <option value="registered">{t('users.sortRegistered')}</option>
+          <option value="login">{t('users.sortLogin')}</option>
         </Select>
       </div>
       <Card flush>
@@ -280,10 +433,10 @@ export function Users() {
                     <thead>
                       <tr>
                         <th>{t('users.user')}</th>
-                        <th>{t('users.role')}</th>
                         <th>{t('auth.phone')}</th>
                         <th>Email</th>
-                        <th>{t('common.group')}</th>
+                        <th>{t('users.method')}</th>
+                        <th>{t('profile.registered')}</th>
                         <th>{t('users.lastLogin')}</th>
                         <th>{t('common.status')}</th>
                       </tr>
@@ -294,17 +447,20 @@ export function Users() {
                           <td>
                             <div className="row">
                               <Avatar name={`${u.first_name} ${u.last_name}`} url={u.avatar_url} size={32} />
-                              <span className="bold">
-                                {u.last_name} {u.first_name}
+                              <span>
+                                <span className="bold">
+                                  {u.last_name} {u.first_name}
+                                </span>
+                                <div className="tiny muted">{t(`role.${u.role}`)}</div>
                               </span>
                             </div>
                           </td>
-                          <td>
-                            <Badge tone={ROLE_TONE[u.role as Role]}>{t(`role.${u.role}`)}</Badge>
-                          </td>
                           <td className="nowrap">{u.phone ?? '—'}</td>
                           <td>{u.email ?? '—'}</td>
-                          <td>{u.groups.map((g: any) => g.name).join(', ') || '—'}</td>
+                          <td>
+                            <Badge tone={u.has_google ? 'blue' : 'gray'}>{u.has_google ? t('users.methodGoogle') : t('users.methodPhone')}</Badge>
+                          </td>
+                          <td className="nowrap small">{f.date(u.created_at)}</td>
                           <td className="nowrap small">{f.dateTime(u.last_login_at)}</td>
                           <td>
                             <Badge tone={u.status === 'active' ? 'green' : u.status === 'blocked' ? 'red' : 'gray'}>{t(`userStatus.${u.status}`)}</Badge>
@@ -322,81 +478,43 @@ export function Users() {
           }
         </Loader>
       </Card>
-      {creating && (
-        <UserForm
-          onClose={() => setCreating(false)}
-          onDone={(tp) => {
-            setCreating(false);
-            list.reload();
-            if (tp) setTemp(tp);
-          }}
-        />
-      )}
-      {temp && <TempPassword value={temp} onClose={() => setTemp(null)} />}
     </>
   );
 }
 
-/** Admin-only: which subjects a teacher teaches and which groups they lead. */
-function TeachingCard({ teacher, readOnly, onSaved }: { teacher: any; readOnly: boolean; onSaved: () => void }) {
+/** Read-only summary on the account card; roles and duties are edited in the Roles section. */
+function RoleSummaryCard({ x, canEdit }: { x: any; canEdit: boolean }) {
   const { t } = useI18n();
-  const subjects = useSubjects();
-  const groups = useGroups();
-  const [sIds, setSIds] = useState<number[]>(teacher.subjects.map((s: any) => s.id));
-  const [gIds, setGIds] = useState<number[]>(teacher.groups.filter((g: any) => g.relation === 'teacher').map((g: any) => g.id));
-  const { busy, run } = useAction();
-  const toggle = (arr: number[], set: (v: number[]) => void, id: number) => set(arr.includes(id) ? arr.filter((v) => v !== id) : [...arr, id]);
+  const led = x.groups.filter((g: any) => g.relation === 'teacher');
+  const member = x.groups.filter((g: any) => g.relation === 'student');
+  const names = (list: any[], empty: string) => (list.length ? list.map((v) => v.name).join(', ') : <span className="muted">{empty}</span>);
   return (
-    <Card title={t('users.teaching')} className="mt">
-      <p className="small muted" style={{ marginTop: 0 }}>
-        {t('users.teachingHint')}
-      </p>
-      <div className="grid g2">
-        <div>
-          <div className="label" style={{ marginBottom: 8 }}>
-            {t('users.subjectsTaught')}
-          </div>
-          <div className="stack" style={{ gap: 6 }}>
-            {subjects.data?.map((s) => (
-              <Check key={s.id} disabled={readOnly} checked={sIds.includes(s.id)} onChange={() => toggle(sIds, setSIds, s.id)} label={s.name} />
-            ))}
-          </div>
-        </div>
-        <div>
-          <div className="label" style={{ marginBottom: 8 }}>
-            {t('users.groupsLed')}
-          </div>
-          <div className="stack" style={{ gap: 6 }}>
-            {groups.data?.map((g) => (
-              <Check
-                key={g.id}
-                disabled={readOnly}
-                checked={gIds.includes(g.id)}
-                onChange={() => toggle(gIds, setGIds, g.id)}
-                label={
-                  <span>
-                    {g.name} <span className="small muted">{g.academic_year}</span>
-                  </span>
-                }
-              />
-            ))}
-          </div>
-        </div>
+    <Card title={t('users.roleDuties')}>
+      <div className="row wrap gap-sm mb">
+        <Badge tone={ROLE_TONE[x.role as Role]}>{t(`role.${x.role}`)}</Badge>
+        {isTeacherRequest(x) && <Badge tone="orange">{t('users.teacherRequest')}</Badge>}
       </div>
-      {!readOnly && (
-        <div className="row mt" style={{ justifyContent: 'flex-end' }}>
-          <Button
-            variant="primary"
-            loading={busy}
-            onClick={async () => {
-              const ok = await run(() => put(`/users/${teacher.id}/teaching`, { subjectIds: sIds, groupIds: gIds }), t('common.saved'));
-              if (ok) onSaved();
-            }}
-          >
-            {t('common.save')}
-          </Button>
-        </div>
+      {(x.role === 'teacher' || x.role === 'student') && (
+        <dl className="kv">
+          {x.role === 'teacher' ? (
+            <>
+              <dt>{t('users.subjectsTaught')}</dt>
+              <dd>{names(x.subjects ?? [], t('roles.noSubjects'))}</dd>
+              <dt>{t('users.groupsLed')}</dt>
+              <dd>{names(led, t('roles.noGroups'))}</dd>
+            </>
+          ) : (
+            <>
+              <dt>{t('users.studentGroups')}</dt>
+              <dd>{names(member, t('roles.noGroups'))}</dd>
+            </>
+          )}
+        </dl>
       )}
+      <div className="alert info mt">{t('roles.manageIn')}</div>
+      <Link to={canEdit ? `/app/roles?user=${x.id}` : `/app/roles?q=${encodeURIComponent(x.last_name)}`} className="btn sm mt">
+        <ShieldCheck size={15} /> {t('roles.openInRoles')}
+      </Link>
     </Card>
   );
 }
@@ -410,8 +528,7 @@ export function UserDetail() {
   const activity = useApi<any[]>(`/users/${id}/activity`);
   const [editing, setEditing] = useState(false);
   const [temp, setTemp] = useState<string | null>(null);
-  const [confirm, setConfirm] = useState<null | { kind: 'status'; status: string } | { kind: 'reset' } | { kind: 'role'; role: Role }>(null);
-  const [newRole, setNewRole] = useState<Role | ''>('');
+  const [confirm, setConfirm] = useState<null | { kind: 'status'; status: string } | { kind: 'reset' }>(null);
   const isAdmin = me.role === 'admin';
   const self = Number(id) === me.id;
 
@@ -428,6 +545,7 @@ export function UserDetail() {
                   {x.first_name} {x.last_name}
                   <div className="row gap-sm" style={{ marginTop: 6 }}>
                     <Badge tone={ROLE_TONE[x.role as Role]}>{t(`role.${x.role}`)}</Badge>
+                    {isTeacherRequest(x) && <Badge tone="orange">{t('users.teacherRequest')}</Badge>}
                     <Badge tone={x.status === 'active' ? 'green' : x.status === 'blocked' ? 'red' : 'gray'}>{t(`userStatus.${x.status}`)}</Badge>
                   </div>
                 </span>
@@ -483,37 +601,8 @@ export function UserDetail() {
                 </Link>
               )}
             </Card>
-            <Card title={t('users.role')}>
-              {isAdmin && !self ? (
-                <div className="stack" style={{ gap: 12 }}>
-                  <Select value={newRole || x.role} onChange={(e) => setNewRole(e.target.value as Role)}>
-                    {ROLES.map((r) => (
-                      <option key={r} value={r}>
-                        {t(`role.${r}`)}
-                      </option>
-                    ))}
-                  </Select>
-                  <Button variant="primary" disabled={!newRole || newRole === x.role} onClick={() => newRole && setConfirm({ kind: 'role', role: newRole })}>
-                    {t('users.changeRole')}
-                  </Button>
-                  <div className="small muted">{t('users.roleHint')}</div>
-                </div>
-              ) : (
-                <div className="muted">{t(`role.${x.role}`)}</div>
-              )}
-            </Card>
+            <RoleSummaryCard x={x} canEdit={isAdmin && !self} />
           </div>
-          {x.role === 'teacher' && (
-            <TeachingCard
-              key={x.id + ':' + x.subjects.map((s: any) => s.id).join(',')}
-              teacher={x}
-              readOnly={!isAdmin}
-              onSaved={() => {
-                u.reload();
-                activity.reload();
-              }}
-            />
-          )}
           <Card title={t('users.activity')} className="mt">
             <Loader state={activity}>
               {(items) =>
@@ -554,28 +643,13 @@ export function UserDetail() {
           {confirm && (
             <Confirm
               danger={confirm.kind === 'status' && confirm.status !== 'active'}
-              title={
-                confirm.kind === 'reset'
-                  ? t('users.resetAccess')
-                  : confirm.kind === 'role'
-                    ? t('users.changeRole')
-                    : t(`users.statusTitle.${confirm.status}`)
-              }
-              text={
-                confirm.kind === 'reset'
-                  ? t('users.resetText')
-                  : confirm.kind === 'role'
-                    ? t('users.roleText', { role: t(`role.${confirm.role}`) })
-                    : t(`users.statusText.${confirm.status}`)
-              }
+              title={confirm.kind === 'reset' ? t('users.resetAccess') : t(`users.statusTitle.${confirm.status}`)}
+              text={confirm.kind === 'reset' ? t('users.resetText') : t(`users.statusText.${confirm.status}`)}
               onClose={() => setConfirm(null)}
               onConfirm={async () => {
                 if (confirm.kind === 'reset') {
                   const r = await api(`/users/${x.id}/reset-password`, { method: 'POST' });
                   setTemp(r.tempPassword);
-                } else if (confirm.kind === 'role') {
-                  await patch(`/users/${x.id}/role`, { role: confirm.role });
-                  setNewRole('');
                 } else await patch(`/users/${x.id}/status`, { status: confirm.status });
                 u.reload();
                 activity.reload();
@@ -604,49 +678,235 @@ const MATRIX: { key: string; v: Record<Role, 'yes' | 'no' | 'limited' | 'optiona
 
 export function Roles() {
   const { t } = useI18n();
-  const counts = useApi<any>('/analytics/admin');
+  const me = useMe();
+  const isAdmin = me.role === 'admin';
+  const [params, setParams] = useSearchParams();
+  const [tab, setTab] = useState<'duties' | 'matrix'>('duties');
+  const [search, setSearch] = useState(params.get('q') ?? '');
+  const [role, setRole] = useState(params.get('role') ?? '');
+  const [subjectId, setSubjectId] = useState('');
+  const [groupId, setGroupId] = useState('');
+  const [unassigned, setUnassigned] = useState(false);
+  const [page, setPage] = useState(1);
+  const [editing, setEditing] = useState<number | null>(isAdmin ? Number(params.get('user')) || null : null);
+  const [assigning, setAssigning] = useState(false);
+  const list = useApi<any>('/users/duties', { search, role, subjectId, groupId, unassigned: unassigned ? 1 : '', page });
+  const reset = <T,>(fn: (v: T) => void) => (v: T) => {
+    fn(v);
+    setPage(1);
+  };
+  const closeEdit = () => {
+    setEditing(null);
+    if (params.get('user')) {
+      params.delete('user');
+      setParams(params, { replace: true });
+    }
+  };
+  const counts = list.data?.counts;
   const tone = { yes: 'green', no: 'gray', limited: 'orange', optional: 'blue', na: 'gray' } as const;
-  return (
-    <>
-      <PageHead title={t('nav.roles')} subtitle={t('roles.subtitle')} />
-      <div className="grid g4 mb">
-        {ROLES.map((r) => (
-          <Card key={r}>
-            <Badge tone={ROLE_TONE[r]}>{t(`role.${r}`)}</Badge>
-            <div className="stat-value mt-sm">{counts.data?.users?.[`${r}s`] ?? '—'}</div>
-            <div className="small muted">{t(`roles.desc.${r}`)}</div>
-          </Card>
+  const cards: { id: string; label: string; tone: 'blue' | 'purple' | 'red' | 'orange'; n?: number }[] = [
+    ...ROLES.map((r) => ({ id: r, label: t(`role.${r}`), tone: ROLE_TONE[r], n: counts?.[r] })),
+    { id: 'requests', label: t('users.teacherRequests'), tone: 'orange', n: counts?.requests },
+  ];
+  const chips = (list: any[], empty: string, warn: boolean) =>
+    list.length ? (
+      <div className="chip-list">
+        {list.map((v) => (
+          <span className="chip" key={v.id}>
+            {v.name}
+          </span>
         ))}
       </div>
-      <Card title={t('roles.matrix')} flush>
-        <div className="table-wrap">
-          <table className="table">
-            <thead>
-              <tr>
-                <th>{t('roles.function')}</th>
-                {ROLES.map((r) => (
-                  <th key={r}>{t(`role.${r}`)}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {MATRIX.map((m) => (
-                <tr key={m.key}>
-                  <td className="bold">{t(`roles.f.${m.key}`)}</td>
-                  {ROLES.map((r) => (
-                    <td key={r}>
-                      <Badge tone={tone[m.v[r]]}>{t(`roles.v.${m.v[r]}`)}</Badge>
-                    </td>
-                  ))}
-                </tr>
+    ) : (
+      <span className={warn ? 'badge orange' : 'muted small'}>{empty}</span>
+    );
+
+  return (
+    <>
+      <PageHead
+        title={t('nav.roles')}
+        subtitle={t('roles.subtitle')}
+        actions={
+          isAdmin && (
+            <Button variant="primary" onClick={() => setAssigning(true)}>
+              <UserCog /> {t('users.assignDuties')}
+            </Button>
+          )
+        }
+      />
+      <Tabs
+        value={tab}
+        onChange={setTab}
+        tabs={[
+          { id: 'duties', label: t('roles.tabDuties'), count: counts?.requests || undefined },
+          { id: 'matrix', label: t('roles.tabMatrix') },
+        ]}
+      />
+      {tab === 'duties' ? (
+        <>
+          <div className="grid mb" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(128px, 1fr))', gap: 12 }}>
+            {cards.map((c) => (
+              <button
+                key={c.id}
+                type="button"
+                className={`card role-card${role === c.id ? ' active' : ''}`}
+                aria-pressed={role === c.id}
+                onClick={() => reset(setRole)(role === c.id ? '' : c.id)}
+              >
+                <Badge tone={c.tone}>{c.label}</Badge>
+                <div className="stat-value mt-sm">{c.n ?? '—'}</div>
+              </button>
+            ))}
+          </div>
+          <div className="filters">
+            <Input className="search-input" placeholder={t('users.search')} value={search} onChange={(e) => reset(setSearch)(e.target.value)} />
+            <Select value={role} onChange={(e) => reset(setRole)(e.target.value)}>
+              <option value="">{t('audit.allRoles')}</option>
+              {ROLES.map((r) => (
+                <option key={r} value={r}>
+                  {t(`role.${r}`)}
+                </option>
               ))}
-            </tbody>
-          </table>
-        </div>
-        <div className="alert info" style={{ margin: 16 }}>
-          {t('roles.serverSide')}
-        </div>
-      </Card>
+              <option value="requests">{t('users.teacherRequests')}</option>
+            </Select>
+            <SubjectSelect value={subjectId} onChange={reset(setSubjectId)} />
+            <GroupSelect value={groupId} onChange={reset(setGroupId)} />
+            <Check
+              checked={unassigned}
+              onChange={reset(setUnassigned)}
+              label={
+                <span>
+                  {t('roles.unassignedOnly')} {counts?.unassigned ? <Badge tone="orange">{counts.unassigned}</Badge> : null}
+                </span>
+              }
+            />
+          </div>
+          <Card flush>
+            <Loader state={list}>
+              {(d) =>
+                d.items.length ? (
+                  <>
+                    <div className="table-wrap">
+                      <table className="table">
+                        <thead>
+                          <tr>
+                            <th>{t('users.user')}</th>
+                            <th>{t('users.role')}</th>
+                            <th>{t('nav.subjects')}</th>
+                            <th>{t('nav.groups')}</th>
+                            {isAdmin && <th />}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {d.items.map((u: any) => {
+                            const groups = u.groups.filter((g: any) => g.relation === (u.role === 'teacher' ? 'teacher' : 'student'));
+                            const hasDuties = u.role === 'teacher' || u.role === 'student';
+                            return (
+                              <tr key={u.id}>
+                                <td>
+                                  <div className="row">
+                                    <Avatar name={`${u.first_name} ${u.last_name}`} url={u.avatar_url} size={32} />
+                                    <span>
+                                      <Link to={`/app/users/${u.id}`} className="bold" style={{ color: 'inherit' }}>
+                                        {u.last_name} {u.first_name}
+                                      </Link>
+                                      <div className="tiny muted">{u.phone ?? u.email}</div>
+                                    </span>
+                                  </div>
+                                </td>
+                                <td>
+                                  <div className="row gap-sm wrap">
+                                    <Badge tone={ROLE_TONE[u.role as Role]}>{t(`role.${u.role}`)}</Badge>
+                                    {isTeacherRequest(u) && <Badge tone="orange">{t('users.teacherRequest')}</Badge>}
+                                  </div>
+                                </td>
+                                <td>{u.role === 'teacher' ? chips(u.subjects, t('roles.noSubjects'), true) : <span className="faint">—</span>}</td>
+                                <td>{hasDuties ? chips(groups, t('roles.noGroups'), true) : <span className="faint">—</span>}</td>
+                                {isAdmin && (
+                                  <td className="right">
+                                    {u.id !== me.id && (
+                                      <Button size="sm" variant={isTeacherRequest(u) || u.unassigned ? 'primary' : undefined} onClick={() => setEditing(u.id)}>
+                                        {isTeacherRequest(u) ? t('roles.approve') : u.unassigned ? t('roles.assign') : t('roles.edit')}
+                                      </Button>
+                                    )}
+                                  </td>
+                                )}
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+                    <Pager page={d.page} pageSize={d.pageSize} total={d.total} onChange={setPage} />
+                  </>
+                ) : (
+                  <Empty title={t('common.nothingFound')} />
+                )
+              }
+            </Loader>
+          </Card>
+        </>
+      ) : (
+        <>
+          <div className="grid g4 mb">
+            {ROLES.map((r) => (
+              <Card key={r}>
+                <Badge tone={ROLE_TONE[r]}>{t(`role.${r}`)}</Badge>
+                <div className="small muted mt-sm">{t(`roles.desc.${r}`)}</div>
+              </Card>
+            ))}
+          </div>
+          <Card title={t('roles.matrix')} flush>
+            <div className="table-wrap">
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th>{t('roles.function')}</th>
+                    {ROLES.map((r) => (
+                      <th key={r}>{t(`role.${r}`)}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {MATRIX.map((m) => (
+                    <tr key={m.key}>
+                      <td className="bold">{t(`roles.f.${m.key}`)}</td>
+                      {ROLES.map((r) => (
+                        <td key={r}>
+                          <Badge tone={tone[m.v[r]]}>{t(`roles.v.${m.v[r]}`)}</Badge>
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="alert info" style={{ margin: 16 }}>
+              {t('roles.serverSide')}
+            </div>
+          </Card>
+        </>
+      )}
+      {editing && (
+        <AssignDutiesModal
+          key={editing}
+          initialUserId={editing}
+          onClose={closeEdit}
+          onDone={() => {
+            closeEdit();
+            list.reload();
+          }}
+        />
+      )}
+      {assigning && (
+        <AssignDutiesModal
+          onClose={() => setAssigning(false)}
+          onDone={() => {
+            setAssigning(false);
+            list.reload();
+          }}
+        />
+      )}
     </>
   );
 }

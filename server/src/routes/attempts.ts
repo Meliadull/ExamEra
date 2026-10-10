@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { z } from 'zod';
 import { all, get, now, run, tx } from '../db.js';
 import { badRequest, conflict, forbidden, HttpError, int, notFound, parse, requireAuth, requireRole, user } from '../http.js';
-import { assertCanViewTest, loadTest } from '../services/access.js';
+import { assertCanViewTest, leadsStudent, loadTest } from '../services/access.js';
 import { audit } from '../services/audit.js';
 import {
   finalizeAttempt,
@@ -189,7 +189,7 @@ attemptsRouter.get('/:id/result', (req, res) => {
   let a = loadAttempt(int(req.params.id));
   const test = loadTest(a.test_id);
   const isOwner = a.user_id === me.id;
-  if (!isOwner) assertCanViewTest(me, test);
+  if (!isOwner && !leadsStudent(me, a.user_id)) assertCanViewTest(me, test);
   a = enforceDeadline(a);
   if (a.status !== 'completed') throw conflict('attempt_in_progress');
   const asg = get<AssignmentRow>('SELECT * FROM assignments WHERE id = ?', a.assignment_id)!;
@@ -217,6 +217,7 @@ attemptsRouter.get('/:id/result', (req, res) => {
     pass_score: asg.pass_score,
     can_retry: isOwner && used < asg.attempts_limit && now() <= asg.ends_at && test.status === 'published',
     assignment_id: asg.id,
+    can_open_test: me.role === 'admin' || me.role === 'auditor' || test.teacher_id === me.id,
   };
   if (!showResult) return res.json(base);
 

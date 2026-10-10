@@ -213,8 +213,8 @@ export async function seedDemo() {
     for (const [gname, people] of Object.entries(STUDENTS)) {
       const gid = run('INSERT INTO study_groups (name, academic_year, status, created_at) VALUES (?, ?, ?, ?)', gname, year, 'active', created).id;
       groupIds[gname] = gid;
-      run('INSERT INTO group_teachers (group_id, user_id) VALUES (?, ?)', gid, teacher);
-      run('INSERT INTO group_teachers (group_id, user_id) VALUES (?, ?)', gid, teacher2);
+      // One class leader per group: Petrov leads 9-А, Karimova leads 9-Б and 10-А.
+      run('INSERT INTO group_teachers (group_id, user_id) VALUES (?, ?)', gid, gname === '9-А класс' ? teacher : teacher2);
       Object.values(subjects).slice(0, 5).forEach((sid) => run('INSERT INTO group_subjects (group_id, subject_id) VALUES (?, ?)', gid, sid));
       for (const p of people) {
         const isDemo = p.first === 'Алексей' && p.last === 'Иванов';

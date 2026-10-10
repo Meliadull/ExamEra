@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import { z } from 'zod';
-import { all, get, getSettings, inList, now, run, tx, Where } from '../db.js';
+import { all, get, getSettings, now, run, tx, Where } from '../db.js';
 import { badRequest, int, notFound, paging, parse, qstr, requireAuth, requireRole, user } from '../http.js';
-import { seesEverything, teacherGroupIds } from '../services/access.js';
+import { seesEverything } from '../services/access.js';
 import { audit } from '../services/audit.js';
 import { COLS, fmtDate, sendTable } from '../services/export.js';
 
@@ -209,17 +209,8 @@ searchRouter.get('/', (req, res) => {
     result.groups = all('SELECT id, name, academic_year FROM study_groups WHERE LOWER(name) LIKE ? LIMIT 5', like);
     result.tests = all('SELECT t.id, t.title, s.name AS subject_name FROM tests t JOIN subjects s ON s.id = t.subject_id WHERE LOWER(t.title) LIKE ? LIMIT 8', like);
   } else {
-    const gids = teacherGroupIds(me.id);
-    result.users = all(
-      `SELECT DISTINCT u.id, u.first_name, u.last_name, u.role FROM users u JOIN group_students gs ON gs.user_id = u.id
-       WHERE gs.group_id IN (${inList(gids)}) AND ${nameMatch} LIMIT 8`,
-      ...gids,
-      like,
-      like,
-      like,
-      like,
-    );
-    result.groups = all(`SELECT id, name, academic_year FROM study_groups WHERE id IN (${inList(gids)}) AND LOWER(name) LIKE ? LIMIT 5`, ...gids, like);
+    result.users = all(`SELECT u.id, u.first_name, u.last_name, u.role FROM users u WHERE u.role = 'student' AND ${nameMatch} LIMIT 8`, like, like, like, like);
+    result.groups = all('SELECT id, name, academic_year FROM study_groups WHERE LOWER(name) LIKE ? LIMIT 5', like);
     result.tests = all(
       'SELECT t.id, t.title, s.name AS subject_name FROM tests t JOIN subjects s ON s.id = t.subject_id WHERE t.teacher_id = ? AND LOWER(t.title) LIKE ? LIMIT 8',
       me.id,

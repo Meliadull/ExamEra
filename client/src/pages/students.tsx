@@ -5,6 +5,7 @@ import { downloadUrl, useApi } from '../api';
 import { Bars, TrendChart } from '../components/charts';
 import { GroupSelect } from '../components/common';
 import { Avatar, Badge, Button, Card, Empty, Input, Loader, PageHead, Pager, PctBadge, Stat, Tabs } from '../components/ui';
+import { useMe } from '../auth';
 import { useFormat, useI18n } from '../i18n';
 
 export function Students() {
@@ -71,6 +72,7 @@ export function Students() {
 
 export function StudentCard() {
   const { id } = useParams();
+  const me = useMe();
   const { t, lang } = useI18n();
   const f = useFormat();
   const nav = useNavigate();
@@ -118,6 +120,9 @@ export function StudentCard() {
                 </>
               }
             />
+            {me.role === 'teacher' && (
+              <div className={`alert ${d.scope === 'full' ? 'success' : 'info'} mb`}>{d.scope === 'full' ? t('students.scopeFull') : t('students.scopeOwn')}</div>
+            )}
             <div className="grid g4 mb">
               <Stat icon={<Trophy />} tone="blue" value={f.pct(d.kpis.avg_percentage)} label={t('dashboard.avgResult')} />
               <Stat icon={<RotateCcw />} tone="purple" value={`${d.kpis.attempts} / ${d.kpis.attempts_total}`} label={t('students.completedAttempts')} />

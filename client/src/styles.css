@@ -527,3 +527,50 @@ html.theme-anim, html.theme-anim *, html.theme-anim *::before, html.theme-anim *
 @media (prefers-reduced-motion: reduce) {
   .theme-toggle, .theme-toggle .knob, .theme-toggle .knob svg { transition: none; }
 }
+
+/* ---------- Picker (dropdown with single / multiple choice) ---------- */
+.picker { height: auto; min-height: 40px; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; padding: 5px 34px 5px 8px; cursor: pointer; position: relative; text-align: left; }
+.picker.open, .picker:focus-visible { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12); }
+.picker.disabled { opacity: 0.6; cursor: not-allowed; background: var(--surface-2); }
+.picker-chevron { position: absolute; right: 11px; top: 50%; transform: translateY(-50%); color: var(--muted); transition: transform 0.2s ease; }
+.picker.open .picker-chevron { transform: translateY(-50%) rotate(180deg); }
+.picker-placeholder { color: var(--faint); padding-left: 4px; }
+.picker-single { padding-left: 4px; }
+.picker-chip { display: inline-flex; align-items: center; gap: 4px; background: var(--primary-50); color: var(--primary); border-radius: 6px; padding: 2px 4px 2px 8px; font-size: 12.5px; font-weight: 600; line-height: 1.6; }
+.picker-chip button { border: none; background: none; color: inherit; cursor: pointer; display: grid; place-items: center; padding: 2px; border-radius: 4px; }
+.picker-chip button:hover { background: var(--primary-100); }
+.picker-pop { position: fixed; z-index: 150; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow-lg); padding: 6px; max-height: 300px; display: flex; flex-direction: column; outline: none; animation: fade 0.12s; }
+.picker-search { display: flex; align-items: center; gap: 8px; padding: 4px 8px 8px; margin-bottom: 4px; border-bottom: 1px solid var(--border); color: var(--faint); }
+.picker-search input { flex: 1; border: none; outline: none; background: transparent; color: var(--text); min-width: 0; }
+.picker-list { overflow-y: auto; }
+.picker-opt { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 8px; cursor: pointer; font-size: 13.5px; }
+.picker-opt.active { background: var(--surface-2); }
+.picker-tick { width: 18px; height: 18px; flex: none; display: grid; place-items: center; border: 1.5px solid var(--border-strong); border-radius: 5px; color: #fff; }
+.picker-tick.round { border-radius: 50%; }
+.picker-opt[aria-selected='true'] .picker-tick { background: var(--primary); border-color: var(--primary); }
+.picker-hint { display: block; font-size: 11.5px; color: var(--muted); }
+.picker-empty { padding: 14px; text-align: center; color: var(--muted); font-size: 13px; }
+.picker-foot { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); margin-top: 4px; padding: 6px 8px 2px; font-size: 12px; color: var(--muted); }
+.picker-foot button { border: none; background: none; color: var(--primary); font-weight: 600; cursor: pointer; font-size: 12px; }
+
+/* ---------- Roles section ---------- */
+.role-card { text-align: left; cursor: pointer; font: inherit; color: inherit; padding: 16px; transition: border-color 0.15s, box-shadow 0.15s; }
+.role-card:hover { border-color: var(--primary-100); }
+.role-card.active { border-color: var(--primary); box-shadow: 0 0 0 2px var(--primary-100); }
+.role-card:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.tabs { scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+@media (max-width: 640px) {
+  .role-card { padding: 12px; }
+  .role-card .stat-value { font-size: 19px; }
+}
+/* Very narrow phones: keep the top bar (menu, theme, language, bell, avatar) within the screen */
+@media (max-width: 420px) {
+  .topbar { gap: 8px; }
+  .top-actions { gap: 4px; }
+  .user-chip { padding: 2px; }
+  .lang-switch button { padding: 4px 7px; }
+  .theme-toggle { width: 52px; height: 30px; }
+  .theme-toggle .knob { width: 22px; height: 22px; }
+  .theme-toggle[aria-checked='true'] .knob { transform: translateX(22px); }
+}

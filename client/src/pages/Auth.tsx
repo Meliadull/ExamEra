@@ -5,7 +5,7 @@ import { api } from '../api';
 import { useAuth } from '../auth';
 import { LangSwitch } from '../components/Layout';
 import { Logo } from '../components/Logo';
-import { Button, Check, ErrorBox, Field, Input } from '../components/ui';
+import { Button, Check, ErrorBox, Field, Input, Seg } from '../components/ui';
 import { useI18n } from '../i18n';
 import { ThemeToggle } from '../theme';
 
@@ -233,6 +233,7 @@ export function Register() {
   const { setSession, config } = useAuth();
   const nav = useNavigate();
   const [form, setForm] = useState({ firstName: '', lastName: '', phone: '', password: '', confirm: '' });
+  const [as, setAs] = useState<'student' | 'teacher'>('student');
   const [code, setCode] = useState('');
   const [step, setStep] = useState<1 | 2>(1);
   const [devCode, setDevCode] = useState<string>();
@@ -263,7 +264,7 @@ export function Register() {
     setBusy(true);
     setError(null);
     try {
-      setSession(await api('/auth/register', { body: { ...form, code, remember: true } }));
+      setSession(await api('/auth/register', { body: { ...form, code, remember: true, asTeacher: as === 'teacher' } }));
       nav('/app', { replace: true });
     } catch (err) {
       setError(err);
@@ -289,6 +290,16 @@ export function Register() {
       <p className="sub">{step === 1 ? t('auth.registerSubtitle') : t('auth.otpSent', { phone: form.phone })}</p>
       {step === 1 ? (
         <form onSubmit={sendCode} className="stack" style={{ gap: 14 }}>
+          <Field label={t('auth.registerAs')} hint={as === 'teacher' ? t('auth.teacherHint') : undefined}>
+            <Seg
+              value={as}
+              onChange={setAs}
+              options={[
+                { id: 'student', label: t('role.student') },
+                { id: 'teacher', label: t('role.teacher') },
+              ]}
+            />
+          </Field>
           <div className="form-grid">
             <Field label={t('profile.firstName')}>
               <Input value={form.firstName} onChange={set('firstName')} required maxLength={60} autoComplete="given-name" />

@@ -148,6 +148,7 @@ export function StudentDashboard() {
   return (
     <>
       <PageHead title={t('dashboard.hello', { name: me.first_name })} subtitle={t('student.dashSubtitle')} />
+      {me.requested_role === 'teacher' && <div className="alert warning mb">{t('student.teacherRequestPending')}</div>}
       <Loader state={state}>
         {(d: any) => (
           <div className="stack">

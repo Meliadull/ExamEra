@@ -43,10 +43,13 @@ export function readFilters(q: Record<string, unknown>): Filters {
 }
 
 /** WHERE clause over ATTEMPT_FROM: completed attempts within the user's access scope plus filters. */
-export function attemptWhere(me: AuthUser, f: Filters, opts: { skipPeriod?: boolean } = {}): Where {
+/** `fullScope` lifts the teacher's own-tests restriction (class leader looking at their own class). */
+export function attemptWhere(me: AuthUser, f: Filters, opts: { skipPeriod?: boolean; fullScope?: boolean } = {}): Where {
   const w = new Where().add("at.status = 'completed'");
-  const scope = attemptScope(me);
-  w.add(scope.sql, ...scope.params);
+  if (!(opts.fullScope && me.role !== 'student')) {
+    const scope = attemptScope(me);
+    w.add(scope.sql, ...scope.params);
+  }
   if (!opts.skipPeriod) {
     if (f.from) w.add('at.completed_at >= ?', new Date(f.from).toISOString());
     if (f.to) w.add('at.completed_at <= ?', new Date(Date.parse(f.to) + (f.to.length <= 10 ? 86400_000 - 1 : 0)).toISOString());

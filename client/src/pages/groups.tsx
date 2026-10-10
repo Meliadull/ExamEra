@@ -51,6 +51,36 @@ function GroupForm({ group, onClose, onDone }: { group?: any; onClose: () => voi
   );
 }
 
+function GroupCard({ g, onOpen }: { g: any; onOpen: () => void }) {
+  const { t } = useI18n();
+  return (
+    <div className="card" style={{ cursor: 'pointer' }} onClick={onOpen}>
+      <div className="row between">
+        <div className="row">
+          <div className="list-icon tone-blue">
+            <Users />
+          </div>
+          <div>
+            <h3>{g.name}</h3>
+            <div className="small muted">{g.academic_year}</div>
+          </div>
+        </div>
+        {g.status === 'archived' ? <Badge>{t('groups.archived')}</Badge> : <PctBadge value={g.avg_percentage} />}
+      </div>
+      {!!g.is_leader && (
+        <div className="mt-sm">
+          <Badge tone="green">{t('groups.leader')}</Badge>
+        </div>
+      )}
+      <div className="small muted mt">
+        {t('groups.studentsCount', { n: g.student_count })}
+        {g.teachers ? ` · ${t('groups.leader')}: ${g.teachers}` : ''}
+      </div>
+      {g.subjects && <div className="tiny faint mt-sm ellipsis">{g.subjects}</div>}
+    </div>
+  );
+}
+
 export function Groups() {
   const { t } = useI18n();
   const me = useMe();
@@ -76,37 +106,35 @@ export function Groups() {
         <Input className="search-input" placeholder={t('common.search')} value={search} onChange={(e) => setSearch(e.target.value)} />
       </div>
       <Loader state={list}>
-        {(items) =>
-          items.length ? (
-            <div className="grid g3">
-              {items.map((g) => (
-                <div key={g.id} className="card" style={{ cursor: 'pointer' }} onClick={() => nav(`/app/groups/${g.id}`)}>
-                  <div className="row between">
-                    <div className="row">
-                      <div className="list-icon tone-blue">
-                        <Users />
-                      </div>
-                      <div>
-                        <h3>{g.name}</h3>
-                        <div className="small muted">{g.academic_year}</div>
-                      </div>
-                    </div>
-                    {g.status === 'archived' ? <Badge>{t('groups.archived')}</Badge> : <PctBadge value={g.avg_percentage} />}
-                  </div>
-                  <div className="small muted mt">
-                    {t('groups.studentsCount', { n: g.student_count })}
-                    {g.teachers ? ` · ${g.teachers}` : ''}
-                  </div>
-                  {g.subjects && <div className="tiny faint mt-sm ellipsis">{g.subjects}</div>}
+        {(items) => {
+          if (!items.length) {
+            return (
+              <Card>
+                <Empty title={t('groups.empty')} />
+              </Card>
+            );
+          }
+          // Teachers see their own class(es) first, then every other group.
+          const sections =
+            me.role === 'teacher'
+              ? [
+                  { title: t('groups.myClasses'), list: items.filter((g) => g.is_leader) },
+                  { title: t('groups.otherGroups'), list: items.filter((g) => !g.is_leader) },
+                ]
+              : [{ title: '', list: items }];
+          return sections
+            .filter((sec) => sec.list.length)
+            .map((sec) => (
+              <section key={sec.title || 'all'} className="mb">
+                {sec.title && <h2 style={{ marginBottom: 12 }}>{sec.title}</h2>}
+                <div className="grid g3">
+                  {sec.list.map((g) => (
+                    <GroupCard key={g.id} g={g} onOpen={() => nav(`/app/groups/${g.id}`)} />
+                  ))}
                 </div>
-              ))}
-            </div>
-          ) : (
-            <Card>
-              <Empty title={t('groups.empty')} />
-            </Card>
-          )
-        }
+              </section>
+            ));
+        }}
       </Loader>
       {creating && (
         <GroupForm
@@ -261,10 +289,11 @@ export function GroupDetail() {
               </>
             }
           />
+          {me.role === 'teacher' && <div className={`alert ${g.isLeader ? 'success' : 'info'} mb`}>{g.isLeader ? t('groups.scopeFull') : t('groups.scopeOwn')}</div>}
           <div className="row wrap mb">
             {g.teachers.map((x: any) => (
               <Badge key={x.id} tone="purple">
-                {t('role.teacher')}: {x.first_name} {x.last_name}
+                {t('groups.leader')}: {x.first_name} {x.last_name}
               </Badge>
             ))}
             {g.subjects.map((s: any) => (
@@ -406,6 +435,7 @@ export function GroupDetail() {
                           <tr>
                             <th>{t('common.test')}</th>
                             <th>{t('common.subject')}</th>
+                            <th>{t('role.teacher')}</th>
                             <th>{t('testDetail.participants')}</th>
                             <th>{t('analytics.passed')}</th>
                             <th>{t('analytics.notPassed')}</th>
@@ -413,18 +443,22 @@ export function GroupDetail() {
                           </tr>
                         </thead>
                         <tbody>
-                          {s.tests.map((x: any) => (
-                            <tr key={x.id} className="click" onClick={() => nav(`/app/tests/${x.id}`)}>
-                              <td className="bold">{x.title}</td>
-                              <td>{x.subject_name}</td>
-                              <td>{x.participants}</td>
-                              <td>{x.passed}</td>
-                              <td>{x.failed}</td>
-                              <td>
-                                <PctBadge value={x.avg_percentage} />
-                              </td>
-                            </tr>
-                          ))}
+                          {s.tests.map((x: any) => {
+                            const canOpen = me.role !== 'teacher' || x.teacher_id === me.id;
+                            return (
+                              <tr key={x.id} className={canOpen ? 'click' : undefined} onClick={canOpen ? () => nav(`/app/tests/${x.id}`) : undefined}>
+                                <td className="bold">{x.title}</td>
+                                <td>{x.subject_name}</td>
+                                <td className="small">{x.teacher_name}</td>
+                                <td>{x.participants}</td>
+                                <td>{x.passed}</td>
+                                <td>{x.failed}</td>
+                                <td>
+                                  <PctBadge value={x.avg_percentage} />
+                                </td>
+                              </tr>
+                            );
+                          })}
                         </tbody>
                       </table>
                     </div>

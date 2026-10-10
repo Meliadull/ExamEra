@@ -12,6 +12,7 @@ import { Audit } from './pages/Audit';
 import { Login, Recover, Register } from './pages/Auth';
 import { GroupDetail, Groups } from './pages/groups';
 import { Landing } from './pages/Landing';
+import { MyClass } from './pages/MyClass';
 import { Notifications } from './pages/Notifications';
 import { Profile } from './pages/Profile';
 import { Questions } from './pages/Questions';
@@ -77,6 +78,7 @@ export function App() {
         <Route path="history" element={<Only roles={['student']}><History /></Only>} />
         <Route path="results" element={<ByRole student={<MyResults />} staff={<Results />} />} />
         <Route path="attempts/:id/result" element={<AttemptResult />} />
+        <Route path="my-class" element={<Only roles={['teacher']}><MyClass /></Only>} />
         <Route path="tests" element={<Only roles={STAFF}><TestsList /></Only>} />
         <Route path="tests/new" element={<Only roles={EDITORS}><TestBuilder /></Only>} />
         <Route path="tests/:id/edit" element={<Only roles={EDITORS}><TestBuilder /></Only>} />

@@ -1,4 +1,4 @@
-import { get, now, run } from '../db.js';
+import { all, get, now, run } from '../db.js';
 
 /**
  * Notifications are stored as a type + params; the client renders the localized text.
@@ -15,4 +15,10 @@ export function notify(userId: number, type: string, params: Record<string, unkn
     ref ?? null,
     now(),
   );
+}
+
+export function notifyAdmins(type: string, params: Record<string, unknown>, link?: string) {
+  for (const a of all<{ id: number }>("SELECT id FROM users WHERE role = 'admin' AND status = 'active'")) {
+    notify(a.id, type, params, link);
+  }
 }

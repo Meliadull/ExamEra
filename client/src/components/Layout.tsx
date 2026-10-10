@@ -13,6 +13,7 @@ import {
   LogOut,
   Menu,
   ScrollText,
+  School,
   Search,
   Settings,
   ShieldCheck,
@@ -70,6 +71,7 @@ export const NAV: Record<Role, NavItem[]> = {
   ],
   teacher: [
     { to: '/app', key: 'nav.dashboard', icon: I.dash, end: true },
+    { to: '/app/my-class', key: 'nav.myClass', icon: <School /> },
     { to: '/app/tests', key: 'nav.tests', icon: I.tests },
     { to: '/app/questions', key: 'nav.questions', icon: I.questions },
     { to: '/app/assignments', key: 'nav.assignments', icon: I.schedule },

@@ -19,6 +19,7 @@ import {
   verifyGoogleCredential,
   verifyPassword,
 } from '../services/auth.js';
+import { notifyAdmins } from '../services/notify.js';
 import { issueOtp, verifyOtp } from '../services/otp.js';
 
 export const authRouter = Router();
@@ -83,6 +84,7 @@ authRouter.post('/register', authLimiter, async (req, res) => {
       password: z.string(),
       code: codeField,
       remember: z.boolean().optional(),
+      asTeacher: z.boolean().optional(),
     }),
     req.body,
   );
@@ -92,17 +94,19 @@ authRouter.post('/register', authLimiter, async (req, res) => {
   const hash = await hashPassword(b.password);
   const t = now();
   const { id } = run(
-    `INSERT INTO users (first_name, last_name, phone, password_hash, role, status, created_at, updated_at)
-     VALUES (?, ?, ?, ?, 'student', 'active', ?, ?)`,
+    `INSERT INTO users (first_name, last_name, phone, password_hash, role, status, requested_role, created_at, updated_at)
+     VALUES (?, ?, ?, ?, 'student', 'active', ?, ?, ?)`,
     b.firstName,
     b.lastName,
     b.phone,
     hash,
+    b.asTeacher ? 'teacher' : null,
     t,
     t,
   );
   const actor = { id, role: 'student', name: `${b.firstName} ${b.lastName}` };
-  audit(req, 'user.register', { actor, entityType: 'user', entityId: id, metadata: { method: 'phone' } });
+  audit(req, 'user.register', { actor, entityType: 'user', entityId: id, metadata: { method: 'phone', asTeacher: !!b.asTeacher } });
+  if (b.asTeacher) notifyAdmins('teacher_request', { name: actor.name }, `/app/roles?user=${id}`);
   createSession(req, res, id, b.remember ?? true);
   audit(req, 'auth.login', { actor, entityType: 'user', entityId: id, metadata: { method: 'phone' } });
   res.status(201).json(meResponse(id));

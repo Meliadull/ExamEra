@@ -58,7 +58,7 @@ export function normalizePhone(raw: string): string | null {
 }
 
 const USER_FIELDS = `u.id, u.role, u.first_name, u.last_name, u.phone, u.email, u.status, u.avatar_url, u.language,
-  (u.password_hash IS NOT NULL) AS has_password`;
+  (u.password_hash IS NOT NULL) AS has_password, u.requested_role`;
 
 export function loadAuthUser(id: number): AuthUser | undefined {
   return get<AuthUser>(`SELECT ${USER_FIELDS} FROM users u WHERE u.id = ?`, id);

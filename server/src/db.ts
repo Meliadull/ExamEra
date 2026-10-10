@@ -6,6 +6,8 @@ fs.mkdirSync(config.uploadsDir, { recursive: true });
 
 export const db = new DatabaseSync(config.dbPath);
 db.exec('PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON; PRAGMA busy_timeout = 5000;');
+// SQLite's built-in lower() folds ASCII only; override it so searches are case-insensitive for Cyrillic too.
+db.function('lower', { deterministic: true }, (v) => (typeof v === 'string' ? v.toLowerCase() : v));
 
 const cache = new Map<string, StatementSync>();
 function stmt(sql: string): StatementSync {
@@ -330,6 +332,11 @@ export function migrate() {
   if (user_version < 1) {
     db.exec(SCHEMA_V1);
     db.exec('PRAGMA user_version = 1');
+  }
+  if (user_version < 2) {
+    // Users register themselves; a teacher marks the request and an administrator grants the role.
+    db.exec('ALTER TABLE users ADD COLUMN requested_role TEXT');
+    db.exec('PRAGMA user_version = 2');
   }
   for (const [key, value] of Object.entries(DEFAULT_SETTINGS)) {
     run('INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)', key, value);

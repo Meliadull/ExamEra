@@ -116,7 +116,7 @@ export function AttemptResult() {
             <PageHead
               title={r.test.title}
               subtitle={`${r.student.last_name} ${r.student.first_name} · ${f.dateTime(r.completed_at)}`}
-              back={{ to: `/app/tests/${r.test.id}`, label: t('common.back') }}
+              back={{ to: r.can_open_test ? `/app/tests/${r.test.id}` : `/app/students/${r.student.id}`, label: t('common.back') }}
               actions={
                 me.role === 'admin' && (
                   <Button onClick={() => setAdjust(true)}>{t('result.adjust')}</Button>

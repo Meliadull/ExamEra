@@ -59,32 +59,44 @@ export function assertTeachesSubject(u: AuthUser, subjectId: number) {
   }
 }
 
-/** Admin, or a teacher assigned to the group (used for viewing it and assigning tests to it). */
+/*
+ * Group access for teachers:
+ *  - the class leader (group_teachers) monitors the whole group: all subjects, all teachers' tests;
+ *  - every other group is open for assigning tests, but its statistics show only the teacher's own tests.
+ */
+
+/** Teacher is the class leader (homeroom teacher) of the group. */
+export function leadsGroup(u: AuthUser, groupId: number): boolean {
+  return u.role === 'teacher' && !!get('SELECT 1 FROM group_teachers WHERE group_id = ? AND user_id = ?', groupId, u.id);
+}
+
+/** Teacher leads a group the student belongs to. */
+export function leadsStudent(u: AuthUser, studentId: number): boolean {
+  return (
+    u.role === 'teacher' &&
+    !!get(
+      'SELECT 1 FROM group_students gs JOIN group_teachers gt ON gt.group_id = gs.group_id WHERE gs.user_id = ? AND gt.user_id = ? LIMIT 1',
+      studentId,
+      u.id,
+    )
+  );
+}
+
+/** Admins and teachers may assign tests to any existing group. */
 export function canManageGroup(u: AuthUser, groupId: number): boolean {
-  if (u.role === 'admin') return true;
-  if (u.role !== 'teacher') return false;
-  return !!get('SELECT 1 FROM group_teachers WHERE group_id = ? AND user_id = ?', groupId, u.id);
+  if (u.role !== 'admin' && u.role !== 'teacher') return false;
+  return !!get('SELECT 1 FROM study_groups WHERE id = ?', groupId);
 }
 
 export function canViewGroup(u: AuthUser, groupId: number): boolean {
   return seesEverything(u) || canManageGroup(u, groupId);
 }
 
-/** A teacher may see students of their groups and students who took their tests. */
+/** Staff may open any student's card; what statistics they see is limited by `fullStatsFor`. */
 export function canViewStudent(u: AuthUser, studentId: number): boolean {
   if (seesEverything(u) || u.id === studentId) return true;
   if (u.role !== 'teacher') return false;
-  return !!get(
-    `SELECT 1 FROM group_students gs JOIN group_teachers gt ON gt.group_id = gs.group_id
-       WHERE gs.user_id = ? AND gt.user_id = ?
-     UNION ALL
-     SELECT 1 FROM attempts a JOIN tests t ON t.id = a.test_id WHERE a.user_id = ? AND t.teacher_id = ?
-     LIMIT 1`,
-    studentId,
-    u.id,
-    studentId,
-    u.id,
-  );
+  return !!get("SELECT 1 FROM users WHERE id = ? AND role = 'student'", studentId);
 }
 
 /** SQL fragment restricting rows aliased `t` (tests) and `at` (attempts) to the user's scope. */
