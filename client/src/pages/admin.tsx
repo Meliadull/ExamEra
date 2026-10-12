@@ -1,8 +1,8 @@
-import { Activity, AlertTriangle, Ban, CheckCircle2, FileText, GraduationCap, Info, KeyRound, Pencil, Plus, ShieldCheck, Trash2, UserCheck, UserCog, Users as UsersIcon } from 'lucide-react';
+import { Activity, AlertTriangle, Ban, CheckCircle2, Database, Download, FileText, GraduationCap, Info, KeyRound, Pencil, Plus, ShieldCheck, Trash2, UserCheck, UserCog, Users as UsersIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
-import { api, del, patch, put, useApi } from '../api';
+import { api, del, downloadUrl, patch, put, useApi } from '../api';
 import { useMe } from '../auth';
 import { auditActionLabel, GroupSelect, SubjectSelect, useGroups, useSubjects } from '../components/common';
 import { Picker } from '../components/Picker';
@@ -911,6 +911,61 @@ export function Roles() {
   );
 }
 
+/** Database backups: automatic daily copies plus manual ones; each can be downloaded for safekeeping elsewhere. */
+function BackupsCard() {
+  const { t } = useI18n();
+  const f = useFormat();
+  const list = useApi<any[]>('/admin/backups');
+  const { busy, run } = useAction();
+  const size = (b: number) => (b >= 1048576 ? `${(b / 1048576).toFixed(1)} MB` : `${Math.max(1, Math.round(b / 1024))} KB`);
+  return (
+    <Card
+      title={t('backups.title')}
+      action={
+        <Button
+          size="sm"
+          variant="primary"
+          loading={busy}
+          onClick={async () => {
+            const ok = await run(() => api('/admin/backups', { method: 'POST' }), t('backups.created'));
+            if (ok) list.reload();
+          }}
+        >
+          <Database /> {t('backups.createNow')}
+        </Button>
+      }
+    >
+      <p className="small muted" style={{ marginTop: 0 }}>
+        {t('backups.hint')}
+      </p>
+      <Loader state={list}>
+        {(items) =>
+          items.length ? (
+            items.map((b) => (
+              <div className="list-item" key={b.name}>
+                <div className="list-icon tone-blue">
+                  <Database />
+                </div>
+                <div className="grow">
+                  <div className="bold">{f.dateTime(b.created_at)}</div>
+                  <div className="tiny muted">
+                    {b.kind === 'manual' ? t('backups.manual') : t('backups.auto')} · {size(b.size)}
+                  </div>
+                </div>
+                <Button size="sm" variant="ghost" onClick={() => downloadUrl(`/admin/backups/${b.name}`)} aria-label={t('backups.download')}>
+                  <Download /> {t('backups.download')}
+                </Button>
+              </div>
+            ))
+          ) : (
+            <Empty title={t('backups.none')} />
+          )
+        }
+      </Loader>
+    </Card>
+  );
+}
+
 function Periods({ readOnly }: { readOnly: boolean }) {
   const { t } = useI18n();
   const f = useFormat();
@@ -1079,6 +1134,7 @@ export function SettingsPage() {
             </fieldset>
           </Card>
           <Periods readOnly={readOnly} />
+          {!readOnly && <BackupsCard />}
         </div>
       ) : (
         <Loader state={state}>{() => null}</Loader>

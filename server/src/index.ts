@@ -16,6 +16,7 @@ import { reportsRouter, resultsRouter } from './routes/reports.js';
 import { questionsRouter, testsRouter, uploadsRouter } from './routes/tests.js';
 import { profileRouter, usersRouter } from './routes/users.js';
 import { runPeriodicJobs } from './services/attempts.js';
+import { runScheduledBackup } from './services/backup.js';
 import { auditorReadOnly, authenticate } from './services/auth.js';
 import { seedDemo } from './seed.js';
 
@@ -104,6 +105,17 @@ setInterval(() => {
   }
 }, 15_000).unref();
 runPeriodicJobs();
+
+// Daily database backup (checked hourly).
+const backupTick = () => {
+  try {
+    runScheduledBackup();
+  } catch (e) {
+    console.error('backup failed', e);
+  }
+};
+setInterval(backupTick, 3600_000).unref();
+backupTick();
 
 app.listen(config.port, () => {
   console.log(`ExamEra API: http://localhost:${config.port}`);

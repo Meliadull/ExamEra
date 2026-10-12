@@ -21,4 +21,6 @@ export const config = {
   cookieSecure: env.COOKIE_SECURE === 'true',
   trustProxy: env.TRUST_PROXY === 'true',
   seedDemo: env.SEED_DEMO !== 'false',
+  backupDir: path.resolve(serverRoot, env.BACKUP_DIR || 'data/backups'),
+  backupKeep: Number(env.BACKUP_KEEP || 14),
 };

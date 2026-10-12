@@ -4,6 +4,7 @@ import { all, get, getSettings, now, run, tx, Where } from '../db.js';
 import { badRequest, int, notFound, paging, parse, qstr, requireAuth, requireRole, user } from '../http.js';
 import { seesEverything } from '../services/access.js';
 import { audit } from '../services/audit.js';
+import { backupFile, createBackup, listBackups } from '../services/backup.js';
 import { COLS, fmtDate, sendTable } from '../services/export.js';
 
 export const auditRouter = Router();
@@ -110,6 +111,22 @@ notificationsRouter.post('/read-all', (req, res) => {
 adminRouter.use(requireAuth);
 
 adminRouter.get('/settings', requireRole('admin', 'auditor'), (_req, res) => res.json(getSettings()));
+
+/* ---------- Database backups (admin only: they contain password hashes) ---------- */
+
+adminRouter.get('/backups', requireRole('admin'), (_req, res) => res.json(listBackups()));
+
+adminRouter.post('/backups', requireRole('admin'), (req, res) => {
+  const b = createBackup('manual');
+  audit(req, 'backup.create', { entityType: 'backup', entityId: b.name, metadata: { size: b.size } });
+  res.status(201).json(b);
+});
+
+adminRouter.get('/backups/:name', requireRole('admin'), (req, res) => {
+  const file = backupFile(String(req.params.name));
+  audit(req, 'backup.download', { entityType: 'backup', entityId: String(req.params.name) });
+  res.download(file);
+});
 
 const settingsBody = z.object({
   platform_name: z.string().trim().min(1).max(60),
