@@ -849,4 +849,7 @@ export const uz: Record<string, string> = {
   'myClass.completedOf': "Topshirdi: {done} / {total}",
   'errors.not_class_leader': "Siz bu guruhning sinf rahbari emassiz",
   'errors.already_assigned': "Bu test allaqachon topshirilgan va hali tugamagan: {names}",
+  'subjects.topicsHint': "Faningiz mavzulari. Ular test yaratishda taklif qilinadi va zaif mavzular tahlilida ishlatiladi.",
+  'subjects.noTopics': "Mavzular hali qo'shilmagan",
+  'audit.action.subject.topics_update': "Fan mavzularini o'zgartirish",
 };

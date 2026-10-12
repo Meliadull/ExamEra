@@ -866,4 +866,7 @@ export const ru: Record<string, string> = {
   'myClass.completedOf': "Сдали {done} из {total}",
   'errors.not_class_leader': "Вы не классный руководитель этой группы",
   'errors.already_assigned': "Этот тест уже назначен и ещё не завершён: {names}",
+  'subjects.topicsHint': "Темы вашего предмета. Они предлагаются при создании тестов и используются в аналитике слабых тем.",
+  'subjects.noTopics': "Темы ещё не добавлены",
+  'audit.action.subject.topics_update': "Изменение тем предмета",
 };

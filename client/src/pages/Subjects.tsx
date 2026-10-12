@@ -12,18 +12,11 @@ function SubjectForm({ subject, onClose, onDone }: { subject?: Subject; onClose:
   const me = useMe();
   const [name, setName] = useState(subject?.name ?? '');
   const [description, setDescription] = useState(subject?.description ?? '');
-  const [topics, setTopics] = useState<string[]>(subject?.topics ?? []);
-  const [topic, setTopic] = useState('');
   const teachers = useApi<any>(me.role === 'admin' ? '/users' : null, { role: 'teacher', pageSize: 200 });
   const [teacherIds, setTeacherIds] = useState<number[] | null>(null);
   const { busy, run } = useAction();
-  const addTopic = () => {
-    const v = topic.trim();
-    if (v && !topics.includes(v)) setTopics([...topics, v]);
-    setTopic('');
-  };
   const submit = async () => {
-    const body = { name, description, topics };
+    const body = { name, description };
     const ok = await run(async () => {
       const r = subject ? await patch(`/subjects/${subject.id}`, body) : await api('/subjects', { body });
       const sid = subject?.id ?? r.id;
@@ -53,24 +46,6 @@ function SubjectForm({ subject, onClose, onDone }: { subject?: Subject; onClose:
         <Field label={t('builder.description')}>
           <Textarea value={description} onChange={(e) => setDescription(e.target.value)} style={{ minHeight: 60 }} />
         </Field>
-        <Field label={t('subjects.topics')}>
-          <div className="row">
-            <Input value={topic} onChange={(e) => setTopic(e.target.value)} onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), addTopic())} placeholder={t('subjects.topicPlaceholder')} />
-            <Button onClick={addTopic}>
-              <Plus />
-            </Button>
-          </div>
-          <div className="chip-list mt-sm">
-            {topics.map((x) => (
-              <span className="chip" key={x}>
-                {x}
-                <button onClick={() => setTopics(topics.filter((y) => y !== x))} aria-label="remove">
-                  <X size={13} />
-                </button>
-              </span>
-            ))}
-          </div>
-        </Field>
         {me.role === 'admin' && (
           <Field label={t('groups.teachers')}>
             <div className="stack" style={{ gap: 6 }}>
@@ -90,12 +65,77 @@ function SubjectForm({ subject, onClose, onDone }: { subject?: Subject; onClose:
   );
 }
 
+/** The teacher of a subject maintains its topics (suggested when creating tests, used for weak-topic analytics). */
+function TopicsForm({ subject, onClose, onDone }: { subject: Subject; onClose: () => void; onDone: () => void }) {
+  const { t } = useI18n();
+  const [topics, setTopics] = useState<string[]>(subject.topics);
+  const [topic, setTopic] = useState('');
+  const { busy, run } = useAction();
+  const addTopic = () => {
+    const v = topic.trim();
+    if (v && !topics.includes(v)) setTopics([...topics, v]);
+    setTopic('');
+  };
+  return (
+    <Modal
+      title={`${t('subjects.topics')}: ${subject.name}`}
+      onClose={onClose}
+      footer={
+        <>
+          <Button onClick={onClose}>{t('common.cancel')}</Button>
+          <Button
+            variant="primary"
+            loading={busy}
+            onClick={async () => {
+              const ok = await run(() => put(`/subjects/${subject.id}/topics`, { topics }), t('common.saved'));
+              if (ok) onDone();
+            }}
+          >
+            {t('common.save')}
+          </Button>
+        </>
+      }
+    >
+      <p className="small muted" style={{ marginTop: 0 }}>
+        {t('subjects.topicsHint')}
+      </p>
+      <div className="row">
+        <Input
+          value={topic}
+          onChange={(e) => setTopic(e.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && (e.preventDefault(), addTopic())}
+          placeholder={t('subjects.topicPlaceholder')}
+          autoFocus
+        />
+        <Button onClick={addTopic} aria-label={t('common.add')}>
+          <Plus />
+        </Button>
+      </div>
+      <div className="chip-list mt">
+        {topics.length ? (
+          topics.map((x) => (
+            <span className="chip" key={x}>
+              {x}
+              <button onClick={() => setTopics(topics.filter((y) => y !== x))} aria-label={`${t('common.remove')}: ${x}`}>
+                <X size={13} />
+              </button>
+            </span>
+          ))
+        ) : (
+          <span className="small muted">{t('subjects.noTopics')}</span>
+        )}
+      </div>
+    </Modal>
+  );
+}
+
 export function Subjects() {
   const { t } = useI18n();
   const me = useMe();
   const list = useSubjects(me.role === 'teacher');
   const [editing, setEditing] = useState<Subject | 'new' | null>(null);
   const [deleting, setDeleting] = useState<Subject | null>(null);
+  const [topicsOf, setTopicsOf] = useState<Subject | null>(null);
   const isAdmin = me.role === 'admin';
   return (
     <>
@@ -141,9 +181,15 @@ export function Subjects() {
                       </div>
                     )}
                     <div className="tiny muted mt-sm">
-                      {s.teachers ? `${t('groups.teachers')}: ${s.teachers}` : ''}
-                      {s.groups ? ` · ${s.groups}` : ''}
+                      {[s.teachers && `${t('groups.teachers')}: ${s.teachers}`, s.groups].filter(Boolean).join(' · ')}
                     </div>
+                    {me.role === 'teacher' && (
+                      <div className="row mt-sm" style={{ justifyContent: 'flex-end' }}>
+                        <Button size="sm" variant="ghost" onClick={() => setTopicsOf(s)}>
+                          <Pencil /> {t('subjects.topics')}
+                        </Button>
+                      </div>
+                    )}
                     {isAdmin && (
                       <div className="row mt-sm" style={{ justifyContent: 'flex-end' }}>
                         <Button size="sm" variant="ghost" onClick={() => setEditing(s)}>
@@ -173,6 +219,16 @@ export function Subjects() {
           onClose={() => setEditing(null)}
           onDone={() => {
             setEditing(null);
+            list.reload();
+          }}
+        />
+      )}
+      {topicsOf && (
+        <TopicsForm
+          subject={topicsOf}
+          onClose={() => setTopicsOf(null)}
+          onDone={() => {
+            setTopicsOf(null);
             list.reload();
           }}
         />

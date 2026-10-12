@@ -147,11 +147,12 @@ groupsRouter.put('/:id/subjects', requireRole('admin'), (req, res) => {
 
 /* ---------- Subjects ---------- */
 
+// Admin defines the subject itself (name, description, teachers); its topics are maintained by the teachers of the subject.
 const subjectBody = z.object({
   name: z.string().trim().min(1).max(80),
   description: z.string().trim().max(1000).default(''),
-  topics: z.array(z.string().trim().min(1).max(120)).max(100).default([]),
 });
+const topicsBody = z.object({ topics: z.array(z.string().trim().min(1).max(120)).max(100) });
 
 subjectsRouter.get('/', (req, res) => {
   const me = user(req);
@@ -176,7 +177,7 @@ subjectsRouter.post('/', requireRole('admin'), (req, res) => {
     'INSERT INTO subjects (name, description, topics, created_at) VALUES (?, ?, ?, ?)',
     b.name,
     b.description,
-    JSON.stringify(b.topics),
+    '[]',
     now(),
   );
   audit(req, 'subject.create', { entityType: 'subject', entityId: id, metadata: { name: b.name } });
@@ -186,10 +187,24 @@ subjectsRouter.post('/', requireRole('admin'), (req, res) => {
 subjectsRouter.patch('/:id', requireRole('admin'), (req, res) => {
   const id = int(req.params.id);
   const b = parse(subjectBody, req.body);
-  const r = run('UPDATE subjects SET name = ?, description = ?, topics = ? WHERE id = ?', b.name, b.description, JSON.stringify(b.topics), id);
+  const r = run('UPDATE subjects SET name = ?, description = ? WHERE id = ?', b.name, b.description, id);
   if (!r.changes) throw notFound();
   audit(req, 'subject.update', { entityType: 'subject', entityId: id, metadata: { name: b.name } });
   res.json({ ok: true });
+});
+
+/** A teacher maintains the topics of a subject assigned to them. */
+subjectsRouter.put('/:id/topics', requireRole('teacher'), (req, res) => {
+  const me = user(req);
+  const id = int(req.params.id);
+  if (!get('SELECT 1 FROM subject_teachers WHERE subject_id = ? AND user_id = ?', id, me.id)) throw forbidden('subject_not_assigned');
+  const { topics } = parse(topicsBody, req.body);
+  const unique = [...new Set(topics)];
+  const before = get<{ topics: string }>('SELECT topics FROM subjects WHERE id = ?', id);
+  if (!before) throw notFound();
+  run('UPDATE subjects SET topics = ? WHERE id = ?', JSON.stringify(unique), id);
+  audit(req, 'subject.topics_update', { entityType: 'subject', entityId: id, metadata: { before: JSON.parse(before.topics), after: unique } });
+  res.json({ topics: unique });
 });
 
 subjectsRouter.put('/:id/teachers', requireRole('admin'), (req, res) => {
