@@ -184,7 +184,7 @@ export async function seedDemo() {
 
     const admin = user("O'quv", "bo'limi", 'admin', '+998900000001', 'admin@examera.uz');
     const teacher = user('Nargiza', 'Xajimirzayeva', 'teacher', '+998900000002', 'n.xajimirzayeva@examera.uz');
-    const teacher2 = user('Нигора', 'Каримова', 'teacher', '+998900000004', 'n.karimova@examera.uz');
+    const teacher2 = user("Ulug'bek", 'Negmatov', 'teacher', '+998900000004', 'u.negmatov@examera.uz');
     user('Jahongir', 'Mirzarayimov', 'auditor', '+998900000003', 'auditor@examera.uz');
 
     run(
@@ -213,7 +213,7 @@ export async function seedDemo() {
     for (const [gname, people] of Object.entries(STUDENTS)) {
       const gid = run('INSERT INTO study_groups (name, academic_year, status, created_at) VALUES (?, ?, ?, ?)', gname, year, 'active', created).id;
       groupIds[gname] = gid;
-      // One class leader per group: Xajimirzayeva leads 01/25, Karimova leads 101/26 and 102/26.
+      // One class leader per group: Xajimirzayeva leads 01/25, Negmatov leads 101/26 and 102/26.
       run('INSERT INTO group_teachers (group_id, user_id) VALUES (?, ?)', gid, gname === '01/25' ? teacher : teacher2);
       Object.values(subjects).slice(0, 5).forEach((sid) => run('INSERT INTO group_subjects (group_id, subject_id) VALUES (?, ?)', gid, sid));
       for (const p of people) {
@@ -352,7 +352,7 @@ export async function seedDemo() {
           }
         }
       }
-      auditAt(new Date(createdAt), d.teacher, d.teacher === teacher ? 'Nargiza Xajimirzayeva' : 'Нигора Каримова', 'teacher', 'test.create', 'test', testId, { title: d.title });
+      auditAt(new Date(createdAt), d.teacher, d.teacher === teacher ? 'Nargiza Xajimirzayeva' : "Ulug'bek Negmatov", 'teacher', 'test.create', 'test', testId, { title: d.title });
     }
 
     // Notifications for the demo accounts
