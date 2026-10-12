@@ -205,22 +205,18 @@ export function Login() {
 function DemoAccounts({ onPick }: { onPick: (login: string) => void }) {
   const { t } = useI18n();
   const { config } = useAuth();
-  if (!config?.smsDevMode) return null;
-  const list = [
-    ['student', '+998901234567'],
-    ['teacher', '+998900000002'],
-    ['admin', '+998900000001'],
-    ['auditor', '+998900000003'],
-  ];
+  // Only accounts that still use the public demo password are offered.
+  const list = config?.demoAccounts ?? [];
+  if (!list.length) return null;
   return (
     <div className="card mt" style={{ padding: 14, boxShadow: 'none', background: 'var(--surface-2)' }}>
       <div className="small bold mb" style={{ marginBottom: 8 }}>
         {t('auth.demoAccounts')}
       </div>
       <div className="row wrap gap-sm">
-        {list.map(([role, login]) => (
-          <button key={role} type="button" className="btn sm" onClick={() => onPick(login)}>
-            {t(`role.${role}`)}
+        {list.map((a) => (
+          <button key={a.login} type="button" className="btn sm" onClick={() => onPick(a.login)} title={a.name}>
+            {t(`role.${a.role}`)} <span className="muted" style={{ fontWeight: 500 }}>· {a.name.split(' ')[0]}</span>
           </button>
         ))}
       </div>

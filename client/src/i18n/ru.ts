@@ -879,4 +879,5 @@ export const ru: Record<string, string> = {
   'backups.none': "Копий пока нет",
   'audit.action.backup.create': "Создание резервной копии",
   'audit.action.backup.download': "Скачивание резервной копии",
+  'admin.alert.default_passwords': "У {count} учётных записей остался демо-пароль Demo1234: {names}. Смените пароль (владелец — в «Профиле», администратор — «Восстановить доступ»), иначе любой сможет войти под ними.",
 };

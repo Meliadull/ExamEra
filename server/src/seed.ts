@@ -2,10 +2,10 @@
 import crypto from 'node:crypto';
 import { all, get, now, run, tx } from './db.js';
 import { hashPassword } from './services/auth.js';
+import { DEMO_PASSWORD } from './services/demo.js';
 import { isAnswered, scoreAnswer } from './services/scoring.js';
 import { loadQuestions, replaceQuestions, type QuestionInput } from './services/tests.js';
 
-export const DEMO_PASSWORD = 'Demo1234';
 
 function mulberry32(seed: number) {
   return () => {

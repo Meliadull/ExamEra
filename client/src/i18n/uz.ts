@@ -862,4 +862,5 @@ export const uz: Record<string, string> = {
   'backups.none': "Hozircha nusxalar yo'q",
   'audit.action.backup.create': "Zaxira nusxa olish",
   'audit.action.backup.download': "Zaxira nusxani yuklab olish",
+  'admin.alert.default_passwords': "{count} ta hisobda demo parol (Demo1234) turibdi: {names}. Parolni almashtiring (egasi — «Profil»da, admin — «Kirishni tiklash» orqali), aks holda istalgan odam shu hisoblarga kira oladi.",
 };

@@ -5,6 +5,7 @@ import { badRequest, conflict, forbidden, int, notFound, paging, parse, qstr, re
 import { canViewStudent, seesEverything } from '../services/access.js';
 import { actorOf, audit } from '../services/audit.js';
 import { generateTempPassword, hashPassword, loadAuthUser, normalizePhone, revokeUserSessions } from '../services/auth.js';
+import { forgetDemoPasswordCheck } from '../services/demo.js';
 import { notifyAdmins } from '../services/notify.js';
 import { saveImage } from '../services/uploads.js';
 import { ROLES, type Role } from '../types.js';
@@ -315,6 +316,7 @@ usersRouter.post('/:id/reset-password', requireRole('admin'), async (req, res) =
   const temp = generateTempPassword();
   run('UPDATE users SET password_hash = ?, updated_at = ? WHERE id = ?', await hashPassword(temp), now(), id);
   revokeUserSessions(id);
+  forgetDemoPasswordCheck();
   audit(req, 'user.reset_access', { entityType: 'user', entityId: id });
   res.json({ tempPassword: temp });
 });

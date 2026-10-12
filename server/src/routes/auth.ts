@@ -20,6 +20,7 @@ import {
   verifyPassword,
 } from '../services/auth.js';
 import { notifyAdmins } from '../services/notify.js';
+import { accountsWithDemoPassword, forgetDemoPasswordCheck } from '../services/demo.js';
 import { issueOtp, verifyOtp } from '../services/otp.js';
 
 export const authRouter = Router();
@@ -47,7 +48,8 @@ function meResponse(id: number) {
   return { user: u, unreadNotifications: unread };
 }
 
-authRouter.get('/config', (_req, res) => {
+authRouter.get('/config', async (_req, res) => {
+  const devMode = config.smsProvider === 'console';
   res.json({
     platformName: getSetting('platform_name'),
     googleClientId: getSetting('google_auth_enabled') === '1' ? config.googleClientId || null : null,
@@ -55,6 +57,8 @@ authRouter.get('/config', (_req, res) => {
     smsDevMode: config.smsProvider === 'console',
     minPasswordLength: Number(getSetting('min_password_length')) || 8,
     defaultLanguage: getSetting('default_language'),
+    // Quick-login buttons disappear as soon as an account's demo password is changed.
+    demoAccounts: devMode ? (await accountsWithDemoPassword()).map((a) => ({ role: a.role, login: a.phone, name: a.name })) : [],
   });
 });
 
@@ -198,6 +202,7 @@ authRouter.post('/recover', authLimiter, async (req, res) => {
   if (!u) throw new HttpError(400, 'otp_invalid');
   run('UPDATE users SET password_hash = ?, updated_at = ? WHERE id = ?', await hashPassword(b.password), now(), u.id);
   revokeUserSessions(u.id);
+  forgetDemoPasswordCheck();
   audit(req, 'auth.password_reset', { actor: actorOf(u), entityType: 'user', entityId: u.id, metadata: { method: 'otp' } });
   res.json({ ok: true });
 });
@@ -244,6 +249,7 @@ authRouter.post('/password', requireAuth, async (req, res) => {
   checkPasswordPolicy(b.next);
   run('UPDATE users SET password_hash = ?, updated_at = ? WHERE id = ?', await hashPassword(b.next), now(), me.id);
   if (b.logoutOthers) revokeUserSessions(me.id, req.sessionId);
+  forgetDemoPasswordCheck();
   audit(req, 'user.password_change', { entityType: 'user', entityId: me.id, metadata: { logoutOthers: !!b.logoutOthers } });
   res.json({ ok: true });
 });

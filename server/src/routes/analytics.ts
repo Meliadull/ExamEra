@@ -14,6 +14,7 @@ import {
   previousPeriod,
   readFilters,
 } from '../services/analytics.js';
+import { accountsWithDemoPassword } from '../services/demo.js';
 import { loadQuestions } from '../services/tests.js';
 
 export const analyticsRouter = Router();
@@ -327,7 +328,7 @@ analyticsRouter.get('/students/:id', (req, res) => {
   });
 });
 
-analyticsRouter.get('/admin', requireRole('admin', 'auditor'), (_req, res) => {
+analyticsRouter.get('/admin', requireRole('admin', 'auditor'), async (_req, res) => {
   const users = get<any>(
     `SELECT COUNT(*) AS total, SUM(role = 'student') AS students, SUM(role = 'teacher') AS teachers,
        SUM(role = 'admin') AS admins, SUM(role = 'auditor') AS auditors, SUM(status = 'blocked') AS blocked
@@ -361,6 +362,8 @@ analyticsRouter.get('/admin', requireRole('admin', 'auditor'), (_req, res) => {
     new Date(Date.now() - 86400_000).toISOString(),
   )!.c;
   if (failed24 >= 10) alerts.push({ type: 'failed_logins', params: { count: failed24 }, level: 'danger' });
+  const demo = await accountsWithDemoPassword();
+  if (demo.length) alerts.push({ type: 'default_passwords', params: { count: demo.length, names: demo.map((a) => a.name).join(', ') }, level: 'danger' });
   const teacherRequests = get<{ c: number }>(
     "SELECT COUNT(*) AS c FROM users WHERE requested_role = 'teacher' AND role = 'student' AND status = 'active'",
   )!.c;

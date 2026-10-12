@@ -23,6 +23,7 @@ export interface AuthConfig {
   smsDevMode: boolean;
   minPasswordLength: number;
   defaultLanguage: string;
+  demoAccounts: { role: string; login: string; name: string }[];
 }
 
 export interface Option {
