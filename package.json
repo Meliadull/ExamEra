@@ -9,7 +9,8 @@
     "build": "npm --prefix client run build && npm --prefix server run build",
     "start": "npm --prefix server run start",
     "seed": "npm --prefix server run seed",
-    "typecheck": "npm --prefix server run typecheck && npm --prefix client run typecheck"
+    "typecheck": "npm --prefix server run typecheck && npm --prefix client run typecheck",
+    "test": "npm --prefix server test"
   },
   "devDependencies": {
     "concurrently": "^9.1.2"
