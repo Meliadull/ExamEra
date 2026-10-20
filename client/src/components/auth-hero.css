@@ -1,0 +1,141 @@
+/* ---------- Auth pages: animated left panel (decorative only) ---------- */
+.auth-side.examera-hero {
+  container-type: inline-size;
+  isolation: isolate;
+  background: linear-gradient(150deg, #0b2a7a 0%, #1d4ed8 45%, #2563eb 70%, #3b82f6 100%);
+}
+.auth-side.examera-hero::after { display: none; }
+
+/* Background layers */
+.examera-hero-bg { position: absolute; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+.examera-hero-glow { position: absolute; border-radius: 50%; filter: blur(60px); will-change: transform; }
+.examera-hero-g1 { width: 460px; height: 460px; left: -120px; top: -140px; background: rgba(56, 189, 248, 0.45); animation: examera-hero-drift-a 18s ease-in-out infinite alternate; }
+.examera-hero-g2 { width: 520px; height: 520px; right: -180px; bottom: -200px; background: rgba(96, 165, 250, 0.55); animation: examera-hero-drift-b 22s ease-in-out infinite alternate; }
+.examera-hero-g3 { width: 300px; height: 300px; left: 45%; top: 35%; background: rgba(14, 165, 233, 0.28); animation: examera-hero-drift-a 26s ease-in-out infinite alternate-reverse; }
+@keyframes examera-hero-drift-a { to { transform: translate(90px, 70px) scale(1.12); } }
+@keyframes examera-hero-drift-b { to { transform: translate(-110px, -60px) scale(0.92); } }
+
+.examera-hero-shape { position: absolute; border: 1px solid rgba(255, 255, 255, 0.14); will-change: transform; }
+.examera-hero-circle { width: 560px; height: 560px; border-radius: 50%; right: -200px; bottom: -220px; background: rgba(255, 255, 255, 0.04); animation: examera-hero-breathe 14s ease-in-out infinite alternate; }
+.examera-hero-circle-sm { width: 180px; height: 180px; right: auto; bottom: auto; left: 38%; top: -60px; background: none; animation-duration: 11s; }
+.examera-hero-square { width: 220px; height: 220px; border-radius: 42px; left: -70px; bottom: 12%; background: rgba(255, 255, 255, 0.03); animation: examera-hero-spin 60s linear infinite; }
+@keyframes examera-hero-breathe { to { transform: scale(1.08) translate(-12px, -10px); opacity: 0.7; } }
+@keyframes examera-hero-spin { to { transform: rotate(360deg); } }
+
+.examera-hero-line { position: absolute; height: 1px; width: 60%; background: linear-gradient(90deg, transparent, rgba(191, 219, 254, 0.55), transparent); transform: rotate(-24deg); opacity: 0.6; }
+.examera-hero-l1 { left: -10%; top: 28%; animation: examera-hero-sweep 12s ease-in-out infinite; }
+.examera-hero-l2 { right: -15%; top: 70%; animation: examera-hero-sweep 15s ease-in-out -6s infinite; }
+@keyframes examera-hero-sweep {
+  0%, 100% { transform: rotate(-24deg) translateX(-40px); opacity: 0.15; }
+  50% { transform: rotate(-24deg) translateX(60px); opacity: 0.6; }
+}
+
+.examera-hero-spark { position: absolute; width: 4px; height: 4px; border-radius: 50%; background: #e0f2fe; box-shadow: 0 0 10px 2px rgba(186, 230, 253, 0.8); opacity: 0.25; animation: examera-hero-twinkle 4.5s ease-in-out infinite; animation-delay: var(--d, 0s); }
+@keyframes examera-hero-twinkle { 50% { opacity: 0.95; transform: translateY(-6px) scale(1.3); } }
+
+/* Text column (existing content) */
+.examera-hero-text { position: relative; z-index: 2; max-width: min(420px, 44%); }
+.examera-hero-text h2 { animation: examera-hero-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; text-shadow: 0 2px 18px rgba(8, 30, 90, 0.35); }
+.examera-hero-feature { opacity: 0.95; animation: examera-hero-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: var(--d); }
+.examera-hero-copy { position: relative; z-index: 2; opacity: 0.75; }
+@keyframes examera-hero-in { from { opacity: 0; transform: translateY(18px); } }
+
+/* Decorative cards */
+.examera-hero-deco { position: absolute; inset: 0; z-index: 1; pointer-events: none; user-select: none; }
+.examera-hero-item { position: absolute; animation: examera-hero-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: var(--d); }
+.examera-hero-float { animation: examera-hero-float var(--dur, 6s) ease-in-out infinite; animation-delay: var(--fd, 0s); will-change: transform; }
+@keyframes examera-hero-float { 50% { transform: translateY(var(--amp, -12px)); } }
+
+.examera-hero-card {
+  position: relative; overflow: hidden; border-radius: 18px; padding: 16px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.07));
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 24px 50px -18px rgba(8, 25, 80, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+.examera-hero-sheen::after { /* soft light reflection passing over the card now and then */
+  content: ''; position: absolute; top: -50%; bottom: -50%; left: 0; width: 45%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  transform: translateX(-160%) rotate(12deg); animation: examera-hero-shine 9s ease-in-out infinite;
+}
+.examera-hero-at-bars .examera-hero-sheen::after { animation-delay: 4s; }
+@keyframes examera-hero-shine { 0%, 70% { transform: translateX(-160%) rotate(12deg); } 100% { transform: translateX(360%) rotate(12deg); } }
+
+.examera-hero-card-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; color: rgba(224, 242, 254, 0.9); margin-bottom: 10px; }
+.examera-hero-timer { font-variant-numeric: tabular-nums; background: rgba(255, 255, 255, 0.16); border-radius: 8px; padding: 2px 8px; }
+.examera-hero-q { font-size: 18px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.01em; }
+.examera-hero-opt { display: flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 500; padding: 7px 10px; margin-top: 6px; border-radius: 10px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); }
+.examera-hero-opt b { width: 22px; height: 22px; flex: none; display: grid; place-items: center; border-radius: 7px; font-size: 11.5px; background: rgba(255, 255, 255, 0.16); }
+.examera-hero-opt.examera-hero-on { background: rgba(255, 255, 255, 0.24); border-color: rgba(255, 255, 255, 0.5); box-shadow: 0 6px 18px -8px rgba(8, 25, 80, 0.6); }
+.examera-hero-opt.examera-hero-on b { background: #fff; color: #1d4ed8; }
+.examera-hero-ok { margin-left: auto; color: #86efac; }
+
+.examera-hero-donut { width: 132px; height: 132px; padding: 0; border-radius: 50%; display: grid; place-items: center; }
+.examera-hero-donut svg { position: absolute; inset: 12px; width: calc(100% - 24px); height: calc(100% - 24px); transform: rotate(-90deg); }
+.examera-hero-donut circle { fill: none; stroke-width: 8; }
+.examera-hero-donut .examera-hero-track { stroke: rgba(255, 255, 255, 0.18); }
+.examera-hero-donut .examera-hero-value { stroke: #a5f3fc; stroke-linecap: round; stroke-dasharray: 201; stroke-dashoffset: 30; animation: examera-hero-ring 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.6s both; }
+@keyframes examera-hero-ring { from { stroke-dashoffset: 201; } }
+.examera-hero-donut-val { position: relative; text-align: center; line-height: 1.1; }
+.examera-hero-donut-val b { display: block; font-size: 24px; font-weight: 800; }
+.examera-hero-donut-val span { font-size: 11px; color: rgba(224, 242, 254, 0.85); }
+
+.examera-hero-chart { display: flex; align-items: flex-end; gap: 10px; height: 84px; padding-top: 4px; }
+.examera-hero-chart span {
+  flex: 1; height: var(--h); border-radius: 6px 6px 3px 3px; transform-origin: bottom;
+  background: linear-gradient(180deg, #e0f2fe, rgba(165, 243, 252, 0.45));
+  animation: examera-hero-grow 1s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: calc(0.8s + var(--i) * 0.1s);
+}
+@keyframes examera-hero-grow { from { transform: scaleY(0); } }
+
+.examera-hero-badge {
+  width: 64px; height: 64px; border-radius: 20px; display: grid; place-items: center; color: #fff;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.08));
+  border: 1px solid rgba(255, 255, 255, 0.32); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 18px 36px -14px rgba(8, 25, 80, 0.7); transform: rotate(-8deg);
+}
+.examera-hero-chip {
+  display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; padding: 9px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 600; color: #fff;
+  background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(255, 255, 255, 0.28); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 14px 30px -14px rgba(8, 25, 80, 0.7);
+}
+.examera-hero-chip svg { color: #86efac; }
+
+/* Placement: decorations live in the right part of the panel, the text stays on the left. */
+.examera-hero-at-question { right: 6%; top: 9%; width: 250px; }
+.examera-hero-at-cap { right: 38%; top: 13%; }
+.examera-hero-at-ring { right: 30%; top: 44%; }
+.examera-hero-at-bars { right: 6%; top: 60%; width: 220px; }
+.examera-hero-at-chip { right: 30%; bottom: 8%; }
+
+/* Medium panels (smaller laptops): fewer, smaller cards in the corners, away from the text. */
+@container (max-width: 760px) {
+  .examera-hero-text { max-width: 58%; }
+  .examera-hero-at-question { top: 11%; right: 5%; width: 220px; }
+  .examera-hero-at-bars { top: auto; bottom: 14%; right: 5%; width: 190px; }
+  .examera-hero-at-ring { right: 8%; top: 46%; }
+  .examera-hero-at-ring .examera-hero-donut { width: 112px; height: 112px; }
+  .examera-hero-at-cap { right: 46%; top: 12%; }
+  .examera-hero-at-cap .examera-hero-badge { width: 54px; height: 54px; border-radius: 17px; }
+  .examera-hero-at-chip { right: 34%; bottom: 11%; }
+}
+@container (max-width: 470px) {
+  .examera-hero-text { max-width: 100%; }
+  .examera-hero-at-ring, .examera-hero-at-bars, .examera-hero-at-cap, .examera-hero-at-chip { display: none; }
+  .examera-hero-at-question { top: 6%; right: 5%; width: 200px; transform-origin: top right; scale: 0.78; }
+}
+/* Short screens: keep the cards clear of the headline. */
+@media (max-height: 760px) {
+  .examera-hero-at-question { scale: 0.82; transform-origin: top right; top: 7%; }
+  .examera-hero-at-ring, .examera-hero-at-cap, .examera-hero-at-chip { display: none; }
+}
+/* Narrow and short: the headline needs the whole panel. */
+@media (max-width: 1140px) and (max-height: 760px) {
+  .examera-hero-at-question { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .examera-hero *, .examera-hero *::before, .examera-hero *::after { animation: none !important; }
+  .examera-hero-sheen::after { display: none; }
+}

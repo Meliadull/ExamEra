@@ -182,6 +182,7 @@ export const uz: Record<string, string> = {
   'landing.flow5': 'Tahlil',
   'landing.flow6': 'Hisobot va audit',
   'landing.footer': 'Elektron test platformasi',
+  'authHero.analytics': "Natijalar tahlili",
   'landing.chipChecked': "Avtomatik tekshirildi",
   'landing.chipTrend': "o'rtacha ball o'sishi",
   'landing.chipScore': "A'lo natija",

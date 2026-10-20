@@ -3,6 +3,7 @@ import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'rea
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { api } from '../api';
 import { useAuth } from '../auth';
+import { AuthHero } from '../components/AuthHero';
 import { LangSwitch } from '../components/Layout';
 import { Logo } from '../components/Logo';
 import { Button, Check, ErrorBox, Field, Input, Seg } from '../components/ui';
@@ -16,25 +17,9 @@ declare global {
 }
 
 function AuthShell({ children }: { children: ReactNode }) {
-  const { t } = useI18n();
   return (
     <div className="auth-page">
-      <div className="auth-side">
-        <Logo onDark style={{ padding: 0, position: 'relative', zIndex: 1 }} />
-        <div style={{ position: 'relative', zIndex: 1 }}>
-          <h2>{t('landing.heroTitle1')} {t('landing.heroTitle2')}</h2>
-          <div className="stack" style={{ gap: 12, marginTop: 26 }}>
-            {['landing.f1', 'landing.f2', 'landing.f3'].map((k) => (
-              <div key={k} className="row" style={{ opacity: 0.95 }}>
-                <CheckCircle2 size={20} /> {t(`${k}Title`)}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="small" style={{ opacity: 0.75, position: 'relative', zIndex: 1 }}>
-          © {new Date().getFullYear()} ExamEra
-        </div>
-      </div>
+      <AuthHero />
       <div className="auth-form-wrap">
         <div className="auth-form">
           <div className="row between mb">

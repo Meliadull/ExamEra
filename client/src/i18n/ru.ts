@@ -186,6 +186,7 @@ export const ru: Record<string, string> = {
   'landing.flow5': 'Аналитика',
   'landing.flow6': 'Отчётность и аудит',
   'landing.footer': 'Платформа электронного тестирования',
+  'authHero.analytics': "Анализ результатов",
   'landing.chipChecked': "Проверено автоматически",
   'landing.chipTrend': "рост среднего балла",
   'landing.chipScore': "Отличный результат",
