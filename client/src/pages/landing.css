@@ -26,7 +26,7 @@
 @keyframes l-drift2 { to { transform: translate(-140px, 60px) scale(0.9); } }
 
 /* ---------- Hero ---------- */
-.l-hero { padding-bottom: 90px; }
+.l-hero { padding-bottom: 60px; }
 .l-nav { display: flex; align-items: center; gap: 16px; padding: 18px 40px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
 .l-nav .btn.ghost { color: #dbe4ff; }
 .l-nav .btn.ghost:hover { background: rgba(255, 255, 255, 0.08); }
@@ -118,17 +118,6 @@
 .l-score { font-size: 22px; font-weight: 800; background: linear-gradient(90deg, #4ade80, #22d3ee); -webkit-background-clip: text; background-clip: text; color: transparent !important; }
 @keyframes l-bob { 50% { translate: 0 -12px; } }
 
-/* ---------- Counters strip (overlaps the hero) ---------- */
-.l-stats {
-  position: relative; z-index: 3; max-width: 1100px; margin: -46px auto 0; padding: 0 40px;
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
-}
-.l-stats::before { content: ''; position: absolute; inset: 0 40px; z-index: -1; border-radius: 20px; background: var(--surface); border: 1px solid var(--border); box-shadow: 0 24px 60px -24px rgba(30, 41, 99, 0.35); }
-.l-stat { padding: 24px 18px; text-align: center; position: relative; }
-.l-stat + .l-stat::before { content: ''; position: absolute; left: 0; top: 24px; bottom: 24px; width: 1px; background: var(--border); }
-.l-stat b { display: block; font-size: 36px; font-weight: 800; letter-spacing: -0.03em; background: var(--l-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
-.l-stat span { color: var(--muted); font-size: 13.5px; }
-
 /* ---------- Scroll reveal ---------- */
 .landing [data-reveal] { opacity: 0; }
 .landing [data-reveal].in { opacity: 1; animation: l-rise 0.85s var(--l-ease) var(--d, 0ms) backwards; }
@@ -206,10 +195,6 @@
   .l-hero-grid { grid-template-columns: 1fr; padding: 26px 20px 10px; gap: 20px; }
   .l-hero h1 { font-size: 36px; }
   .l-hero p { font-size: 16px; }
-  .l-stats { grid-template-columns: repeat(2, 1fr); padding: 0 20px; margin-top: -40px; }
-  .l-stats::before { inset: 0 20px; }
-  .l-stat:nth-child(3)::before { display: none; }
-  .l-stat b { font-size: 30px; }
   .l-section { padding: 64px 20px 20px; }
   .l-features { grid-template-columns: 1fr 1fr; }
   .l-h2 { font-size: 26px; margin-bottom: 28px; }

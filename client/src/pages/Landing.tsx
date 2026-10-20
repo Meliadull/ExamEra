@@ -247,12 +247,6 @@ export function Landing() {
     { icon: <ScrollText />, k: 'f5' },
     { icon: <Smartphone />, k: 'f6' },
   ];
-  const stats = [
-    { to: 5, suffix: '', k: 'stat1' },
-    { to: 4, suffix: '', k: 'stat2' },
-    { to: 15, suffix: ' s', k: 'stat3' },
-    { to: 100, suffix: '%', k: 'stat4' },
-  ];
   const subjects = t('landing.subjects').split('|');
   const flow = ['flow1', 'flow2', 'flow3', 'flow4', 'flow5', 'flow6'];
   const words = t('landing.heroTitle1').split(' ');
@@ -329,17 +323,6 @@ export function Landing() {
           </div>
         </section>
       </header>
-
-      <section className="l-stats">
-        {stats.map((s, i) => (
-          <div key={s.k} className="l-stat" data-reveal style={{ '--d': `${i * 90}ms` } as CSSProperties}>
-            <b>
-              <CountUp to={s.to} suffix={s.suffix} delay={i * 90} />
-            </b>
-            <span>{t(`landing.${s.k}`)}</span>
-          </div>
-        ))}
-      </section>
 
       <section className="l-subjects" aria-label={t('landing.subjectsTitle')}>
         <p className="l-subjects-title" data-reveal>
