@@ -160,6 +160,16 @@ export const ru: Record<string, string> = {
   'landing.flow5': 'Аналитика',
   'landing.flow6': 'Отчётность и аудит',
   'landing.footer': 'Платформа электронного тестирования',
+  'landing.chipChecked': "Проверено автоматически",
+  'landing.chipTrend': "рост среднего балла",
+  'landing.chipScore': "Отличный результат",
+  'landing.stat1': "типов вопросов",
+  'landing.stat2': "роли: ученик, учитель, админ, аудитор",
+  'landing.stat3': "интервал автосохранения",
+  'landing.stat4': "автоматическая проверка",
+  'landing.featuresTitle': "Всё, что нужно для экзамена",
+  'landing.ctaTitle': "Создайте первый тест уже сегодня",
+  'landing.ctaText': "Зарегистрируйтесь — создание, назначение и анализ результатов теста займут считанные минуты.",
 
   // Dashboard
   'dashboard.hello': 'Здравствуйте, {name}!',
