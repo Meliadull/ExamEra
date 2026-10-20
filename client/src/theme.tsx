@@ -38,7 +38,7 @@ export function setTheme(theme: Theme, origin?: { x: number; y: number }) {
   if (theme === getTheme()) return;
   if (reducedMotion.matches) return apply(theme);
 
-  const doc = document as Document & { startViewTransition?: (cb: () => void) => { ready: Promise<void> } };
+  const doc = document as Document & { startViewTransition?: (cb: () => void) => { ready: Promise<void>; skipTransition?: () => void } };
   if (doc.startViewTransition && origin) {
     const { x, y } = origin;
     const radius = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
@@ -49,9 +49,9 @@ export function setTheme(theme: Theme, origin?: { x: number; y: number }) {
         apply(theme);
       }
     };
-    doc
-      .startViewTransition(run)
-      .ready.then(() => {
+    const vt = doc.startViewTransition(run);
+    vt.ready
+      .then(() => {
         document.documentElement.animate(
           { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
           { duration: 550, easing: 'cubic-bezier(0.4, 0, 0.2, 1)', pseudoElement: '::view-transition-new(root)' },
@@ -60,6 +60,8 @@ export function setTheme(theme: Theme, origin?: { x: number; y: number }) {
       .catch(() => {});
     // The transition waits for the next rendered frame; never let the switch itself depend on it.
     setTimeout(run, 300);
+    // A transition that never finishes would keep swallowing clicks: end it after the animation.
+    setTimeout(() => vt.skipTransition?.(), 900);
     return;
   }
   const root = document.documentElement;
@@ -100,7 +102,11 @@ export function ThemeToggle() {
       className="theme-toggle"
       onClick={(e) => {
         const r = e.currentTarget.getBoundingClientRect();
-        setTheme(dark ? 'light' : 'dark', { x: r.left + r.width / 2, y: r.top + r.height / 2 });
+        // A mouse/touch click picks the half that was pressed (sun = light, moon = dark);
+        // the keyboard (detail === 0) simply switches.
+        const next: Theme = e.detail > 0 ? (e.clientX < r.left + r.width / 2 ? 'light' : 'dark') : dark ? 'light' : 'dark';
+        if (next === theme) return;
+        setTheme(next, { x: r.left + r.width / 2, y: r.top + r.height / 2 });
       }}
     >
       <Sun className="track-icon sun" aria-hidden />
