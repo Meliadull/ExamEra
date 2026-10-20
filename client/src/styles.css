@@ -424,7 +424,7 @@ table.table { width: 100%; border-collapse: collapse; }
 }
 
 /* ---------- Dark theme ---------- */
-:root[data-theme='dark'], .l-dark {
+:root[data-theme='dark'] {
   color-scheme: dark;
   --bg: #0b1120;
   --surface: #121a2c;

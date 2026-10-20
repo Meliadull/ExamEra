@@ -19,7 +19,7 @@ import { useAuth } from '../auth';
 import { LangSwitch } from '../components/Layout';
 import { Logo } from '../components/Logo';
 import { useI18n } from '../i18n';
-import { ThemeToggle } from '../theme';
+import { ThemeToggle, useTheme } from '../theme';
 import './landing.css';
 
 const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -236,6 +236,7 @@ function LiveTestCard() {
 export function Landing() {
   const { t } = useI18n();
   const { user } = useAuth();
+  const theme = useTheme();
   const root = useRef<HTMLDivElement>(null);
   useReveal(root);
 
@@ -260,7 +261,7 @@ export function Landing() {
 
   return (
     <div className="landing" ref={root}>
-      <header className="l-hero l-dark">
+      <header className="l-hero l-band">
         <div className="l-bg" aria-hidden="true">
           <span className="l-orb o1" />
           <span className="l-orb o2" />
@@ -269,7 +270,7 @@ export function Landing() {
         </div>
 
         <nav className="l-nav">
-          <Logo onDark style={{ padding: 0 }} />
+          <Logo onDark={theme === 'dark'} style={{ padding: 0 }} />
           <div className="row" style={{ marginLeft: 'auto' }}>
             <ThemeToggle />
             <LangSwitch />
@@ -365,7 +366,7 @@ export function Landing() {
         </div>
       </section>
 
-      <section className="l-flow l-dark">
+      <section className="l-flow l-band">
         <div className="l-bg" aria-hidden="true">
           <span className="l-orb o2" />
           <span className="l-grid" />
