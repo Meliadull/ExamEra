@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api, del, patch, useApi } from '../api';
 import { useMe } from '../auth';
-import { useGroups } from '../components/common';
+import { GroupSelect, ResetFilters, SubjectSelect, TeacherSelect, useGroups } from '../components/common';
 import { Badge, Button, Card, Check, Confirm, Empty, Field, Input, Loader, Modal, PageHead, PctBadge, Select, Seg, ToggleRow, useAction } from '../components/ui';
 import { useFormat, useI18n } from '../i18n';
 
@@ -278,7 +278,12 @@ export function Assignments() {
   const { t } = useI18n();
   const me = useMe();
   const [state, setState] = useState<'' | 'active' | 'upcoming' | 'finished'>('');
-  const list = useApi<any[]>('/assignments', { state });
+  const [search, setSearch] = useState('');
+  const [subjectId, setSubjectId] = useState('');
+  const [groupId, setGroupId] = useState('');
+  const [teacherId, setTeacherId] = useState('');
+  const list = useApi<any[]>('/assignments', { state, search, subjectId, groupId, teacherId });
+  const filtered = !!(state || search || subjectId || groupId || teacherId);
   const [creating, setCreating] = useState(false);
   const counts = useMemo(() => list.data?.length ?? 0, [list.data]);
   return (
@@ -304,6 +309,20 @@ export function Assignments() {
             { id: 'upcoming', label: t('assign.state.upcoming') },
             { id: 'finished', label: t('assign.state.finished') },
           ]}
+        />
+        <Input className="search-input" placeholder={t('filters.searchAssignments')} value={search} onChange={(e) => setSearch(e.target.value)} />
+        <SubjectSelect value={subjectId} onChange={setSubjectId} />
+        <GroupSelect value={groupId} onChange={setGroupId} />
+        {me.role !== 'teacher' && <TeacherSelect value={teacherId} onChange={setTeacherId} />}
+        <ResetFilters
+          active={filtered}
+          onReset={() => {
+            setState('');
+            setSearch('');
+            setSubjectId('');
+            setGroupId('');
+            setTeacherId('');
+          }}
         />
         <span className="small muted">{t('common.totalN', { n: counts })}</span>
       </div>

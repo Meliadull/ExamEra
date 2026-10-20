@@ -4,7 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { api, useApi } from '../api';
 import { useMe } from '../auth';
 import { TrendChart } from '../components/charts';
-import { Badge, Button, Card, Empty, ErrorBox, Loader, Modal, PageHead, PctBadge, Stat, Tabs, type Tone } from '../components/ui';
+import { distinct, matchesSearch, ResetFilters, ValueSelect } from '../components/common';
+import { Badge, Button, Card, Empty, ErrorBox, Input, Loader, Modal, PageHead, PctBadge, Select, Stat, Tabs, type Tone } from '../components/ui';
 import { useFormat, useI18n } from '../i18n';
 
 export interface MyAssignment {
@@ -222,15 +223,32 @@ export function MyTests() {
   const state = useApi<MyAssignment[]>('/student/tests');
   const [tab, setTab] = useState<MyAssignment['status']>('available');
   const [starting, setStarting] = useState<MyAssignment | null>(null);
+  const [search, setSearch] = useState('');
+  const [subject, setSubject] = useState('');
+  const active = !!(search || subject);
   return (
     <>
       <PageHead title={t('student.myTests')} subtitle={t('student.myTestsSubtitle')} />
       <Loader state={state}>
-        {(list) => {
+        {(all) => {
+          const list = all.filter((a) => (!subject || a.subject_name === subject) && matchesSearch(search, a.title, a.topic, a.subject_name));
           const count = (s: string) => list.filter((a) => a.status === s).length;
           const shown = list.filter((a) => a.status === tab);
           return (
             <>
+              {all.length > 0 && (
+                <div className="filters">
+                  <Input className="search-input" placeholder={t('filters.searchTests')} value={search} onChange={(e) => setSearch(e.target.value)} />
+                  <ValueSelect value={subject} onChange={setSubject} options={distinct(all.map((a) => a.subject_name))} allLabel={t('filters.allSubjects')} />
+                  <ResetFilters
+                    active={active}
+                    onReset={() => {
+                      setSearch('');
+                      setSubject('');
+                    }}
+                  />
+                </div>
+              )}
               <Tabs
                 value={tab}
                 onChange={setTab}
@@ -243,7 +261,7 @@ export function MyTests() {
                   ))}
                 </div>
               ) : (
-                <Empty title={t('student.emptyTab')} />
+                <Empty title={active ? t('common.nothingFound') : t('student.emptyTab')} />
               )}
             </>
           );
@@ -276,12 +294,22 @@ export function MyResults() {
   const { t } = useI18n();
   const f = useFormat();
   const state = useApi<MyAttempt[]>('/student/attempts');
+  const [search, setSearch] = useState('');
+  const [subject, setSubject] = useState('');
+  const [outcome, setOutcome] = useState('');
+  const active = !!(search || subject || outcome);
   return (
     <>
       <PageHead title={t('nav.results')} subtitle={t('student.resultsSubtitle')} />
       <Loader state={state}>
         {(list) => {
-          const done = list.filter((a) => a.status === 'completed');
+          const completed = list.filter((a) => a.status === 'completed');
+          const done = completed.filter(
+            (a) =>
+              (!subject || a.subject_name === subject) &&
+              matchesSearch(search, a.title, a.subject_name) &&
+              (!outcome || (outcome === 'hidden' ? !a.show_result : !!a.show_result && (outcome === 'passed') === !!a.passed)),
+          );
           const visible = done.filter((a) => a.show_result && a.percentage != null);
           const avg = visible.length ? visible.reduce((s, a) => s + (a.percentage ?? 0), 0) / visible.length : null;
           return (
@@ -291,6 +319,26 @@ export function MyResults() {
                 <Stat icon={<Trophy />} tone="blue" value={f.pct(avg)} label={t('dashboard.avgResult')} />
                 <Stat icon={<XCircle />} tone="red" value={visible.filter((a) => !a.passed).length} label={t('student.notPassed')} />
               </div>
+              {completed.length > 0 && (
+                <div className="filters" style={{ marginBottom: 0 }}>
+                  <Input className="search-input" placeholder={t('filters.searchTests')} value={search} onChange={(e) => setSearch(e.target.value)} />
+                  <ValueSelect value={subject} onChange={setSubject} options={distinct(completed.map((a) => a.subject_name))} allLabel={t('filters.allSubjects')} />
+                  <Select value={outcome} onChange={(e) => setOutcome(e.target.value)} aria-label={t('common.result')}>
+                    <option value="">{t('results.anyStatus')}</option>
+                    <option value="passed">{t('result.passed')}</option>
+                    <option value="failed">{t('result.failed')}</option>
+                    <option value="hidden">{t('student.resultHidden')}</option>
+                  </Select>
+                  <ResetFilters
+                    active={active}
+                    onReset={() => {
+                      setSearch('');
+                      setSubject('');
+                      setOutcome('');
+                    }}
+                  />
+                </div>
+              )}
               {done.length ? (
                 <div className="grid g2">
                   {done.map((a) => (
@@ -317,6 +365,10 @@ export function MyResults() {
                     </Link>
                   ))}
                 </div>
+              ) : active ? (
+                <Card>
+                  <Empty title={t('common.nothingFound')} />
+                </Card>
               ) : (
                 <Card>
                   <Empty title={t('student.noResults')} action={<Link to="/app/my-tests" className="btn primary">{t('student.myTests')}</Link>} />
@@ -334,58 +386,90 @@ export function History() {
   const { t } = useI18n();
   const f = useFormat();
   const state = useApi<MyAttempt[]>('/student/attempts');
+  const [search, setSearch] = useState('');
+  const [subject, setSubject] = useState('');
+  const [status, setStatus] = useState('');
+  const active = !!(search || subject || status);
   return (
     <>
       <PageHead title={t('nav.history')} subtitle={t('student.historySubtitle')} />
       <Loader state={state}>
-        {(list) =>
-          list.length ? (
-            <Card flush>
-              <div className="table-wrap">
-                <table className="table">
-                  <thead>
-                    <tr>
-                      <th>{t('common.test')}</th>
-                      <th>{t('common.subject')}</th>
-                      <th>{t('history.started')}</th>
-                      <th>{t('history.finished')}</th>
-                      <th>{t('result.time')}</th>
-                      <th>{t('result.score')}</th>
-                      <th>{t('common.result')}</th>
-                      <th>{t('common.status')}</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {list.map((a) => (
-                      <tr key={a.id}>
-                        <td className="bold">
-                          {a.status === 'completed' ? <Link to={`/app/attempts/${a.id}/result`}>{a.title}</Link> : <Link to={`/app/attempt/${a.id}`}>{a.title}</Link>}
-                        </td>
-                        <td>{a.subject_name}</td>
-                        <td className="nowrap">{f.dateTime(a.started_at)}</td>
-                        <td className="nowrap">{f.dateTime(a.completed_at)}</td>
-                        <td>{f.duration(a.duration_sec)}</td>
-                        <td>{a.score != null ? `${a.score} / ${a.max_score}` : '—'}</td>
-                        <td>{a.show_result ? <PctBadge value={a.percentage} /> : <Badge>{t('student.resultHidden')}</Badge>}</td>
-                        <td>
-                          {a.status === 'in_progress' ? (
-                            <Badge tone="purple">{t('student.inProgress')}</Badge>
-                          ) : (
-                            <Badge tone="gray">{t(`finish.${a.finish_reason ?? 'manual'}`)}</Badge>
-                          )}
-                        </td>
-                      </tr>
+        {(all) => {
+          const reason = (a: MyAttempt) => (a.status === 'in_progress' ? 'in_progress' : (a.finish_reason ?? 'manual'));
+          const list = all.filter((a) => (!subject || a.subject_name === subject) && (!status || reason(a) === status) && matchesSearch(search, a.title, a.subject_name));
+          return (
+            <>
+              {all.length > 0 && (
+                <div className="filters">
+                  <Input className="search-input" placeholder={t('filters.searchTests')} value={search} onChange={(e) => setSearch(e.target.value)} />
+                  <ValueSelect value={subject} onChange={setSubject} options={distinct(all.map((a) => a.subject_name))} allLabel={t('filters.allSubjects')} />
+                  <Select value={status} onChange={(e) => setStatus(e.target.value)} aria-label={t('common.status')}>
+                    <option value="">{t('results.anyStatus')}</option>
+                    {distinct(all.map(reason)).map((r) => (
+                      <option key={r} value={r}>
+                        {r === 'in_progress' ? t('student.inProgress') : t(`finish.${r}`)}
+                      </option>
                     ))}
-                  </tbody>
-                </table>
-              </div>
-            </Card>
-          ) : (
-            <Card>
-              <Empty title={t('student.noResults')} />
-            </Card>
-          )
-        }
+                  </Select>
+                  <ResetFilters
+                    active={active}
+                    onReset={() => {
+                      setSearch('');
+                      setSubject('');
+                      setStatus('');
+                    }}
+                  />
+                </div>
+              )}
+              {list.length ? (
+                <Card flush>
+                  <div className="table-wrap">
+                    <table className="table">
+                      <thead>
+                        <tr>
+                          <th>{t('common.test')}</th>
+                          <th>{t('common.subject')}</th>
+                          <th>{t('history.started')}</th>
+                          <th>{t('history.finished')}</th>
+                          <th>{t('result.time')}</th>
+                          <th>{t('result.score')}</th>
+                          <th>{t('common.result')}</th>
+                          <th>{t('common.status')}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {list.map((a) => (
+                          <tr key={a.id}>
+                            <td className="bold">
+                              {a.status === 'completed' ? <Link to={`/app/attempts/${a.id}/result`}>{a.title}</Link> : <Link to={`/app/attempt/${a.id}`}>{a.title}</Link>}
+                            </td>
+                            <td>{a.subject_name}</td>
+                            <td className="nowrap">{f.dateTime(a.started_at)}</td>
+                            <td className="nowrap">{f.dateTime(a.completed_at)}</td>
+                            <td>{f.duration(a.duration_sec)}</td>
+                            <td>{a.score != null ? `${a.score} / ${a.max_score}` : '—'}</td>
+                            <td>{a.show_result ? <PctBadge value={a.percentage} /> : <Badge>{t('student.resultHidden')}</Badge>}</td>
+                            <td>
+                              {a.status === 'in_progress' ? (
+                                <Badge tone="purple">{t('student.inProgress')}</Badge>
+                              ) : (
+                                <Badge tone="gray">{t(`finish.${a.finish_reason ?? 'manual'}`)}</Badge>
+                              )}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </Card>
+              ) : (
+                <Card>
+                  <Empty title={active ? t('common.nothingFound') : t('student.noResults')} />
+                </Card>
+              )}
+            </>
+          );
+        }}
       </Loader>
     </>
   );

@@ -2,8 +2,8 @@ import { BookOpen, Pencil, Plus, Trash2, X } from 'lucide-react';
 import { useState } from 'react';
 import { api, del, patch, put, useApi } from '../api';
 import { useMe } from '../auth';
-import { useSubjects } from '../components/common';
-import { Button, Card, Check, Confirm, Empty, Field, Input, Loader, Modal, PageHead, PctBadge, Textarea, useAction } from '../components/ui';
+import { matchesSearch, ResetFilters, useSubjects } from '../components/common';
+import { Button, Card, Check, Confirm, Empty, Field, Input, Loader, Modal, PageHead, PctBadge, Select, Textarea, useAction } from '../components/ui';
 import { useI18n } from '../i18n';
 import type { Subject } from '../types';
 
@@ -136,7 +136,10 @@ export function Subjects() {
   const [editing, setEditing] = useState<Subject | 'new' | null>(null);
   const [deleting, setDeleting] = useState<Subject | null>(null);
   const [topicsOf, setTopicsOf] = useState<Subject | null>(null);
+  const [search, setSearch] = useState('');
+  const [staffing, setStaffing] = useState('');
   const isAdmin = me.role === 'admin';
+  const filtered = !!(search || staffing);
   return (
     <>
       <PageHead
@@ -151,9 +154,33 @@ export function Subjects() {
         }
       />
       {me.role === 'teacher' && <div className="alert info mb">{t('subjects.adminManaged')}</div>}
+      {me.role !== 'teacher' || (list.data?.length ?? 0) > 3 ? (
+        <div className="filters">
+          <Input className="search-input" placeholder={t('filters.searchSubjects')} value={search} onChange={(e) => setSearch(e.target.value)} />
+          {me.role !== 'teacher' && (
+            <Select value={staffing} onChange={(e) => setStaffing(e.target.value)} aria-label={t('groups.teachers')}>
+              <option value="">{t('filters.anyTeacher')}</option>
+              <option value="with">{t('filters.withTeacher')}</option>
+              <option value="without">{t('filters.withoutTeacher')}</option>
+            </Select>
+          )}
+          <ResetFilters
+            active={filtered}
+            onReset={() => {
+              setSearch('');
+              setStaffing('');
+            }}
+          />
+        </div>
+      ) : null}
       <Loader state={list}>
-        {(items) =>
-          items.length ? (
+        {(all) => {
+          const items = all.filter(
+            (s) =>
+              (!staffing || (staffing === 'with') === !!s.teachers) &&
+              matchesSearch(search, s.name, s.description, ...s.topics),
+          );
+          return items.length ? (
             <div className="grid g3">
               {items.map((s) => {
                 return (
@@ -208,10 +235,10 @@ export function Subjects() {
             </div>
           ) : (
             <Card>
-              <Empty title={me.role === 'teacher' ? t('subjects.noneAssigned') : t('subjects.empty')} />
+              <Empty title={filtered && all.length ? t('common.nothingFound') : me.role === 'teacher' ? t('subjects.noneAssigned') : t('subjects.empty')} />
             </Card>
-          )
-        }
+          );
+        }}
       </Loader>
       {editing && (
         <SubjectForm

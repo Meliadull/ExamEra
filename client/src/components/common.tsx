@@ -1,3 +1,4 @@
+import { X } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { useApi } from '../api';
 import { useI18n, type TFn } from '../i18n';
@@ -95,4 +96,56 @@ export function auditActionLabel(t: TFn, action: string) {
   const key = `audit.action.${action}`;
   const s = t(key);
   return s === key ? action : s;
+}
+
+/** Case-insensitive "contains" over several fields (client-side filtering of short lists). */
+export function matchesSearch(query: string, ...fields: (string | null | undefined)[]) {
+  const q = query.trim().toLowerCase();
+  return !q || fields.some((f) => f?.toLowerCase().includes(q));
+}
+
+/** Distinct, sorted non-empty values of a list — options for a client-side filter. */
+export function distinct(values: (string | null | undefined)[]) {
+  return [...new Set(values.filter((v): v is string => !!v))].sort((a, b) => a.localeCompare(b));
+}
+
+/** A select over plain string options with an "all" entry. */
+export function ValueSelect({ value, onChange, options, allLabel, label }: { value: string; onChange: (v: string) => void; options: string[]; allLabel: string; label?: string }) {
+  return (
+    <Select value={value} onChange={(e) => onChange(e.target.value)} aria-label={label ?? allLabel}>
+      <option value="">{allLabel}</option>
+      {options.map((o) => (
+        <option key={o} value={o}>
+          {o}
+        </option>
+      ))}
+    </Select>
+  );
+}
+
+/** "Clear filters" link-button, shown only while some filter is set. */
+export function ResetFilters({ active, onReset }: { active: boolean; onReset: () => void }) {
+  const { t } = useI18n();
+  if (!active) return null;
+  return (
+    <button type="button" className="btn ghost sm" onClick={onReset}>
+      <X /> {t('filters.reset')}
+    </button>
+  );
+}
+
+/** Teacher filter for administrators and auditors (teachers only ever see their own items). */
+export function TeacherSelect({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  const { t } = useI18n();
+  const { data } = useApi<{ items: { id: number; first_name: string; last_name: string }[] }>('/users', { role: 'teacher', pageSize: 200, sort: 'name' });
+  return (
+    <Select value={value} onChange={(e) => onChange(e.target.value)} aria-label={t('filters.allTeachers')}>
+      <option value="">{t('filters.allTeachers')}</option>
+      {data?.items.map((u) => (
+        <option key={u.id} value={u.id}>
+          {u.last_name} {u.first_name}
+        </option>
+      ))}
+    </Select>
+  );
 }

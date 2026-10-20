@@ -230,6 +230,20 @@ describe('search & backups', () => {
     }
   });
 
+  it('assignment list filters by search, subject and teacher', async () => {
+    const a = await login('admin');
+    const all = (await call('GET', '/assignments', { cookie: a })).data as any[];
+    assert.ok(all.length > 0);
+    const sample = all[0];
+    const bySearch = (await call('GET', `/assignments?search=${encodeURIComponent(sample.test_title.slice(0, 5).toUpperCase())}`, { cookie: a })).data as any[];
+    assert.ok(bySearch.some((x) => x.id === sample.id));
+    const bySubject = (await call('GET', `/assignments?subjectId=${(await call('GET', `/tests/${sample.test_id}`, { cookie: a })).data.subject_id}`, { cookie: a })).data as any[];
+    assert.ok(bySubject.length && bySubject.every((x) => x.subject_name === sample.subject_name));
+    const byTeacher = (await call('GET', `/assignments?teacherId=${sample.teacher_id}`, { cookie: a })).data as any[];
+    assert.ok(byTeacher.length && byTeacher.every((x) => x.teacher_id === sample.teacher_id));
+    assert.equal(((await call('GET', '/assignments?search=zzzz-nothing', { cookie: a })).data as any[]).length, 0);
+  });
+
   it('admins create and list backups; others cannot', async () => {
     const a = await login('admin');
     const created = await call('POST', '/admin/backups', { cookie: a });

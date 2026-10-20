@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { api, del, downloadUrl, patch, put, useApi } from '../api';
 import { useMe } from '../auth';
 import { Bars, DistributionDonut, TrendChart } from '../components/charts';
-import { useSubjects } from '../components/common';
+import { distinct, matchesSearch, ResetFilters, useSubjects, ValueSelect } from '../components/common';
 import { Avatar, Badge, Button, Card, Check, Confirm, Empty, Field, Input, Loader, Modal, PageHead, PctBadge, Select, Stat, Tabs, useAction } from '../components/ui';
 import { useFormat, useI18n } from '../i18n';
 
@@ -86,8 +86,13 @@ export function Groups() {
   const me = useMe();
   const nav = useNavigate();
   const [search, setSearch] = useState('');
-  const list = useApi<any[]>('/groups', { search });
+  const [status, setStatus] = useState('');
+  const [year, setYear] = useState('');
+  const [leader, setLeader] = useState('');
+  const [sort, setSort] = useState('name');
+  const list = useApi<any[]>('/groups', { search, status });
   const [creating, setCreating] = useState(false);
+  const filtered = !!(search || status || year || leader);
   return (
     <>
       <PageHead
@@ -103,14 +108,50 @@ export function Groups() {
       />
       {me.role === 'teacher' && <div className="alert info mb">{t('groups.adminManaged')}</div>}
       <div className="filters">
-        <Input className="search-input" placeholder={t('common.search')} value={search} onChange={(e) => setSearch(e.target.value)} />
+        <Input className="search-input" placeholder={t('filters.searchGroups')} value={search} onChange={(e) => setSearch(e.target.value)} />
+        <Select value={status} onChange={(e) => setStatus(e.target.value)} aria-label={t('common.status')}>
+          <option value="">{t('results.anyStatus')}</option>
+          <option value="active">{t('groups.active')}</option>
+          <option value="archived">{t('groups.archived')}</option>
+        </Select>
+        <ValueSelect value={year} onChange={setYear} options={distinct((list.data ?? []).map((g) => g.academic_year))} allLabel={t('filters.allYears')} />
+        {me.role !== 'teacher' && (
+          <Select value={leader} onChange={(e) => setLeader(e.target.value)} aria-label={t('groups.leader')}>
+            <option value="">{t('filters.anyLeader')}</option>
+            <option value="with">{t('filters.withLeader')}</option>
+            <option value="without">{t('filters.withoutLeader')}</option>
+          </Select>
+        )}
+        <Select value={sort} onChange={(e) => setSort(e.target.value)} aria-label={t('filters.sort')}>
+          <option value="name">{t('filters.sortName')}</option>
+          <option value="avg">{t('filters.sortAvg')}</option>
+          <option value="students">{t('filters.sortStudents')}</option>
+        </Select>
+        <ResetFilters
+          active={filtered}
+          onReset={() => {
+            setSearch('');
+            setStatus('');
+            setYear('');
+            setLeader('');
+          }}
+        />
       </div>
       <Loader state={list}>
-        {(items) => {
+        {(all) => {
+          const items = all
+            .filter((g) => (!year || g.academic_year === year) && (!leader || (leader === 'with') === !!g.teachers))
+            .sort((a, b) =>
+              sort === 'avg'
+                ? (b.avg_percentage ?? -1) - (a.avg_percentage ?? -1)
+                : sort === 'students'
+                  ? b.student_count - a.student_count
+                  : String(a.name).localeCompare(String(b.name), undefined, { numeric: true }),
+            );
           if (!items.length) {
             return (
               <Card>
-                <Empty title={t('groups.empty')} />
+                <Empty title={filtered ? t('common.nothingFound') : t('groups.empty')} />
               </Card>
             );
           }
@@ -259,6 +300,10 @@ export function GroupDetail() {
   const [editing, setEditing] = useState(false);
   const [links, setLinks] = useState(false);
   const [removing, setRemoving] = useState<any>(null);
+  const [stSearch, setStSearch] = useState('');
+  const [stStatus, setStStatus] = useState('');
+  const [testSearch, setTestSearch] = useState('');
+  const [testSubject, setTestSubject] = useState('');
 
   return (
     <Loader state={group}>
@@ -311,6 +356,23 @@ export function GroupDetail() {
               { id: 'tests', label: t('nav.tests'), count: stats.data?.tests.length },
             ]}
           />
+          {tab === 'students' && g.students.length > 0 && (
+            <div className="filters">
+              <Input className="search-input" placeholder={t('common.searchStudents')} value={stSearch} onChange={(e) => setStSearch(e.target.value)} />
+              <Select value={stStatus} onChange={(e) => setStStatus(e.target.value)} aria-label={t('common.status')}>
+                <option value="">{t('results.anyStatus')}</option>
+                <option value="active">{t('userStatus.active')}</option>
+                <option value="blocked">{t('userStatus.blocked')}</option>
+              </Select>
+              <ResetFilters
+                active={!!(stSearch || stStatus)}
+                onReset={() => {
+                  setStSearch('');
+                  setStStatus('');
+                }}
+              />
+            </div>
+          )}
           {tab === 'students' && (
             <Card flush>
               {g.students.length ? (
@@ -327,7 +389,13 @@ export function GroupDetail() {
                       </tr>
                     </thead>
                     <tbody>
-                      {g.students.map((s: any) => (
+                      {g.students
+                        .filter(
+                          (s: any) =>
+                            (!stStatus || s.status === stStatus) &&
+                            matchesSearch(stSearch, `${s.last_name} ${s.first_name}`, `${s.first_name} ${s.last_name}`, s.phone, s.email),
+                        )
+                        .map((s: any) => (
                         <tr key={s.id} className="click" onClick={() => nav(`/app/students/${s.id}`)}>
                           <td>
                             <div className="row">
@@ -424,6 +492,19 @@ export function GroupDetail() {
               )}
             </Loader>
           )}
+          {tab === 'tests' && (stats.data?.tests.length ?? 0) > 0 && (
+            <div className="filters">
+              <Input className="search-input" placeholder={t('filters.searchTests')} value={testSearch} onChange={(e) => setTestSearch(e.target.value)} />
+              <ValueSelect value={testSubject} onChange={setTestSubject} options={distinct(stats.data.tests.map((x: any) => x.subject_name))} allLabel={t('filters.allSubjects')} />
+              <ResetFilters
+                active={!!(testSearch || testSubject)}
+                onReset={() => {
+                  setTestSearch('');
+                  setTestSubject('');
+                }}
+              />
+            </div>
+          )}
           {tab === 'tests' && (
             <Card flush>
               <Loader state={stats}>
@@ -443,7 +524,9 @@ export function GroupDetail() {
                           </tr>
                         </thead>
                         <tbody>
-                          {s.tests.map((x: any) => {
+                          {s.tests
+                            .filter((x: any) => (!testSubject || x.subject_name === testSubject) && matchesSearch(testSearch, x.title, x.teacher_name))
+                            .map((x: any) => {
                             const canOpen = me.role !== 'teacher' || x.teacher_id === me.id;
                             return (
                               <tr key={x.id} className={canOpen ? 'click' : undefined} onClick={canOpen ? () => nav(`/app/tests/${x.id}`) : undefined}>

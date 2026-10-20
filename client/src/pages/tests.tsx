@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { api, del, downloadUrl, useApi } from '../api';
 import { useMe } from '../auth';
 import { Bars, DistributionDonut } from '../components/charts';
-import { OptionText, SubjectSelect, TestStatusBadge } from '../components/common';
+import { distinct, matchesSearch, OptionText, ResetFilters, SubjectSelect, TeacherSelect, TestStatusBadge, ValueSelect } from '../components/common';
 import { RichText } from '../components/RichText';
 import { Badge, Button, Card, Confirm, Empty, Input, Loader, PageHead, PctBadge, Progress, Select, Stat, Tabs, useAction } from '../components/ui';
 import { useFormat, useI18n } from '../i18n';
@@ -67,7 +67,8 @@ export function TestsList() {
   const [search, setSearch] = useState('');
   const [subjectId, setSubjectId] = useState('');
   const [status, setStatus] = useState('');
-  const list = useApi<any[]>('/tests', { search, subjectId, status });
+  const [teacherId, setTeacherId] = useState('');
+  const list = useApi<any[]>('/tests', { search, subjectId, status, teacherId });
   const actions = useTestActions(list.reload);
   const [deleting, setDeleting] = useState<any>(null);
   const [importing, setImporting] = useState(false);
@@ -102,6 +103,16 @@ export function TestsList() {
             </option>
           ))}
         </Select>
+        {me.role !== 'teacher' && <TeacherSelect value={teacherId} onChange={setTeacherId} />}
+        <ResetFilters
+          active={!!(search || subjectId || status || teacherId)}
+          onReset={() => {
+            setSearch('');
+            setSubjectId('');
+            setStatus('');
+            setTeacherId('');
+          }}
+        />
       </div>
       <Card flush>
         <Loader state={list}>
@@ -390,60 +401,7 @@ export function TestDetail() {
                 )}
               </Loader>
             )}
-            {tab === 'participants' && (
-              <Card flush>
-                <Loader state={stats}>
-                  {(s) =>
-                    s.attempts.length ? (
-                      <div className="table-wrap">
-                        <table className="table">
-                          <thead>
-                            <tr>
-                              <th>#</th>
-                              <th>{t('common.student')}</th>
-                              <th>{t('common.group')}</th>
-                              <th>{t('result.score')}</th>
-                              <th>{t('common.result')}</th>
-                              <th>{t('result.correct')}</th>
-                              <th>{t('result.time')}</th>
-                              <th>{t('common.date')}</th>
-                              <th>{t('common.status')}</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {s.attempts.map((a: any, i: number) => (
-                              <tr key={a.id} className="click" onClick={() => nav(`/app/attempts/${a.id}/result`)}>
-                                <td className="muted">{i + 1}</td>
-                                <td className="bold">
-                                  {a.last_name} {a.first_name}
-                                </td>
-                                <td>{a.group_name}</td>
-                                <td>
-                                  {a.score} / {a.max_score}
-                                </td>
-                                <td>
-                                  <PctBadge value={a.percentage} />
-                                </td>
-                                <td>
-                                  {a.correct_count} / {a.correct_count + a.wrong_count + a.skipped_count}
-                                </td>
-                                <td>{f.duration(a.duration_sec)}</td>
-                                <td className="nowrap">{f.dateTime(a.completed_at)}</td>
-                                <td>
-                                  <Badge tone={a.passed ? 'green' : 'red'}>{a.passed ? t('result.passed') : t('result.failed')}</Badge>
-                                </td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
-                      </div>
-                    ) : (
-                      <Empty title={t('testDetail.noParticipants')} />
-                    )
-                  }
-                </Loader>
-              </Card>
-            )}
+            {tab === 'participants' && <Loader state={stats}>{(s) => <Participants attempts={s.attempts} />}</Loader>}
             {tab === 'questions' && <Loader state={stats}>{(s) => (s.attempts.length ? <QuestionAnalysis questions={s.questions} /> : <Card><Empty title={t('testDetail.noParticipants')} /></Card>)}</Loader>}
             {tab === 'assignments' && (
               <Card
@@ -530,5 +488,98 @@ export function TestDetail() {
         );
       }}
     </Loader>
+  );
+}
+
+/** Test participants with search, group and result filters. */
+function Participants({ attempts }: { attempts: any[] }) {
+  const { t } = useI18n();
+  const f = useFormat();
+  const nav = useNavigate();
+  const [search, setSearch] = useState('');
+  const [group, setGroup] = useState('');
+  const [outcome, setOutcome] = useState('');
+  const active = !!(search || group || outcome);
+  const shown = attempts.filter(
+    (a) =>
+      (!group || a.group_name === group) &&
+      (!outcome || (outcome === 'passed') === !!a.passed) &&
+      matchesSearch(search, `${a.last_name} ${a.first_name}`, `${a.first_name} ${a.last_name}`),
+  );
+  if (!attempts.length)
+    return (
+      <Card>
+        <Empty title={t('testDetail.noParticipants')} />
+      </Card>
+    );
+  return (
+    <>
+      <div className="filters">
+        <Input className="search-input" placeholder={t('common.searchStudents')} value={search} onChange={(e) => setSearch(e.target.value)} />
+        <ValueSelect value={group} onChange={setGroup} options={distinct(attempts.map((a) => a.group_name))} allLabel={t('filters.allGroups')} />
+        <Select value={outcome} onChange={(e) => setOutcome(e.target.value)} aria-label={t('common.result')}>
+          <option value="">{t('results.anyStatus')}</option>
+          <option value="passed">{t('result.passed')}</option>
+          <option value="failed">{t('result.failed')}</option>
+        </Select>
+        <ResetFilters
+          active={active}
+          onReset={() => {
+            setSearch('');
+            setGroup('');
+            setOutcome('');
+          }}
+        />
+        <span className="small muted">{t('common.totalN', { n: shown.length })}</span>
+      </div>
+      <Card flush>
+        {shown.length ? (
+          <div className="table-wrap">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>{t('common.student')}</th>
+                  <th>{t('common.group')}</th>
+                  <th>{t('result.score')}</th>
+                  <th>{t('common.result')}</th>
+                  <th>{t('result.correct')}</th>
+                  <th>{t('result.time')}</th>
+                  <th>{t('common.date')}</th>
+                  <th>{t('common.status')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {shown.map((a, i) => (
+                  <tr key={a.id} className="click" onClick={() => nav(`/app/attempts/${a.id}/result`)}>
+                    <td className="muted">{i + 1}</td>
+                    <td className="bold">
+                      {a.last_name} {a.first_name}
+                    </td>
+                    <td>{a.group_name}</td>
+                    <td>
+                      {a.score} / {a.max_score}
+                    </td>
+                    <td>
+                      <PctBadge value={a.percentage} />
+                    </td>
+                    <td>
+                      {a.correct_count} / {a.correct_count + a.wrong_count + a.skipped_count}
+                    </td>
+                    <td>{f.duration(a.duration_sec)}</td>
+                    <td className="nowrap">{f.dateTime(a.completed_at)}</td>
+                    <td>
+                      <Badge tone={a.passed ? 'green' : 'red'}>{a.passed ? t('result.passed') : t('result.failed')}</Badge>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          <Empty title={t('common.nothingFound')} />
+        )}
+      </Card>
+    </>
   );
 }

@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { downloadUrl, useApi } from '../api';
 import { Bars, TrendChart } from '../components/charts';
-import { GroupSelect } from '../components/common';
-import { Avatar, Badge, Button, Card, Empty, Input, Loader, PageHead, Pager, PctBadge, Stat, Tabs } from '../components/ui';
+import { distinct, GroupSelect, matchesSearch, ResetFilters, ValueSelect } from '../components/common';
+import { Avatar, Badge, Button, Card, Empty, Input, Loader, PageHead, Pager, PctBadge, Select, Stat, Tabs } from '../components/ui';
 import { useMe } from '../auth';
 import { useFormat, useI18n } from '../i18n';
 
@@ -13,14 +13,39 @@ export function Students() {
   const nav = useNavigate();
   const [search, setSearch] = useState('');
   const [groupId, setGroupId] = useState('');
+  const [status, setStatus] = useState('');
+  const [sort, setSort] = useState('name');
   const [page, setPage] = useState(1);
-  const list = useApi<any>('/users', { role: 'student', search, groupId, page });
+  const list = useApi<any>('/users', { role: 'student', search, groupId, status, sort, page });
+  const upd = (fn: (v: string) => void) => (v: string) => {
+    fn(v);
+    setPage(1);
+  };
   return (
     <>
       <PageHead title={t('nav.students')} subtitle={t('students.subtitle')} />
       <div className="filters">
         <Input className="search-input" placeholder={t('common.searchStudents')} value={search} onChange={(e) => { setSearch(e.target.value); setPage(1); }} />
-        <GroupSelect value={groupId} onChange={(v) => { setGroupId(v); setPage(1); }} />
+        <GroupSelect value={groupId} onChange={upd(setGroupId)} />
+        <Select value={status} onChange={(e) => upd(setStatus)(e.target.value)} aria-label={t('common.status')}>
+          <option value="">{t('results.anyStatus')}</option>
+          <option value="active">{t('userStatus.active')}</option>
+          <option value="blocked">{t('userStatus.blocked')}</option>
+        </Select>
+        <Select value={sort} onChange={(e) => upd(setSort)(e.target.value)} aria-label={t('filters.sort')}>
+          <option value="name">{t('filters.sortSurname')}</option>
+          <option value="registered">{t('filters.sortNewest')}</option>
+          <option value="login">{t('filters.sortLastLogin')}</option>
+        </Select>
+        <ResetFilters
+          active={!!(search || groupId || status)}
+          onReset={() => {
+            setSearch('');
+            setGroupId('');
+            setStatus('');
+            setPage(1);
+          }}
+        />
       </div>
       <Card flush>
         <Loader state={list}>
@@ -78,6 +103,9 @@ export function StudentCard() {
   const nav = useNavigate();
   const state = useApi<any>(`/analytics/students/${id}`);
   const [tab, setTab] = useState<'overview' | 'results'>('overview');
+  const [search, setSearch] = useState('');
+  const [subject, setSubject] = useState('');
+  const [outcome, setOutcome] = useState('');
   return (
     <Loader state={state}>
       {(d) => {
@@ -169,6 +197,26 @@ export function StudentCard() {
                 </Card>
               </div>
             ) : (
+              <>
+              {d.attempts.length > 0 && (
+                <div className="filters">
+                  <Input className="search-input" placeholder={t('filters.searchTests')} value={search} onChange={(e) => setSearch(e.target.value)} />
+                  <ValueSelect value={subject} onChange={setSubject} options={distinct(d.attempts.map((a: any) => a.subject_name))} allLabel={t('filters.allSubjects')} />
+                  <Select value={outcome} onChange={(e) => setOutcome(e.target.value)} aria-label={t('common.result')}>
+                    <option value="">{t('results.anyStatus')}</option>
+                    <option value="passed">{t('result.passed')}</option>
+                    <option value="failed">{t('result.failed')}</option>
+                  </Select>
+                  <ResetFilters
+                    active={!!(search || subject || outcome)}
+                    onReset={() => {
+                      setSearch('');
+                      setSubject('');
+                      setOutcome('');
+                    }}
+                  />
+                </div>
+              )}
               <Card flush>
                 {d.attempts.length ? (
                   <div className="table-wrap">
@@ -185,7 +233,9 @@ export function StudentCard() {
                         </tr>
                       </thead>
                       <tbody>
-                        {d.attempts.map((a: any) => (
+                        {d.attempts
+                          .filter((a: any) => (!subject || a.subject_name === subject) && (!outcome || (outcome === 'passed') === !!a.passed) && matchesSearch(search, a.title, a.subject_name))
+                          .map((a: any) => (
                           <tr key={a.id} className="click" onClick={() => nav(`/app/attempts/${a.id}/result`)}>
                             <td className="bold">{a.title}</td>
                             <td>{a.subject_name}</td>
@@ -209,6 +259,7 @@ export function StudentCard() {
                   <Empty title={t('student.noResults')} />
                 )}
               </Card>
+              </>
             )}
           </>
         );

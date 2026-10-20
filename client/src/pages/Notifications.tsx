@@ -1,8 +1,9 @@
 import { Bell, CheckCheck } from 'lucide-react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { api, useApi } from '../api';
 import { useAuth } from '../auth';
-import { Button, Card, Empty, Loader, PageHead } from '../components/ui';
+import { Button, Card, Empty, Loader, PageHead, Seg } from '../components/ui';
 import { useFormat, useI18n } from '../i18n';
 
 export function Notifications() {
@@ -11,6 +12,7 @@ export function Notifications() {
   const nav = useNavigate();
   const { setUnread } = useAuth();
   const list = useApi<any>('/notifications');
+  const [show, setShow] = useState<'all' | 'unread' | 'read'>('all');
   const open = async (n: any) => {
     if (!n.read_at) await api(`/notifications/${n.id}/read`, { method: 'POST' }).catch(() => null);
     setUnread(Math.max(0, (list.data?.unread ?? 1) - (n.read_at ? 0 : 1)));
@@ -33,11 +35,23 @@ export function Notifications() {
           </Button>
         }
       />
+      <div className="filters">
+        <Seg
+          value={show}
+          onChange={setShow}
+          options={[
+            { id: 'all', label: t('common.all') },
+            { id: 'unread', label: t('filters.unread') },
+            { id: 'read', label: t('filters.read') },
+          ]}
+        />
+      </div>
       <Card>
         <Loader state={list}>
-          {(d) =>
-            d.items.length ? (
-              d.items.map((n: any) => {
+          {(d) => {
+            const items = d.items.filter((n: any) => show === 'all' || (show === 'unread') === !n.read_at);
+            return items.length ? (
+              items.map((n: any) => {
                 const params = JSON.parse(n.params || '{}');
                 if (params.endsAt) params.endsAt = f.dateTime(params.endsAt);
                 return (
@@ -54,9 +68,9 @@ export function Notifications() {
                 );
               })
             ) : (
-              <Empty title={t('notifications.empty')} />
-            )
-          }
+              <Empty title={show === 'all' ? t('notifications.empty') : t('common.nothingFound')} />
+            );
+          }}
         </Loader>
       </Card>
     </>

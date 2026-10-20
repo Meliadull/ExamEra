@@ -32,6 +32,17 @@ assignmentsRouter.get('/', (req, res) => {
   if (!seesEverything(me)) w.add('t.teacher_id = ?', me.id);
   if (q.testId) w.add('asg.test_id = ?', int(q.testId));
   if (q.groupId) w.add('asg.group_id = ?', int(q.groupId));
+  if (q.subjectId) w.add('t.subject_id = ?', int(q.subjectId));
+  if (q.teacherId && seesEverything(me)) w.add('t.teacher_id = ?', int(q.teacherId));
+  if (q.search) {
+    const like = `%${String(q.search).toLowerCase()}%`;
+    w.add(
+      "(LOWER(t.title) LIKE ? OR LOWER(COALESCE(g.name, '')) LIKE ? OR LOWER(COALESCE(u.first_name || ' ' || u.last_name, '')) LIKE ?)",
+      like,
+      like,
+      like,
+    );
+  }
   const t = now();
   if (q.state === 'active') w.add('asg.starts_at <= ? AND asg.ends_at >= ?', t, t);
   if (q.state === 'upcoming') w.add('asg.starts_at > ?', t);

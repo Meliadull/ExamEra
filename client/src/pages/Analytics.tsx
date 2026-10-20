@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { downloadUrl, useApi } from '../api';
 import { useMe } from '../auth';
 import { Bars, DistributionDonut, TrendChart } from '../components/charts';
-import { GroupSelect, PeriodSelect, SubjectSelect, usePeriod } from '../components/common';
-import { Button, Card, Empty, Loader, PageHead, PctBadge, Select, Stat } from '../components/ui';
+import { GroupSelect, PeriodSelect, ResetFilters, SubjectSelect, TeacherSelect, usePeriod } from '../components/common';
+import { Button, Card, Empty, Loader, PageHead, PctBadge, Stat } from '../components/ui';
 import { useFormat, useI18n } from '../i18n';
 
 export function Analytics() {
@@ -16,7 +16,6 @@ export function Analytics() {
   const [subjectId, setSubjectId] = useState('');
   const [groupId, setGroupId] = useState('');
   const [teacherId, setTeacherId] = useState('');
-  const teachers = useApi<any>(me.role !== 'teacher' ? '/users' : null, { role: 'teacher', pageSize: 200 });
   const filters = { from, subjectId, groupId, teacherId };
   const state = useApi<any>('/analytics/overview', filters);
   const delta = (cur?: number | null, prev?: number | null) => (cur != null && prev != null ? cur - prev : null);
@@ -36,16 +35,16 @@ export function Analytics() {
         <PeriodSelect value={period} onChange={setPeriod} />
         <SubjectSelect value={subjectId} onChange={setSubjectId} />
         <GroupSelect value={groupId} onChange={setGroupId} />
-        {me.role !== 'teacher' && (
-          <Select value={teacherId} onChange={(e) => setTeacherId(e.target.value)}>
-            <option value="">{t('filters.allTeachers')}</option>
-            {teachers.data?.items.map((u: any) => (
-              <option key={u.id} value={u.id}>
-                {u.last_name} {u.first_name}
-              </option>
-            ))}
-          </Select>
-        )}
+        {me.role !== 'teacher' && <TeacherSelect value={teacherId} onChange={setTeacherId} />}
+        <ResetFilters
+          active={period !== '30' || !!(subjectId || groupId || teacherId)}
+          onReset={() => {
+            setPeriod('30');
+            setSubjectId('');
+            setGroupId('');
+            setTeacherId('');
+          }}
+        />
       </div>
       <Loader state={state}>
         {(d) => (

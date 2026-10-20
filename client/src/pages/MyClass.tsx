@@ -4,8 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { downloadUrl, useApi } from '../api';
 import { useMe } from '../auth';
 import { Bars, DistributionDonut, TrendChart } from '../components/charts';
-import { useGroups } from '../components/common';
-import { Avatar, Badge, Button, Card, Empty, Loader, PageHead, PctBadge, Progress, Select, Stat, Tabs } from '../components/ui';
+import { distinct, matchesSearch, ResetFilters, useGroups, ValueSelect } from '../components/common';
+import { Avatar, Badge, Button, Card, Empty, Input, Loader, PageHead, PctBadge, Progress, Select, Stat, Tabs } from '../components/ui';
 import { useFormat, useI18n } from '../i18n';
 
 interface ClassStudent {
@@ -45,6 +45,13 @@ export function MyClass() {
   }, [led, groupId]);
   const data = useApi<any>(groupId ? `/analytics/class/${groupId}` : null);
   const [tab, setTab] = useState<'overview' | 'students' | 'assignments'>('overview');
+  const [stSearch, setStSearch] = useState('');
+  const [stShow, setStShow] = useState('');
+  const [stSort, setStSort] = useState('name');
+  const [asSearch, setAsSearch] = useState('');
+  const [asSubject, setAsSubject] = useState('');
+  const [asTeacher, setAsTeacher] = useState('');
+  const [asState, setAsState] = useState('');
 
   if (groups.data && !led.length) {
     return (
@@ -157,6 +164,29 @@ export function MyClass() {
                 </div>
               )}
 
+              {tab === 'students' && students.length > 0 && (
+                <div className="filters">
+                  <Input className="search-input" placeholder={t('common.searchStudents')} value={stSearch} onChange={(e) => setStSearch(e.target.value)} />
+                  <Select value={stShow} onChange={(e) => setStShow(e.target.value)} aria-label={t('common.status')}>
+                    <option value="">{t('filters.allStudents')}</option>
+                    <option value="attention">{t('myClass.attention')}</option>
+                    <option value="missed">{t('filters.hasMissed')}</option>
+                    <option value="pending">{t('filters.hasPending')}</option>
+                  </Select>
+                  <Select value={stSort} onChange={(e) => setStSort(e.target.value)} aria-label={t('filters.sort')}>
+                    <option value="name">{t('filters.sortSurname')}</option>
+                    <option value="avgDesc">{t('filters.sortAvgDesc')}</option>
+                    <option value="avgAsc">{t('filters.sortAvgAsc')}</option>
+                  </Select>
+                  <ResetFilters
+                    active={!!(stSearch || stShow)}
+                    onReset={() => {
+                      setStSearch('');
+                      setStShow('');
+                    }}
+                  />
+                </div>
+              )}
               {tab === 'students' && (
                 <Card flush>
                   {students.length ? (
@@ -174,7 +204,18 @@ export function MyClass() {
                           </tr>
                         </thead>
                         <tbody>
-                          {students.map((s) => (
+                          {students
+                            .filter(
+                              (s) =>
+                                matchesSearch(stSearch, `${s.last_name} ${s.first_name}`, `${s.first_name} ${s.last_name}`) &&
+                                (!stShow || (stShow === 'attention' ? concerns(s, t).length > 0 : stShow === 'missed' ? s.missed > 0 : s.pending > 0)),
+                            )
+                            .sort((a, b) =>
+                              stSort === 'name'
+                                ? `${a.last_name} ${a.first_name}`.localeCompare(`${b.last_name} ${b.first_name}`)
+                                : ((a.avg_percentage ?? -1) - (b.avg_percentage ?? -1)) * (stSort === 'avgAsc' ? 1 : -1),
+                            )
+                            .map((s) => (
                             <tr key={s.id} className="click" onClick={() => nav(`/app/students/${s.id}`)}>
                               <td>
                                 <div className="row">
@@ -206,6 +247,28 @@ export function MyClass() {
                   <p className="small muted" style={{ margin: 0, padding: '14px 20px 0' }}>
                     {t('myClass.assignmentsHint')}
                   </p>
+                  {d.assignments.length > 0 && (
+                    <div className="filters" style={{ padding: '14px 20px 0', marginBottom: 0 }}>
+                      <Input className="search-input" placeholder={t('filters.searchTests')} value={asSearch} onChange={(e) => setAsSearch(e.target.value)} />
+                      <ValueSelect value={asSubject} onChange={setAsSubject} options={distinct(d.assignments.map((a: any) => a.subject_name))} allLabel={t('filters.allSubjects')} />
+                      <ValueSelect value={asTeacher} onChange={setAsTeacher} options={distinct(d.assignments.map((a: any) => a.teacher_name))} allLabel={t('filters.allTeachers')} />
+                      <Select value={asState} onChange={(e) => setAsState(e.target.value)} aria-label={t('common.status')}>
+                        <option value="">{t('results.anyStatus')}</option>
+                        <option value="active">{t('assign.state.active')}</option>
+                        <option value="upcoming">{t('assign.state.upcoming')}</option>
+                        <option value="finished">{t('assign.state.finished')}</option>
+                      </Select>
+                      <ResetFilters
+                        active={!!(asSearch || asSubject || asTeacher || asState)}
+                        onReset={() => {
+                          setAsSearch('');
+                          setAsSubject('');
+                          setAsTeacher('');
+                          setAsState('');
+                        }}
+                      />
+                    </div>
+                  )}
                   {d.assignments.length ? (
                     <div className="table-wrap">
                       <table className="table">
@@ -220,7 +283,15 @@ export function MyClass() {
                           </tr>
                         </thead>
                         <tbody>
-                          {d.assignments.map((a: any) => {
+                          {d.assignments
+                            .filter(
+                              (a: any) =>
+                                (!asSubject || a.subject_name === asSubject) &&
+                                (!asTeacher || a.teacher_name === asTeacher) &&
+                                (!asState || a.state === asState) &&
+                                matchesSearch(asSearch, a.title, a.subject_name),
+                            )
+                            .map((a: any) => {
                             const own = a.teacher_id === me.id;
                             const pct = a.student_count ? (a.completed_count / a.student_count) * 100 : 0;
                             return (
