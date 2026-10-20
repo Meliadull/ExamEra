@@ -166,6 +166,8 @@ export const uz: Record<string, string> = {
   'landing.featuresTitle': "Imtihon uchun kerakli hamma narsa",
   'landing.ctaTitle': "Birinchi testingizni bugun yarating",
   'landing.ctaText': "Ro'yxatdan o'ting — test yaratish, topshirish va natijalarni tahlil qilish bir necha daqiqada.",
+  'landing.subjectsTitle': "Istalgan fan bo‘yicha testlar",
+  'landing.subjects': "Matematika|Algebra|Geometriya|Fizika|Kimyo|Biologiya|Ona tili|Adabiyot|Ingliz tili|Rus tili|Tarix|Geografiya|Informatika|Iqtisodiyot|Huquq|Chizmachilik",
 
   'dashboard.hello': 'Assalomu alaykum, {name}!',
   'dashboard.teacherSubtitle': 'Bugun testlaringiz bilan nimalar bo‘lmoqda.',

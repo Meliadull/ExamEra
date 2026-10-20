@@ -1,6 +1,7 @@
 import {
   ArrowRight,
   BarChart3,
+  BookOpen,
   CheckCircle2,
   Clock,
   FileSpreadsheet,
@@ -252,6 +253,7 @@ export function Landing() {
     { to: 15, suffix: ' s', k: 'stat3' },
     { to: 100, suffix: '%', k: 'stat4' },
   ];
+  const subjects = t('landing.subjects').split('|');
   const flow = ['flow1', 'flow2', 'flow3', 'flow4', 'flow5', 'flow6'];
   const words = t('landing.heroTitle1').split(' ');
 
@@ -335,6 +337,26 @@ export function Landing() {
               <CountUp to={s.to} suffix={s.suffix} delay={i * 90} />
             </b>
             <span>{t(`landing.${s.k}`)}</span>
+          </div>
+        ))}
+      </section>
+
+      <section className="l-subjects" aria-label={t('landing.subjectsTitle')}>
+        <p className="l-subjects-title" data-reveal>
+          {t('landing.subjectsTitle')}
+        </p>
+        {[subjects, [...subjects].reverse()].map((row, r) => (
+          <div key={r} className={`l-marquee ${r ? 'reverse' : ''}`} aria-hidden={r ? 'true' : undefined}>
+            {/* The row is rendered twice so the loop has no seam. */}
+            {[0, 1].map((copy) => (
+              <div key={copy} className="l-marquee-track" aria-hidden={copy ? 'true' : undefined}>
+                {row.map((s, i) => (
+                  <span key={s} className={`l-subject c${(i + r * 3) % 5}`}>
+                    <BookOpen size={15} /> {s}
+                  </span>
+                ))}
+              </div>
+            ))}
           </div>
         ))}
       </section>
