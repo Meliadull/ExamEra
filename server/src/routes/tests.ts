@@ -173,7 +173,8 @@ testsRouter.post('/import/preview', requireRole('teacher', 'admin'), async (req,
   const ws = wb.worksheets[0];
   if (!ws) throw badRequest('xlsx_empty');
 
-  const header = (ws.getRow(1).values as ExcelJS.CellValue[]).map((v) => cellText(v).toLowerCase());
+  // row.values is sparse (index 0 and empty cells are holes): Array.from turns holes into '' instead of skipping them.
+  const header = Array.from(ws.getRow(1).values as ExcelJS.CellValue[], (v) => cellText(v).toLowerCase());
   const find = (...names: string[]) => header.findIndex((h) => names.some((n) => h === n || h.startsWith(n)));
   const col = {
     question: find('вопрос', 'savol', 'question'),

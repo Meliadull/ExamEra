@@ -263,3 +263,19 @@ describe('search & backups', () => {
     assert.ok(!afterList.some((d) => d.login === PHONES.teacher2));
   });
 });
+
+describe('excel import', () => {
+  it('the downloadable template passes the import check', async () => {
+    const t = await login('teacher');
+    const file = await fetch(BASE + '/tests/import/template', { headers: { cookie: t } });
+    assert.equal(file.status, 200);
+    const data = Buffer.from(await file.arrayBuffer()).toString('base64');
+    const r = await call('POST', '/tests/import/preview', { cookie: t, body: { data, fileName: 'template.xlsx' } });
+    assert.equal(r.status, 200);
+    assert.equal(r.data.errorCount, 0);
+    assert.deepEqual(
+      r.data.questions.map((q: any) => q.type),
+      ['single', 'multiple', 'short_text'],
+    );
+  });
+});
