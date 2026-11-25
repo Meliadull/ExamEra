@@ -9,7 +9,7 @@ import { notFound } from '../http.js';
  * Automatic backups are taken once a day and the oldest are pruned; manual ones are kept separately.
  */
 
-const NAME_RE = /^examera-\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}(-manual)?\.db$/;
+const NAME_RE = /^(?:examera|imtihonchisi)-\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}(-manual)?\.db$/;
 const DAY_MS = 24 * 3600_000;
 const KEEP_MANUAL = 10;
 
@@ -47,7 +47,7 @@ function prune() {
 
 export function createBackup(kind: 'auto' | 'manual'): BackupInfo {
   const stamp = new Date().toISOString().slice(0, 19).replace('T', '_').replace(/:/g, '-');
-  const name = `examera-${stamp}${kind === 'manual' ? '-manual' : ''}.db`;
+  const name = `imtihonchisi-${stamp}${kind === 'manual' ? '-manual' : ''}.db`;
   const file = path.join(dir(), name);
   fs.rmSync(file, { force: true }); // VACUUM INTO refuses to overwrite
   db.exec(`VACUUM INTO '${file.replace(/'/g, "''")}'`);

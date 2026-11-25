@@ -141,7 +141,7 @@ testsRouter.get('/import/template', requireRole('teacher', 'admin'), async (_req
     ['Формулы можно записывать в формате LaTeX между знаками $...$, например $x^2 + 1$.'],
   ]);
   res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-  res.setHeader('Content-Disposition', 'attachment; filename="examera-template.xlsx"');
+  res.setHeader('Content-Disposition', 'attachment; filename="imtihonchisi-shablon.xlsx"');
   await wb.xlsx.write(res);
   res.end();
 });

@@ -182,10 +182,10 @@ export async function seedDemo() {
         first, last, phone, email, hash, role, created, created,
       ).id;
 
-    const admin = user("O'quv", "bo'limi", 'admin', '+998900000001', 'admin@examera.uz');
-    const teacher = user('Nargiza', 'Xajimirzayeva', 'teacher', '+998900000002', 'n.xajimirzayeva@examera.uz');
-    const teacher2 = user("Ulug'bek", 'Negmatov', 'teacher', '+998900000004', 'u.negmatov@examera.uz');
-    user('Jahongir', 'Mirzarayimov', 'auditor', '+998900000003', 'auditor@examera.uz');
+    const admin = user("O'quv", "bo'limi", 'admin', '+998900000001', 'admin@imtihonchisi.uz');
+    const teacher = user('Nargiza', 'Xajimirzayeva', 'teacher', '+998900000002', 'n.xajimirzayeva@imtihonchisi.uz');
+    const teacher2 = user("Ulug'bek", 'Negmatov', 'teacher', '+998900000004', 'u.negmatov@imtihonchisi.uz');
+    user('Jahongir', 'Mirzarayimov', 'auditor', '+998900000003', 'auditor@imtihonchisi.uz');
 
     run(
       "INSERT INTO academic_periods (name, starts_on, ends_on, is_current) VALUES ('2025–2026 учебный год', ?, ?, 1)",

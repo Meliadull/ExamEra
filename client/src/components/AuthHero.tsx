@@ -128,7 +128,7 @@ export function AuthHero() {
         </div>
       </div>
 
-      <div className="small examera-hero-copy">© {new Date().getFullYear()} ExamEra</div>
+      <div className="small examera-hero-copy">© {new Date().getFullYear()} ImtihonchiSI</div>
     </div>
   );
 }

@@ -11,7 +11,7 @@ import { after, before, describe, it } from 'node:test';
 import { fileURLToPath } from 'node:url';
 
 const serverRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'examera-test-'));
+const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'imtihonchisi-test-'));
 const PORT = 4500 + Math.floor(Math.random() * 400);
 const BASE = `http://localhost:${PORT}/api`;
 let proc: ChildProcess;

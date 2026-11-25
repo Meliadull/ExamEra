@@ -65,7 +65,7 @@ export async function sendTable(
     return;
   }
   const wb = new ExcelJS.Workbook();
-  wb.creator = 'ExamEra';
+  wb.creator = 'ImtihonchiSI';
   const ws = wb.addWorksheet('Report');
   let rowIdx = 1;
   for (const line of opts.title ?? []) {

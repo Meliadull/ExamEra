@@ -317,7 +317,7 @@ CREATE TABLE settings (
 `;
 
 export const DEFAULT_SETTINGS: Record<string, string> = {
-  platform_name: 'ExamEra',
+  platform_name: 'ImtihonchiSI',
   registration_enabled: '1',
   google_auth_enabled: '1',
   default_language: 'ru',
@@ -337,6 +337,11 @@ export function migrate() {
     // Users register themselves; a teacher marks the request and an administrator grants the role.
     db.exec('ALTER TABLE users ADD COLUMN requested_role TEXT');
     db.exec('PRAGMA user_version = 2');
+  }
+  if (user_version < 3) {
+    // The platform was renamed; keep a name an administrator chose themselves.
+    run("UPDATE settings SET value = ? WHERE key = 'platform_name' AND value = 'ExamEra'", 'ImtihonchiSI');
+    db.exec('PRAGMA user_version = 3');
   }
   for (const [key, value] of Object.entries(DEFAULT_SETTINGS)) {
     run('INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)', key, value);

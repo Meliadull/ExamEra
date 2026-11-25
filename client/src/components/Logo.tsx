@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useI18n } from '../i18n';
 
 /**
- * Brand logo: 3D mark + "Exam" (dark) "Era" (blue) wordmark. Always leads to the home page;
+ * Brand logo: 3D mark + "Imtihonchi" (dark) "SI" (blue) wordmark. Always leads to the home page;
  * when already there, it scrolls back to the top. `onDark` is for blue/dark backgrounds.
  */
 export function Logo({ onDark, size = 34, style }: { onDark?: boolean; size?: number; style?: CSSProperties }) {
@@ -14,7 +14,7 @@ export function Logo({ onDark, size = 34, style }: { onDark?: boolean; size?: nu
       to="/"
       className={`brand${onDark ? ' on-dark' : ''}`}
       style={style}
-      aria-label={`ExamEra — ${t('logo.home')}`}
+      aria-label={`ImtihonchiSI — ${t('logo.home')}`}
       title={t('logo.home')}
       onClick={(e) => {
         if (pathname !== '/') return;
@@ -30,7 +30,7 @@ export function Logo({ onDark, size = 34, style }: { onDark?: boolean; size?: nu
     >
       <img src="/logo-mark.svg" alt="" style={{ height: size }} />
       <span className="wordmark">
-        Exam<b>Era</b>
+        Imtihonchi<b>SI</b>
       </span>
     </Link>
   );

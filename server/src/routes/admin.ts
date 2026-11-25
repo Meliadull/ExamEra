@@ -68,7 +68,7 @@ auditRouter.get('/export', requireRole('admin', 'auditor'), async (req, res) => 
   await sendTable(res, {
     format,
     lang,
-    filename: 'examera-audit',
+    filename: 'imtihonchisi-audit',
     columns: [
       c('event_id', 'ID события', 'Hodisa ID', 38),
       c('date', 'Дата и время', 'Sana va vaqt', 19),

@@ -86,9 +86,9 @@ app.get(/^\/(?!api\/|uploads\/).*/, (_req, res) => {
     .status(404)
     .type('html')
     .send(
-      `<!doctype html><meta charset="utf-8"><title>ExamEra API</title>
+      `<!doctype html><meta charset="utf-8"><title>ImtihonchiSI API</title>
        <body style="font-family:system-ui;padding:40px;line-height:1.6">
-       <h2>ExamEra API</h2>
+       <h2>ImtihonchiSI API</h2>
        <p>Это сервер API, а не интерфейс. / Bu API server, sayt emas.</p>
        <p>Режим разработки / Ishlab chiqish rejimi: <a href="http://localhost:5173">http://localhost:5173</a></p>
        <p>Production: <code>npm run build</code>, затем / so'ng <code>npm start</code>.</p></body>`,
@@ -118,5 +118,5 @@ setInterval(backupTick, 3600_000).unref();
 backupTick();
 
 app.listen(config.port, () => {
-  console.log(`ExamEra API: http://localhost:${config.port}`);
+  console.log(`ImtihonchiSI API: http://localhost:${config.port}`);
 });

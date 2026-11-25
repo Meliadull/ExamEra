@@ -397,7 +397,7 @@ export function Landing() {
       </section>
 
       <footer className="l-footer">
-        © {new Date().getFullYear()} ExamEra · {t('landing.footer')}
+        © {new Date().getFullYear()} ImtihonchiSI · {t('landing.footer')}
       </footer>
     </div>
   );

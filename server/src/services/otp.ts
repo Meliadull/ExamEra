@@ -39,7 +39,7 @@ export async function issueOtp(phone: string, purpose: 'register' | 'recover'): 
     now(),
     new Date(Date.now() + TTL_MS).toISOString(),
   );
-  await sendSms(phone, `ExamEra: ваш код подтверждения ${code}. Никому его не сообщайте.`);
+  await sendSms(phone, `ImtihonchiSI: ваш код подтверждения ${code}. Никому его не сообщайте.`);
   return code;
 }
 

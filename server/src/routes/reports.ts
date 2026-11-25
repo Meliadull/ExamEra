@@ -79,7 +79,7 @@ reportsRouter.get('/results', async (req, res) => {
   await sendTable(res, {
     format,
     lang,
-    filename: 'examera-results',
+    filename: 'imtihonchisi-results',
     title: [lang === 'uz' ? 'Natijalar' : 'Результаты тестирования', fmtDate(new Date().toISOString())],
     columns: FULL_COLUMNS,
     rows: rows.map((r) => toRow(r, lang)),
@@ -169,7 +169,7 @@ reportsRouter.get('/summary', requireRole('admin', 'auditor'), async (req, res) 
   await sendTable(res, {
     format,
     lang,
-    filename: 'examera-summary',
+    filename: 'imtihonchisi-summary',
     title: [lang === 'uz' ? 'Umumiy hisobot' : 'Сводный административный отчёт', fmtDate(new Date().toISOString())],
     columns: [
       { key: 'subject', ...L('Предмет', 'Fan'), width: 22 },

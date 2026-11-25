@@ -2,7 +2,7 @@
   "name": "examera",
   "version": "1.0.0",
   "private": true,
-  "description": "ExamEra — веб-платформа электронного тестирования и анализа знаний учащихся",
+  "description": "ImtihonchiSI — веб-платформа электронного тестирования и анализа знаний учащихся",
   "scripts": {
     "setup": "npm install && npm --prefix server install && npm --prefix client install",
     "dev": "concurrently -n api,web -c blue,green \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
