@@ -121,7 +121,7 @@ export const ru: Record<string, string> = {
   'period.365short': 'Год',
 
   // Auth
-  'auth.welcome': 'Добро пожаловать в',
+  'auth.welcome': 'Добро пожаловать!',
   'auth.loginSubtitle': 'Войдите в свой аккаунт',
   'auth.phoneOrEmail': 'Телефон или email',
   'auth.phone': 'Телефон',

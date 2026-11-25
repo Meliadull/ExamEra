@@ -118,7 +118,7 @@ export const uz: Record<string, string> = {
   'period.180short': 'Semestr',
   'period.365short': 'Yil',
 
-  'auth.welcome': 'Xush kelibsiz:',
+  'auth.welcome': 'Xush kelibsiz!',
   'auth.loginSubtitle': 'Hisobingizga kiring',
   'auth.phoneOrEmail': 'Telefon yoki email',
   'auth.phone': 'Telefon',

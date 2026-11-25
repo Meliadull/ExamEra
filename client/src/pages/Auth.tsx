@@ -149,9 +149,7 @@ export function Login() {
 
   return (
     <AuthShell>
-      <h1>
-        {t('auth.welcome')} <span style={{ color: 'var(--primary)' }}>{config?.platformName ?? 'ImtihonchiSI'}</span>
-      </h1>
+      <h1>{t('auth.welcome')}</h1>
       <p className="sub">{t('auth.loginSubtitle')}</p>
       <form onSubmit={submit} className="stack" style={{ gap: 14 }}>
         <Field label={t('auth.phoneOrEmail')}>
