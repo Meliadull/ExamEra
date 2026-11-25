@@ -86,7 +86,7 @@ h3 { font-size: 15px; font-weight: 600; }
 .wordmark b { font-weight: 800; color: var(--brand-blue); }
 .brand.on-dark .wordmark { color: #fff; }
 .brand.on-dark .wordmark b { color: #bfdbfe; }
-.brand.on-dark img { background: #fff; border-radius: 10px; padding: 4px 6px; box-sizing: content-box; }
+.brand.on-dark img { filter: drop-shadow(0 4px 10px rgba(8, 25, 80, 0.45)); }
 .nav { display: flex; flex-direction: column; gap: 2px; flex: 1; overflow-y: auto; }
 .nav a {
   display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-radius: 10px; color: var(--text-2);
