@@ -1,0 +1,83 @@
+{
+  "key": "biologiya",
+  "from": 21,
+  "name": ["Biologiya", "Биология"],
+  "aliases": ["biology"],
+  "topics": [
+    {
+      "t": ["Nerv sistemasi va sezgi organlari", "Нервная система и органы чувств"],
+      "q": [
+        ["Nerv sistemasining tuzilish va funksional birligi nima?", "Что является структурно-функциональной единицей нервной системы?", [["Neyron", "Нейрон"], ["Nefron", "Нефрон"], ["Alveola", "Альвеола"], ["Eritrotsit", "Эритроцит"]], 0],
+        ["Reflektor yoy nimadan boshlanadi?", "С чего начинается рефлекторная дуга?", [["Effektordan", "С эффектора"], ["Retseptordan", "С рецептора"], ["Markaziy neyrondan", "С центрального нейрона"], ["Muskuldan", "С мышцы"]], 1],
+        ["Harakatlar koordinatsiyasini miyaning qaysi qismi boshqaradi?", "Какой отдел мозга отвечает за координацию движений?", [["Uzunchoq miya", "Продолговатый мозг"], ["Oraliq miya", "Промежуточный мозг"], ["Miyacha", "Мозжечок"], ["Orqa miya", "Спинной мозг"]], 2],
+        ["Ko'zda yorug'likni qabul qiluvchi retseptorlar qayerda joylashgan?", "Где расположены светочувствительные рецепторы глаза?", [["Shox pardada", "В роговице"], ["Gavharda", "В хрусталике"], ["Qorachiqda", "В зрачке"], ["To'r pardada (tayoqcha va kolbachalar)", "В сетчатке (палочки и колбочки)"]], 3],
+        ["Yaqindan ko'rishda (miopiya) tasvir qayerda hosil bo'ladi?", "Где фокусируется изображение при близорукости (миопии)?", [["To'r pardaning oldida", "Перед сетчаткой"], ["To'r pardaning orqasida", "За сетчаткой"], ["Aynan to'r pardada", "Точно на сетчатке"], ["Gavharda", "В хрусталике"]], 0],
+        ["Eshitish retseptorlari qayerda joylashgan?", "Где расположены слуховые рецепторы?", [["Tashqi quloqda", "В наружном ухе"], ["Ichki quloqning chig'anog'ida", "В улитке внутреннего уха"], ["Nog'ora pardada", "В барабанной перепонке"], ["Eshituv suyakchalarida", "В слуховых косточках"]], 1],
+        ["Muvozanat organi qaysi?", "Какой орган отвечает за равновесие?", [["Chig'anoq", "Улитка"], ["Nog'ora parda", "Барабанная перепонка"], ["Vestibulyar apparat", "Вестибулярный аппарат"], ["Tashqi eshituv yo'li", "Наружный слуховой проход"]], 2],
+        ["Shartli reflekslarni kim o'rgangan?", "Кто изучал условные рефлексы?", [["I. P. Pavlov", "И. П. Павлов"], ["I. M. Sechenov", "И. М. Сеченов"], ["I. I. Mechnikov", "И. И. Мечников"], ["Ch. Darvin", "Ч. Дарвин"]], 0],
+        ["Vegetativ nerv sistemasi nimani boshqaradi?", "Что регулирует вегетативная нервная система?", [["Skelet muskullarini", "Скелетные мышцы"], ["Ichki organlar faoliyatini", "Работу внутренних органов"], ["Ixtiyoriy harakatlarni", "Произвольные движения"], ["Nutqni", "Речь"]], 1],
+        ["Bosh miya po'stlog'ining ko'rish markazi qaysi bo'lakda joylashgan?", "В какой доле коры больших полушарий находится зрительная зона?", [["Chakka bo'lagida", "В височной доле"], ["Peshona bo'lagida", "В лобной доле"], ["Tepa bo'lagida", "В теменной доле"], ["Ensa bo'lagida", "В затылочной доле"]], 3]
+      ]
+    },
+    {
+      "t": ["Endokrin sistema", "Эндокринная система"],
+      "q": [
+        ["Insulin qaysi bezda ishlab chiqariladi?", "Какая железа вырабатывает инсулин?", [["Oshqozon osti bezi", "Поджелудочная железа"], ["Qalqonsimon bez", "Щитовидная железа"], ["Buyrak usti bezi", "Надпочечники"], ["Gipofiz", "Гипофиз"]], 0],
+        ["Insulin yetishmasligi qanday kasallikka olib keladi?", "К какому заболеванию приводит недостаток инсулина?", [["Bo'qoq", "Зоб"], ["Qandli diabet", "Сахарный диабет"], ["Gigantizm", "Гигантизм"], ["Raxit", "Рахит"]], 1],
+        ["Qalqonsimon bez gormonlari tarkibida qaysi element bor?", "Какой элемент входит в состав гормонов щитовидной железы?", [["Temir", "Железо"], ["Kalsiy", "Кальций"], ["Yod", "Йод"], ["Natriy", "Натрий"]], 2],
+        ["Boshqa ichki sekretsiya bezlari faoliyatini boshqaruvchi «bosh bez» qaysi?", "Какую железу называют «главной», регулирующей работу других желёз внутренней секреции?", [["Qalqonsimon bez", "Щитовидная железа"], ["Jigar", "Печень"], ["Taloq", "Селезёнка"], ["Gipofiz", "Гипофиз"]], 3],
+        ["Adrenalin qaysi bezda ishlab chiqariladi?", "Какая железа вырабатывает адреналин?", [["Buyrak usti bezi", "Надпочечники"], ["Oshqozon osti bezi", "Поджелудочная железа"], ["Qalqonsimon bez", "Щитовидная железа"], ["Ayrisimon bez", "Вилочковая железа"]], 0],
+        ["Bolalikda o'sish gormoni ortiqcha ishlab chiqarilsa nima yuz beradi?", "Что происходит при избытке гормона роста в детстве?", [["Pakanalik", "Карликовость"], ["Gigantizm", "Гигантизм"], ["Diabet", "Диабет"], ["Bo'qoq", "Зоб"]], 1],
+        ["Gormonlar organizmda nima orqali tarqaladi?", "Чем разносятся гормоны по организму?", [["Nervlar orqali", "По нервам"], ["Limfa tugunlari orqali", "Через лимфоузлы"], ["Qon orqali", "Кровью"], ["Havo orqali", "Воздухом"]], 2],
+        ["Endokrin bezlarning o'ziga xos xususiyati qaysi?", "Какова особенность эндокринных желёз?", [["Chiqaruv naychasi yo'q, sekretni qonga chiqaradi", "Не имеют протоков и выделяют секрет в кровь"], ["Sekretni teri yuzasiga chiqaradi", "Выделяют секрет на поверхность кожи"], ["Sekretni ichakka chiqaradi", "Выделяют секрет в кишечник"], ["Gormon ishlab chiqarmaydi", "Не вырабатывают гормонов"]], 0],
+        ["Aralash sekretsiya bezi qaysi?", "Какая железа является железой смешанной секреции?", [["Gipofiz", "Гипофиз"], ["Oshqozon osti bezi", "Поджелудочная железа"], ["Qalqonsimon bez", "Щитовидная железа"], ["Buyrak usti bezi", "Надпочечники"]], 1],
+        ["Yod yetishmasligidan qaysi bez kattalashib, bo'qoq paydo bo'ladi?", "Какая железа увеличивается при недостатке йода, вызывая зоб?", [["Gipofiz", "Гипофиз"], ["Buyrak usti bezi", "Надпочечники"], ["Oshqozon osti bezi", "Поджелудочная железа"], ["Qalqonsimon bez", "Щитовидная железа"]], 3]
+      ]
+    },
+    {
+      "t": ["Evolyutsiya", "Эволюция"],
+      "q": [
+        ["Tabiiy tanlanish nazariyasining muallifi kim?", "Кто автор теории естественного отбора?", [["Charlz Darvin", "Чарльз Дарвин"], ["Jan Batist Lamark", "Жан Батист Ламарк"], ["Gregor Mendel", "Грегор Мендель"], ["Karl Linney", "Карл Линней"]], 0],
+        ["Darvin bo'yicha evolyutsiyaning harakatlantiruvchi kuchlari qaysilar?", "Каковы движущие силы эволюции по Дарвину?", [["Faqat ovqatlanish", "Только питание"], ["Irsiyat, o'zgaruvchanlik, yashash uchun kurash va tabiiy tanlanish", "Наследственность, изменчивость, борьба за существование и естественный отбор"], ["Faqat iqlim", "Только климат"], ["Faqat mutatsiyalar", "Только мутации"]], 1],
+        ["Gomologik organlarga misol keltiring.", "Приведите пример гомологичных органов.", [["Kapalak va qush qanoti", "Крыло бабочки и крыло птицы"], ["Baliq va kit suzgichi", "Плавник рыбы и ласт кита (как аналогичные)"], ["Qush qanoti va odam qo'li", "Крыло птицы и рука человека"], ["Ari nayzasi va ilon tishi", "Жало пчелы и зуб змеи"]], 2],
+        ["Analogik organlarga misol keltiring.", "Приведите пример аналогичных органов.", [["Odam qo'li va qush qanoti", "Рука человека и крыло птицы"], ["Odam qo'li va kit kurak suzgichi", "Рука человека и ласт кита"], ["Ot oyog'i va odam oyog'i", "Нога лошади и нога человека"], ["Kapalak qanoti va qush qanoti", "Крыло бабочки и крыло птицы"]], 3],
+        ["Odamdagi rudiment organga misol keltiring.", "Приведите пример рудиментарного органа у человека.", [["Ko'richak o'simtasi (appendiks)", "Червеобразный отросток (аппендикс)"], ["Yurak", "Сердце"], ["Jigar", "Печень"], ["Buyrak", "Почка"]], 0],
+        ["Atavizmga misol keltiring.", "Приведите пример атавизма.", [["Appendiks", "Аппендикс"], ["Odamda dum paydo bo'lishi", "Появление хвоста у человека"], ["Ko'z", "Глаз"], ["Yurak", "Сердце"]], 1],
+        ["Evolyutsiyaning eng kichik birligi nima?", "Что является элементарной единицей эволюции?", [["Individ", "Особь"], ["Tur", "Вид"], ["Populyatsiya", "Популяция"], ["Oila", "Семейство"]], 2],
+        ["Darvinning «Turlarning kelib chiqishi» asari qaysi yili nashr etilgan?", "В каком году вышла книга Дарвина «Происхождение видов»?", ["1859", "1900", "1765", "1953"], 0],
+        ["Lamark g'oyasi qanday edi?", "В чём состояла идея Ламарка?", [["Tabiiy tanlanish", "Естественный отбор"], ["Organlar mashq qilish natijasida o'zgaradi va bu o'zgarish naslga o'tadi", "Органы меняются от упражнения, и изменения наследуются"], ["Turlar o'zgarmaydi", "Виды неизменны"], ["Mutatsiyalar nazariyasi", "Теория мутаций"]], 1],
+        ["Geografik izolyatsiya orqali tur hosil bo'lishiga misol keltiring.", "Приведите пример видообразования путём географической изоляции.", [["Bir hududda turli oziqlanish", "Разное питание на одной территории"], ["Mutatsiyaning to'satdan paydo bo'lishi", "Внезапная мутация"], ["Bir populyatsiyaning o'sishi", "Рост одной популяции"], ["Populyatsiyalarning tog' yoki daryo bilan ajralib qolishi", "Разделение популяций горами или рекой"]], 3]
+      ]
+    },
+    {
+      "t": ["Ekologiya asoslari", "Основы экологии"],
+      "q": [
+        ["Ekologiya nimani o'rganadi?", "Что изучает экология?", [["Organizmlarning o'zaro va atrof-muhit bilan munosabatlarini", "Взаимоотношения организмов друг с другом и со средой"], ["Faqat o'simliklarning tuzilishini", "Только строение растений"], ["Hujayra tuzilishini", "Строение клетки"], ["Kimyoviy elementlarni", "Химические элементы"]], 0],
+        ["«Ekologiya» atamasini kim kiritgan?", "Кто ввёл термин «экология»?", [["Ch. Darvin", "Ч. Дарвин"], ["E. Gekkel", "Э. Геккель"], ["K. Linney", "К. Линней"], ["V. I. Vernadskiy", "В. И. Вернадский"]], 1],
+        ["Ekotizimda produtsentlar kimlar?", "Кто является продуцентами в экосистеме?", [["Yirtqich hayvonlar", "Хищники"], ["Bakteriyalar", "Бактерии"], ["Yashil o'simliklar", "Зелёные растения"], ["O'txo'r hayvonlar", "Травоядные"]], 2],
+        ["Ekotizimda redutsentlar (parchalovchilar) kimlar?", "Кто является редуцентами (разрушителями) в экосистеме?", [["Yashil o'simliklar", "Зелёные растения"], ["Yirtqichlar", "Хищники"], ["O'txo'rlar", "Травоядные"], ["Bakteriyalar va zamburug'lar", "Бактерии и грибы"]], 3],
+        ["To'g'ri tuzilgan oziq zanjirini ko'rsating.", "Укажите правильно составленную пищевую цепь.", [["O't → chigirtka → baqa → ilon", "Трава → кузнечик → лягушка → змея"], ["Ilon → baqa → o't → chigirtka", "Змея → лягушка → трава → кузнечик"], ["Baqa → o't → ilon → chigirtka", "Лягушка → трава → змея → кузнечик"], ["Chigirtka → ilon → o't → baqa", "Кузнечик → змея → трава → лягушка"]], 0],
+        ["«10 foiz qoidasi» ga ko'ra keyingi trofik darajaga energiyaning taxminan qancha qismi o'tadi?", "Какая доля энергии, согласно «правилу 10 %», переходит на следующий трофический уровень?", ["50%", "10%", "90%", "1%"], 1],
+        ["Biotik omilga misol keltiring.", "Приведите пример биотического фактора.", [["Harorat", "Температура"], ["Namlik", "Влажность"], ["Hayvonlar orasidagi raqobat", "Конкуренция между животными"], ["Yorug'lik", "Свет"]], 2],
+        ["Abiotik omilga misol keltiring.", "Приведите пример абиотического фактора.", [["Harorat", "Температура"], ["Raqobat", "Конкуренция"], ["Parazitizm", "Паразитизм"], ["Simbioz", "Симбиоз"]], 0],
+        ["Ikkala tur uchun ham foydali birga yashash qanday ataladi?", "Как называется сожительство, выгодное обоим видам?", [["Parazitizm", "Паразитизм"], ["Mutualizm", "Мутуализм"], ["Raqobat", "Конкуренция"], ["Yirtqichlik", "Хищничество"]], 1],
+        ["Populyatsiya nima?", "Что такое популяция?", [["Turli turlarning birgalikdagi yig'indisi", "Совокупность разных видов"], ["Bitta organizm", "Один организм"], ["Butun biosfera", "Вся биосфера"], ["Bir hududda uzoq yashaydigan bir turga mansub individlar guruhi", "Группа особей одного вида, долго живущих на одной территории"]], 3]
+      ]
+    },
+    {
+      "t": ["Biosfera va tabiatni muhofaza qilish", "Биосфера и охрана природы"],
+      "q": [
+        ["Biosfera haqidagi ta'limotni kim yaratgan?", "Кто создал учение о биосфере?", [["V. I. Vernadskiy", "В. И. Вернадский"], ["Ch. Darvin", "Ч. Дарвин"], ["E. Gekkel", "Э. Геккель"], ["G. Mendel", "Г. Мендель"]], 0],
+        ["Ozon qatlami Yerni nimadan himoya qiladi?", "От чего озоновый слой защищает Землю?", [["Shamoldan", "От ветра"], ["Ultrabinafsha nurlardan", "От ультрафиолетового излучения"], ["Meteoritlardan", "От метеоритов"], ["Sovuqdan", "От холода"]], 1],
+        ["Issiqxona effekti asosan nima sababdan kuchayadi?", "Из-за чего в основном усиливается парниковый эффект?", [["Kislorod ko'payishidan", "Увеличения кислорода"], ["Azot kamayishidan", "Уменьшения азота"], ["Atmosferada CO₂ ko'payishidan", "Роста содержания CO₂ в атмосфере"], ["Ozon ko'payishidan", "Увеличения озона"]], 2],
+        ["«Qizil kitob» ga qanday turlar kiritiladi?", "Какие виды заносят в «Красную книгу»?", [["Eng ko'p tarqalgan", "Самые распространённые"], ["Uy hayvonlari", "Домашние животные"], ["Zararkunandalar", "Вредители"], ["Kamyob va yo'qolib ketish xavfidagi", "Редкие и находящиеся под угрозой исчезновения"]], 3],
+        ["Orol dengizi fojiasining asosiy sababi nima?", "Какова главная причина трагедии Аральского моря?", [["Amudaryo va Sirdaryo suvining sug'orishga haddan tashqari olinishi", "Чрезмерный забор воды Амударьи и Сырдарьи на орошение"], ["Zilzila", "Землетрясение"], ["Vulqon otilishi", "Извержение вулкана"], ["Ko'p yog'ingarchilik", "Обильные осадки"]], 0],
+        ["Qayta tiklanadigan tabiiy resursga misol keltiring.", "Приведите пример возобновимого природного ресурса.", [["Neft", "Нефть"], ["O'rmonlar", "Леса"], ["Ko'mir", "Уголь"], ["Tabiiy gaz", "Природный газ"]], 1],
+        ["Kislotali yomg'irlar nima sababdan yog'adi?", "Чем вызваны кислотные дожди?", [["Kislorod ko'pligidan", "Избытком кислорода"], ["Changdan", "Пылью"], ["Oltingugurt va azot oksidlarining havoga chiqarilishidan", "Выбросами оксидов серы и азота"], ["Suv bug'idan", "Водяным паром"]], 2],
+        ["Noosfera tushunchasi nimani anglatadi?", "Что означает понятие «ноосфера»?", [["Aql sferasi — inson faoliyati ta'siridagi biosfera", "Сфера разума — биосфера под влиянием деятельности человека"], ["Okeanlar qatlami", "Слой океанов"], ["Havo qatlami", "Воздушная оболочка"], ["Yer po'sti", "Земная кора"]], 0],
+        ["Har qanday xo'jalik faoliyati taqiqlangan muhofaza etiladigan hudud qanday ataladi?", "Как называется охраняемая территория, где запрещена любая хозяйственная деятельность?", [["Bog'", "Сад"], ["Ferma", "Ферма"], ["Qo'riqxona", "Заповедник"], ["Shahar parki", "Городской парк"]], 2],
+        ["Biosferaning tirik moddasi nima?", "Что такое живое вещество биосферы?", [["Faqat o'simliklar", "Только растения"], ["Faqat hayvonlar", "Только животные"], ["Tog' jinslari", "Горные породы"], ["Barcha tirik organizmlar majmui", "Совокупность всех живых организмов"]], 3]
+      ]
+    }
+  ]
+}

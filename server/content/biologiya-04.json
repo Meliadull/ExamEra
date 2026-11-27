@@ -1,0 +1,83 @@
+{
+  "key": "biologiya",
+  "from": 16,
+  "name": ["Biologiya", "Биология"],
+  "aliases": ["biology"],
+  "topics": [
+    {
+      "t": ["Odam: tayanch-harakat sistemasi", "Человек: опорно-двигательная система"],
+      "q": [
+        ["Katta yoshli odam skeletida taxminan nechta suyak bor?", "Сколько примерно костей в скелете взрослого человека?", ["206", "300", "106", "412"], 0],
+        ["Odam tanasidagi eng uzun suyak qaysi?", "Какая кость самая длинная в теле человека?", [["Yelka suyagi", "Плечевая кость"], ["Son suyagi", "Бедренная кость"], ["Katta boldir suyagi", "Большеберцовая кость"], ["Umurtqa", "Позвонок"]], 1],
+        ["Suyaklarning harakatchan birikishi qanday ataladi?", "Как называется подвижное соединение костей?", [["Bo'g'im", "Сустав"], ["Chok", "Шов"], ["Tog'ay", "Хрящ"], ["Pay", "Сухожилие"]], 0],
+        ["Bosh suyagi (kalla) suyaklari qanday birikkan?", "Как соединены кости черепа (мозгового отдела)?", [["Bo'g'imlar orqali", "Суставами"], ["Choklar orqali (harakatsiz)", "Швами (неподвижно)"], ["Muskullar orqali", "Мышцами"], ["Birikmagan", "Не соединены"]], 1],
+        ["Suyaklarga qattiqlik beradigan moddalar qaysilar?", "Какие вещества придают костям твёрдость?", [["Oqsillar", "Белки"], ["Yog'lar", "Жиры"], ["Kalsiy tuzlari", "Соли кальция"], ["Suv", "Вода"]], 2],
+        ["Muskullar suyaklarga nima orqali birikadi?", "Чем мышцы прикрепляются к костям?", [["Boylamlar orqali", "Связками"], ["Nervlar orqali", "Нервами"], ["Qon tomirlar orqali", "Сосудами"], ["Paylar orqali", "Сухожилиями"]], 3],
+        ["Skelet muskullari qanday to'qimadan tuzilgan?", "Из какой ткани состоят скелетные мышцы?", [["Ko'ndalang-targ'il muskul to'qimasidan", "Из поперечнополосатой мышечной ткани"], ["Silliq muskul to'qimasidan", "Из гладкой мышечной ткани"], ["Biriktiruvchi to'qimadan", "Из соединительной ткани"], ["Epiteliy to'qimasidan", "Из эпителиальной ткани"]], 0],
+        ["Odam umurtqa pog'onasida nechta umurtqa bor?", "Сколько позвонков в позвоночнике человека?", ["24", "33–34", "12", "7"], 1],
+        ["Raxit kasalligi qaysi vitamin yetishmasligidan kelib chiqadi?", "Недостаток какого витамина вызывает рахит?", [["D vitamini", "Витамин D"], ["C vitamini", "Витамин C"], ["A vitamini", "Витамин A"], ["B₁ vitamini", "Витамин B₁"]], 0],
+        ["Ikki boshli muskul (biseps) qisqarganda nima sodir bo'ladi?", "Что происходит при сокращении двуглавой мышцы (бицепса)?", [["Qo'l tirsakdan yoziladi", "Рука разгибается в локте"], ["Oyoq bukiladi", "Сгибается нога"], ["Qo'l tirsak bo'g'imida bukiladi", "Рука сгибается в локтевом суставе"], ["Bosh buriladi", "Поворачивается голова"]], 2]
+      ]
+    },
+    {
+      "t": ["Qon va qon aylanish", "Кровь и кровообращение"],
+      "q": [
+        ["Kislorodni tashuvchi qon hujayralari qaysilar?", "Какие клетки крови переносят кислород?", [["Eritrotsitlar", "Эритроциты"], ["Leykotsitlar", "Лейкоциты"], ["Trombotsitlar", "Тромбоциты"], ["Limfotsitlar", "Лимфоциты"]], 0],
+        ["Leykotsitlarning asosiy vazifasi nima?", "Какова основная функция лейкоцитов?", [["Kislorod tashish", "Перенос кислорода"], ["Organizmni himoya qilish", "Защита организма"], ["Qon ivishi", "Свёртывание крови"], ["Ovqat hazm qilish", "Пищеварение"]], 1],
+        ["Trombotsitlarning vazifasi nima?", "Какова функция тромбоцитов?", [["Kislorod tashish", "Перенос кислорода"], ["Antitelalar hosil qilish", "Образование антител"], ["Qonning ivishi", "Свёртывание крови"], ["Gormon ishlab chiqarish", "Выработка гормонов"]], 2],
+        ["Gemoglobin tarkibida qaysi element bor?", "Какой элемент входит в состав гемоглобина?", [["Mis", "Медь"], ["Kalsiy", "Кальций"], ["Natriy", "Натрий"], ["Temir", "Железо"]], 3],
+        ["Odam yuragi necha kamerali?", "Сколько камер в сердце человека?", ["2", "3", "4", "5"], 2],
+        ["Yurakdan qonni olib chiquvchi tomirlar qanday ataladi?", "Как называются сосуды, несущие кровь от сердца?", [["Arteriyalar", "Артерии"], ["Venalar", "Вены"], ["Kapillyarlar", "Капилляры"], ["Limfa tomirlari", "Лимфатические сосуды"]], 0],
+        ["Qaysi qon guruhi universal donor hisoblanadi?", "Какая группа крови считается универсальным донором?", ["II (A)", "I (0)", "III (B)", "IV (AB)"], 1],
+        ["Kichik qon aylanish doirasi yurakning qaysi bo'limidan boshlanadi?", "С какого отдела сердца начинается малый круг кровообращения?", [["Chap qorinchadan", "С левого желудочка"], ["O'ng qorinchadan", "С правого желудочка"], ["Chap bo'lmachadan", "С левого предсердия"], ["O'ng bo'lmachadan", "С правого предсердия"]], 1],
+        ["Katta yoshli odamning normal arterial bosimi taxminan qancha (mm sim. ust.)?", "Каково примерно нормальное артериальное давление взрослого человека (мм рт. ст.)?", ["200/120", "60/30", "120/80", "90/150"], 2],
+        ["Qon aylanishini kim kashf etgan?", "Кто открыл кровообращение?", [["L. Paster", "Л. Пастер"], ["I. I. Mechnikov", "И. И. Мечников"], ["I. P. Pavlov", "И. П. Павлов"], ["Uilyam Garvey", "Уильям Гарвей"]], 3]
+      ]
+    },
+    {
+      "t": ["Nafas olish", "Дыхание"],
+      "q": [
+        ["O'pkada gaz almashinuvi qayerda sodir bo'ladi?", "Где в лёгких происходит газообмен?", [["Alveolalarda", "В альвеолах"], ["Traxeyada", "В трахее"], ["Bronxlarda", "В бронхах"], ["Hiqildoqda", "В гортани"]], 0],
+        ["Tovush paychalari qayerda joylashgan?", "Где находятся голосовые связки?", [["Traxeyada", "В трахее"], ["Hiqildoqda", "В гортани"], ["Burun bo'shlig'ida", "В носовой полости"], ["O'pkada", "В лёгких"]], 1],
+        ["Nafas olishda ishtirok etuvchi asosiy muskul qaysi?", "Какая мышца является главной дыхательной?", [["Biseps", "Бицепс"], ["Yurak muskuli", "Сердечная мышца"], ["Diafragma", "Диафрагма"], ["Chaynov muskuli", "Жевательная мышца"]], 2],
+        ["Chiqarilgan havoda kislorod taxminan necha foiz bo'ladi?", "Сколько примерно процентов кислорода в выдыхаемом воздухе?", ["21%", "16%", "4%", "78%"], 1],
+        ["Nafas olish markazi miyaning qaysi qismida joylashgan?", "В каком отделе мозга находится дыхательный центр?", [["Miyachada", "В мозжечке"], ["Katta yarimsharlarda", "В больших полушариях"], ["Orqa miyada", "В спинном мозге"], ["Uzunchoq miyada", "В продолговатом мозге"]], 3],
+        ["O'pkaning tiriklik sig'imi qaysi asbob bilan o'lchanadi?", "Каким прибором измеряют жизненную ёмкость лёгких?", [["Spirometr", "Спирометр"], ["Termometr", "Термометр"], ["Tonometr", "Тонометр"], ["Mikroskop", "Микроскоп"]], 0],
+        ["Sil (tuberkulyoz) kasalligini nima qo'zg'atadi?", "Что вызывает туберкулёз?", [["Gripp virusi", "Вирус гриппа"], ["Kox tayoqchasi (bakteriya)", "Палочка Коха (бактерия)"], ["Zamburug'", "Гриб"], ["Gijja", "Глист"]], 1],
+        ["Havo qayerda isiydi, namlanadi va changdan tozalanadi?", "Где воздух согревается, увлажняется и очищается от пыли?", [["O'pkada", "В лёгких"], ["Hiqildoqda", "В гортани"], ["Burun bo'shlig'ida", "В носовой полости"], ["Alveolalarda", "В альвеолах"]], 2],
+        ["Is gazi (CO) organizm uchun nima sababdan xavfli?", "Чем опасен угарный газ (CO) для организма?", [["Gemoglobin bilan mustahkam birikib, kislorod tashilishini to'xtatadi", "Прочно соединяется с гемоглобином и блокирует перенос кислорода"], ["O'pkani kengaytiradi", "Расширяет лёгкие"], ["Qonni suyultiradi", "Разжижает кровь"], ["Hech qanday xavfi yo'q", "Ничем не опасен"]], 0],
+        ["Tinch holatda katta yoshli odam bir minutda necha marta nafas oladi?", "Сколько раз в минуту дышит взрослый человек в покое?", ["60–80", "2–4", "40–50", "16–20"], 3]
+      ]
+    },
+    {
+      "t": ["Ovqat hazm qilish", "Пищеварение"],
+      "q": [
+        ["Ovqat hazm qilish qayerdan boshlanadi?", "Где начинается пищеварение?", [["Og'iz bo'shlig'ida", "В ротовой полости"], ["Oshqozonda", "В желудке"], ["Ingichka ichakda", "В тонком кишечнике"], ["Yo'g'on ichakda", "В толстом кишечнике"]], 0],
+        ["So'lak fermenti (amilaza) qaysi moddani parchalaydi?", "Какое вещество расщепляет фермент слюны (амилаза)?", [["Oqsilni", "Белок"], ["Kraxmalni", "Крахмал"], ["Yog'ni", "Жир"], ["Sellyulozani", "Целлюлозу"]], 1],
+        ["Oshqozon shirasi tarkibida qaysi kislota bor?", "Какая кислота входит в состав желудочного сока?", ["H₂SO₄", "HNO₃", "HCl", "CH₃COOH"], 2],
+        ["Pepsin fermenti qaysi moddalarni parchalaydi?", "Какие вещества расщепляет фермент пепсин?", [["Oqsillarni", "Белки"], ["Kraxmalni", "Крахмал"], ["Yog'larni", "Жиры"], ["Suvni", "Воду"]], 0],
+        ["O't suyuqligi qaysi organda ishlab chiqariladi?", "Какой орган вырабатывает жёлчь?", [["Oshqozon osti bezi", "Поджелудочная железа"], ["Oshqozon", "Желудок"], ["Buyrak", "Почка"], ["Jigar", "Печень"]], 3],
+        ["O't suyuqligining vazifasi nima?", "Какова функция жёлчи?", [["Oqsillarni parchalaydi", "Расщепляет белки"], ["Yog'larni emulsiyalaydi (mayda tomchilarga ajratadi)", "Эмульгирует жиры (дробит на капельки)"], ["Kraxmalni parchalaydi", "Расщепляет крахмал"], ["Kislota ishlab chiqaradi", "Вырабатывает кислоту"]], 1],
+        ["Oziq moddalar asosan qayerda qonga so'riladi?", "Где в основном питательные вещества всасываются в кровь?", [["Oshqozonda", "В желудке"], ["Qizilo'ngachda", "В пищеводе"], ["Ingichka ichakda", "В тонком кишечнике"], ["Og'iz bo'shlig'ida", "В ротовой полости"]], 2],
+        ["Odam organizmidagi eng yirik bez qaysi?", "Какая железа самая крупная в организме человека?", [["Jigar", "Печень"], ["Qalqonsimon bez", "Щитовидная железа"], ["So'lak bezi", "Слюнная железа"], ["Gipofiz", "Гипофиз"]], 0],
+        ["Ingichka ichakdagi vorsinkalar nimani oshiradi?", "Что увеличивают ворсинки тонкого кишечника?", [["Ichak uzunligini", "Длину кишечника"], ["So'rilish yuzasini", "Площадь всасывания"], ["Kislota miqdorini", "Количество кислоты"], ["Ichak harakatini", "Движение кишечника"]], 1],
+        ["C vitamini yetishmasligi qanday kasallikka olib keladi?", "К какой болезни приводит недостаток витамина C?", [["Raxit", "Рахит"], ["Tovuq ko'rligi", "Куриная слепота"], ["Beri-beri", "Бери-бери"], ["Singa", "Цинга"]], 3]
+      ]
+    },
+    {
+      "t": ["Ayirish sistemasi va teri", "Выделительная система и кожа"],
+      "q": [
+        ["Odam organizmining asosiy ayirish organi qaysi?", "Какой орган является главным органом выделения у человека?", [["Buyraklar", "Почки"], ["Yurak", "Сердце"], ["Oshqozon", "Желудок"], ["Taloq", "Селезёнка"]], 0],
+        ["Buyrakning tuzilish va funksional birligi nima?", "Что является структурно-функциональной единицей почки?", [["Neyron", "Нейрон"], ["Nefron", "Нефрон"], ["Alveola", "Альвеола"], ["Vorsinka", "Ворсинка"]], 1],
+        ["Siydik qayerda to'planadi?", "Где накапливается моча?", [["Buyrak jomida", "В почечной лоханке"], ["Siydik yo'lida", "В мочеточнике"], ["Siydik pufagida", "В мочевом пузыре"], ["Jigarda", "В печени"]], 2],
+        ["Bir sutkada qancha birlamchi siydik hosil bo'ladi?", "Сколько первичной мочи образуется за сутки?", [["150–180 L", "150–180 л"], ["1,5 L", "1,5 л"], ["10 L", "10 л"], ["500 L", "500 л"]], 0],
+        ["Bir sutkada qancha ikkilamchi siydik ajraladi?", "Сколько вторичной мочи выделяется за сутки?", [["150 L", "150 л"], ["1,5 L", "1,5 л"], ["15 L", "15 л"], ["0,1 L", "0,1 л"]], 1],
+        ["Ter bezlari terining qaysi qavatida joylashgan?", "В каком слое кожи расположены потовые железы?", [["Epidermisda", "В эпидермисе"], ["Muskul qavatida", "В мышечном слое"], ["Suyak to'qimasida", "В костной ткани"], ["Dermada (haqiqiy terida)", "В дерме (собственно коже)"]], 3],
+        ["Terining vazifalaridan biri qaysi?", "Какая из функций выполняется кожей?", [["Tana haroratini boshqarish", "Терморегуляция"], ["Ovqat hazm qilish", "Пищеварение"], ["Qon hosil qilish", "Кроветворение"], ["Gormon ishlab chiqarish (asosiy)", "Основная выработка гормонов"]], 0],
+        ["Melanin pigmenti nima vazifani bajaradi?", "Какую функцию выполняет пигмент меланин?", [["Kislorod tashiydi", "Переносит кислород"], ["Yog'ni parchalaydi", "Расщепляет жиры"], ["Teriga rang beradi va ultrabinafsha nurlardan himoya qiladi", "Придаёт цвет коже и защищает от ультрафиолета"], ["Terlashni kuchaytiradi", "Усиливает потоотделение"]], 2],
+        ["Terining tashqi qavati qanday ataladi?", "Как называется наружный слой кожи?", [["Derma", "Дерма"], ["Epidermis", "Эпидермис"], ["Teri osti yog' kletchatkasi", "Подкожная жировая клетчатка"], ["Muskul qavati", "Мышечный слой"]], 1],
+        ["Moddalar almashinuvining oxirgi mahsulotlarini chiqaruvchi organlar qaysilar?", "Какие органы выводят конечные продукты обмена веществ?", [["Faqat buyraklar", "Только почки"], ["Faqat teri", "Только кожа"], ["Yurak va qon tomirlar", "Сердце и сосуды"], ["Buyraklar, o'pka va teri", "Почки, лёгкие и кожа"]], 3]
+      ]
+    }
+  ]
+}

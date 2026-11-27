@@ -1,0 +1,83 @@
+{
+  "key": "biologiya",
+  "from": 11,
+  "name": ["Biologiya", "Биология"],
+  "aliases": ["biology"],
+  "topics": [
+    {
+      "t": ["Zamburug'lar va lishayniklar", "Грибы и лишайники"],
+      "q": [
+        ["Zamburug'larning hujayra devori tarkibida qaysi modda bor?", "Какое вещество входит в состав клеточной стенки грибов?", [["Xitin", "Хитин"], ["Sellyuloza", "Целлюлоза"], ["Kraxmal", "Крахмал"], ["Lignin", "Лигнин"]], 0],
+        ["Zamburug'ning tanasi nimadan tashkil topgan?", "Из чего состоит тело гриба?", [["Ildiz va poyadan", "Из корня и стебля"], ["Gifalardan (mitseliydan)", "Из гиф (мицелия)"], ["Barglardan", "Из листьев"], ["Gullardan", "Из цветков"]], 1],
+        ["Penitsillin antibiotigi qaysi zamburug'dan olinadi?", "Из какого гриба получают антибиотик пенициллин?", [["Mukor", "Мукор"], ["Achitqi", "Дрожжи"], ["Penitsill", "Пеницилл"], ["Shampinon", "Шампиньон"]], 2],
+        ["Achitqi zamburug'lari qayerda ishlatiladi?", "Где используют дрожжи?", [["Antibiotik olishda", "Для получения антибиотиков"], ["Tuproqni o'g'itlashda", "Для удобрения почвы"], ["Qog'oz ishlab chiqarishda", "В производстве бумаги"], ["Non yopish va bijg'itishda", "В хлебопечении и брожении"]], 3],
+        ["Lishaynik qanday organizmlarning simbiozidan iborat?", "Симбиозом каких организмов является лишайник?", [["Zamburug' va suvo'ti", "Гриба и водоросли"], ["Bakteriya va virus", "Бактерии и вируса"], ["Mox va paporotnik", "Мха и папоротника"], ["Ikki xil zamburug'", "Двух разных грибов"]], 0],
+        ["Lishayniklar nimaning ko'rsatkichi (indikatori) hisoblanadi?", "Индикатором чего являются лишайники?", [["Tuproq unumdorligining", "Плодородия почвы"], ["Havo tozaligining", "Чистоты воздуха"], ["Suv chuqurligining", "Глубины воды"], ["Harorat o'zgarishining", "Изменения температуры"]], 1],
+        ["Mikoriza nima?", "Что такое микориза?", [["Zamburug' kasalligi", "Болезнь гриба"], ["Zamburug'ning sporasi", "Спора гриба"], ["Zamburug' va o'simlik ildizining simbiozi", "Симбиоз гриба и корней растения"], ["Zamburug'ning mevasi", "Плод гриба"]], 2],
+        ["Quyidagilardan qaysi biri zaharli qo'ziqorin?", "Какой из грибов ядовит?", [["Oq poganka", "Бледная поганка"], ["Shampinon", "Шампиньон"], ["Oq qo'ziqorin", "Белый гриб"], ["Qayin qo'ziqorini", "Подберёзовик"]], 0],
+        ["Zamburug'lar qanday oziqlanadi?", "Как питаются грибы?", [["Avtotrof", "Автотрофно"], ["Geterotrof", "Гетеротрофно"], ["Fotosintez orqali", "Путём фотосинтеза"], ["Xemosintez orqali", "Путём хемосинтеза"]], 1],
+        ["Boshoqli ekinlarda parazitlik qiluvchi zamburug' qaysi?", "Какой гриб паразитирует на злаках?", [["Shampinon", "Шампиньон"], ["Achitqi", "Дрожжи"], ["Penitsill", "Пеницилл"], ["Qorakuya", "Головня"]], 3]
+      ]
+    },
+    {
+      "t": ["O'simliklar tuzilishi", "Строение растений"],
+      "q": [
+        ["O'simlikning qaysi organi tuproqdan suv va mineral moddalarni so'radi?", "Какой орган растения всасывает воду и минеральные вещества из почвы?", [["Ildiz", "Корень"], ["Barg", "Лист"], ["Gul", "Цветок"], ["Meva", "Плод"]], 0],
+        ["Fotosintez qiluvchi asosiy organ qaysi?", "Какой орган растения является основным органом фотосинтеза?", [["Ildiz", "Корень"], ["Barg", "Лист"], ["Urug'", "Семя"], ["Gul", "Цветок"]], 1],
+        ["Barg og'izchalarining vazifasi nima?", "Какова функция устьиц листа?", [["Suv so'rish", "Всасывание воды"], ["Changlanish", "Опыление"], ["Gaz almashinuvi va suv bug'latish", "Газообмен и испарение воды"], ["Urug' hosil qilish", "Образование семян"]], 2],
+        ["Suv va mineral moddalar o'simlik bo'ylab yuqoriga nima orqali ko'tariladi?", "По чему вода и минеральные вещества поднимаются вверх по растению?", [["Ksilema (naychalar) orqali", "По ксилеме (сосудам)"], ["Floema orqali", "По флоэме"], ["Epidermis orqali", "По эпидермису"], ["Kambiy orqali", "По камбию"]], 0],
+        ["Organik moddalar barglardan boshqa organlarga nima orqali oqib o'tadi?", "По чему органические вещества оттекают от листьев к другим органам?", [["Ksilema orqali", "По ксилеме"], ["Floema (elaksimon naychalar) orqali", "По флоэме (ситовидным трубкам)"], ["Po'kak orqali", "По пробке"], ["O'zak orqali", "По сердцевине"]], 1],
+        ["Kambiyning vazifasi nima?", "Какова функция камбия?", [["Fotosintez", "Фотосинтез"], ["Suv so'rish", "Всасывание воды"], ["Poyaning yo'g'onlashib o'sishi", "Рост стебля в толщину"], ["Changlanish", "Опыление"]], 2],
+        ["Daraxt poyasidagi yillik halqalar nima hisobiga hosil bo'ladi?", "За счёт чего образуются годичные кольца на стволе дерева?", [["Barglar to'kilishi", "Листопада"], ["Ildiz o'sishi", "Роста корня"], ["Gullash", "Цветения"], ["Kambiy faoliyati", "Деятельности камбия"]], 3],
+        ["Gulning erkaklik qismi qanday ataladi?", "Как называется мужская часть цветка?", [["Changchi", "Тычинка"], ["Urug'chi", "Пестик"], ["Kosachabarg", "Чашелистик"], ["Gultojbarg", "Лепесток"]], 0],
+        ["Meva gulning qaysi qismidan rivojlanadi?", "Из какой части цветка развивается плод?", [["Changchidan", "Из тычинки"], ["Urug'chining tugunchasidan", "Из завязи пестика"], ["Gultojbargdan", "Из лепестков"], ["Kosachabargdan", "Из чашелистиков"]], 1],
+        ["Urug'ning unib chiqishi uchun nimalar zarur?", "Что необходимо для прорастания семян?", [["Faqat yorug'lik", "Только свет"], ["Faqat tuproq", "Только почва"], ["Suv, havo va issiqlik", "Вода, воздух и тепло"], ["Faqat o'g'it", "Только удобрения"]], 2]
+      ]
+    },
+    {
+      "t": ["O'simliklar sistematikasi", "Систематика растений"],
+      "q": [
+        ["Quyidagilardan qaysi biri sporali o'simlik?", "Какое из растений является споровым?", [["Yo'sin", "Мох"], ["Qarag'ay", "Сосна"], ["Olma", "Яблоня"], ["Bug'doy", "Пшеница"]], 0],
+        ["Quyidagilardan qaysi biri ochiq urug'li o'simlik?", "Какое из растений относится к голосеменным?", [["Olma", "Яблоня"], ["Qarag'ay", "Сосна"], ["G'o'za", "Хлопчатник"], ["Lola", "Тюльпан"]], 1],
+        ["Quyidagilardan qaysi biri bir pallali o'simlik?", "Какое из растений однодольное?", [["Loviya", "Фасоль"], ["Kungaboqar", "Подсолнечник"], ["Bug'doy", "Пшеница"], ["Olma", "Яблоня"]], 2],
+        ["Ikki pallali o'simliklar uchun xos belgilar qaysi?", "Какие признаки характерны для двудольных растений?", [["Bir urug'palla va popuk ildiz", "Одна семядоля и мочковатый корень"], ["Spora bilan ko'payish", "Размножение спорами"], ["Gulning yo'qligi", "Отсутствие цветка"], ["Ikki urug'palla va o'q ildiz", "Две семядоли и стержневой корень"]], 3],
+        ["G'o'za qaysi oilaga mansub?", "К какому семейству относится хлопчатник?", [["Gulxayridoshlar", "Мальвовые"], ["Bug'doydoshlar", "Злаковые"], ["Ra'nodoshlar", "Розоцветные"], ["Burchoqdoshlar", "Бобовые"]], 0],
+        ["Burchoqdoshlar oilasiga qaysi o'simlik kiradi?", "Какое растение относится к семейству бобовых?", [["Bug'doy", "Пшеница"], ["Loviya", "Фасоль"], ["Lola", "Тюльпан"], ["Piyoz", "Лук"]], 1],
+        ["Sholi (guruch) qaysi oilaga mansub?", "К какому семейству относится рис?", [["Ra'nodoshlar", "Розоцветные"], ["Burchoqdoshlar", "Бобовые"], ["Bug'doydoshlar", "Злаковые"], ["Ituzumdoshlar", "Паслёновые"]], 2],
+        ["Suvo'tlarining o'ziga xos belgisi qaysi?", "Какая особенность характерна для водорослей?", [["Haqiqiy to'qima va organlari yo'q", "Нет настоящих тканей и органов"], ["Gul hosil qiladi", "Образуют цветки"], ["Urug' bilan ko'payadi", "Размножаются семенами"], ["Ildizi bor", "Имеют корни"]], 0],
+        ["Yopiq urug'li o'simliklarning asosiy belgisi nima?", "Каков главный признак покрытосеменных растений?", [["Spora bilan ko'payish", "Размножение спорами"], ["Gul va meva hosil qilish", "Образование цветков и плодов"], ["Faqat suvda yashash", "Жизнь только в воде"], ["Ildizning yo'qligi", "Отсутствие корня"]], 1],
+        ["Lola qaysi sinfga mansub?", "К какому классу относится тюльпан?", [["Ikki pallalilar", "Двудольные"], ["Ochiq urug'lilar", "Голосеменные"], ["Yo'sinlar", "Мхи"], ["Bir pallalilar", "Однодольные"]], 3]
+      ]
+    },
+    {
+      "t": ["Umurtqasiz hayvonlar", "Беспозвоночные животные"],
+      "q": [
+        ["Quyidagilardan qaysi biri bir hujayrali hayvon?", "Какое из животных одноклеточное?", [["Amyoba", "Амёба"], ["Gidra", "Гидра"], ["Yomg'ir chuvalchangi", "Дождевой червь"], ["Qisqichbaqa", "Рак"]], 0],
+        ["Gidra qaysi tipga mansub?", "К какому типу относится гидра?", [["Halqali chuvalchanglar", "Кольчатые черви"], ["Bo'shliqichlilar", "Кишечнополостные"], ["Mollyuskalar", "Моллюски"], ["Bo'g'imoyoqlilar", "Членистоногие"]], 1],
+        ["Yomg'ir chuvalchangi qaysi tipga mansub?", "К какому типу относится дождевой червь?", [["Yassi chuvalchanglar", "Плоские черви"], ["To'garak chuvalchanglar", "Круглые черви"], ["Halqali chuvalchanglar", "Кольчатые черви"], ["Bo'shliqichlilar", "Кишечнополостные"]], 2],
+        ["Hasharotlarning nechta oyog'i bor?", "Сколько ног у насекомых?", ["8", "10", "4", "6"], 3],
+        ["O'rgimchaklarning nechta oyog'i bor?", "Сколько ног у пауков?", ["6", "8", "10", "4"], 1],
+        ["Bezgak (malyariya) kasalligini nima qo'zg'atadi?", "Кто вызывает малярию?", [["Bezgak plazmodiysi", "Малярийный плазмодий"], ["Amyoba", "Амёба"], ["Infuzoriya", "Инфузория"], ["Evglena", "Эвглена"]], 0],
+        ["Quyidagilardan qaysi biri mollyuska?", "Какое из животных является моллюском?", [["Asalari", "Пчела"], ["O'rgimchak", "Паук"], ["Shilliqqurt", "Слизень"], ["Qisqichbaqa", "Рак"]], 2],
+        ["Qaysi hasharot to'liq o'zgarish (metamorfoz) bilan rivojlanadi?", "Какое насекомое развивается с полным превращением?", [["Kapalak", "Бабочка"], ["Chigirtka", "Саранча"], ["Suvarak", "Таракан"], ["Ninachi", "Стрекоза"]], 0],
+        ["Daryo qisqichbaqasi qaysi sinfga mansub?", "К какому классу относится речной рак?", [["Hasharotlar", "Насекомые"], ["Qisqichbaqasimonlar", "Ракообразные"], ["O'rgimchaksimonlar", "Паукообразные"], ["Mollyuskalar", "Моллюски"]], 1],
+        ["Odam askaridasi qanday hayot kechiradi?", "Какой образ жизни ведёт человеческая аскарида?", [["Erkin yashaydi", "Свободноживущий"], ["Suvda suzadi", "Плавает в воде"], ["O'simliklarda yashaydi", "Живёт на растениях"], ["Parazitlik qiladi", "Паразитирует"]], 3]
+      ]
+    },
+    {
+      "t": ["Umurtqali hayvonlar", "Позвоночные животные"],
+      "q": [
+        ["Baliqlar nima bilan nafas oladi?", "Чем дышат рыбы?", [["Jabra bilan", "Жабрами"], ["O'pka bilan", "Лёгкими"], ["Teri bilan", "Кожей"], ["Traxeya bilan", "Трахеями"]], 0],
+        ["Quyidagilardan qaysi biri suvda hamda quruqlikda yashovchi (amfibiya)?", "Какое из животных является земноводным?", [["Kaltakesak", "Ящерица"], ["Baqa", "Лягушка"], ["Ilon", "Змея"], ["Toshbaqa", "Черепаха"]], 1],
+        ["Kaltakesak qaysi sinfga mansub?", "К какому классу относится ящерица?", [["Suvda hamda quruqlikda yashovchilar", "Земноводные"], ["Sutemizuvchilar", "Млекопитающие"], ["Sudralib yuruvchilar", "Пресмыкающиеся"], ["Qushlar", "Птицы"]], 2],
+        ["Qushlarning yuragi necha kamerali?", "Сколько камер в сердце птиц?", ["2", "3", "4", "1"], 2],
+        ["Baliqlarning yuragi necha kamerali?", "Сколько камер в сердце рыб?", ["2", "3", "4", "1"], 0],
+        ["Sutemizuvchilar bolalarini nima bilan boqadi?", "Чем млекопитающие выкармливают детёнышей?", [["Hasharotlar bilan", "Насекомыми"], ["Urug'lar bilan", "Семенами"], ["Baliq bilan", "Рыбой"], ["Sut bilan", "Молоком"]], 3],
+        ["Qaysi hayvonlar issiq qonli?", "Какие животные теплокровные?", [["Baliqlar va baqalar", "Рыбы и лягушки"], ["Qushlar va sutemizuvchilar", "Птицы и млекопитающие"], ["Ilonlar va kaltakesaklar", "Змеи и ящерицы"], ["Hasharotlar", "Насекомые"]], 1],
+        ["Qaysi sutemizuvchi tuxum qo'yadi?", "Какое млекопитающее откладывает яйца?", [["O'rdakburun", "Утконос"], ["Kenguru", "Кенгуру"], ["Mushuk", "Кошка"], ["Ko'rshapalak", "Летучая мышь"]], 0],
+        ["Ko'rshapalaklar qaysi sinfga mansub?", "К какому классу относятся летучие мыши?", [["Qushlar", "Птицы"], ["Sudralib yuruvchilar", "Пресмыкающиеся"], ["Sutemizuvchilar", "Млекопитающие"], ["Hasharotlar", "Насекомые"]], 2],
+        ["Ilonlar qaysi sinfga mansub?", "К какому классу относятся змеи?", [["Suvda hamda quruqlikda yashovchilar", "Земноводные"], ["Sutemizuvchilar", "Млекопитающие"], ["Baliqlar", "Рыбы"], ["Sudralib yuruvchilar", "Пресмыкающиеся"]], 3]
+      ]
+    }
+  ]
+}
