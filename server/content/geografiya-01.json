@@ -1,0 +1,83 @@
+{
+  "key": "geografiya",
+  "from": 1,
+  "name": ["Geografiya", "География"],
+  "aliases": ["geography"],
+  "topics": [
+    {
+      "t": ["Yer — Quyosh sistemasidagi sayyora", "Земля — планета Солнечной системы"],
+      "q": [
+        ["Yer Quyoshdan hisoblaganda nechanchi sayyora?", "Какой по счёту от Солнца является Земля?", ["2", "3", "4", "5"], 1],
+        ["Quyosh sistemasidagi eng katta sayyora qaysi?", "Какая планета Солнечной системы самая большая?", [["Yupiter", "Юпитер"], ["Saturn", "Сатурн"], ["Yer", "Земля"], ["Mars", "Марс"]], 0],
+        ["Yer Quyosh atrofini qancha vaqtda bir marta aylanib chiqadi?", "За какое время Земля совершает один оборот вокруг Солнца?", [["24 soatda", "За 24 часа"], ["30 kunda", "За 30 дней"], ["Taxminan 365 kunda", "Примерно за 365 суток"], ["10 yilda", "За 10 лет"]], 2],
+        ["Kun va tunning almashinuviga nima sabab bo'ladi?", "Что является причиной смены дня и ночи?", [["Yerning Quyosh atrofida aylanishi", "Обращение Земли вокруг Солнца"], ["Yerning o'z o'qi atrofida aylanishi", "Вращение Земли вокруг своей оси"], ["Oyning harakati", "Движение Луны"], ["Bulutlar", "Облака"]], 1],
+        ["Fasllar almashinuviga nima sabab bo'ladi?", "Что является причиной смены времён года?", [["Oyning Yer atrofida aylanishi", "Обращение Луны вокруг Земли"], ["Yerning Quyoshgacha masofasining keskin o'zgarishi", "Резкое изменение расстояния до Солнца"], ["Shamollar", "Ветры"], ["Yer o'qining og'maligi va Yerning Quyosh atrofida aylanishi", "Наклон земной оси и обращение Земли вокруг Солнца"]], 3],
+        ["Yerning tabiiy yo'ldoshi qaysi?", "Какой естественный спутник у Земли?", [["Oy", "Луна"], ["Mars", "Марс"], ["Venera", "Венера"], ["Quyosh", "Солнце"]], 0],
+        ["Yerning o'rtacha radiusi taxminan qancha?", "Чему примерно равен средний радиус Земли?", [["40 000 km", "40 000 км"], ["6371 km", "6371 км"], ["1000 km", "1000 км"], ["150 mln km", "150 млн км"]], 1],
+        ["Ekvatorning uzunligi taxminan qancha?", "Какова примерная длина экватора?", [["6371 km", "6371 км"], ["40 000 km", "40 000 км"], ["12 742 km", "12 742 км"], ["100 000 km", "100 000 км"]], 1],
+        ["Yerdan Quyoshgacha bo'lgan o'rtacha masofa qancha?", "Каково среднее расстояние от Земли до Солнца?", [["384 ming km", "384 тыс. км"], ["1 mln km", "1 млн км"], ["150 mln km", "150 млн км"], ["1 mlrd km", "1 млрд км"]], 2],
+        ["Quyoshga eng yaqin sayyora qaysi?", "Какая планета ближе всех к Солнцу?", [["Venera", "Венера"], ["Mars", "Марс"], ["Yer", "Земля"], ["Merkuriy", "Меркурий"]], 3]
+      ]
+    },
+    {
+      "t": ["Geografik xarita va koordinatalar", "Географическая карта и координаты"],
+      "q": [
+        ["Xarita masshtabi 1 : 100 000. Xaritadagi 1 sm joydagi qancha masofaga teng?", "Масштаб карты 1 : 100 000. Какому расстоянию на местности соответствует 1 см на карте?", [["1 km", "1 км"], ["10 km", "10 км"], ["100 m", "100 м"], ["100 km", "100 км"]], 0],
+        ["Geografik kenglik qayerdan boshlab hisoblanadi?", "От чего отсчитывается географическая широта?", [["Bosh meridiandan", "От нулевого меридиана"], ["Ekvatordan", "От экватора"], ["Shimoliy qutbdan", "От Северного полюса"], ["Okean sathidan", "От уровня океана"]], 1],
+        ["Geografik uzoqlik qayerdan boshlab hisoblanadi?", "От чего отсчитывается географическая долгота?", [["Ekvatordan", "От экватора"], ["Janubiy qutbdan", "От Южного полюса"], ["Bosh (Grinvich) meridianidan", "От нулевого (Гринвичского) меридиана"], ["Shimoliy tropikdan", "От Северного тропика"]], 2],
+        ["Geografik kenglikning eng katta qiymati qancha?", "Каково наибольшее значение географической широты?", ["180°", "90°", "360°", "60°"], 1],
+        ["Geografik uzoqlikning eng katta qiymati qancha?", "Каково наибольшее значение географической долготы?", ["90°", "360°", "45°", "180°"], 3],
+        ["Xaritada bir xil balandlikdagi nuqtalarni tutashtiruvchi chiziqlar qanday ataladi?", "Как называются линии на карте, соединяющие точки с одинаковой высотой?", [["Gorizontallar", "Горизонтали"], ["Izotermalar", "Изотермы"], ["Izobaralar", "Изобары"], ["Meridianlar", "Меридианы"]], 0],
+        ["Toshkent qaysi yarimsharlarda joylashgan?", "В каких полушариях находится Ташкент?", [["Janubiy va G'arbiy", "Южном и Западном"], ["Shimoliy va Sharqiy", "Северном и Восточном"], ["Shimoliy va G'arbiy", "Северном и Западном"], ["Janubiy va Sharqiy", "Южном и Восточном"]], 1],
+        ["Sharq yo'nalishining azimuti necha gradus?", "Чему равен азимут направления на восток?", ["0°", "180°", "90°", "270°"], 2],
+        ["Parallel nima?", "Что такое параллель?", [["Bir xil kenglikdagi nuqtalarni tutashtiruvchi chiziq", "Линия, соединяющая точки с одинаковой широтой"], ["Qutblarni tutashtiruvchi chiziq", "Линия, соединяющая полюса"], ["Bir xil balandlik chizig'i", "Линия равных высот"], ["Daryo o'zani", "Русло реки"]], 0],
+        ["Quyidagi masshtablardan qaysi biri eng yirik?", "Какой из масштабов самый крупный?", ["1 : 100 000", "1 : 1 000 000", "1 : 5 000 000", "1 : 10 000"], 3]
+      ]
+    },
+    {
+      "t": ["Litosfera va Yer yuzasi relyefi", "Литосфера и рельеф Земли"],
+      "q": [
+        ["Dunyodagi eng baland cho'qqi qaysi?", "Какая вершина самая высокая в мире?", [["Jomolungma (Everest)", "Джомолунгма (Эверест)"], ["Elbrus", "Эльбрус"], ["Kilimanjaro", "Килиманджаро"], ["Akonkagua", "Аконкагуа"]], 0],
+        ["Dunyo okeanidagi eng chuqur botiq qaysi?", "Какой желоб самый глубокий в Мировом океане?", [["Puerto-Riko botig'i", "Пуэрто-Риканский"], ["Mariana botig'i", "Марианский"], ["Yava botig'i", "Зондский (Яванский)"], ["Kuril-Kamchatka botig'i", "Курило-Камчатский"]], 1],
+        ["Yerning ichki tuzilishi qaysi qatlamlardan iborat?", "Из каких слоёв состоит внутреннее строение Земли?", [["Atmosfera va gidrosfera", "Атмосфера и гидросфера"], ["Faqat po'st", "Только кора"], ["Yer po'sti, mantiya va yadro", "Земная кора, мантия и ядро"], ["Tuproq va qum", "Почва и песок"]], 2],
+        ["Yer yuzasiga otilib chiqqan magma qanday ataladi?", "Как называется магма, излившаяся на поверхность Земли?", [["Granit", "Гранит"], ["Qum", "Песок"], ["Tuproq", "Почва"], ["Lava", "Лава"]], 3],
+        ["Litosfera plitalarining harakati nimaga sabab bo'ladi?", "К чему приводит движение литосферных плит?", [["Zilzila va vulqonlarga", "К землетрясениям и вулканизму"], ["Yomg'ir yog'ishiga", "К выпадению дождей"], ["Kun va tun almashinuviga", "К смене дня и ночи"], ["Fasllar almashinuviga", "К смене времён года"]], 0],
+        ["Zilzila kuchi qanday o'lchanadi?", "Чем измеряется сила землетрясения?", [["Gradus bilan", "Градусами"], ["Ball yoki magnituda bilan", "Баллами или магнитудой"], ["Metr bilan", "Метрами"], ["Kilogramm bilan", "Килограммами"]], 1],
+        ["Dunyodagi eng katta pasttekislik qaysi?", "Какая низменность самая большая в мире?", [["Turon pasttekisligi", "Туранская низменность"], ["Kaspiybo'yi pasttekisligi", "Прикаспийская низменность"], ["Amazonka pasttekisligi", "Амазонская низменность"], ["Hind-Gang pasttekisligi", "Индо-Гангская низменность"]], 2],
+        ["Nurash nima?", "Что такое выветривание?", [["Harorat, suv va shamol ta'sirida tog' jinslarining yemirilishi", "Разрушение горных пород под действием температуры, воды и ветра"], ["Vulqon otilishi", "Извержение вулкана"], ["Tog'larning ko'tarilishi", "Поднятие гор"], ["Daryoning muzlashi", "Замерзание реки"]], 0],
+        ["Quruqlikdagi eng uzun tog' tizmasi qaysi?", "Какая горная система на суше самая длинная?", [["Himoloy", "Гималаи"], ["And (Kordilyera)", "Анды"], ["Alp", "Альпы"], ["Ural", "Урал"]], 1],
+        ["Quyidagilardan qaysi biri cho'kindi tog' jinsi?", "Какая из горных пород является осадочной?", [["Granit", "Гранит"], ["Bazalt", "Базальт"], ["Marmar", "Мрамор"], ["Ohaktosh", "Известняк"]], 3]
+      ]
+    },
+    {
+      "t": ["Atmosfera va iqlim", "Атмосфера и климат"],
+      "q": [
+        ["Atmosfera havosida qaysi gaz eng ko'p?", "Какого газа больше всего в атмосферном воздухе?", [["Azot", "Азот"], ["Kislorod", "Кислород"], ["Karbonat angidrid", "Углекислый газ"], ["Argon", "Аргон"]], 0],
+        ["Atmosferaning eng quyi qatlami qanday ataladi?", "Как называется нижний слой атмосферы?", [["Stratosfera", "Стратосфера"], ["Troposfera", "Тропосфера"], ["Mezosfera", "Мезосфера"], ["Termosfera", "Термосфера"]], 1],
+        ["Troposferada har 1 km ko'tarilganda havo harorati taxminan qanchaga pasayadi?", "Примерно на сколько понижается температура воздуха в тропосфере при подъёме на каждый 1 км?", ["1 °C", "20 °C", "6 °C", "0,5 °C"], 2],
+        ["Atmosfera bosimi qaysi asbob bilan o'lchanadi?", "Каким прибором измеряют атмосферное давление?", [["Termometr", "Термометр"], ["Gigrometr", "Гигрометр"], ["Flyuger", "Флюгер"], ["Barometr", "Барометр"]], 3],
+        ["Shamol qayerdan qayerga esadi?", "Откуда и куда дует ветер?", [["Yuqori bosimli joydan past bosimli joyga", "Из области высокого давления в область низкого"], ["Past bosimdan yuqori bosimga", "Из области низкого давления в область высокого"], ["Faqat shimoldan janubga", "Только с севера на юг"], ["Faqat dengizdan quruqlikka", "Только с моря на сушу"]], 0],
+        ["Havo namligi qaysi asbob bilan o'lchanadi?", "Каким прибором измеряют влажность воздуха?", [["Barometr", "Барометр"], ["Gigrometr", "Гигрометр"], ["Termometr", "Термометр"], ["Flyuger", "Флюгер"]], 1],
+        ["Mussonlar qanday shamollar?", "Что такое муссоны?", [["Kunlik shamollar", "Суточные ветры"], ["Doimiy g'arbiy shamollar", "Постоянные западные ветры"], ["Fasliy shamollar", "Сезонные ветры"], ["Tog' shamollari", "Горные ветры"]], 2],
+        ["Iqlim ob-havodan nimasi bilan farq qiladi?", "Чем климат отличается от погоды?", [["Iqlim — ko'p yillik ob-havo rejimi", "Климат — многолетний режим погоды"], ["Iqlim — bir kunlik holat", "Климат — состояние за один день"], ["Farqi yo'q", "Ничем"], ["Iqlim faqat shamolni bildiradi", "Климат описывает только ветер"]], 0],
+        ["Eng sovuq materik qaysi?", "Какой материк самый холодный?", [["Yevrosiyo", "Евразия"], ["Shimoliy Amerika", "Северная Америка"], ["Antarktida", "Антарктида"], ["Yevropa", "Европа"]], 2],
+        ["Briz shamoli o'z yo'nalishini qanday davr bilan o'zgartiradi?", "С какой периодичностью меняет направление бриз?", [["Yilda bir marta", "Раз в год"], ["Har oyda", "Каждый месяц"], ["O'zgartirmaydi", "Не меняет"], ["Sutkada ikki marta (kunduz va kechasi)", "Дважды в сутки (днём и ночью)"]], 3]
+      ]
+    },
+    {
+      "t": ["Gidrosfera. Dunyo okeani", "Гидросфера. Мировой океан"],
+      "q": [
+        ["Eng katta okean qaysi?", "Какой океан самый большой?", [["Tinch okeani", "Тихий"], ["Atlantika okeani", "Атлантический"], ["Hind okeani", "Индийский"], ["Shimoliy Muz okeani", "Северный Ледовитый"]], 0],
+        ["Eng kichik okean qaysi?", "Какой океан самый маленький?", [["Tinch okeani", "Тихий"], ["Atlantika okeani", "Атлантический"], ["Hind okeani", "Индийский"], ["Shimoliy Muz okeani", "Северный Ледовитый"]], 3],
+        ["Okean suvining o'rtacha sho'rligi qancha?", "Какова средняя солёность воды океана?", ["5‰", "35‰", "100‰", "1‰"], 1],
+        ["Quyidagi dengizlardan qaysi biri eng sho'r?", "Какое из морей самое солёное?", [["Boltiq dengizi", "Балтийское"], ["Qora dengiz", "Чёрное"], ["Qizil dengiz", "Красное"], ["Oq dengiz", "Белое"]], 2],
+        ["Quyidagilardan qaysi biri iliq oqim?", "Какое из течений является тёплым?", [["Golfstrim", "Гольфстрим"], ["Labrador oqimi", "Лабрадорское"], ["Kaliforniya oqimi", "Калифорнийское"], ["Peru oqimi", "Перуанское"]], 0],
+        ["Dengizdagi qalqish va qaytishlar asosan nima ta'sirida sodir bo'ladi?", "Под действием чего в основном происходят приливы и отливы?", [["Shamol", "Ветра"], ["Oyning tortish kuchi", "Притяжения Луны"], ["Zilzila", "Землетрясений"], ["Daryolar oqimi", "Течения рек"]], 1],
+        ["Dunyo okeani Yer yuzasining taxminan necha foizini egallaydi?", "Какую примерно часть поверхности Земли занимает Мировой океан?", ["29%", "50%", "90%", "71%"], 3],
+        ["Dunyo okeanining eng chuqur joyi taxminan qancha?", "Какова примерно наибольшая глубина Мирового океана?", [["≈ 11 km", "≈ 11 км"], ["≈ 4 km", "≈ 4 км"], ["≈ 2 km", "≈ 2 км"], ["≈ 20 km", "≈ 20 км"]], 0],
+        ["Sunami to'lqinlari nima sababdan paydo bo'ladi?", "Из-за чего возникают волны цунами?", [["Kuchli shamoldan", "Из-за сильного ветра"], ["Suv osti zilzilalaridan", "Из-за подводных землетрясений"], ["Oy tutilishidan", "Из-за лунного затмения"], ["Daryo toshqinidan", "Из-за разлива рек"]], 1],
+        ["Dunyodagi eng katta orol qaysi?", "Какой остров самый большой в мире?", [["Madagaskar", "Мадагаскар"], ["Buyuk Britaniya", "Великобритания"], ["Grenlandiya", "Гренландия"], ["Kalimantan", "Калимантан"]], 2]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "key": "geografiya",
+  "from": 6,
+  "name": ["Geografiya", "География"],
+  "aliases": ["geography"],
+  "topics": [
+    {
+      "t": ["Quruqlik suvlari", "Воды суши"],
+      "q": [
+        ["An'anaviy ma'lumotlarga ko'ra dunyodagi eng uzun daryo qaysi?", "Какая река, по традиционным данным, самая длинная в мире?", [["Nil", "Нил"], ["Amazonka", "Амазонка"], ["Yangtsi", "Янцзы"], ["Missisipi", "Миссисипи"]], 0],
+        ["Dunyodagi eng sersuv daryo qaysi?", "Какая река самая полноводная в мире?", [["Nil", "Нил"], ["Amazonka", "Амазонка"], ["Volga", "Волга"], ["Dunay", "Дунай"]], 1],
+        ["Maydoni bo'yicha dunyodagi eng katta ko'l qaysi?", "Какое озеро самое большое в мире по площади?", [["Baykal", "Байкал"], ["Viktoriya", "Виктория"], ["Kaspiy dengizi", "Каспийское море"], ["Yuqori ko'l", "Верхнее"]], 2],
+        ["Dunyodagi eng chuqur ko'l qaysi?", "Какое озеро самое глубокое в мире?", [["Kaspiy", "Каспийское"], ["Tanganika", "Танганьика"], ["Issiqko'l", "Иссык-Куль"], ["Baykal", "Байкал"]], 3],
+        ["Daryo havzasi nima?", "Что такое бассейн реки?", [["Daryo o'z suvini yig'adigan hudud", "Территория, с которой река собирает воду"], ["Daryoning quyilish joyi", "Место впадения реки"], ["Daryo o'zani", "Русло реки"], ["Daryodagi ko'l", "Озеро на реке"]], 0],
+        ["Suv o'tkazmaydigan qatlamlar orasida bosim ostida yotgan yer osti suvlari qanday ataladi?", "Как называются подземные воды, залегающие под давлением между водоупорными слоями?", [["Grunt suvlari", "Грунтовые"], ["Artezian suvlari", "Артезианские"], ["Tuproq suvlari", "Почвенные"], ["Dengiz suvlari", "Морские"]], 1],
+        ["Yerdagi chuchuk suvning taxminan qancha qismi muzliklarda to'plangan?", "Какая примерно часть пресной воды Земли сосредоточена в ледниках?", ["≈ 5%", "≈ 30%", "≈ 70%", "≈ 1%"], 2],
+        ["Botqoqliklar qayerda hosil bo'ladi?", "Где образуются болота?", [["Namlik ortiqcha va suv yaxshi oqib ketmaydigan joylarda", "Там, где избыток влаги и плохой сток"], ["Cho'llarda", "В пустынях"], ["Baland tog' cho'qqilarida", "На вершинах высоких гор"], ["Vulqon og'zida", "В жерле вулкана"]], 0],
+        ["Daryoning dengiz yoki ko'lga quyiladigan joyi qanday ataladi?", "Как называется место впадения реки в море или озеро?", [["Irmoq", "Приток"], ["Boshlanish joyi", "Исток"], ["O'zan", "Русло"], ["Quyilish joyi (mansab)", "Устье"]], 3],
+        ["Dunyodagi eng baland sharshara qaysi?", "Какой водопад самый высокий в мире?", [["Niagara", "Ниагарский"], ["Anxel (Salto-Anxel)", "Анхель"], ["Viktoriya", "Виктория"], ["Iguasu", "Игуасу"]], 1]
+      ]
+    },
+    {
+      "t": ["Tabiat zonalari", "Природные зоны"],
+      "q": [
+        ["Abadiy muzloq, mox va lishayniklar qaysi tabiat zonasiga xos?", "Для какой природной зоны характерны многолетняя мерзлота, мхи и лишайники?", [["Tundra", "Тундра"], ["Dasht", "Степь"], ["Cho'l", "Пустыня"], ["Savanna", "Саванна"]], 0],
+        ["Tayga zonasida qanday daraxtlar ustunlik qiladi?", "Какие деревья преобладают в зоне тайги?", [["Bargli daraxtlar", "Лиственные"], ["Ignabargli daraxtlar", "Хвойные"], ["Palmalar", "Пальмы"], ["Butalar", "Кустарники"]], 1],
+        ["Savanna zonasi qaysi materikda eng ko'p tarqalgan?", "На каком материке наиболее распространена зона саванн?", [["Yevropa", "Европа"], ["Antarktida", "Антарктида"], ["Afrika", "Африка"], ["Avstraliya", "Австралия"]], 2],
+        ["Dunyodagi eng katta issiq cho'l qaysi?", "Какая пустыня самая большая жаркая пустыня мира?", [["Gobi", "Гоби"], ["Qizilqum", "Кызылкум"], ["Kalaxari", "Калахари"], ["Sahroi Kabir", "Сахара"]], 3],
+        ["Ekvatorial o'rmonlar iqlimi qanday?", "Каков климат экваториальных лесов?", [["Yil bo'yi issiq va nam", "Жарко и влажно круглый год"], ["Qishi sovuq, yozi qisqa", "Холодная зима, короткое лето"], ["Quruq va issiq", "Сухо и жарко"], ["Yil bo'yi sovuq", "Холодно круглый год"]], 0],
+        ["Dasht zonasida qanday tuproq tarqalgan?", "Какие почвы распространены в зоне степей?", [["Qumli tuproq", "Песчаные"], ["Qora tuproq (chernozem)", "Чернозёмы"], ["Botqoq tuproq", "Болотные"], ["Muzloq tuproq", "Мерзлотные"]], 1],
+        ["Balandlik mintaqalanishi qayerda kuzatiladi?", "Где наблюдается высотная поясность?", [["Tekisliklarda", "На равнинах"], ["Okeanlarda", "В океанах"], ["Tog'larda", "В горах"], ["Cho'llarda", "В пустынях"]], 2],
+        ["Ekvatordan qutblarga tomon tabiat zonalarining almashinishiga nima sabab bo'ladi?", "Что является причиной смены природных зон от экватора к полюсам?", [["Issiqlik va namlik nisbatining o'zgarishi", "Изменение соотношения тепла и влаги"], ["Okeanlar soni", "Число океанов"], ["Vaqt zonalari", "Часовые пояса"], ["Aholi soni", "Численность населения"]], 0],
+        ["Arktika cho'llari zonasi qayerda joylashgan?", "Где расположена зона арктических пустынь?", [["Ekvator yaqinida", "Вблизи экватора"], ["Tropiklarda", "В тропиках"], ["Mo'tadil mintaqada", "В умеренном поясе"], ["Shimoliy qutb atrofida", "Вокруг Северного полюса"]], 3],
+        ["O'rta dengiz (subtropik) iqlimining xususiyati qanday?", "Какова особенность средиземноморского (субтропического) климата?", [["Yil bo'yi yomg'irli", "Дожди круглый год"], ["Qishi juda sovuq", "Очень холодная зима"], ["Yozi quruq va issiq, qishi iliq va nam", "Сухое жаркое лето, мягкая влажная зима"], ["Yil bo'yi qor", "Снег круглый год"]], 2]
+      ]
+    },
+    {
+      "t": ["Dunyo aholisi", "Население мира"],
+      "q": [
+        ["2020-yillarda dunyo aholisi taxminan qancha?", "Какова примерно численность населения мира в 2020-х годах?", [["≈ 8 mlrd kishi", "≈ 8 млрд человек"], ["≈ 2 mlrd kishi", "≈ 2 млрд человек"], ["≈ 20 mlrd kishi", "≈ 20 млрд человек"], ["≈ 800 mln kishi", "≈ 800 млн человек"]], 0],
+        ["2023-yildan boshlab aholisi eng ko'p davlat qaysi?", "Какая страна с 2023 года самая населённая?", [["Xitoy", "Китай"], ["Hindiston", "Индия"], ["AQSh", "США"], ["Indoneziya", "Индонезия"]], 1],
+        ["Aholi zichligi qanday hisoblanadi?", "Как рассчитывается плотность населения?", [["Aholi soni hudud maydoniga bo'linadi", "Численность населения делится на площадь территории"], ["Maydon aholiga bo'linadi", "Площадь делится на население"], ["Tug'ilish o'limga bo'linadi", "Рождаемость делится на смертность"], ["Shaharlar soni bilan", "Числом городов"]], 0],
+        ["Urbanizatsiya nima?", "Что такое урбанизация?", [["Qishloq aholisining ortishi", "Рост сельского населения"], ["Shahar aholisi ulushining o'sishi", "Рост доли городского населения"], ["Aholining kamayishi", "Сокращение населения"], ["O'rmonlarning kesilishi", "Вырубка лесов"]], 1],
+        ["Ona tili sifatida eng ko'p so'zlashiladigan til qaysi?", "На каком языке как на родном говорит больше всего людей?", [["Ingliz tili", "Английский"], ["Ispan tili", "Испанский"], ["Xitoy tili", "Китайский"], ["Arab tili", "Арабский"]], 2],
+        ["Jahon dinlari qaysilar?", "Какие религии являются мировыми?", [["Faqat islom", "Только ислам"], ["Hinduizm va iudaizm", "Индуизм и иудаизм"], ["Shintoizm va daosizm", "Синтоизм и даосизм"], ["Xristianlik, islom va buddizm", "Христианство, ислам и буддизм"]], 3],
+        ["Aholining tabiiy o'sishi qanday aniqlanadi?", "Как определяется естественный прирост населения?", [["Tug'ilganlar sonidan o'lganlar soni ayiriladi", "Из числа родившихся вычитают число умерших"], ["Kelganlar sonidan ketganlar ayiriladi", "Из числа прибывших вычитают выбывших"], ["Shaharlar soni bilan", "Числом городов"], ["Maydon bilan", "Площадью"]], 0],
+        ["Migratsiya nima?", "Что такое миграция?", [["Aholining tug'ilishi", "Рождаемость"], ["Aholining bir joydan boshqa joyga ko'chishi", "Перемещение населения с места на место"], ["Shaharlarning o'sishi", "Рост городов"], ["Aholi zichligi", "Плотность населения"]], 1],
+        ["Aholisi eng ko'p qit'a qaysi?", "Какая часть света самая населённая?", [["Osiyo", "Азия"], ["Afrika", "Африка"], ["Yevropa", "Европа"], ["Avstraliya", "Австралия"]], 0],
+        ["Megalopolis nima?", "Что такое мегалополис?", [["Kichik qishloq", "Маленькое село"], ["Bitta yirik shahar", "Один крупный город"], ["Bir-biriga qo'shilib ketgan bir necha aglomeratsiya", "Слияние нескольких агломераций"], ["Davlat poytaxti", "Столица государства"]], 2]
+      ]
+    },
+    {
+      "t": ["Dunyo siyosiy xaritasi", "Политическая карта мира"],
+      "q": [
+        ["BMT ga a'zo davlatlar soni qancha?", "Сколько государств являются членами ООН?", ["193", "150", "210", "100"], 0],
+        ["Maydoni bo'yicha eng katta davlat qaysi?", "Какая страна самая большая по площади?", [["Kanada", "Канада"], ["Rossiya", "Россия"], ["Xitoy", "Китай"], ["AQSh", "США"]], 1],
+        ["Dunyodagi eng kichik davlat qaysi?", "Какое государство самое маленькое в мире?", [["Monako", "Монако"], ["San-Marino", "Сан-Марино"], ["Vatikan", "Ватикан"], ["Lixtenshteyn", "Лихтенштейн"]], 2],
+        ["Yaponiyaning poytaxti qaysi shahar?", "Какой город является столицей Японии?", [["Pekin", "Пекин"], ["Seul", "Сеул"], ["Bangkok", "Бангкок"], ["Tokio", "Токио"]], 3],
+        ["Quyidagi davlatlardan qaysi biri monarxiya?", "Какое из государств является монархией?", [["Buyuk Britaniya", "Великобритания"], ["Fransiya", "Франция"], ["Germaniya", "Германия"], ["AQSh", "США"]], 0],
+        ["Quyidagi davlatlardan qaysi biri federativ tuzilishga ega?", "Какое из государств является федерацией?", [["Fransiya", "Франция"], ["AQSh", "США"], ["Yaponiya", "Япония"], ["Italiya", "Италия"]], 1],
+        ["Qozog'iston Respublikasining poytaxti qaysi shahar?", "Какой город является столицей Республики Казахстан?", [["Olmaota", "Алматы"], ["Bishkek", "Бишкек"], ["Astana", "Астана"], ["Dushanbe", "Душанбе"]], 2],
+        ["Respublika boshqaruv shaklining xususiyati qanday?", "Какова особенность республиканской формы правления?", [["Hokimiyat saylanadigan organlarga tegishli", "Власть принадлежит выборным органам"], ["Hokimiyat meros bo'lib o'tadi", "Власть передаётся по наследству"], ["Davlat yo'q", "Государства нет"], ["Hokimiyat diniy rahbarda", "Власть у религиозного лидера"]], 0],
+        ["BMT ning bosh qarorgohi qaysi shaharda joylashgan?", "В каком городе находится штаб-квартира ООН?", [["Jeneva", "Женева"], ["London", "Лондон"], ["Parij", "Париж"], ["Nyu-York", "Нью-Йорк"]], 3],
+        ["Turkmanistonning poytaxti qaysi shahar?", "Какой город является столицей Туркменистана?", [["Toshkent", "Ташкент"], ["Ashxobod", "Ашхабад"], ["Boku", "Баку"], ["Tehron", "Тегеран"]], 1]
+      ]
+    },
+    {
+      "t": ["Jahon xo'jaligi", "Мировое хозяйство"],
+      "q": [
+        ["Xo'jalikning birlamchi sohasiga nimalar kiradi?", "Что относится к первичному сектору хозяйства?", [["Qishloq xo'jaligi va qazib olish sanoati", "Сельское хозяйство и добывающая промышленность"], ["Bank va sug'urta", "Банки и страхование"], ["Ta'lim", "Образование"], ["Turizm", "Туризм"]], 0],
+        ["YaIM (yalpi ichki mahsulot) nima?", "Что такое ВВП (валовой внутренний продукт)?", [["Davlat budjeti", "Государственный бюджет"], ["Mamlakatda bir yilda ishlab chiqarilgan barcha tovar va xizmatlar qiymati", "Стоимость всех товаров и услуг, произведённых в стране за год"], ["Eksport hajmi", "Объём экспорта"], ["Aholi daromadi", "Доходы населения"]], 1],
+        ["OPEK qanday tashkilot?", "Что такое ОПЕК?", [["Neft eksport qiluvchi mamlakatlar tashkiloti", "Организация стран — экспортёров нефти"], ["Harbiy ittifoq", "Военный союз"], ["Sport tashkiloti", "Спортивная организация"], ["Bank", "Банк"]], 0],
+        ["Og'ir sanoat tarmoqlariga qaysilar kiradi?", "Какие отрасли относятся к тяжёлой промышленности?", [["To'qimachilik", "Текстильная"], ["Oziq-ovqat", "Пищевая"], ["Metallurgiya va mashinasozlik", "Металлургия и машиностроение"], ["Poyabzal ishlab chiqarish", "Обувная"]], 2],
+        ["Xizmat ko'rsatish sohasi qanday ataladi?", "Как называется сфера услуг?", [["Birlamchi soha", "Первичный сектор"], ["Ikkilamchi soha", "Вторичный сектор"], ["Qazib olish sohasi", "Добывающий сектор"], ["Uchlamchi soha", "Третичный сектор"]], 3],
+        ["Xalqaro ixtisoslashuv nima?", "Что такое международная специализация?", [["Mamlakatning boshqa davlatlar uchun ma'lum mahsulotlar ishlab chiqarishi", "Производство страной определённых товаров для других стран"], ["Barcha mahsulotni o'zi iste'mol qilish", "Потребление всей продукции внутри страны"], ["Chegaralarni yopish", "Закрытие границ"], ["Faqat import qilish", "Только импорт"]], 0],
+        ["Nominal YaIM bo'yicha dunyodagi eng yirik iqtisodiyot qaysi davlatda?", "У какой страны крупнейшая экономика мира по номинальному ВВП?", [["Xitoy", "Китай"], ["AQSh", "США"], ["Yaponiya", "Япония"], ["Germaniya", "Германия"]], 1],
+        ["Xalqaro savdoda yuklarning asosiy qismi qaysi transportda tashiladi?", "Каким транспортом перевозится основная часть грузов в международной торговле?", [["Havo transporti", "Воздушным"], ["Avtomobil transporti", "Автомобильным"], ["Dengiz transporti", "Морским"], ["Quvur transporti", "Трубопроводным"]], 2],
+        ["Qayta tiklanadigan energiya manbaiga misol keltiring.", "Приведите пример возобновляемого источника энергии.", [["Quyosh energiyasi", "Солнечная энергия"], ["Ko'mir", "Уголь"], ["Neft", "Нефть"], ["Tabiiy gaz", "Природный газ"]], 0],
+        ["Erkin iqtisodiy zona nima?", "Что такое свободная экономическая зона?", [["Harbiy hudud", "Военная территория"], ["Qo'riqxona", "Заповедник"], ["Davlat chegarasi", "Государственная граница"], ["Soliq va bojxona imtiyozlari berilgan hudud", "Территория с льготным налоговым и таможенным режимом"]], 3]
+      ]
+    }
+  ]
+}
