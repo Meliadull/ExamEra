@@ -1,0 +1,83 @@
+{
+  "key": "geografiya",
+  "from": 21,
+  "name": ["Geografiya", "География"],
+  "aliases": ["geography"],
+  "topics": [
+    {
+      "t": ["O'zbekiston aholisi", "Население Узбекистана"],
+      "q": [
+        ["O'zbekistonning eng yirik shahri qaysi?", "Какой город Узбекистана самый крупный?", [["Toshkent", "Ташкент"], ["Samarqand", "Самарканд"], ["Namangan", "Наманган"], ["Andijon", "Андижан"]], 0],
+        ["Aholi zichligi eng yuqori bo'lgan viloyat qaysi?", "В какой области самая высокая плотность населения?", [["Navoiy", "Навоийская"], ["Andijon", "Андижанская"], ["Buxoro", "Бухарская"], ["Jizzax", "Джизакская"]], 1],
+        ["Farg'ona vodiysida aholining zich joylashishiga asosiy sabab nima?", "Какова главная причина высокой плотности населения в Ферганской долине?", [["Dengizga yaqinligi", "Близость к морю"], ["Sovuq iqlim", "Холодный климат"], ["Unumdor yerlar va suv resurslari", "Плодородные земли и водные ресурсы"], ["Cho'llarning ko'pligi", "Обилие пустынь"]], 2],
+        ["2020-yillar o'rtalarida O'zbekiston aholisi taxminan qancha?", "Какова примерно численность населения Узбекистана в середине 2020-х годов?", [["≈ 10 mln kishi", "≈ 10 млн человек"], ["≈ 100 mln kishi", "≈ 100 млн человек"], ["≈ 5 mln kishi", "≈ 5 млн человек"], ["≈ 37 mln kishi", "≈ 37 млн человек"]], 3],
+        ["O'zbekiston aholisining ko'pchiligini qaysi millat tashkil etadi?", "Какая национальность составляет большинство населения Узбекистана?", [["O'zbeklar", "Узбеки"], ["Ruslar", "Русские"], ["Tojiklar", "Таджики"], ["Qozoqlar", "Казахи"]], 0],
+        ["O'zbekiston Respublikasining davlat tili qaysi?", "Какой язык является государственным в Республике Узбекистан?", [["Rus tili", "Русский"], ["O'zbek tili", "Узбекский"], ["Ingliz tili", "Английский"], ["Tojik tili", "Таджикский"]], 1],
+        ["Toshkent shahri aholisi taxminan qancha?", "Какова примерно численность населения Ташкента?", [["≈ 300 ming kishi", "≈ 300 тыс. человек"], ["≈ 30 mln kishi", "≈ 30 млн человек"], ["≈ 3 mln kishi", "≈ 3 млн человек"], ["≈ 10 mln kishi", "≈ 10 млн человек"]], 2],
+        ["O'zbekistonda aholi sonining o'sishiga asosiy sabab nima?", "Какова главная причина роста численности населения Узбекистана?", [["Yuqori tabiiy o'sish", "Высокий естественный прирост"], ["Chet eldan ko'chib kelish", "Иммиграция из-за рубежа"], ["Hududning kengayishi", "Расширение территории"], ["Shaharlarning qisqarishi", "Сокращение городов"]], 0],
+        ["O'zbekistonda shahar aholisining ulushi taxminan qancha?", "Какова примерно доля городского населения Узбекистана?", [["≈ 90%", "≈ 90 %"], ["Taxminan yarmi", "Примерно половина"], ["≈ 10%", "≈ 10 %"], ["≈ 1%", "≈ 1 %"]], 1],
+        ["Ichan qal'a qaysi shaharda joylashgan?", "В каком городе находится Ичан-Кала?", [["Samarqand", "Самарканд"], ["Buxoro", "Бухара"], ["Termiz", "Термез"], ["Xiva", "Хива"]], 3]
+      ]
+    },
+    {
+      "t": ["O'zbekiston sanoati", "Промышленность Узбекистана"],
+      "q": [
+        ["Navoiy kon-metallurgiya kombinati asosan nima qazib oladi?", "Что в основном добывает Навоийский горно-металлургический комбинат?", [["Oltin", "Золото"], ["Ko'mir", "Уголь"], ["Neft", "Нефть"], ["Tuz", "Соль"]], 0],
+        ["Olmaliq kon-metallurgiya kombinati asosan qaysi metallni ishlab chiqaradi?", "Какой металл в основном производит Алмалыкский горно-металлургический комбинат?", [["Oltin", "Золото"], ["Mis", "Медь"], ["Temir", "Железо"], ["Alyuminiy", "Алюминий"]], 1],
+        ["Asaka avtomobil zavodi qaysi viloyatda joylashgan?", "В какой области находится Асакинский автомобильный завод?", [["Toshkent", "Ташкентской"], ["Samarqand", "Самаркандской"], ["Andijon", "Андижанской"], ["Navoiy", "Навоийской"]], 2],
+        ["Gidroelektr stansiyalari (GES) qaysi energiya manbaidan foydalanadi?", "Какой источник энергии используют гидроэлектростанции (ГЭС)?", [["Ko'mir", "Уголь"], ["Quyosh", "Солнце"], ["Shamol", "Ветер"], ["Oqar suv", "Текущая вода"]], 3],
+        ["Mineral o'g'itlar ishlab chiqaruvchi yirik kimyo sanoati markazi qaysi?", "Какой город — крупный центр химической промышленности, выпускающий минеральные удобрения?", [["Chirchiq", "Чирчик"], ["Xiva", "Хива"], ["Termiz", "Термез"], ["Nukus", "Нукус"]], 0],
+        ["Muborak gazni qayta ishlash zavodi qaysi viloyatda joylashgan?", "В какой области находится Мубарекский газоперерабатывающий завод?", [["Xorazm", "Хорезмской"], ["Qashqadaryo", "Кашкадарьинской"], ["Jizzax", "Джизакской"], ["Namangan", "Наманганской"]], 1],
+        ["Paxta tolasidan asosan nima ishlab chiqariladi?", "Что в основном производят из хлопкового волокна?", [["Metall", "Металл"], ["Yoqilg'i", "Топливо"], ["Ip va gazlamalar", "Пряжу и ткани"], ["Qurilish materiallari", "Строительные материалы"]], 2],
+        ["Neftni qayta ishlash zavodi joylashgan shahar qaysi?", "В каком городе находится нефтеперерабатывающий завод?", [["Farg'ona", "Фергана"], ["Termiz", "Термез"], ["Nukus", "Нукус"], ["Jizzax", "Джизак"]], 0],
+        ["Yengil sanoatga qaysi tarmoqlar kiradi?", "Какие отрасли относятся к лёгкой промышленности?", [["Metallurgiya", "Металлургия"], ["Neft-gaz sanoati", "Нефтегазовая"], ["Mashinasozlik", "Машиностроение"], ["To'qimachilik, tikuvchilik va poyabzal", "Текстильная, швейная и обувная"]], 3],
+        ["O'zbekistonning asosiy eksport mahsulotlari qaysilar?", "Каковы основные экспортные товары Узбекистана?", [["Banan va kofe", "Бананы и кофе"], ["Oltin, tabiiy gaz va to'qimachilik mahsulotlari", "Золото, природный газ и текстильная продукция"], ["Baliq va dengiz mahsulotlari", "Рыба и морепродукты"], ["Yog'och va qog'oz", "Древесина и бумага"]], 1]
+      ]
+    },
+    {
+      "t": ["O'zbekiston qishloq xo'jaligi", "Сельское хозяйство Узбекистана"],
+      "q": [
+        ["O'zbekistondagi asosiy texnik ekin qaysi?", "Какая техническая культура является главной в Узбекистане?", [["G'o'za (paxta)", "Хлопчатник"], ["Kartoshka", "Картофель"], ["Lavlagi", "Свёкла"], ["Kungaboqar", "Подсолнечник"]], 0],
+        ["O'zbekistondagi asosiy g'alla ekini qaysi?", "Какая зерновая культура является главной в Узбекистане?", [["Sholi", "Рис"], ["Bug'doy", "Пшеница"], ["Makkajo'xori", "Кукуруза"], ["Arpa", "Ячмень"]], 1],
+        ["Sholi asosan qayerda yetishtiriladi?", "Где в основном выращивают рис?", [["Toshkent viloyatida", "В Ташкентской области"], ["Jizzax viloyatida", "В Джизакской области"], ["Xorazm va Qoraqalpog'istonda", "В Хорезме и Каракалпакстане"], ["Navoiy viloyatida", "В Навоийской области"]], 2],
+        ["Ipak qaysi tarmoq mahsuloti?", "Продукцией какой отрасли является шёлк?", [["Qorako'lchilik", "Каракулеводства"], ["Parrandachilik", "Птицеводства"], ["Asalarichilik", "Пчеловодства"], ["Pillachilik", "Шелководства"]], 3],
+        ["Qorako'l qo'ylari asosan qayerda boqiladi?", "Где в основном разводят каракульских овец?", [["Cho'l va chala cho'llarda", "В пустынях и полупустынях"], ["Baland tog'larda", "Высоко в горах"], ["Shaharlarda", "В городах"], ["Sholi dalalarida", "На рисовых полях"]], 0],
+        ["O'zbekistonda dehqonchilik asosan qanday turda?", "Каким в основном является земледелие в Узбекистане?", [["Lalmikor", "Богарным"], ["Sug'orma", "Орошаемым"], ["Gidroponika", "Гидропонным"], ["Faqat issiqxonada", "Только тепличным"]], 1],
+        ["Tomchilatib sug'orish nimani tejaydi?", "Что позволяет экономить капельное орошение?", [["O'g'itni", "Удобрения"], ["Yerni", "Землю"], ["Suvni", "Воду"], ["Urug'ni", "Семена"]], 2],
+        ["Mevali bog'lar va uzumzorlar eng ko'p qaysi hududlarda?", "В каких районах больше всего садов и виноградников?", [["Farg'ona vodiysi va Samarqandda", "В Ферганской долине и Самарканде"], ["Ustyurt platosida", "На плато Устюрт"], ["Qizilqum cho'lida", "В пустыне Кызылкум"], ["Orolbo'yida", "В Приаралье"]], 0],
+        ["Qovunlari bilan ayniqsa mashhur hudud qaysi?", "Какой регион особенно славится дынями?", [["Toshkent", "Ташкент"], ["Xorazm", "Хорезм"], ["Jizzax", "Джизак"], ["Surxondaryo", "Сурхандарья"]], 1],
+        ["Sut chorvachiligi ko'proq qayerda rivojlangan?", "Где больше развито молочное животноводство?", [["Baland tog' cho'qqilarida", "На горных вершинах"], ["Cho'l markazida", "В центре пустыни"], ["Orol dengizi tubida", "На дне Аральского моря"], ["Yirik shaharlar atrofida", "Вокруг крупных городов"]], 3]
+      ]
+    },
+    {
+      "t": ["O'zbekiston transporti va iqtisodiy rayonlari", "Транспорт и экономические районы Узбекистана"],
+      "q": [
+        ["O'zbekistondagi tezyurar poyezd qanday ataladi?", "Как называется скоростной поезд в Узбекистане?", [["Afrosiyob", "Афросиаб"], ["Registon", "Регистан"], ["Nasaf", "Насаф"], ["Turon", "Туран"]], 0],
+        ["Kamchiq dovonidagi temir yo'l tunneli qaysi hududlarni bog'laydi?", "Какие районы соединяет железнодорожный тоннель на перевале Камчик?", [["Xorazm va Qoraqalpog'iston", "Хорезм и Каракалпакстан"], ["Farg'ona vodiysi va Toshkent viloyati", "Ферганскую долину и Ташкентскую область"], ["Samarqand va Buxoro", "Самарканд и Бухару"], ["Surxondaryo va Qashqadaryo", "Сурхандарью и Кашкадарью"]], 1],
+        ["«Afrosiyob» tezyurar poyezdi qaysi shaharlarni bog'laydi?", "Какие города соединяет скоростной поезд «Афросиаб»?", [["Nukus – Xiva", "Нукус – Хива"], ["Andijon – Namangan", "Андижан – Наманган"], ["Toshkent – Samarqand – Buxoro", "Ташкент – Самарканд – Бухара"], ["Termiz – Qarshi", "Термез – Карши"]], 2],
+        ["O'zbekistonning asosiy xalqaro aeroporti qaysi shaharda?", "В каком городе находится главный международный аэропорт Узбекистана?", [["Samarqand", "Самарканд"], ["Buxoro", "Бухара"], ["Navoiy", "Навои"], ["Toshkent", "Ташкент"]], 3],
+        ["Buyuk Ipak yo'li tarixda nima bo'lgan?", "Чем исторически был Великий шёлковый путь?", [["Sharq va G'arbni bog'lagan savdo yo'li", "Торговым путём, связывавшим Восток и Запад"], ["Daryo nomi", "Названием реки"], ["Tog' tizmasi", "Горным хребтом"], ["Qadimgi davlat", "Древним государством"]], 0],
+        ["Quvur transporti orqali asosan nima tashiladi?", "Что в основном транспортируют по трубопроводам?", [["Paxta", "Хлопок"], ["Gaz va neft", "Газ и нефть"], ["Mevalar", "Фрукты"], ["Yo'lovchilar", "Пассажиров"]], 1],
+        ["Toshkent metrosi qaysi yili ochilgan?", "В каком году открылся Ташкентский метрополитен?", ["1977", "1990", "2000", "1966"], 0],
+        ["Farg'ona iqtisodiy rayoniga qaysi viloyatlar kiradi?", "Какие области входят в Ферганский экономический район?", [["Samarqand va Navoiy", "Самаркандская и Навоийская"], ["Andijon, Namangan va Farg'ona", "Андижанская, Наманганская и Ферганская"], ["Xorazm va Qoraqalpog'iston", "Хорезм и Каракалпакстан"], ["Toshkent va Sirdaryo", "Ташкентская и Сырдарьинская"]], 1],
+        ["Temir yo'l transportining asosiy afzalligi nima?", "В чём главное преимущество железнодорожного транспорта?", [["Eng tez transport", "Самый быстрый вид транспорта"], ["Faqat yo'lovchi tashiydi", "Перевозит только пассажиров"], ["Okeanni kesib o'tadi", "Пересекает океаны"], ["Katta yuklarni uzoq masofaga arzon tashiydi", "Дёшево перевозит большие грузы на дальние расстояния"]], 3],
+        ["O'zbekistondagi birinchi erkin industrial-iqtisodiy zona qayerda tashkil etilgan?", "Где была создана первая свободная индустриально-экономическая зона Узбекистана?", [["Navoiyda", "В Навои"], ["Nukusda", "В Нукусе"], ["Termizda", "В Термезе"], ["Xivada", "В Хиве"]], 0]
+      ]
+    },
+    {
+      "t": ["Global ekologik muammolar", "Глобальные экологические проблемы"],
+      "q": [
+        ["Global isishning asosiy sababi nima?", "Какова главная причина глобального потепления?", [["Issiqxona gazlarining ko'payishi", "Рост выбросов парниковых газов"], ["Oy ta'siri", "Влияние Луны"], ["Zilzilalar", "Землетрясения"], ["Okean to'lqinlari", "Океанские волны"]], 0],
+        ["Parij iqlim kelishuvining asosiy maqsadi nima?", "Какова главная цель Парижского климатического соглашения?", [["Neft qazib olishni ko'paytirish", "Увеличение добычи нефти"], ["Global isishni cheklash", "Ограничение глобального потепления"], ["Chegaralarni o'zgartirish", "Изменение границ"], ["Savdoni taqiqlash", "Запрет торговли"]], 1],
+        ["O'rmonlarning kesilishi nimaga olib keladi?", "К чему приводит вырубка лесов?", [["Kislorod ko'payishiga", "К росту кислорода"], ["Yog'inning ortishiga", "К росту осадков"], ["Biologik xilma-xillik kamayishi va CO₂ ortishiga", "К сокращению биоразнообразия и росту CO₂"], ["Tuproq unumdorligi oshishiga", "К повышению плодородия почв"]], 2],
+        ["Cho'llanish nima?", "Что такое опустынивание?", [["Cho'llarda o'rmon o'sishi", "Рост лесов в пустынях"], ["Daryo toshqini", "Разлив рек"], ["Qor ko'chkisi", "Снежная лавина"], ["Quruq hududlarda yerlarning degradatsiyasi", "Деградация земель в засушливых районах"]], 3],
+        ["Ozon qatlamini yemiruvchi moddalar qaysilar?", "Какие вещества разрушают озоновый слой?", [["Freonlar", "Фреоны"], ["Kislorod", "Кислород"], ["Azot", "Азот"], ["Suv bug'i", "Водяной пар"]], 0],
+        ["Okeanlarning ifloslanishida qaysi chiqindilar katta muammo?", "Какие отходы являются большой проблемой загрязнения океанов?", [["Barglar", "Листья"], ["Plastik chiqindilar", "Пластиковые отходы"], ["Qum", "Песок"], ["Tosh", "Камни"]], 1],
+        ["Xalqaro «Yer kuni» qachon nishonlanadi?", "Когда отмечается Международный день Земли?", [["1-yanvar", "1 января"], ["1-sentyabr", "1 сентября"], ["22-aprel", "22 апреля"], ["31-dekabr", "31 декабря"]], 2],
+        ["Barqaror rivojlanish nima?", "Что такое устойчивое развитие?", [["Kelajak avlodlar imkoniyatlariga zarar yetkazmay bugungi ehtiyojlarni qondirish", "Удовлетворение нынешних потребностей без ущерба для будущих поколений"], ["Faqat sanoatni rivojlantirish", "Развитие только промышленности"], ["Tabiiy resurslarni tez sarflash", "Быстрое расходование ресурсов"], ["Aholini kamaytirish", "Сокращение населения"]], 0],
+        ["Ichimlik suvi tanqisligini kamaytirishning to'g'ri yo'li qaysi?", "Какой путь правильный для снижения дефицита питьевой воды?", [["Suvni ko'proq isrof qilish", "Расходовать больше воды"], ["Suvni tejash va tozalash", "Экономия и очистка воды"], ["Daryolarni quritish", "Осушение рек"], ["Chiqindilarni suvga tashlash", "Сброс отходов в воду"]], 1],
+        ["Qayta tiklanadigan energiyadan foydalanish nimani kamaytiradi?", "Что снижает использование возобновляемой энергии?", [["Quyosh nurini", "Солнечный свет"], ["Shamol tezligini", "Скорость ветра"], ["Daryo oqimini", "Сток рек"], ["Zararli chiqindilar va issiqxona gazlarini", "Вредные выбросы и парниковые газы"]], 3]
+      ]
+    }
+  ]
+}
