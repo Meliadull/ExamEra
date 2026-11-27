@@ -1,0 +1,83 @@
+{
+  "key": "fizika",
+  "from": 6,
+  "name": ["Fizika", "Физика"],
+  "aliases": ["physics"],
+  "topics": [
+    {
+      "t": ["Impuls va impulsning saqlanish qonuni", "Импульс и закон сохранения импульса"],
+      "q": [
+        ["Massasi 2 kg bo'lgan jism 5 m/s tezlik bilan harakatlanmoqda. Uning impulsini toping.", "Тело массой 2 кг движется со скоростью 5 м/с. Найдите его импульс.", [["10 kg·m/s", "10 кг·м/с"], ["2,5 kg·m/s", "2,5 кг·м/с"], ["7 kg·m/s", "7 кг·м/с"], ["25 kg·m/s", "25 кг·м/с"]], 0],
+        ["Impulsning SI dagi birligi qaysi?", "Какова единица импульса в СИ?", [["N/s", "Н/с"], ["J", "Дж"], ["kg·m/s", "кг·м/с"], ["kg·m/s²", "кг·м/с²"]], 2],
+        ["Massasi 0,5 kg bo'lgan to'p devorga 4 m/s tezlik bilan urilib, xuddi shunday tezlik bilan qaytdi. To'p impulsining o'zgarishi modulini toping.", "Мяч массой 0,5 кг ударился о стену со скоростью 4 м/с и отскочил с такой же по модулю скоростью. Найдите модуль изменения импульса мяча.", [["0", "0"], ["2 kg·m/s", "2 кг·м/с"], ["4 kg·m/s", "4 кг·м/с"], ["8 kg·m/s", "8 кг·м/с"]], 2],
+        ["3 m/s tezlikdagi 2 kg massali arava tinch turgan 1 kg massali aravaga urilib, unga ilashib qoldi. Ularning birgalikdagi tezligini toping.", "Тележка массой 2 кг, движущаяся со скоростью 3 м/с, сталкивается с покоящейся тележкой массой 1 кг и сцепляется с ней. Найдите их общую скорость.", [["1 m/s", "1 м/с"], ["2 m/s", "2 м/с"], ["3 m/s", "3 м/с"], ["1,5 m/s", "1,5 м/с"]], 1],
+        ["Jismga 0,5 s davomida 10 N kuch ta'sir qildi. Kuch impulsini toping.", "На тело в течение 0,5 с действовала сила 10 Н. Найдите импульс силы.", [["20 N·s", "20 Н·с"], ["10,5 N·s", "10,5 Н·с"], ["2 N·s", "2 Н·с"], ["5 N·s", "5 Н·с"]], 3],
+        ["Massasi 5 kg bo'lgan miltiqdan 0,01 kg massali o'q 500 m/s tezlik bilan otildi. Miltiqning tepish tezligini toping.", "Из ружья массой 5 кг вылетает пуля массой 0,01 кг со скоростью 500 м/с. Найдите скорость отдачи ружья.", [["0,5 m/s", "0,5 м/с"], ["1 m/s", "1 м/с"], ["2 m/s", "2 м/с"], ["10 m/s", "10 м/с"]], 1],
+        ["Impulsning saqlanish qonuni qanday sistemada bajariladi?", "В какой системе выполняется закон сохранения импульса?", [["Faqat tinch jismlar uchun", "Только для покоящихся тел"], ["Faqat ishqalanish bo'lganda", "Только при наличии трения"], ["Yopiq sistemada", "В замкнутой системе"], ["Faqat elastik to'qnashuvda", "Только при упругом ударе"]], 2],
+        ["Reaktiv harakat qaysi qonunga asoslangan?", "На каком законе основано реактивное движение?", [["Guk qonuniga", "На законе Гука"], ["Arximed qonuniga", "На законе Архимеда"], ["Om qonuniga", "На законе Ома"], ["Impulsning saqlanish qonuniga", "На законе сохранения импульса"]], 3],
+        ["Jism tezligi 2 marta oshsa, uning impulsi qanday o'zgaradi?", "Как изменится импульс тела, если его скорость увеличится в 2 раза?", [["2 marta oshadi", "Увеличится в 2 раза"], ["4 marta oshadi", "Увеличится в 4 раза"], ["O'zgarmaydi", "Не изменится"], ["2 marta kamayadi", "Уменьшится в 2 раза"]], 0],
+        ["1 kg massali jism 4 m/s, 2 kg massali jism esa unga qarama-qarshi 2 m/s tezlik bilan harakatlanmoqda. Sistemaning umumiy impulsini toping.", "Тело массой 1 кг движется со скоростью 4 м/с, а тело массой 2 кг — навстречу ему со скоростью 2 м/с. Найдите суммарный импульс системы.", [["8 kg·m/s", "8 кг·м/с"], ["4 kg·m/s", "4 кг·м/с"], ["0", "0"], ["6 kg·m/s", "6 кг·м/с"]], 2]
+      ]
+    },
+    {
+      "t": ["Ish, quvvat va energiya", "Работа, мощность и энергия"],
+      "q": [
+        ["50 N kuch jismni kuch yo'nalishida 4 m ga ko'chirdi. Bajarilgan ishni toping.", "Сила 50 Н переместила тело на 4 м в направлении силы. Найдите работу.", [["200 J", "200 Дж"], ["12,5 J", "12,5 Дж"], ["54 J", "54 Дж"], ["46 J", "46 Дж"]], 0],
+        ["Massasi 2 kg, tezligi 3 m/s bo'lgan jismning kinetik energiyasini toping.", "Найдите кинетическую энергию тела массой 2 кг, движущегося со скоростью 3 м/с.", [["6 J", "6 Дж"], ["18 J", "18 Дж"], ["9 J", "9 Дж"], ["3 J", "3 Дж"]], 2],
+        ["5 m balandlikdagi 2 kg massali jismning potensial energiyasini toping ($g = 10$ m/s²).", "Найдите потенциальную энергию тела массой 2 кг на высоте 5 м ($g = 10$ м/с²).", [["10 J", "10 Дж"], ["100 J", "100 Дж"], ["50 J", "50 Дж"], ["1000 J", "1000 Дж"]], 1],
+        ["Dvigatel 2 minutda 600 J ish bajardi. Uning quvvatini toping.", "Двигатель за 2 мин совершил работу 600 Дж. Найдите его мощность.", [["300 W", "300 Вт"], ["1200 W", "1200 Вт"], ["5 W", "5 Вт"], ["50 W", "50 Вт"]], 2],
+        ["Quvvatning SI dagi birligi qaysi?", "Какова единица мощности в СИ?", [["J", "Дж"], ["W", "Вт"], ["N", "Н"], ["Pa", "Па"]], 1],
+        ["Jism 20 m balandlikdan erkin tushmoqda. Yerga urilish paytidagi tezligini toping ($g = 10$ m/s²).", "Тело свободно падает с высоты 20 м. Найдите его скорость у земли ($g = 10$ м/с²).", [["20 m/s", "20 м/с"], ["10 m/s", "10 м/с"], ["40 m/s", "40 м/с"], ["200 m/s", "200 м/с"]], 0],
+        ["10 kg massali yukni 3 m balandlikka tekis ko'tarishda bajarilgan ishni toping ($g = 10$ m/s²).", "Найдите работу при равномерном подъёме груза массой 10 кг на высоту 3 м ($g = 10$ м/с²).", [["30 J", "30 Дж"], ["3000 J", "3000 Дж"], ["13 J", "13 Дж"], ["300 J", "300 Дж"]], 3],
+        ["Kuch ko'chishga perpendikulyar yo'nalgan bo'lsa, kuchning bajargan ishi nimaga teng?", "Чему равна работа силы, направленной перпендикулярно перемещению?", ["$Fs$", "0", "$-Fs$", "$\\frac{Fs}{2}$"], 1],
+        ["Mexanizmning foydali ishi 400 J, to'liq ishi 500 J. Foydali ish koeffitsiyentini toping.", "Полезная работа механизма 400 Дж, полная — 500 Дж. Найдите КПД.", ["125%", "20%", "80%", "90%"], 2],
+        ["Bikrligi 100 N/m bo'lgan prujina 0,1 m ga cho'zilgan. Uning potensial energiyasini toping.", "Пружина жёсткостью 100 Н/м растянута на 0,1 м. Найдите её потенциальную энергию.", [["10 J", "10 Дж"], ["5 J", "5 Дж"], ["1 J", "1 Дж"], ["0,5 J", "0,5 Дж"]], 3]
+      ]
+    },
+    {
+      "t": ["Statika va oddiy mexanizmlar", "Статика и простые механизмы"],
+      "q": [
+        ["10 N kuchning yelkasi 0,5 m. Kuch momentini toping.", "Плечо силы 10 Н равно 0,5 м. Найдите момент силы.", [["5 N·m", "5 Н·м"], ["20 N·m", "20 Н·м"], ["10,5 N·m", "10,5 Н·м"], ["2 N·m", "2 Н·м"]], 0],
+        ["Richag muvozanatda: $F_1 = 20$ N, $l_1 = 0{,}3$ m, $l_2 = 0{,}6$ m. $F_2$ ni toping.", "Рычаг в равновесии: $F_1 = 20$ Н, $l_1 = 0{,}3$ м, $l_2 = 0{,}6$ м. Найдите $F_2$.", [["40 N", "40 Н"], ["10 N", "10 Н"], ["20 N", "20 Н"], ["5 N", "5 Н"]], 1],
+        ["Qo'zg'aluvchan blok kuchdan necha marta yutuq beradi?", "Какой выигрыш в силе даёт подвижный блок?", [["4 marta", "В 4 раза"], ["Yutuq bermaydi", "Не даёт выигрыша"], ["2 marta", "В 2 раза"], ["3 marta", "В 3 раза"]], 2],
+        ["Qo'zg'almas blok nima beradi?", "Что даёт неподвижный блок?", [["Kuchdan 2 marta yutuq", "Выигрыш в силе в 2 раза"], ["Kuch yo'nalishini o'zgartiradi, kuchdan yutuq bermaydi", "Меняет направление силы, не давая выигрыша в силе"], ["Ishdan yutuq", "Выигрыш в работе"], ["Kuchdan 4 marta yutuq", "Выигрыш в силе в 4 раза"]], 1],
+        ["Mexanikaning «oltin qoidasi» nimani ta'kidlaydi?", "Что утверждает «золотое правило» механики?", [["Har qanday mexanizm kuchdan yutuq beradi", "Любой механизм даёт выигрыш в силе"], ["Blok ishdan yutuq beradi", "Блок даёт выигрыш в работе"], ["Richag energiyani ko'paytiradi", "Рычаг увеличивает энергию"], ["Hech bir mexanizm ishdan yutuq bermaydi", "Ни один механизм не даёт выигрыша в работе"]], 3],
+        ["Kuch momentining SI dagi birligi qaysi?", "Какова единица момента силы в СИ?", [["N", "Н"], ["N·m", "Н·м"], ["N/m", "Н/м"], ["J/s", "Дж/с"]], 1],
+        ["Qattiq jismning muvozanat shartlari qaysilar?", "Каковы условия равновесия твёрдого тела?", [["Faqat kuchlar yig'indisi nolga teng", "Только сумма сил равна нулю"], ["Faqat momentlar yig'indisi nolga teng", "Только сумма моментов равна нулю"], ["Kuchlar yig'indisi ham, momentlar yig'indisi ham nolga teng", "Равны нулю и сумма сил, и сумма моментов"], ["Jism tezligi o'zgarmas", "Скорость тела постоянна"]], 2],
+        ["Uzunligi 5 m, balandligi 1 m bo'lgan ideal qiya tekislik bo'ylab 500 N og'irlikdagi yukni ko'tarish uchun qanday kuch kerak?", "Какая сила нужна, чтобы поднять груз весом 500 Н по идеальной наклонной плоскости длиной 5 м и высотой 1 м?", [["100 N", "100 Н"], ["500 N", "500 Н"], ["2500 N", "2500 Н"], ["50 N", "50 Н"]], 0],
+        ["Bir jinsli sterjenning og'irlik markazi qayerda joylashgan?", "Где находится центр тяжести однородного стержня?", [["Bir uchida", "На одном из концов"], ["Uzunligining uchdan bir qismida", "На трети длины"], ["O'rtasida", "В середине"], ["Aniqlab bo'lmaydi", "Определить нельзя"]], 2],
+        ["Kuch yelkasi deb nimaga aytiladi?", "Что называют плечом силы?", [["Kuch qo'yilgan nuqtagacha bo'lgan masofaga", "Расстояние до точки приложения силы"], ["Aylanish o'qidan kuchning ta'sir chizig'igacha bo'lgan eng qisqa masofaga", "Кратчайшее расстояние от оси вращения до линии действия силы"], ["Richagning uzunligiga", "Длину рычага"], ["Kuch moduliga", "Модуль силы"]], 1]
+      ]
+    },
+    {
+      "t": ["Suyuqlik va gazlar bosimi", "Давление жидкостей и газов"],
+      "q": [
+        ["0,5 m² yuzaga 100 N kuch ta'sir qilmoqda. Bosimni toping.", "На площадь 0,5 м² действует сила 100 Н. Найдите давление.", [["200 Pa", "200 Па"], ["50 Pa", "50 Па"], ["100,5 Pa", "100,5 Па"], ["20 Pa", "20 Па"]], 0],
+        ["Suvning 10 m chuqurlikdagi gidrostatik bosimini toping ($\\rho = 1000$ kg/m³, $g = 10$ m/s²).", "Найдите гидростатическое давление воды на глубине 10 м ($\\rho = 1000$ кг/м³, $g = 10$ м/с²).", [["10 kPa", "10 кПа"], ["100 kPa", "100 кПа"], ["1000 kPa", "1000 кПа"], ["1 kPa", "1 кПа"]], 1],
+        ["Hajmi 0,002 m³ bo'lgan jism suvga to'liq botirildi. Arximed kuchini toping ($g = 10$ m/s²).", "Тело объёмом 0,002 м³ полностью погружено в воду. Найдите силу Архимеда ($g = 10$ м/с²).", [["2 N", "2 Н"], ["200 N", "200 Н"], ["20 N", "20 Н"], ["0,2 N", "0,2 Н"]], 2],
+        ["Normal atmosfera bosimi taxminan qancha?", "Чему примерно равно нормальное атмосферное давление?", [["760 Pa", "760 Па"], ["1000 Pa", "1000 Па"], ["10 Pa", "10 Па"], ["101 325 Pa", "101 325 Па"]], 3],
+        ["Paskal qonuni nimani ta'kidlaydi?", "Что утверждает закон Паскаля?", [["Suyuqlik yoki gazga berilgan bosim barcha yo'nalishlarda bir xil uzatiladi", "Давление, производимое на жидкость или газ, передаётся одинаково во всех направлениях"], ["Bosim chuqurlikka bog'liq emas", "Давление не зависит от глубины"], ["Bosim faqat pastga uzatiladi", "Давление передаётся только вниз"], ["Gaz bosimi hajmga bog'liq emas", "Давление газа не зависит от объёма"]], 0],
+        ["Gidravlik pressning kichik porsheni yuzi 10 sm², kattasiniki 200 sm². Kichik porshenga 50 N kuch qo'yilgan. Katta porshendagi kuchni toping.", "Площадь малого поршня гидравлического пресса 10 см², большого — 200 см². На малый поршень действует сила 50 Н. Найдите силу на большом поршне.", [["2,5 N", "2,5 Н"], ["500 N", "500 Н"], ["1000 N", "1000 Н"], ["10 000 N", "10 000 Н"]], 2],
+        ["Jism suyuqlikda qachon suzadi?", "Когда тело плавает в жидкости?", [["Jism zichligi suyuqlik zichligidan katta bo'lsa", "Если плотность тела больше плотности жидкости"], ["Jism zichligi suyuqlik zichligidan kichik bo'lsa", "Если плотность тела меньше плотности жидкости"], ["Jism massasi katta bo'lsa", "Если масса тела велика"], ["Jism hajmi kichik bo'lsa", "Если объём тела мал"]], 1],
+        ["Bosimning SI dagi birligi qaysi?", "Какова единица давления в СИ?", [["N", "Н"], ["J", "Дж"], ["W", "Вт"], ["Pa", "Па"]], 3],
+        ["Muz suvda nima uchun suzadi?", "Почему лёд плавает в воде?", [["Muzning zichligi suvnikidan kichik", "Плотность льда меньше плотности воды"], ["Muz suvdan yengilroq moddadan iborat", "Лёд состоит из более лёгкого вещества"], ["Muz harorati past", "У льда низкая температура"], ["Muz ichida havo yo'q", "Внутри льда нет воздуха"]], 0],
+        ["Bir xil suyuqlik quyilgan tutash idishlarda suyuqlik sathlari qanday bo'ladi?", "Каковы уровни однородной жидкости в сообщающихся сосудах?", [["Keng idishda balandroq", "В широком сосуде выше"], ["Tor idishda balandroq", "В узком сосуде выше"], ["Bir xil balandlikda", "На одной высоте"], ["Idish shakliga bog'liq", "Зависят от формы сосуда"]], 2]
+      ]
+    },
+    {
+      "t": ["Molekulyar-kinetik nazariya", "Молекулярно-кинетическая теория"],
+      "q": [
+        ["Avogadro doimiysining qiymati qancha?", "Чему равна постоянная Авогадро?", [["$6{,}02\\cdot10^{23}$ mol⁻¹", "$6{,}02\\cdot10^{23}$ моль⁻¹"], ["$1{,}38\\cdot10^{-23}$ mol⁻¹", "$1{,}38\\cdot10^{-23}$ моль⁻¹"], ["9,8 mol⁻¹", "9,8 моль⁻¹"], ["$3\\cdot10^{8}$ mol⁻¹", "$3\\cdot10^{8}$ моль⁻¹"]], 0],
+        ["Broun harakati nimani isbotlaydi?", "Что доказывает броуновское движение?", [["Moddalar uzluksiz tuzilgan", "Вещество непрерывно"], ["Molekulalar tartibsiz harakatda bo'ladi", "Молекулы находятся в хаотическом движении"], ["Molekulalar tinch turadi", "Молекулы покоятся"], ["Atomlar bo'linmaydi", "Атомы неделимы"]], 1],
+        ["Diffuziya qaysi holatdagi moddalarda eng tez boradi?", "В каком состоянии вещества диффузия идёт быстрее всего?", [["Suyuqliklarda", "В жидкостях"], ["Qattiq jismlarda", "В твёрдых телах"], ["Gazlarda", "В газах"], ["Hammasida bir xil", "Везде одинаково"]], 2],
+        ["Suv ($H_2O$) ning molyar massasini toping.", "Найдите молярную массу воды ($H_2O$).", [["16 g/mol", "16 г/моль"], ["18 g/mol", "18 г/моль"], ["10 g/mol", "10 г/моль"], ["20 g/mol", "20 г/моль"]], 1],
+        ["36 g suvda necha mol modda bor?", "Сколько молей вещества содержится в 36 г воды?", [["0,5 mol", "0,5 моль"], ["36 mol", "36 моль"], ["2 mol", "2 моль"], ["18 mol", "18 моль"]], 2],
+        ["Absolyut nol Selsiy shkalasida taxminan necha gradusga teng?", "Чему примерно равен абсолютный нуль по шкале Цельсия?", ["0 °C", "−273 °C", "−100 °C", "273 °C"], 1],
+        ["27 °C necha kelvinga teng?", "Сколько кельвинов составляет 27 °C?", ["27 K", "246 K", "327 K", "300 K"], 3],
+        ["Gaz molekulalarining o'rtacha kinetik energiyasi nimaga proporsional?", "Чему пропорциональна средняя кинетическая энергия молекул газа?", [["Absolyut temperaturaga", "Абсолютной температуре"], ["Gaz hajmiga", "Объёму газа"], ["Idish shakliga", "Форме сосуда"], ["Gaz massasiga", "Массе газа"]], 0],
+        ["Bolsman doimiysining qiymati qancha?", "Чему равна постоянная Больцмана?", [["$6{,}02\\cdot10^{23}$ J/K", "$6{,}02\\cdot10^{23}$ Дж/К"], ["8,31 J/K", "8,31 Дж/К"], ["$1{,}38\\cdot10^{-23}$ J/K", "$1{,}38\\cdot10^{-23}$ Дж/К"], ["$9{,}1\\cdot10^{-31}$ J/K", "$9{,}1\\cdot10^{-31}$ Дж/К"]], 2],
+        ["Har qanday moddaning 1 molida nechta molekula bor?", "Сколько молекул содержится в 1 моле любого вещества?", ["1", "$N_A$", "$k$", "$R$"], 1]
+      ]
+    }
+  ]
+}

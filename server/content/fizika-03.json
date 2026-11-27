@@ -1,0 +1,83 @@
+{
+  "key": "fizika",
+  "from": 11,
+  "name": ["Fizika", "Физика"],
+  "aliases": ["physics"],
+  "topics": [
+    {
+      "t": ["Ideal gaz qonunlari", "Законы идеального газа"],
+      "q": [
+        ["Izotermik jarayonda gazning bosimi 100 kPa, hajmi 6 L edi. Hajm 2 L gacha kamaytirildi. Yangi bosimni toping.", "При изотермическом процессе давление газа было 100 кПа, объём 6 л. Объём уменьшили до 2 л. Найдите новое давление.", [["300 kPa", "300 кПа"], ["200 kPa", "200 кПа"], ["33 kPa", "33 кПа"], ["600 kPa", "600 кПа"]], 0],
+        ["Izobarik jarayonda qaysi kattalik o'zgarmaydi?", "Какая величина остаётся постоянной при изобарном процессе?", [["Hajm", "Объём"], ["Bosim", "Давление"], ["Temperatura", "Температура"], ["Ichki energiya", "Внутренняя энергия"]], 1],
+        ["Izoxorik jarayonda qaysi kattalik o'zgarmaydi?", "Какая величина остаётся постоянной при изохорном процессе?", [["Temperatura", "Температура"], ["Bosim", "Давление"], ["Hajm", "Объём"], ["Ichki energiya", "Внутренняя энергия"]], 2],
+        ["Universal gaz doimiysining qiymati qancha?", "Чему равна универсальная газовая постоянная?", [["$1{,}38\\cdot10^{-23}$ J/(mol·K)", "$1{,}38\\cdot10^{-23}$ Дж/(моль·К)"], ["$6{,}02\\cdot10^{23}$ J/(mol·K)", "$6{,}02\\cdot10^{23}$ Дж/(моль·К)"], ["9,8 J/(mol·K)", "9,8 Дж/(моль·К)"], ["8,31 J/(mol·K)", "8,31 Дж/(моль·К)"]], 3],
+        ["Mendeleyev–Klapeyron tenglamasini ko'rsating.", "Укажите уравнение Менделеева–Клапейрона.", ["$pV=\\frac{m}{M}RT$", "$pV=mRT$", "$p=\\frac{V}{RT}$", "$pV=\\frac{M}{m}RT$"], 0],
+        ["Izoxorik jarayonda gazning absolyut temperaturasi 2 marta oshirildi. Bosimi qanday o'zgaradi?", "При изохорном процессе абсолютную температуру газа увеличили в 2 раза. Как изменится давление?", [["2 marta kamayadi", "Уменьшится в 2 раза"], ["4 marta oshadi", "Увеличится в 4 раза"], ["2 marta oshadi", "Увеличится в 2 раза"], ["O'zgarmaydi", "Не изменится"]], 2],
+        ["Izobarik jarayonda 300 K da gaz hajmi 2 L edi. 600 K da hajmi qancha bo'ladi?", "При изобарном процессе объём газа при 300 К был 2 л. Каким он будет при 600 К?", [["1 L", "1 л"], ["4 L", "4 л"], ["2 L", "2 л"], ["6 L", "6 л"]], 1],
+        ["Normal sharoitda 2 mol gaz qancha hajmni egallaydi?", "Какой объём занимают 2 моль газа при нормальных условиях?", [["22,4 L", "22,4 л"], ["11,2 L", "11,2 л"], ["2 L", "2 л"], ["44,8 L", "44,8 л"]], 3],
+        ["Gazning idish devorlariga bosimi nima sababdan vujudga keladi?", "Чем обусловлено давление газа на стенки сосуда?", [["Gazning og'irligi bilan", "Весом газа"], ["Molekulalarning devorga urilishi bilan", "Ударами молекул о стенки"], ["Molekulalarning o'zaro tortishishi bilan", "Притяжением молекул друг к другу"], ["Idish materiali bilan", "Материалом сосуда"]], 1],
+        ["Izotermik jarayonda gaz bosimi 3 marta oshdi. Hajmi qanday o'zgaradi?", "При изотермическом процессе давление газа увеличилось в 3 раза. Как изменился объём?", [["3 marta oshdi", "Увеличился в 3 раза"], ["9 marta kamaydi", "Уменьшился в 9 раз"], ["3 marta kamaydi", "Уменьшился в 3 раза"], ["O'zgarmadi", "Не изменился"]], 2]
+      ]
+    },
+    {
+      "t": ["Termodinamika asoslari", "Основы термодинамики"],
+      "q": [
+        ["Termodinamikaning birinchi qonunini ko'rsating ($A$ — gaz bajargan ish).", "Укажите первый закон термодинамики ($A$ — работа, совершённая газом).", ["$Q=\\Delta U+A$", "$Q=\\Delta U-A$", "$A=Q+\\Delta U$", "$\\Delta U=Q+A$"], 0],
+        ["Gaz 300 J issiqlik oldi va 100 J ish bajardi. Ichki energiyasining o'zgarishini toping.", "Газ получил 300 Дж теплоты и совершил работу 100 Дж. Найдите изменение его внутренней энергии.", [["400 J", "400 Дж"], ["200 J", "200 Дж"], ["300 J", "300 Дж"], ["100 J", "100 Дж"]], 1],
+        ["Adiabatik jarayon qanday jarayon?", "Что такое адиабатный процесс?", [["Temperatura o'zgarmas jarayon", "Процесс при постоянной температуре"], ["Bosim o'zgarmas jarayon", "Процесс при постоянном давлении"], ["Hajm o'zgarmas jarayon", "Процесс при постоянном объёме"], ["Atrof-muhit bilan issiqlik almashinuvisiz jarayon", "Процесс без теплообмена с окружающей средой"]], 3],
+        ["$2\\cdot10^5$ Pa o'zgarmas bosimda gaz hajmi 0,01 m³ ga oshdi. Gaz bajargan ishni toping.", "При постоянном давлении $2\\cdot10^5$ Па объём газа увеличился на 0,01 м³. Найдите работу газа.", [["200 J", "200 Дж"], ["20 000 J", "20 000 Дж"], ["2000 J", "2000 Дж"], ["20 J", "20 Дж"]], 2],
+        ["Isitgich temperaturasi 500 K, sovitgichniki 300 K bo'lgan ideal issiqlik mashinasining FIKini toping.", "Найдите КПД идеальной тепловой машины с температурой нагревателя 500 К и холодильника 300 К.", ["40%", "60%", "80%", "30%"], 0],
+        ["Issiqlik mashinasi isitgichdan 1000 J oladi va sovitgichga 700 J beradi. FIKini toping.", "Тепловая машина получает от нагревателя 1000 Дж и отдаёт холодильнику 700 Дж. Найдите КПД.", ["70%", "30%", "43%", "100%"], 1],
+        ["Ideal gazning ichki energiyasi nimaga bog'liq?", "От чего зависит внутренняя энергия идеального газа?", [["Idish shakliga", "От формы сосуда"], ["Faqat hajmga", "Только от объёма"], ["Temperaturaga", "От температуры"], ["Faqat bosimga", "Только от давления"]], 2],
+        ["Ideal gazning izotermik jarayonida ichki energiyaning o'zgarishi nimaga teng?", "Чему равно изменение внутренней энергии идеального газа при изотермическом процессе?", ["$Q$", "0", "$A$", "$pV$"], 1],
+        ["Termodinamikaning ikkinchi qonuniga ko'ra:", "Согласно второму закону термодинамики:", [["Energiya yo'qdan paydo bo'ladi", "Энергия возникает из ничего"], ["Har qanday mashinaning FIKi 100% bo'lishi mumkin", "КПД любой машины может быть 100%"], ["Issiqlik sovuq jismdan issiq jismga o'z-o'zidan o'tadi", "Теплота сама переходит от холодного тела к горячему"], ["Issiqlik sovuq jismdan issiq jismga o'z-o'zidan o'tmaydi", "Теплота сама не переходит от холодного тела к горячему"]], 3],
+        ["Issiqlik miqdorining SI dagi birligi qaysi?", "Какова единица количества теплоты в СИ?", [["W", "Вт"], ["J", "Дж"], ["K", "К"], ["Pa", "Па"]], 1]
+      ]
+    },
+    {
+      "t": ["Issiqlik miqdori va agregat holatlar", "Количество теплоты и агрегатные состояния"],
+      "q": [
+        ["2 kg suvni 10 °C ga isitish uchun qancha issiqlik kerak ($c = 4200$ J/(kg·°C))?", "Сколько теплоты нужно, чтобы нагреть 2 кг воды на 10 °C ($c = 4200$ Дж/(кг·°C))?", [["84 kJ", "84 кДж"], ["8,4 kJ", "8,4 кДж"], ["42 kJ", "42 кДж"], ["840 kJ", "840 кДж"]], 0],
+        ["0 °C dagi 2 kg muzni eritish uchun qancha issiqlik kerak ($\\lambda = 3{,}4\\cdot10^5$ J/kg)?", "Сколько теплоты нужно, чтобы расплавить 2 кг льда при 0 °C ($\\lambda = 3{,}4\\cdot10^5$ Дж/кг)?", [["340 kJ", "340 кДж"], ["680 kJ", "680 кДж"], ["170 kJ", "170 кДж"], ["6800 kJ", "6800 кДж"]], 1],
+        ["Normal atmosfera bosimida suv necha gradusda qaynaydi?", "При какой температуре кипит вода при нормальном атмосферном давлении?", ["90 °C", "100 °C", "120 °C", "80 °C"], 1],
+        ["Qaynash temperaturasidagi 0,5 kg suvni bug'ga aylantirish uchun qancha issiqlik kerak ($L = 2{,}3\\cdot10^6$ J/kg)?", "Сколько теплоты нужно, чтобы превратить в пар 0,5 кг воды при температуре кипения ($L = 2{,}3\\cdot10^6$ Дж/кг)?", [["2300 kJ", "2300 кДж"], ["4600 kJ", "4600 кДж"], ["1150 kJ", "1150 кДж"], ["115 kJ", "115 кДж"]], 2],
+        ["Kristall modda erish jarayonida uning temperaturasi qanday o'zgaradi?", "Как меняется температура кристаллического вещества в процессе плавления?", [["Oshadi", "Повышается"], ["Kamayadi", "Понижается"], ["Avval oshib, keyin kamayadi", "Сначала повышается, затем понижается"], ["O'zgarmaydi", "Не изменяется"]], 3],
+        ["2 kg benzin to'liq yonganda qancha issiqlik ajraladi ($q = 4{,}6\\cdot10^7$ J/kg)?", "Сколько теплоты выделится при полном сгорании 2 кг бензина ($q = 4{,}6\\cdot10^7$ Дж/кг)?", [["$9{,}2\\cdot10^{7}$ J", "$9{,}2\\cdot10^{7}$ Дж"], ["$2{,}3\\cdot10^{7}$ J", "$2{,}3\\cdot10^{7}$ Дж"], ["$4{,}6\\cdot10^{7}$ J", "$4{,}6\\cdot10^{7}$ Дж"], ["$9{,}2\\cdot10^{6}$ J", "$9{,}2\\cdot10^{6}$ Дж"]], 0],
+        ["Suyuqlikning bug'lanishi uning bilan nima sodir bo'lishiga olib keladi?", "К чему приводит испарение жидкости?", [["Isishiga", "К её нагреванию"], ["Sovishiga", "К её охлаждению"], ["Qotishiga", "К её отвердеванию"], ["Hech narsa o'zgarmaydi", "Ничего не меняется"]], 1],
+        ["Issiqlik uzatishning qaysi turi vakuumda ham sodir bo'ladi?", "Какой вид теплопередачи возможен в вакууме?", [["Issiqlik o'tkazuvchanlik", "Теплопроводность"], ["Konveksiya", "Конвекция"], ["Nurlanish", "Излучение"], ["Hech biri", "Никакой"]], 2],
+        ["20 °C li 1 kg suv va 80 °C li 1 kg suv aralashtirildi. Aralashmaning temperaturasini toping (issiqlik yo'qotilmaydi).", "Смешали 1 кг воды при 20 °C и 1 кг воды при 80 °C. Найдите температуру смеси (без потерь тепла).", ["60 °C", "40 °C", "50 °C", "100 °C"], 2],
+        ["Solishtirma issiqlik sig'imining SI dagi birligi qaysi?", "Какова единица удельной теплоёмкости в СИ?", [["J/kg", "Дж/кг"], ["J/(kg·K)", "Дж/(кг·К)"], ["J/K", "Дж/К"], ["W/kg", "Вт/кг"]], 1]
+      ]
+    },
+    {
+      "t": ["Elektrostatika", "Электростатика"],
+      "q": [
+        ["Kulon qonunining formulasini ko'rsating.", "Укажите формулу закона Кулона.", ["$F=k\\frac{q_1 q_2}{r}$", "$F=k\\frac{q_1 q_2}{r^2}$", "$F=k q_1 q_2 r$", "$F=\\frac{q_1 q_2}{k r^2}$"], 1],
+        ["Elektr zaryadining SI dagi birligi qaysi?", "Какова единица электрического заряда в СИ?", [["A", "А"], ["C", "Кл"], ["V", "В"], ["F", "Ф"]], 1],
+        ["Bir xil ishorali zaryadlar o'zaro qanday ta'sirlashadi?", "Как взаимодействуют одноимённые заряды?", [["Itarishadi", "Отталкиваются"], ["Tortishadi", "Притягиваются"], ["Ta'sirlashmaydi", "Не взаимодействуют"], ["Aylanma harakat qiladi", "Вращаются"]], 0],
+        ["Ikki nuqtaviy zaryad orasidagi masofa 3 marta oshirildi. O'zaro ta'sir kuchi qanday o'zgaradi?", "Расстояние между двумя точечными зарядами увеличили в 3 раза. Как изменится сила взаимодействия?", [["3 marta kamayadi", "Уменьшится в 3 раза"], ["9 marta kamayadi", "Уменьшится в 9 раз"], ["9 marta oshadi", "Увеличится в 9 раз"], ["O'zgarmaydi", "Не изменится"]], 1],
+        ["$10^{-4}$ C zaryadga elektr maydonda 0,2 N kuch ta'sir qilmoqda. Maydon kuchlanganligini toping.", "На заряд $10^{-4}$ Кл в электрическом поле действует сила 0,2 Н. Найдите напряжённость поля.", [["20 N/C", "20 Н/Кл"], ["$2\\cdot10^{-5}$ N/C", "$2\\cdot10^{-5}$ Н/Кл"], ["2000 N/C", "2000 Н/Кл"], ["200 N/C", "200 Н/Кл"]], 2],
+        ["Kondensatorga $2\\cdot10^{-6}$ C zaryad berilganda kuchlanish 100 V bo'ldi. Sig'imini toping.", "При заряде $2\\cdot10^{-6}$ Кл напряжение на конденсаторе 100 В. Найдите его ёмкость.", [["$2\\cdot10^{-8}$ F", "$2\\cdot10^{-8}$ Ф"], ["$2\\cdot10^{-4}$ F", "$2\\cdot10^{-4}$ Ф"], ["$5\\cdot10^{7}$ F", "$5\\cdot10^{7}$ Ф"], ["$2\\cdot10^{-6}$ F", "$2\\cdot10^{-6}$ Ф"]], 0],
+        ["Elementar zaryadning qiymati qancha?", "Чему равен элементарный заряд?", [["$9{,}1\\cdot10^{-31}$ C", "$9{,}1\\cdot10^{-31}$ Кл"], ["$1{,}6\\cdot10^{19}$ C", "$1{,}6\\cdot10^{19}$ Кл"], ["$6{,}02\\cdot10^{23}$ C", "$6{,}02\\cdot10^{23}$ Кл"], ["$1{,}6\\cdot10^{-19}$ C", "$1{,}6\\cdot10^{-19}$ Кл"]], 3],
+        ["2 C zaryadni potensiallar farqi 5 V bo'lgan nuqtalar orasida ko'chirishda maydon qancha ish bajaradi?", "Какую работу совершает поле при перемещении заряда 2 Кл между точками с разностью потенциалов 5 В?", [["2,5 J", "2,5 Дж"], ["10 J", "10 Дж"], ["7 J", "7 Дж"], ["0,4 J", "0,4 Дж"]], 1],
+        ["Elektr sig'imining SI dagi birligi qaysi?", "Какова единица электроёмкости в СИ?", [["C", "Кл"], ["V", "В"], ["F", "Ф"], ["Om", "Ом"]], 2],
+        ["Zaryadning saqlanish qonuni nimani ta'kidlaydi?", "Что утверждает закон сохранения заряда?", [["Yopiq sistemada zaryadlarning algebraik yig'indisi o'zgarmaydi", "В замкнутой системе алгебраическая сумма зарядов не меняется"], ["Zaryad massaga proporsional", "Заряд пропорционален массе"], ["Zaryad faqat musbat bo'ladi", "Заряд бывает только положительным"], ["Zaryad vaqt o'tishi bilan kamayadi", "Заряд со временем уменьшается"]], 0]
+      ]
+    },
+    {
+      "t": ["O'zgarmas tok qonunlari", "Законы постоянного тока"],
+      "q": [
+        ["Qarshiligi 4 Om bo'lgan o'tkazgichga 12 V kuchlanish berildi. Tok kuchini toping.", "К проводнику сопротивлением 4 Ом приложено напряжение 12 В. Найдите силу тока.", [["3 A", "3 А"], ["48 A", "48 А"], ["8 A", "8 А"], ["16 A", "16 А"]], 0],
+        ["2 Om va 3 Om li rezistorlar ketma-ket ulangan. Umumiy qarshilikni toping.", "Резисторы 2 Ом и 3 Ом соединены последовательно. Найдите общее сопротивление.", [["6 Om", "6 Ом"], ["1,2 Om", "1,2 Ом"], ["5 Om", "5 Ом"], ["1 Om", "1 Ом"]], 2],
+        ["6 Om va 3 Om li rezistorlar parallel ulangan. Umumiy qarshilikni toping.", "Резисторы 6 Ом и 3 Ом соединены параллельно. Найдите общее сопротивление.", [["9 Om", "9 Ом"], ["2 Om", "2 Ом"], ["4,5 Om", "4,5 Ом"], ["18 Om", "18 Ом"]], 1],
+        ["Elektr qarshiligining SI dagi birligi qaysi?", "Какова единица электрического сопротивления в СИ?", [["V", "В"], ["A", "А"], ["Om", "Ом"], ["W", "Вт"]], 2],
+        ["O'tkazgichning ko'ndalang kesimidan 10 s da 20 C zaryad o'tdi. Tok kuchini toping.", "Через поперечное сечение проводника за 10 с прошёл заряд 20 Кл. Найдите силу тока.", [["200 A", "200 А"], ["0,5 A", "0,5 А"], ["30 A", "30 А"], ["2 A", "2 А"]], 3],
+        ["O'tkazgich qarshiligining formulasini ko'rsating.", "Укажите формулу сопротивления проводника.", ["$R=\\rho\\frac{l}{S}$", "$R=\\rho\\frac{S}{l}$", "$R=\\rho l S$", "$R=\\frac{l}{\\rho S}$"], 0],
+        ["Manbaning EYuK 12 V, ichki qarshiligi 1 Om, tashqi qarshilik 5 Om. Zanjirdagi tok kuchini toping.", "ЭДС источника 12 В, внутреннее сопротивление 1 Ом, внешнее — 5 Ом. Найдите силу тока в цепи.", [["2,4 A", "2,4 А"], ["2 A", "2 А"], ["12 A", "12 А"], ["3 A", "3 А"]], 1],
+        ["Ampermetr zanjirga qanday ulanadi?", "Как включают амперметр в цепь?", [["Parallel", "Параллельно"], ["Ixtiyoriy", "Произвольно"], ["Ketma-ket", "Последовательно"], ["Faqat manbaga parallel", "Только параллельно источнику"]], 2],
+        ["Voltmetr zanjirning qismiga qanday ulanadi?", "Как подключают вольтметр к участку цепи?", [["Ketma-ket", "Последовательно"], ["Parallel", "Параллельно"], ["Ixtiyoriy", "Произвольно"], ["Ulanmaydi", "Не подключают"]], 1],
+        ["Ketma-ket ulangan zanjirda tok kuchi qanday bo'ladi?", "Какова сила тока в цепи с последовательным соединением?", [["Har bir qismda har xil", "На каждом участке разная"], ["Kuchlanishga teskari proporsional", "Обратно пропорциональна напряжению"], ["Nolga teng", "Равна нулю"], ["Barcha qismlarda bir xil", "Одинакова на всех участках"]], 3]
+      ]
+    }
+  ]
+}

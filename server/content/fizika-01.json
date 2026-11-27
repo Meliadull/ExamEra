@@ -1,0 +1,83 @@
+{
+  "key": "fizika",
+  "from": 1,
+  "name": ["Fizika", "Физика"],
+  "aliases": ["physics"],
+  "topics": [
+    {
+      "t": ["Kinematika asoslari", "Основы кинематики"],
+      "q": [
+        ["Avtomobil 2 soatda 120 km yo'l bosdi. Uning o'rtacha tezligini toping.", "Автомобиль за 2 ч проехал 120 км. Найдите его среднюю скорость.", [["60 km/soat", "60 км/ч"], ["240 km/soat", "240 км/ч"], ["120 km/soat", "120 км/ч"], ["30 km/soat", "30 км/ч"]], 0],
+        ["72 km/soat tezlik necha m/s ga teng?", "Скорость 72 км/ч равна скольким м/с?", [["72 m/s", "72 м/с"], ["7,2 m/s", "7,2 м/с"], ["20 m/s", "20 м/с"], ["36 m/s", "36 м/с"]], 2],
+        ["Tezlikning SI dagi birligi qaysi?", "Какова единица скорости в СИ?", [["km/soat", "км/ч"], ["m/s", "м/с"], ["sm/s", "см/с"], ["m/min", "м/мин"]], 1],
+        ["Jism radiusi $R$ bo'lgan aylanani to'liq bir marta aylanib chiqdi. Uning ko'chishi nimaga teng?", "Тело один раз полностью обошло окружность радиуса $R$. Чему равно его перемещение?", ["$2\\pi R$", "$R$", "0", "$2R$"], 2],
+        ["Jismning harakat tenglamasi $x = 5 + 2t$ (m). Boshlang'ich koordinatasini toping.", "Уравнение движения тела $x = 5 + 2t$ (м). Найдите начальную координату.", [["2 m", "2 м"], ["5 m", "5 м"], ["7 m", "7 м"], ["10 m", "10 м"]], 1],
+        ["Jismning harakat tenglamasi $x = 5 + 2t$ (m). Uning tezligini toping.", "Уравнение движения тела $x = 5 + 2t$ (м). Найдите его скорость.", [["5 m/s", "5 м/с"], ["7 m/s", "7 м/с"], ["10 m/s", "10 м/с"], ["2 m/s", "2 м/с"]], 3],
+        ["Oralaridagi masofa 200 km bo'lgan ikki avtomobil bir-biriga qarab 60 km/soat va 40 km/soat tezlik bilan yo'lga chiqdi. Ular qancha vaqtdan keyin uchrashadi?", "Два автомобиля, расстояние между которыми 200 км, выехали навстречу друг другу со скоростями 60 км/ч и 40 км/ч. Через сколько времени они встретятся?", [["2 soat", "2 ч"], ["4 soat", "4 ч"], ["5 soat", "5 ч"], ["1 soat", "1 ч"]], 0],
+        ["Quyidagi kattaliklardan qaysi biri vektor kattalik?", "Какая из величин является векторной?", [["Yo'l", "Путь"], ["Vaqt", "Время"], ["Tezlik", "Скорость"], ["Massa", "Масса"]], 2],
+        ["Jism 15 m/s tezlik bilan 1 minut tekis harakatlandi. U qancha yo'l bosdi?", "Тело двигалось равномерно со скоростью 15 м/с в течение 1 мин. Какой путь оно прошло?", [["900 m", "900 м"], ["15 m", "15 м"], ["90 m", "90 м"], ["150 m", "150 м"]], 0],
+        ["Poyezd 20 m/s tezlik bilan ketmoqda. Yo'lovchi vagon bo'ylab harakat yo'nalishida 1 m/s tezlik bilan yurmoqda. Yo'lovchining Yerga nisbatan tezligini toping.", "Поезд идёт со скоростью 20 м/с. Пассажир идёт по вагону по ходу поезда со скоростью 1 м/с. Найдите скорость пассажира относительно Земли.", [["19 m/s", "19 м/с"], ["21 m/s", "21 м/с"], ["20 m/s", "20 м/с"], ["1 m/s", "1 м/с"]], 1]
+      ]
+    },
+    {
+      "t": ["Tekis tezlanuvchan harakat", "Равноускоренное движение"],
+      "q": [
+        ["Avtomobil tinch holatdan 5 s da 20 m/s tezlikka erishdi. Tezlanishini toping.", "Автомобиль из состояния покоя за 5 с разогнался до 20 м/с. Найдите ускорение.", [["4 m/s²", "4 м/с²"], ["5 m/s²", "5 м/с²"], ["100 m/s²", "100 м/с²"], ["20 m/s²", "20 м/с²"]], 0],
+        ["Tinch holatdan 2 m/s² tezlanish bilan harakatlangan jism 5 s da qancha yo'l bosadi?", "Какой путь пройдёт за 5 с тело, движущееся из покоя с ускорением 2 м/с²?", [["10 m", "10 м"], ["25 m", "25 м"], ["50 m", "50 м"], ["5 m", "5 м"]], 1],
+        ["Erkin tushayotgan jismning 2 s dan keyingi tezligini toping ($g = 10$ m/s²).", "Найдите скорость свободно падающего тела через 2 с ($g = 10$ м/с²).", [["10 m/s", "10 м/с"], ["40 m/s", "40 м/с"], ["20 m/s", "20 м/с"], ["5 m/s", "5 м/с"]], 2],
+        ["Jism 45 m balandlikdan erkin tushmoqda. Tushish vaqtini toping ($g = 10$ m/s²).", "Тело свободно падает с высоты 45 м. Найдите время падения ($g = 10$ м/с²).", [["3 s", "3 с"], ["9 s", "9 с"], ["4,5 s", "4,5 с"], ["2 s", "2 с"]], 0],
+        ["20 m/s tezlikdagi avtomobil 4 m/s² tezlanish bilan tormozlanmoqda. U qancha vaqtda to'xtaydi?", "Автомобиль, движущийся со скоростью 20 м/с, тормозит с ускорением 4 м/с². Через сколько времени он остановится?", [["4 s", "4 с"], ["80 s", "80 с"], ["10 s", "10 с"], ["5 s", "5 с"]], 3],
+        ["20 m/s tezlikdagi avtomobil 4 m/s² tezlanish bilan tormozlanmoqda. Tormozlanish yo'lini toping.", "Автомобиль, движущийся со скоростью 20 м/с, тормозит с ускорением 4 м/с². Найдите тормозной путь.", [["100 m", "100 м"], ["25 m", "25 м"], ["50 m", "50 м"], ["80 m", "80 м"]], 2],
+        ["Jism 30 m/s tezlik bilan vertikal yuqoriga otildi. U qanday maksimal balandlikka ko'tariladi ($g = 10$ m/s²)?", "Тело брошено вертикально вверх со скоростью 30 м/с. На какую максимальную высоту оно поднимется ($g = 10$ м/с²)?", [["45 m", "45 м"], ["90 m", "90 м"], ["30 m", "30 м"], ["15 m", "15 м"]], 0],
+        ["Jism 30 m/s tezlik bilan vertikal yuqoriga otildi. U qancha vaqtda eng yuqori nuqtaga ko'tariladi ($g = 10$ m/s²)?", "Тело брошено вертикально вверх со скоростью 30 м/с. За какое время оно достигнет высшей точки ($g = 10$ м/с²)?", [["6 s", "6 с"], ["3 s", "3 с"], ["1,5 s", "1,5 с"], ["30 s", "30 с"]], 1],
+        ["Tezlanishning SI dagi birligi qaysi?", "Какова единица ускорения в СИ?", [["m/s", "м/с"], ["m/s²", "м/с²"], ["m²/s", "м²/с"], ["N", "Н"]], 1],
+        ["Jism tezligi $v = 3 + 2t$ (m/s) qonun bo'yicha o'zgaradi. Tezlanishini toping.", "Скорость тела меняется по закону $v = 3 + 2t$ (м/с). Найдите ускорение.", [["3 m/s²", "3 м/с²"], ["5 m/s²", "5 м/с²"], ["1 m/s²", "1 м/с²"], ["2 m/s²", "2 м/с²"]], 3]
+      ]
+    },
+    {
+      "t": ["Aylana bo'ylab harakat", "Движение по окружности"],
+      "q": [
+        ["G'ildirak 5 s da 10 marta aylandi. Aylanish davrini toping.", "Колесо за 5 с совершило 10 оборотов. Найдите период вращения.", [["0,5 s", "0,5 с"], ["2 s", "2 с"], ["50 s", "50 с"], ["5 s", "5 с"]], 0],
+        ["G'ildirak 5 s da 10 marta aylandi. Aylanish chastotasini toping.", "Колесо за 5 с совершило 10 оборотов. Найдите частоту вращения.", [["0,5 Hz", "0,5 Гц"], ["2 Hz", "2 Гц"], ["10 Hz", "10 Гц"], ["50 Hz", "50 Гц"]], 1],
+        ["Jism radiusi 5 m bo'lgan aylana bo'ylab 10 m/s tezlik bilan harakatlanmoqda. Markazga intilma tezlanishni toping.", "Тело движется по окружности радиусом 5 м со скоростью 10 м/с. Найдите центростремительное ускорение.", [["2 m/s²", "2 м/с²"], ["50 m/s²", "50 м/с²"], ["20 m/s²", "20 м/с²"], ["100 m/s²", "100 м/с²"]], 2],
+        ["Jism radiusi 2 m bo'lgan aylana bo'ylab $\\pi$ s davr bilan aylanmoqda. Chiziqli tezligini toping.", "Тело движется по окружности радиусом 2 м с периодом $\\pi$ с. Найдите линейную скорость.", [["4 m/s", "4 м/с"], ["2 m/s", "2 м/с"], ["8 m/s", "8 м/с"], ["1 m/s", "1 м/с"]], 0],
+        ["Aylana bo'ylab tekis harakatda markazga intilma tezlanish qayerga yo'nalgan?", "Куда направлено центростремительное ускорение при равномерном движении по окружности?", [["Markazdan tashqariga", "От центра"], ["Urinma bo'ylab", "По касательной"], ["Harakatga qarshi", "Против движения"], ["Aylana markaziga", "К центру окружности"]], 3],
+        ["Aylanish davri 2 s. Burchak tezligini toping.", "Период вращения 2 с. Найдите угловую скорость.", [["$2\\pi$ rad/s", "$2\\pi$ рад/с"], ["$\\pi$ rad/s", "$\\pi$ рад/с"], ["$\\frac{\\pi}{2}$ rad/s", "$\\frac{\\pi}{2}$ рад/с"], ["2 rad/s", "2 рад/с"]], 1],
+        ["Chiziqli tezlik $v$, burchak tezlik $\\omega$ va radius $r$ qanday bog'langan?", "Как связаны линейная скорость $v$, угловая скорость $\\omega$ и радиус $r$?", ["$v=\\omega r$", "$v=\\frac{\\omega}{r}$", "$v=\\omega r^2$", "$v=\\frac{r}{\\omega}$"], 0],
+        ["Radius o'zgarmay, tezlik 2 marta oshsa, markazga intilma tezlanish qanday o'zgaradi?", "Как изменится центростремительное ускорение, если при том же радиусе скорость увеличится в 2 раза?", [["2 marta oshadi", "Увеличится в 2 раза"], ["4 marta oshadi", "Увеличится в 4 раза"], ["O'zgarmaydi", "Не изменится"], ["2 marta kamayadi", "Уменьшится в 2 раза"]], 1],
+        ["Chastotaning SI dagi birligi qaysi?", "Какова единица частоты в СИ?", [["s", "с"], ["rad", "рад"], ["Hz", "Гц"], ["m/s", "м/с"]], 2],
+        ["Yerning o'z o'qi atrofida aylanish davri taxminan qancha?", "Чему примерно равен период вращения Земли вокруг своей оси?", [["1 soat", "1 час"], ["12 soat", "12 часов"], ["24 soat", "24 часа"], ["365 kun", "365 суток"]], 2]
+      ]
+    },
+    {
+      "t": ["Nyuton qonunlari", "Законы Ньютона"],
+      "q": [
+        ["Massasi 2 kg bo'lgan jismga 3 m/s² tezlanish beruvchi kuchni toping.", "Найдите силу, сообщающую телу массой 2 кг ускорение 3 м/с².", [["6 N", "6 Н"], ["5 N", "5 Н"], ["1,5 N", "1,5 Н"], ["9 N", "9 Н"]], 0],
+        ["Nyutonning birinchi qonuni yana qanday ataladi?", "Как ещё называют первый закон Ньютона?", [["Butun olam tortishish qonuni", "Закон всемирного тяготения"], ["Energiyaning saqlanish qonuni", "Закон сохранения энергии"], ["Inersiya qonuni", "Закон инерции"], ["Guk qonuni", "Закон Гука"]], 2],
+        ["Nyutonning uchinchi qonuni nimani ifodalaydi?", "Что утверждает третий закон Ньютона?", [["Kuch tezlanishga teskari proporsional", "Сила обратно пропорциональна ускорению"], ["Ta'sir kuchi aks ta'sir kuchiga teng va qarama-qarshi yo'nalgan", "Сила действия равна силе противодействия и направлена противоположно"], ["Jism tinch holatini saqlaydi", "Тело сохраняет состояние покоя"], ["Energiya saqlanadi", "Энергия сохраняется"]], 1],
+        ["20 N kuch jismga 4 m/s² tezlanish beradi. Jism massasini toping.", "Сила 20 Н сообщает телу ускорение 4 м/с². Найдите массу тела.", [["80 kg", "80 кг"], ["5 kg", "5 кг"], ["0,2 kg", "0,2 кг"], ["24 kg", "24 кг"]], 1],
+        ["1 Nyuton asosiy SI birliklari orqali qanday ifodalanadi?", "Как выражается 1 ньютон через основные единицы СИ?", [["kg·m/s", "кг·м/с"], ["kg/s²", "кг/с²"], ["J/s", "Дж/с"], ["kg·m/s²", "кг·м/с²"]], 3],
+        ["Jismga o'zaro perpendikulyar 3 N va 4 N kuchlar ta'sir qilmoqda. Teng ta'sir etuvchi kuchni toping.", "На тело действуют две взаимно перпендикулярные силы 3 Н и 4 Н. Найдите равнодействующую.", [["7 N", "7 Н"], ["1 N", "1 Н"], ["5 N", "5 Н"], ["12 N", "12 Н"]], 2],
+        ["Stol ustida tinch turgan jismga ta'sir qiluvchi kuchlarning teng ta'sir etuvchisi nimaga teng?", "Чему равна равнодействующая сил, действующих на тело, покоящееся на столе?", [["Nolga", "Нулю"], ["$mg$ ga", "$mg$"], ["$2mg$ ga", "$2mg$"], ["Ishqalanish kuchiga", "Силе трения"]], 0],
+        ["Massasi 1000 kg bo'lgan avtomobilga 2000 N tormozlovchi kuch ta'sir qilmoqda. Tezlanish modulini toping.", "На автомобиль массой 1000 кг действует тормозящая сила 2000 Н. Найдите модуль ускорения.", [["0,5 m/s²", "0,5 м/с²"], ["20 m/s²", "20 м/с²"], ["2 m/s²", "2 м/с²"], ["2000 m/s²", "2000 м/с²"]], 2],
+        ["Jismga ta'sir qiluvchi kuchlarning teng ta'sir etuvchisi nolga teng bo'lsa, jism qanday harakat qiladi?", "Как движется тело, если равнодействующая всех сил равна нулю?", [["Tekis tezlanuvchan", "Равноускоренно"], ["Tinch turadi yoki to'g'ri chiziqli tekis harakatlanadi", "Покоится или движется равномерно и прямолинейно"], ["Aylana bo'ylab", "По окружности"], ["Tekis sekinlanuvchan", "Равнозамедленно"]], 1],
+        ["Massasi 0,5 kg bo'lgan jismga 2 N kuch ta'sir qilmoqda. Tezlanishini toping.", "На тело массой 0,5 кг действует сила 2 Н. Найдите ускорение.", [["1 m/s²", "1 м/с²"], ["2,5 m/s²", "2,5 м/с²"], ["0,25 m/s²", "0,25 м/с²"], ["4 m/s²", "4 м/с²"]], 3]
+      ]
+    },
+    {
+      "t": ["Tabiatdagi kuchlar", "Силы в природе"],
+      "q": [
+        ["Massasi 5 kg bo'lgan jismning og'irligini toping ($g = 10$ m/s²).", "Найдите вес тела массой 5 кг ($g = 10$ м/с²).", [["5 N", "5 Н"], ["50 N", "50 Н"], ["0,5 N", "0,5 Н"], ["500 N", "500 Н"]], 1],
+        ["Bikrligi 200 N/m bo'lgan prujina 5 sm ga cho'zildi. Elastiklik kuchini toping.", "Пружину жёсткостью 200 Н/м растянули на 5 см. Найдите силу упругости.", [["10 N", "10 Н"], ["40 N", "40 Н"], ["1000 N", "1000 Н"], ["1 N", "1 Н"]], 0],
+        ["Ishqalanish koeffitsiyenti 0,2, tayanchning reaksiya kuchi 50 N. Sirpanish ishqalanish kuchini toping.", "Коэффициент трения 0,2, сила реакции опоры 50 Н. Найдите силу трения скольжения.", [["250 N", "250 Н"], ["2,5 N", "2,5 Н"], ["10 N", "10 Н"], ["50 N", "50 Н"]], 2],
+        ["Butun olam tortishish qonunining formulasini ko'rsating.", "Укажите формулу закона всемирного тяготения.", ["$F=G\\frac{m_1 m_2}{r}$", "$F=G\\frac{m_1 m_2}{r^2}$", "$F=G m_1 m_2 r^2$", "$F=\\frac{m_1 m_2}{G r^2}$"], 1],
+        ["Jismlar orasidagi masofa 2 marta oshirilsa, tortishish kuchi qanday o'zgaradi?", "Как изменится сила тяготения, если расстояние между телами увеличить в 2 раза?", [["2 marta kamayadi", "Уменьшится в 2 раза"], ["4 marta kamayadi", "Уменьшится в 4 раза"], ["4 marta oshadi", "Увеличится в 4 раза"], ["O'zgarmaydi", "Не изменится"]], 1],
+        ["Vaznsizlik holati qachon kuzatiladi?", "Когда наблюдается состояние невесомости?", [["Jism tinch turganda", "Когда тело покоится"], ["Tekis harakatda", "При равномерном движении"], ["Yuqoriga tezlanish bilan harakatda", "При движении с ускорением вверх"], ["Erkin tushishda", "При свободном падении"]], 3],
+        ["Massasi 50 kg bo'lgan odam lift ichida turibdi. Lift 2 m/s² tezlanish bilan yuqoriga ko'tarilmoqda. Odamning og'irligini toping ($g = 10$ m/s²).", "Человек массой 50 кг стоит в лифте, который поднимается с ускорением 2 м/с². Найдите вес человека ($g = 10$ м/с²).", [["500 N", "500 Н"], ["600 N", "600 Н"], ["400 N", "400 Н"], ["100 N", "100 Н"]], 1],
+        ["Bikrligi 100 N/m bo'lgan prujinaga 20 N kuch ta'sir qilmoqda. Prujina qanchaga cho'ziladi?", "На пружину жёсткостью 100 Н/м действует сила 20 Н. На сколько она растянется?", [["5 m", "5 м"], ["2000 m", "2000 м"], ["0,2 m", "0,2 м"], ["20 m", "20 м"]], 2],
+        ["Sirpanish ishqalanish kuchi qanday yo'nalgan?", "Как направлена сила трения скольжения?", [["Harakatga qarama-qarshi", "Против движения"], ["Harakat yo'nalishida", "По направлению движения"], ["Vertikal yuqoriga", "Вертикально вверх"], ["Vertikal pastga", "Вертикально вниз"]], 0],
+        ["Prujina bikrligining SI dagi birligi qaysi?", "Какова единица жёсткости пружины в СИ?", [["N", "Н"], ["N·m", "Н·м"], ["kg/m", "кг/м"], ["N/m", "Н/м"]], 3]
+      ]
+    }
+  ]
+}

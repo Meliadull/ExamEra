@@ -73,7 +73,8 @@ export function checkSampleFile(f: SampleFile): string[] {
       if (options.some((o) => !uz(o)?.toString().trim() || !ru(o)?.toString().trim())) problems.push(`${at}: empty option`);
       const idx = Array.isArray(answer) ? answer : [answer];
       if (!idx.length || idx.some((i) => !Number.isInteger(i) || i < 0 || i >= options.length)) problems.push(`${at}: bad answer`);
-      if (new Set(options.map((o) => uz(o).trim().toLowerCase())).size !== options.length) problems.push(`${at}: duplicate options`);
+      // Case matters: formulas such as m/M and M/m are different options.
+      if (new Set(options.map((o) => uz(o).trim())).size !== options.length) problems.push(`${at}: duplicate options`);
     });
     for (const q of toQuestions(t)) {
       const errors = validateQuestion(q);
