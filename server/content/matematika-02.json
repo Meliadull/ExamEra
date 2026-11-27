@@ -1,0 +1,83 @@
+{
+  "key": "matematika",
+  "from": 6,
+  "name": ["Matematika", "Математика"],
+  "aliases": ["mathematics", "algebra", "алгебра"],
+  "topics": [
+    {
+      "t": ["Kvadrat tenglamalar", "Квадратные уравнения"],
+      "q": [
+        ["$x^2 - 5x + 6 = 0$ tenglamaning ildizlarini toping.", "Найдите корни уравнения $x^2 - 5x + 6 = 0$.", ["$2;\\ 3$", "$-2;\\ -3$", "$1;\\ 6$", "$-1;\\ 6$"], 0],
+        ["$2x^2 - 3x - 2 = 0$ tenglamaning diskriminantini toping.", "Найдите дискриминант уравнения $2x^2 - 3x - 2 = 0$.", ["7", "−7", "25", "17"], 2],
+        ["$x^2 + 4x + 5 = 0$ tenglama nechta haqiqiy ildizga ega?", "Сколько действительных корней имеет уравнение $x^2 + 4x + 5 = 0$?", [["Ikkita", "Два"], ["Bitta", "Один"], ["Haqiqiy ildizi yo'q", "Нет действительных корней"], ["Cheksiz ko'p", "Бесконечно много"]], 2],
+        ["$x^2 - 7x + 10 = 0$ tenglama ildizlarining yig'indisini toping.", "Найдите сумму корней уравнения $x^2 - 7x + 10 = 0$.", ["−7", "7", "10", "−10"], 1],
+        ["$3x^2 + 6x - 9 = 0$ tenglama ildizlarining ko'paytmasini toping.", "Найдите произведение корней уравнения $3x^2 + 6x - 9 = 0$.", ["−2", "3", "2", "−3"], 3],
+        ["$x^2 = 49$ tenglamani yeching.", "Решите уравнение $x^2 = 49$.", ["7", "−7", "$\\pm 7$", "49"], 2],
+        ["$2x^2 - 8x = 0$ tenglamani yeching.", "Решите уравнение $2x^2 - 8x = 0$.", ["$0;\\ 4$", "$0;\\ -4$", "$4$", "$2;\\ 4$"], 0],
+        ["$k$ ning qanday qiymatida $x^2 - 6x + k = 0$ tenglama ikkita teng ildizga ega bo'ladi?", "При каком значении $k$ уравнение $x^2 - 6x + k = 0$ имеет два равных корня?", ["6", "9", "36", "−9"], 1],
+        ["Ildizlari 3 va −2 bo'lgan kvadrat tenglamani tuzing.", "Составьте квадратное уравнение с корнями 3 и −2.", ["$x^2+x-6=0$", "$x^2-x+6=0$", "$x^2+5x-6=0$", "$x^2-x-6=0$"], 3],
+        ["$x^4 - 5x^2 + 4 = 0$ tenglama nechta haqiqiy ildizga ega?", "Сколько действительных корней имеет уравнение $x^4 - 5x^2 + 4 = 0$?", ["4", "2", "3", "0"], 0]
+      ]
+    },
+    {
+      "t": ["Tenglamalar sistemasi", "Системы уравнений"],
+      "q": [
+        ["$\\begin{cases} x + y = 7 \\\\ x - y = 1 \\end{cases}$ sistemani yeching.", "Решите систему $\\begin{cases} x + y = 7 \\\\ x - y = 1 \\end{cases}$.", ["$(4;\\ 3)$", "$(3;\\ 4)$", "$(5;\\ 2)$", "$(6;\\ 1)$"], 0],
+        ["$\\begin{cases} 2x + y = 8 \\\\ x - y = 1 \\end{cases}$ sistemani yeching.", "Решите систему $\\begin{cases} 2x + y = 8 \\\\ x - y = 1 \\end{cases}$.", ["$(2;\\ 4)$", "$(3;\\ 2)$", "$(4;\\ 0)$", "$(1;\\ 6)$"], 1],
+        ["$\\begin{cases} 3x - 2y = 4 \\\\ x + 2y = 12 \\end{cases}$ sistemaning yechimi uchun $x + y$ ni toping.", "Для решения системы $\\begin{cases} 3x - 2y = 4 \\\\ x + 2y = 12 \\end{cases}$ найдите $x + y$.", ["6", "7", "8", "10"], 2],
+        ["$\\begin{cases} x + y = 5 \\\\ xy = 6 \\end{cases}$ sistema nechta yechimga ega?", "Сколько решений имеет система $\\begin{cases} x + y = 5 \\\\ xy = 6 \\end{cases}$?", ["1", "2", "4", "0"], 1],
+        ["$\\begin{cases} x + y = 3 \\\\ 2x + 2y = 6 \\end{cases}$ sistema nechta yechimga ega?", "Сколько решений имеет система $\\begin{cases} x + y = 3 \\\\ 2x + 2y = 6 \\end{cases}$?", [["Bitta", "Одно"], ["Yechimi yo'q", "Нет решений"], ["Ikkita", "Два"], ["Cheksiz ko'p", "Бесконечно много"]], 3],
+        ["$\\begin{cases} x + y = 3 \\\\ x + y = 5 \\end{cases}$ sistema nechta yechimga ega?", "Сколько решений имеет система $\\begin{cases} x + y = 3 \\\\ x + y = 5 \\end{cases}$?", [["Bitta", "Одно"], ["Yechimi yo'q", "Нет решений"], ["Ikkita", "Два"], ["Cheksiz ko'p", "Бесконечно много"]], 1],
+        ["3 ta daftar va 2 ta ruchka 11 000 so'm, 1 ta daftar va 2 ta ruchka 5 000 so'm turadi. Bitta daftar necha so'm?", "3 тетради и 2 ручки стоят 11 000 сумов, 1 тетрадь и 2 ручки — 5 000 сумов. Сколько стоит одна тетрадь?", [["2 000 so'm", "2 000 сумов"], ["2 500 so'm", "2 500 сумов"], ["3 000 so'm", "3 000 сумов"], ["4 000 so'm", "4 000 сумов"]], 2],
+        ["$\\begin{cases} y = 2x \\\\ x + y = 9 \\end{cases}$ sistemadan $y$ ni toping.", "Найдите $y$ из системы $\\begin{cases} y = 2x \\\\ x + y = 9 \\end{cases}$.", ["3", "4,5", "9", "6"], 3],
+        ["$\\begin{cases} x^2 + y^2 = 25 \\\\ x + y = 7 \\end{cases}$ bo'lsa, $xy$ ni toping.", "Найдите $xy$, если $\\begin{cases} x^2 + y^2 = 25 \\\\ x + y = 7 \\end{cases}$.", ["12", "24", "7", "18"], 0],
+        ["$\\begin{cases} \\frac{x}{2} + \\frac{y}{3} = 4 \\\\ x - y = 3 \\end{cases}$ sistemadan $x$ ni toping.", "Найдите $x$ из системы $\\begin{cases} \\frac{x}{2} + \\frac{y}{3} = 4 \\\\ x - y = 3 \\end{cases}$.", ["3", "6", "9", "4"], 1]
+      ]
+    },
+    {
+      "t": ["Kvadrat tengsizliklar va intervallar usuli", "Квадратные неравенства и метод интервалов"],
+      "q": [
+        ["$x^2 - 9 < 0$ tengsizlikni yeching.", "Решите неравенство $x^2 - 9 < 0$.", ["$(-3;\\ 3)$", "$(-\\infty;\\ -3)\\cup(3;\\ +\\infty)$", "$(-9;\\ 9)$", "$(0;\\ 3)$"], 0],
+        ["$x^2 - 5x + 4 \\ge 0$ tengsizlikni yeching.", "Решите неравенство $x^2 - 5x + 4 \\ge 0$.", ["$[1;\\ 4]$", "$(-\\infty;\\ 1]\\cup[4;\\ +\\infty)$", "$(1;\\ 4)$", "$(-\\infty;\\ -4]\\cup[-1;\\ +\\infty)$"], 1],
+        ["$x^2 + 1 > 0$ tengsizlikni yeching.", "Решите неравенство $x^2 + 1 > 0$.", [["Yechimi yo'q", "Нет решений"], "$x>-1$", ["Barcha haqiqiy sonlar", "Все действительные числа"], "$x>1$"], 2],
+        ["$(x-2)(x+5) < 0$ tengsizlik nechta butun yechimga ega?", "Сколько целых решений имеет неравенство $(x-2)(x+5) < 0$?", ["5", "6", "7", "8"], 1],
+        ["$x^2 \\le 0$ tengsizlikni yeching.", "Решите неравенство $x^2 \\le 0$.", ["$x=0$", ["Yechimi yo'q", "Нет решений"], ["Barcha sonlar", "Все числа"], "$x\\ge 0$"], 0],
+        ["$\\frac{x-1}{x+3} > 0$ tengsizlikni yeching.", "Решите неравенство $\\frac{x-1}{x+3} > 0$.", ["$(-3;\\ 1)$", "$(1;\\ +\\infty)$", "$(-\\infty;\\ -3)$", "$(-\\infty;\\ -3)\\cup(1;\\ +\\infty)$"], 3],
+        ["$-x^2 + 4x > 0$ tengsizlikni yeching.", "Решите неравенство $-x^2 + 4x > 0$.", ["$(0;\\ 4)$", "$(-4;\\ 0)$", "$(-\\infty;\\ 0)\\cup(4;\\ +\\infty)$", "$(4;\\ +\\infty)$"], 0],
+        ["$x^2 - 6x + 9 > 0$ tengsizlikni yeching.", "Решите неравенство $x^2 - 6x + 9 > 0$.", ["$x>3$", "$x\\ne 3$", ["Barcha sonlar", "Все числа"], ["Yechimi yo'q", "Нет решений"]], 1],
+        ["$x^2 - x - 12 < 0$ tengsizlikning eng katta butun yechimini toping.", "Найдите наибольшее целое решение неравенства $x^2 - x - 12 < 0$.", ["4", "2", "3", "−3"], 2],
+        ["$(x-1)(x-2)(x-3) \\le 0$ tengsizlikni yeching.", "Решите неравенство $(x-1)(x-2)(x-3) \\le 0$.", ["$[1;\\ 2]\\cup[3;\\ +\\infty)$", "$(-\\infty;\\ 1]\\cup[2;\\ 3]$", "$[1;\\ 3]$", "$(-\\infty;\\ 3]$"], 1]
+      ]
+    },
+    {
+      "t": ["Funksiya va uning xossalari", "Функция и её свойства"],
+      "q": [
+        ["$y = \\sqrt{x-3}$ funksiyaning aniqlanish sohasini toping.", "Найдите область определения функции $y = \\sqrt{x-3}$.", ["$[3;\\ +\\infty)$", "$(3;\\ +\\infty)$", "$(-\\infty;\\ 3]$", "$\\mathbb{R}$"], 0],
+        ["$y = \\frac{1}{x+2}$ funksiyaning aniqlanish sohasini toping.", "Найдите область определения функции $y = \\frac{1}{x+2}$.", ["$x\\ne 2$", "$x\\ne -2$", "$x>-2$", "$x\\ge -2$"], 1],
+        ["$f(x) = 2x^2 - 1$ bo'lsa, $f(-2)$ ni toping.", "Найдите $f(-2)$, если $f(x) = 2x^2 - 1$.", ["−9", "9", "7", "15"], 2],
+        ["Quyidagi funksiyalardan qaysi biri juft?", "Какая из функций является чётной?", ["$y=x^3$", "$y=x+1$", "$y=2^x$", "$y=x^2+1$"], 3],
+        ["Quyidagi funksiyalardan qaysi biri toq?", "Какая из функций является нечётной?", ["$y=x^3-x$", "$y=x^2$", "$y=|x|$", "$y=x^2+x$"], 0],
+        ["$y = x^2 + 3$ funksiyaning qiymatlar sohasini toping.", "Найдите множество значений функции $y = x^2 + 3$.", ["$\\mathbb{R}$", "$(-\\infty;\\ 3]$", "$[3;\\ +\\infty)$", "$[0;\\ +\\infty)$"], 2],
+        ["$f(x) = x^2 - 4x$ funksiyaning nollarini toping.", "Найдите нули функции $f(x) = x^2 - 4x$.", ["$4$", "$0;\\ 4$", "$-4;\\ 0$", "$2$"], 1],
+        ["$f(x) = 3x + 1$ va $g(x) = x^2$ bo'lsa, $f(g(2))$ ni toping.", "Найдите $f(g(2))$, если $f(x) = 3x + 1$ и $g(x) = x^2$.", ["49", "7", "13", "16"], 2],
+        ["$y = 2x - 4$ funksiyaga teskari funksiyani toping.", "Найдите функцию, обратную к $y = 2x - 4$.", ["$y=\\frac{x-4}{2}$", "$y=2x+4$", "$y=\\frac{1}{2x-4}$", "$y=\\frac{x+4}{2}$"], 3],
+        ["$y = -3x + 2$ funksiya butun son o'qida qanday?", "Какой является функция $y = -3x + 2$ на всей числовой прямой?", [["O'suvchi", "Возрастающей"], ["Kamayuvchi", "Убывающей"], ["O'zgarmas", "Постоянной"], ["Juft", "Чётной"]], 1]
+      ]
+    },
+    {
+      "t": ["Chiziqli va kvadrat funksiya", "Линейная и квадратичная функция"],
+      "q": [
+        ["$y = -2x + 5$ to'g'ri chiziqning burchak koeffitsiyentini toping.", "Найдите угловой коэффициент прямой $y = -2x + 5$.", ["5", "−2", "2", "−5"], 1],
+        ["$(0;\\ 3)$ nuqtadan o'tuvchi va $y = 4x$ ga parallel to'g'ri chiziq tenglamasini toping.", "Найдите уравнение прямой, проходящей через точку $(0;\\ 3)$ параллельно прямой $y = 4x$.", ["$y=3x+4$", "$y=4x-3$", "$y=-4x+3$", "$y=4x+3$"], 3],
+        ["$y = 2x - 1$ to'g'ri chiziq $Ox$ o'qini qaysi nuqtada kesadi?", "В какой точке прямая $y = 2x - 1$ пересекает ось $Ox$?", ["$(0;\\ -1)$", "$(-\\frac{1}{2};\\ 0)$", "$(\\frac{1}{2};\\ 0)$", "$(1;\\ 0)$"], 2],
+        ["$y = x^2 - 4x + 3$ parabola uchining koordinatalarini toping.", "Найдите координаты вершины параболы $y = x^2 - 4x + 3$.", ["$(2;\\ -1)$", "$(-2;\\ 15)$", "$(2;\\ 3)$", "$(4;\\ 3)$"], 0],
+        ["$y = 2x^2 + 8x - 1$ parabolaning simmetriya o'qini toping.", "Найдите ось симметрии параболы $y = 2x^2 + 8x - 1$.", ["$x=2$", "$x=-2$", "$x=-4$", "$x=4$"], 1],
+        ["$y = -x^2 + 2$ parabolaning tarmoqlari qayerga yo'nalgan?", "Куда направлены ветви параболы $y = -x^2 + 2$?", [["Yuqoriga", "Вверх"], ["O'ngga", "Вправо"], ["Pastga", "Вниз"], ["Chapga", "Влево"]], 2],
+        ["$y = x^2 + 6x + 10$ funksiyaning eng kichik qiymatini toping.", "Найдите наименьшее значение функции $y = x^2 + 6x + 10$.", ["1", "10", "−3", "−1"], 0],
+        ["$y = x^2 - 2x - 3$ parabola $Oy$ o'qini qaysi nuqtada kesadi?", "В какой точке парабола $y = x^2 - 2x - 3$ пересекает ось $Oy$?", ["$(0;\\ 3)$", "$(3;\\ 0)$", "$(0;\\ -3)$", "$(-1;\\ 0)$"], 2],
+        ["$k$ ning qanday qiymatida $y = kx + 1$ to'g'ri chiziq $(2;\\ 7)$ nuqtadan o'tadi?", "При каком $k$ прямая $y = kx + 1$ проходит через точку $(2;\\ 7)$?", ["4", "2", "6", "3"], 3],
+        ["$y = -x^2 + 4x$ funksiyaning qiymatlar sohasini toping.", "Найдите множество значений функции $y = -x^2 + 4x$.", ["$[4;\\ +\\infty)$", "$(-\\infty;\\ 4]$", "$(-\\infty;\\ 2]$", "$\\mathbb{R}$"], 1]
+      ]
+    }
+  ]
+}

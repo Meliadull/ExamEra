@@ -1,0 +1,83 @@
+{
+  "key": "matematika",
+  "from": 16,
+  "name": ["Matematika", "Математика"],
+  "aliases": ["mathematics", "algebra", "алгебра"],
+  "topics": [
+    {
+      "t": ["Geometrik progressiya", "Геометрическая прогрессия"],
+      "q": [
+        ["Geometrik progressiyada $b_1 = 2$, $q = 3$. $b_5$ ni toping.", "В геометрической прогрессии $b_1 = 2$, $q = 3$. Найдите $b_5$.", ["162", "54", "486", "48"], 0],
+        ["3; 6; 12; … geometrik progressiyaning maxrajini toping.", "Найдите знаменатель геометрической прогрессии 3; 6; 12; …", ["3", "2", "6", "$\\frac{1}{2}$"], 1],
+        ["$b_1 = 1$, $q = 2$ bo'lgan geometrik progressiyaning dastlabki 6 ta hadi yig'indisini toping.", "Найдите сумму первых 6 членов геометрической прогрессии с $b_1 = 1$, $q = 2$.", ["64", "32", "63", "127"], 2],
+        ["Cheksiz kamayuvchi geometrik progressiyada $b_1 = 6$, $q = \\frac{1}{2}$. Uning yig'indisini toping.", "Найдите сумму бесконечно убывающей геометрической прогрессии с $b_1 = 6$, $q = \\frac{1}{2}$.", ["6", "3", "24", "12"], 3],
+        ["Hadlari musbat geometrik progressiyada $b_2 = 6$, $b_4 = 54$. Maxrajni toping.", "В геометрической прогрессии с положительными членами $b_2 = 6$, $b_4 = 54$. Найдите знаменатель.", ["3", "9", "2", "6"], 0],
+        ["Geometrik progressiyada $b_1 = 81$, $q = \\frac{1}{3}$. $b_4$ ni toping.", "В геометрической прогрессии $b_1 = 81$, $q = \\frac{1}{3}$. Найдите $b_4$.", ["27", "9", "3", "1"], 2],
+        ["4 va 9 sonlarining o'rta geometrigini toping.", "Найдите среднее геометрическое чисел 4 и 9.", ["6,5", "13", "6", "36"], 2],
+        ["Geometrik progressiyaning $n$-hadi formulasini ko'rsating.", "Укажите формулу $n$-го члена геометрической прогрессии.", ["$b_n=b_1+(n-1)q$", "$b_n=b_1 q^{n-1}$", "$b_n=b_1 q^n$", "$b_n=\\frac{b_1}{q^n}$"], 1],
+        ["0,555… cheksiz davriy kasrni oddiy kasr ko'rinishida yozing.", "Запишите бесконечную периодическую дробь 0,555… в виде обыкновенной дроби.", ["$\\frac{1}{2}$", "$\\frac{6}{11}$", "$\\frac{11}{20}$", "$\\frac{5}{9}$"], 3],
+        ["Shahar aholisi 1000 kishi, u har yili 10% ga ortadi. 2 yildan keyin aholi soni qancha bo'ladi?", "Население посёлка 1000 человек и ежегодно растёт на 10%. Каким оно будет через 2 года?", ["1200", "1210", "1100", "1331"], 1]
+      ]
+    },
+    {
+      "t": ["Hosila", "Производная"],
+      "q": [
+        ["$(x^3)'$ ni toping.", "Найдите $(x^3)'$.", ["$3x^2$", "$x^2$", "$3x^3$", "$\\frac{x^4}{4}$"], 0],
+        ["$(5x - 7)'$ ni toping.", "Найдите $(5x - 7)'$.", ["−7", "5x", "5", "0"], 2],
+        ["$(\\sin x)'$ ni toping.", "Найдите $(\\sin x)'$.", ["$-\\cos x$", "$\\cos x$", "$\\sin x$", "$-\\sin x$"], 1],
+        ["$(e^x)'$ ni toping.", "Найдите $(e^x)'$.", ["$xe^{x-1}$", "$\\ln x$", "$e$", "$e^x$"], 3],
+        ["$(\\ln x)'$ ni toping.", "Найдите $(\\ln x)'$.", ["$\\frac{1}{x}$", "$\\ln x$", "$x$", "$e^x$"], 0],
+        ["$f(x) = x^2 + 3x$ bo'lsa, $f'(2)$ ni toping.", "Найдите $f'(2)$, если $f(x) = x^2 + 3x$.", ["10", "7", "4", "5"], 1],
+        ["$(x \\sin x)'$ ni toping.", "Найдите $(x \\sin x)'$.", ["$\\cos x$", "$x\\cos x$", "$\\sin x + x\\cos x$", "$\\sin x - x\\cos x$"], 2],
+        ["$((2x+1)^3)'$ ni toping.", "Найдите $((2x+1)^3)'$.", ["$6(2x+1)^2$", "$3(2x+1)^2$", "$6(2x+1)$", "$2(2x+1)^3$"], 0],
+        ["$y = x^2$ funksiya grafigiga $x = 3$ nuqtada o'tkazilgan urinmaning burchak koeffitsiyentini toping.", "Найдите угловой коэффициент касательной к графику $y = x^2$ в точке $x = 3$.", ["9", "3", "1", "6"], 3],
+        ["Jism $s(t) = t^2 + 2t$ (m) qonun bo'yicha harakatlanmoqda. $t = 3$ s dagi tezligini toping (m/s).", "Тело движется по закону $s(t) = t^2 + 2t$ (м). Найдите его скорость при $t = 3$ с (м/с).", ["15", "6", "8", "9"], 2]
+      ]
+    },
+    {
+      "t": ["Hosilaning tatbiqlari", "Применение производной"],
+      "q": [
+        ["$f(x) = x^2 - 4x$ funksiyaning kritik nuqtasini toping.", "Найдите критическую точку функции $f(x) = x^2 - 4x$.", ["2", "−2", "4", "0"], 0],
+        ["$f(x) = x^3 - 3x$ funksiyaning o'sish oraliqlarini toping.", "Найдите промежутки возрастания функции $f(x) = x^3 - 3x$.", ["$(-1;\\ 1)$", "$(-\\infty;\\ -1)\\cup(1;\\ +\\infty)$", "$(0;\\ +\\infty)$", "$\\mathbb{R}$"], 1],
+        ["$f(x) = -x^2 + 6x$ funksiyaning maksimum nuqtasini toping.", "Найдите точку максимума функции $f(x) = -x^2 + 6x$.", ["6", "−3", "3", "9"], 2],
+        ["$f(x) = x^2 - 2x + 5$ funksiyaning eng kichik qiymatini toping.", "Найдите наименьшее значение функции $f(x) = x^2 - 2x + 5$.", ["5", "4", "1", "3"], 1],
+        ["$f(x) = x^3 - 3x$ funksiyaning $[0;\\ 2]$ kesmadagi eng katta qiymatini toping.", "Найдите наибольшее значение функции $f(x) = x^3 - 3x$ на отрезке $[0;\\ 2]$.", ["0", "−2", "8", "2"], 3],
+        ["$y = x^2$ funksiya grafigiga $x = 1$ nuqtada o'tkazilgan urinma tenglamasini toping.", "Найдите уравнение касательной к графику $y = x^2$ в точке $x = 1$.", ["$y=2x+1$", "$y=x+1$", "$y=2x-1$", "$y=2x$"], 2],
+        ["Oraliqda $f'(x) > 0$ bo'lsa, $f(x)$ funksiya bu oraliqda qanday bo'ladi?", "Если на промежутке $f'(x) > 0$, то функция $f(x)$ на нём…", [["O'suvchi", "возрастает"], ["Kamayuvchi", "убывает"], ["O'zgarmas", "постоянна"], ["Nolga teng", "равна нулю"]], 0],
+        ["$f'(x_0) = 0$ va $x_0$ nuqtadan o'tishda hosila ishorasi «+» dan «−» ga o'zgarsa, $x_0$ qanday nuqta?", "Если $f'(x_0) = 0$ и при переходе через $x_0$ производная меняет знак с «+» на «−», то $x_0$ — это…", [["Minimum nuqtasi", "точка минимума"], ["Maksimum nuqtasi", "точка максимума"], ["Burilish nuqtasi", "точка перегиба"], ["Uzilish nuqtasi", "точка разрыва"]], 1],
+        ["Jism $s(t) = t^3$ (m) qonun bo'yicha harakatlanmoqda. $t = 2$ s dagi tezlanishini toping.", "Тело движется по закону $s(t) = t^3$ (м). Найдите его ускорение при $t = 2$ с.", [["8 m/s²", "8 м/с²"], ["12 m/s²", "12 м/с²"], ["6 m/s²", "6 м/с²"], ["24 m/s²", "24 м/с²"]], 1],
+        ["Perimetri 20 sm bo'lgan to'g'ri to'rtburchaklar orasida eng katta yuzaga egasining yuzini toping (sm²).", "Среди прямоугольников с периметром 20 см найдите площадь наибольшего (см²).", ["24", "20", "25", "100"], 2]
+      ]
+    },
+    {
+      "t": ["Boshlang'ich funksiya va integral", "Первообразная и интеграл"],
+      "q": [
+        ["$f(x) = 2x$ funksiyaning boshlang'ich funksiyasini toping.", "Найдите первообразную функции $f(x) = 2x$.", ["$x^2+C$", "$2+C$", "$2x^2+C$", "$\\frac{x^2}{2}+C$"], 0],
+        ["$\\int \\cos x\\, dx$ ni toping.", "Найдите $\\int \\cos x\\, dx$.", ["$-\\sin x+C$", "$\\sin x+C$", "$\\cos x+C$", "$-\\cos x+C$"], 1],
+        ["$\\int x^3\\, dx$ ni toping.", "Найдите $\\int x^3\\, dx$.", ["$3x^2+C$", "$x^4+C$", "$\\frac{x^4}{4}+C$", "$\\frac{x^3}{3}+C$"], 2],
+        ["$\\int_0^2 x\\, dx$ ni hisoblang.", "Вычислите $\\int_0^2 x\\, dx$.", ["4", "1", "8", "2"], 3],
+        ["$\\int_1^3 2x\\, dx$ ni hisoblang.", "Вычислите $\\int_1^3 2x\\, dx$.", ["8", "9", "6", "4"], 0],
+        ["$\\int_0^{\\pi} \\sin x\\, dx$ ni hisoblang.", "Вычислите $\\int_0^{\\pi} \\sin x\\, dx$.", ["0", "1", "2", "$\\pi$"], 2],
+        ["$\\int \\frac{1}{x}\\, dx$ ni toping.", "Найдите $\\int \\frac{1}{x}\\, dx$.", ["$-\\frac{1}{x^2}+C$", "$\\ln|x|+C$", "$x+C$", "$e^x+C$"], 1],
+        ["$y = x^2$, $x = 0$, $x = 3$ va $Ox$ o'qi bilan chegaralangan figuraning yuzini toping.", "Найдите площадь фигуры, ограниченной линиями $y = x^2$, $x = 0$, $x = 3$ и осью $Ox$.", ["27", "3", "9", "6"], 2],
+        ["$\\int e^x\\, dx$ ni toping.", "Найдите $\\int e^x\\, dx$.", ["$xe^x+C$", "$\\frac{e^{x+1}}{x+1}+C$", "$\\ln x+C$", "$e^x+C$"], 3],
+        ["$f(x) = 3x^2$ funksiyaning $F(1) = 4$ shartni qanoatlantiruvchi boshlang'ich funksiyasini toping.", "Найдите первообразную функции $f(x) = 3x^2$, удовлетворяющую условию $F(1) = 4$.", ["$x^3+4$", "$x^3+3$", "$3x^3+1$", "$x^3$"], 1]
+      ]
+    },
+    {
+      "t": ["Kombinatorika", "Комбинаторика"],
+      "q": [
+        ["$5!$ ni hisoblang.", "Вычислите $5!$.", ["25", "60", "120", "720"], 2],
+        ["4 ta har xil kitobni javonga necha xil usulda terish mumkin?", "Сколькими способами можно расставить на полке 4 разные книги?", ["24", "4", "16", "12"], 0],
+        ["$C_5^2$ ni hisoblang.", "Вычислите $C_5^2$.", ["20", "10", "5", "25"], 1],
+        ["$A_5^2$ ni hisoblang.", "Вычислите $A_5^2$.", ["10", "25", "60", "20"], 3],
+        ["10 nafar o'quvchidan 3 kishilik guruhni necha usulda tanlash mumkin?", "Сколькими способами можно выбрать группу из 3 человек среди 10 учеников?", ["720", "30", "120", "1000"], 2],
+        ["1, 2, 3 raqamlaridan (raqamlar takrorlanishi mumkin) nechta ikki xonali son tuzish mumkin?", "Сколько двузначных чисел можно составить из цифр 1, 2, 3 (цифры могут повторяться)?", ["6", "9", "3", "27"], 1],
+        ["$0!$ nimaga teng?", "Чему равно $0!$?", ["0", ["Aniqlanmagan", "Не определено"], "10", "1"], 3],
+        ["3 ta ko'ylak va 4 ta shimdan nechta turli to'plam (ko'ylak + shim) tuzish mumkin?", "Сколько разных комплектов (рубашка + брюки) можно составить из 3 рубашек и 4 брюк?", ["7", "12", "81", "64"], 1],
+        ["$C_n^0$ nimaga teng?", "Чему равно $C_n^0$?", ["$n$", "0", "1", "$n!$"], 2],
+        ["KITOB so'zining harflaridan nechta turli «so'z» (anagramma) tuzish mumkin?", "Сколько различных «слов» (анаграмм) можно составить из букв слова КНИГА?", ["120", "60", "25", "24"], 0]
+      ]
+    }
+  ]
+}

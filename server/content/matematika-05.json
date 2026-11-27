@@ -1,0 +1,83 @@
+{
+  "key": "matematika",
+  "from": 21,
+  "name": ["Matematika", "Математика"],
+  "aliases": ["mathematics", "algebra", "алгебра"],
+  "topics": [
+    {
+      "t": ["Ehtimollar nazariyasi va statistika asoslari", "Основы теории вероятностей и статистики"],
+      "q": [
+        ["Tanga tashlanganda «gerb» tushish ehtimolini toping.", "Найдите вероятность выпадения «герба» при бросании монеты.", ["$\\frac{1}{2}$", "1", "$\\frac{1}{4}$", "0"], 0],
+        ["O'yin soqqasi tashlanganda juft son tushish ehtimolini toping.", "Найдите вероятность выпадения чётного числа при бросании игральной кости.", ["$\\frac{1}{6}$", "$\\frac{1}{3}$", "$\\frac{1}{2}$", "$\\frac{2}{3}$"], 2],
+        ["O'yin soqqasi tashlanganda 4 dan katta son tushish ehtimolini toping.", "Найдите вероятность того, что при бросании игральной кости выпадет число больше 4.", ["$\\frac{1}{2}$", "$\\frac{1}{3}$", "$\\frac{2}{3}$", "$\\frac{1}{6}$"], 1],
+        ["Qutida 3 ta qizil va 7 ta ko'k shar bor. Tavakkaliga olingan shar qizil bo'lish ehtimolini toping.", "В коробке 3 красных и 7 синих шаров. Найдите вероятность того, что наугад взятый шар красный.", ["$\\frac{3}{7}$", "$\\frac{7}{10}$", "$\\frac{1}{3}$", "$\\frac{3}{10}$"], 3],
+        ["Mumkin bo'lmagan hodisaning ehtimoli nimaga teng?", "Чему равна вероятность невозможного события?", ["1", "0,5", "0", "−1"], 2],
+        ["Ikkita tanga tashlanganda ikkalasida ham «gerb» tushish ehtimolini toping.", "Найдите вероятность того, что при бросании двух монет на обеих выпадет «герб».", ["$\\frac{1}{2}$", "$\\frac{1}{4}$", "$\\frac{3}{4}$", "$\\frac{1}{3}$"], 1],
+        ["$P(A) = 0{,}3$ bo'lsa, $A$ ga qarama-qarshi hodisaning ehtimolini toping.", "Найдите вероятность события, противоположного $A$, если $P(A) = 0{,}3$.", ["0,3", "1,3", "0,7", "0"], 2],
+        ["Ikkita o'yin soqqasi tashlanganda tushgan ochkolar yig'indisi 7 ga teng bo'lish ehtimolini toping.", "Найдите вероятность того, что при бросании двух игральных костей сумма очков равна 7.", ["$\\frac{1}{6}$", "$\\frac{7}{36}$", "$\\frac{1}{12}$", "$\\frac{1}{36}$"], 0],
+        ["$A$ va $B$ bog'liqsiz hodisalar, $P(A) = 0{,}5$, $P(B) = 0{,}4$. $P(AB)$ ni toping.", "События $A$ и $B$ независимы, $P(A) = 0{,}5$, $P(B) = 0{,}4$. Найдите $P(AB)$.", ["0,9", "0,1", "0,45", "0,2"], 3],
+        ["2, 4, 6, 8, 10 sonlarining o'rta arifmetigini toping.", "Найдите среднее арифметическое чисел 2, 4, 6, 8, 10.", ["6", "5", "30", "8"], 0]
+      ]
+    },
+    {
+      "t": ["Uchburchaklar", "Треугольники"],
+      "q": [
+        ["Uchburchakning ikki burchagi 50° va 60° ga teng. Uchinchi burchagini toping.", "Два угла треугольника равны 50° и 60°. Найдите третий угол.", ["70°", "80°", "90°", "60°"], 0],
+        ["To'g'ri burchakli uchburchakning katetlari 6 va 8 ga teng. Gipotenuzani toping.", "Катеты прямоугольного треугольника равны 6 и 8. Найдите гипотенузу.", ["14", "10", "12", "48"], 1],
+        ["Uchburchakning asosi 10 ga, balandligi 6 ga teng. Yuzini toping.", "Основание треугольника равно 10, высота — 6. Найдите площадь.", ["60", "16", "30", "15"], 2],
+        ["Teng tomonli uchburchakning har bir burchagi necha gradus?", "Чему равен каждый угол равностороннего треугольника?", ["45°", "90°", "30°", "60°"], 3],
+        ["Teng yonli uchburchakning asosidagi burchagi 70° ga teng. Uchidagi burchagini toping.", "Угол при основании равнобедренного треугольника равен 70°. Найдите угол при вершине.", ["40°", "70°", "110°", "20°"], 0],
+        ["To'g'ri burchakli uchburchakning gipotenuzasi 13 ga, bir kateti 5 ga teng. Ikkinchi katetini toping.", "Гипотенуза прямоугольного треугольника равна 13, один катет — 5. Найдите другой катет.", ["8", "12", "18", "10"], 1],
+        ["Uchburchakning ikki burchagi 40° va 75°. Uchinchi uchidagi tashqi burchakni toping.", "Два угла треугольника равны 40° и 75°. Найдите внешний угол при третьей вершине.", ["65°", "105°", "115°", "140°"], 2],
+        ["Tomoni 6 ga teng bo'lgan teng tomonli uchburchakning yuzini toping.", "Найдите площадь равностороннего треугольника со стороной 6.", ["$36\\sqrt{3}$", "18", "$6\\sqrt{3}$", "$9\\sqrt{3}$"], 3],
+        ["Tomonlari 5, 5 va 6 bo'lgan uchburchakning yuzini toping.", "Найдите площадь треугольника со сторонами 5, 5 и 6.", ["12", "15", "24", "30"], 0],
+        ["O'xshash uchburchaklarning mos tomonlari nisbati 2 : 3. Ularning yuzlari nisbatini toping.", "Соответствующие стороны подобных треугольников относятся как 2 : 3. Найдите отношение их площадей.", ["2 : 3", "4 : 9", "8 : 27", "3 : 2"], 1]
+      ]
+    },
+    {
+      "t": ["To'rtburchaklar va aylana", "Четырёхугольники и окружность"],
+      "q": [
+        ["Qavariq to'rtburchak burchaklarining yig'indisi nechaga teng?", "Чему равна сумма углов выпуклого четырёхугольника?", ["180°", "360°", "540°", "720°"], 1],
+        ["Tomonlari 8 va 5 bo'lgan to'g'ri to'rtburchakning yuzini toping.", "Найдите площадь прямоугольника со сторонами 8 и 5.", ["26", "13", "40", "80"], 2],
+        ["Tomoni 4 ga teng kvadratning diagonalini toping.", "Найдите диагональ квадрата со стороной 4.", ["$4\\sqrt{2}$", "8", "16", "$2\\sqrt{2}$"], 0],
+        ["Trapetsiyaning asoslari 6 va 10, balandligi 4 ga teng. Yuzini toping.", "Основания трапеции равны 6 и 10, высота — 4. Найдите площадь.", ["64", "40", "24", "32"], 3],
+        ["Rombning diagonallari 6 va 8 ga teng. Yuzini toping.", "Диагонали ромба равны 6 и 8. Найдите его площадь.", ["48", "24", "14", "12"], 1],
+        ["Radiusi 5 ga teng aylananing uzunligini toping.", "Найдите длину окружности радиуса 5.", ["$5\\pi$", "$25\\pi$", "$10\\pi$", "$20\\pi$"], 2],
+        ["Radiusi 3 ga teng doiraning yuzini toping.", "Найдите площадь круга радиуса 3.", ["$9\\pi$", "$6\\pi$", "$3\\pi$", "$18\\pi$"], 0],
+        ["Ichki chizilgan burchak 100° li yoyga tiralgan. Burchak kattaligini toping.", "Вписанный угол опирается на дугу 100°. Найдите величину угла.", ["100°", "200°", "25°", "50°"], 3],
+        ["Parallelogrammning bir burchagi 65° ga teng. Unga qo'shni burchakni toping.", "Один угол параллелограмма равен 65°. Найдите соседний с ним угол.", ["65°", "115°", "25°", "130°"], 1],
+        ["Muntazam oltiburchakning ichki burchagi necha gradus?", "Чему равен внутренний угол правильного шестиугольника?", ["108°", "135°", "120°", "150°"], 2]
+      ]
+    },
+    {
+      "t": ["Ko'pyoqlar", "Многогранники"],
+      "q": [
+        ["Qirrasi 3 ga teng kubning hajmini toping.", "Найдите объём куба с ребром 3.", ["9", "27", "18", "54"], 1],
+        ["Qirrasi 2 ga teng kubning to'la sirtini toping.", "Найдите площадь полной поверхности куба с ребром 2.", ["8", "16", "24", "12"], 2],
+        ["O'lchamlari 2, 3 va 4 bo'lgan to'g'ri burchakli parallelepipedning hajmini toping.", "Найдите объём прямоугольного параллелепипеда с измерениями 2, 3 и 4.", ["24", "9", "52", "12"], 0],
+        ["Kubning nechta uchi bor?", "Сколько вершин у куба?", ["6", "12", "4", "8"], 3],
+        ["Kubning nechta qirrasi bor?", "Сколько рёбер у куба?", ["12", "8", "6", "24"], 0],
+        ["Piramidaning asos yuzi 12 ga, balandligi 5 ga teng. Hajmini toping.", "Площадь основания пирамиды равна 12, высота — 5. Найдите её объём.", ["60", "20", "30", "17"], 1],
+        ["O'lchamlari 3, 4 va 12 bo'lgan to'g'ri burchakli parallelepipedning diagonalini toping.", "Найдите диагональ прямоугольного параллелепипеда с измерениями 3, 4 и 12.", ["19", "12", "13", "15"], 2],
+        ["Qavariq ko'pyoq uchun Eyler formulasi: $B - Q + Y = ?$ (uchlar, qirralar, yoqlar)", "Формула Эйлера для выпуклого многогранника: $В - Р + Г = ?$ (вершины, рёбра, грани)", ["1", "2", "0", "3"], 1],
+        ["Uchburchakli prizmaning nechta yog'i bor?", "Сколько граней у треугольной призмы?", ["6", "9", "5", "3"], 2],
+        ["Prizmaning asos yuzi 10 ga, balandligi 7 ga teng. Hajmini toping.", "Площадь основания призмы равна 10, высота — 7. Найдите её объём.", ["35", "17", "140", "70"], 3]
+      ]
+    },
+    {
+      "t": ["Aylanish jismlari", "Тела вращения"],
+      "q": [
+        ["Asosining radiusi 2, balandligi 5 bo'lgan silindrning hajmini toping.", "Найдите объём цилиндра с радиусом основания 2 и высотой 5.", ["$20\\pi$", "$10\\pi$", "$40\\pi$", "$25\\pi$"], 0],
+        ["Asosining radiusi 3, balandligi 4 bo'lgan konusning hajmini toping.", "Найдите объём конуса с радиусом основания 3 и высотой 4.", ["$36\\pi$", "$12\\pi$", "$24\\pi$", "$9\\pi$"], 1],
+        ["Radiusi 3 ga teng sharning hajmini toping.", "Найдите объём шара радиуса 3.", ["$27\\pi$", "$108\\pi$", "$36\\pi$", "$12\\pi$"], 2],
+        ["Radiusi 2 ga teng sfera sirtining yuzini toping.", "Найдите площадь сферы радиуса 2.", ["$8\\pi$", "$32\\pi$", "$4\\pi$", "$16\\pi$"], 3],
+        ["Asosining radiusi 3, balandligi 4 bo'lgan konusning yasovchisini toping.", "Найдите образующую конуса с радиусом основания 3 и высотой 4.", ["5", "7", "$\\sqrt{7}$", "25"], 0],
+        ["Asosining radiusi 2, balandligi 5 bo'lgan silindrning yon sirtini toping.", "Найдите площадь боковой поверхности цилиндра с радиусом основания 2 и высотой 5.", ["$10\\pi$", "$20\\pi$", "$40\\pi$", "$28\\pi$"], 1],
+        ["To'g'ri to'rtburchak o'z tomoni atrofida aylantirilsa, qanday jism hosil bo'ladi?", "Какое тело получится при вращении прямоугольника вокруг его стороны?", [["Konus", "Конус"], ["Shar", "Шар"], ["Silindr", "Цилиндр"], ["Piramida", "Пирамида"]], 2],
+        ["To'g'ri burchakli uchburchak kateti atrofida aylantirilsa, qanday jism hosil bo'ladi?", "Какое тело получится при вращении прямоугольного треугольника вокруг катета?", [["Silindr", "Цилиндр"], ["Shar", "Шар"], ["Prizma", "Призма"], ["Konus", "Конус"]], 3],
+        ["Asosining radiusi 3, yasovchisi 5 bo'lgan konusning yon sirtini toping.", "Найдите площадь боковой поверхности конуса с радиусом основания 3 и образующей 5.", ["$24\\pi$", "$15\\pi$", "$30\\pi$", "$9\\pi$"], 1],
+        ["Sharning radiusi 2 marta oshirilsa, uning hajmi necha marta oshadi?", "Во сколько раз увеличится объём шара, если его радиус увеличить в 2 раза?", [["2 marta", "В 2 раза"], ["4 marta", "В 4 раза"], ["8 marta", "В 8 раз"], ["6 marta", "В 6 раз"]], 2]
+      ]
+    }
+  ]
+}

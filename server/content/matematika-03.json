@@ -1,0 +1,83 @@
+{
+  "key": "matematika",
+  "from": 11,
+  "name": ["Matematika", "Математика"],
+  "aliases": ["mathematics", "algebra", "алгебра"],
+  "topics": [
+    {
+      "t": ["Ko'rsatkichli funksiya va tenglamalar", "Показательная функция и уравнения"],
+      "q": [
+        ["$2^x = 32$ tenglamani yeching.", "Решите уравнение $2^x = 32$.", ["4", "5", "6", "16"], 1],
+        ["$3^{x-1} = 27$ tenglamani yeching.", "Решите уравнение $3^{x-1} = 27$.", ["3", "2", "9", "4"], 3],
+        ["$5^{2x} = \\frac{1}{25}$ tenglamani yeching.", "Решите уравнение $5^{2x} = \\frac{1}{25}$.", ["−1", "1", "−2", "2"], 0],
+        ["$\\left(\\frac{1}{2}\\right)^x = 8$ tenglamani yeching.", "Решите уравнение $\\left(\\frac{1}{2}\\right)^x = 8$.", ["3", "−3", "$\\frac{1}{3}$", "−8"], 1],
+        ["$4^x = 2^{x+3}$ tenglamani yeching.", "Решите уравнение $4^x = 2^{x+3}$.", ["1", "2", "3", "6"], 2],
+        ["$2^x > 8$ tengsizlikni yeching.", "Решите неравенство $2^x > 8$.", ["$x<3$", "$x>4$", "$x>3$", "$x>8$"], 2],
+        ["$0{,}5^x \\ge 4$ tengsizlikni yeching.", "Решите неравенство $0{,}5^x \\ge 4$.", ["$x\\ge 2$", "$x\\le -2$", "$x\\ge -2$", "$x\\le 2$"], 1],
+        ["$y = 3^x$ funksiya grafigi qaysi nuqtadan o'tadi?", "Через какую точку проходит график функции $y = 3^x$?", ["$(0;\\ 0)$", "$(1;\\ 0)$", "$(1;\\ 1)$", "$(0;\\ 1)$"], 3],
+        ["$9^x - 4\\cdot 3^x + 3 = 0$ tenglama ildizlarining yig'indisini toping.", "Найдите сумму корней уравнения $9^x - 4\\cdot 3^x + 3 = 0$.", ["1", "3", "4", "0"], 0],
+        ["$y = 2^x + 1$ funksiyaning qiymatlar sohasini toping.", "Найдите множество значений функции $y = 2^x + 1$.", ["$[1;\\ +\\infty)$", "$(1;\\ +\\infty)$", "$(0;\\ +\\infty)$", "$\\mathbb{R}$"], 1]
+      ]
+    },
+    {
+      "t": ["Logarifmlar", "Логарифмы"],
+      "q": [
+        ["$\\log_2 8$ ni hisoblang.", "Вычислите $\\log_2 8$.", ["2", "3", "4", "8"], 1],
+        ["$\\log_3 \\frac{1}{9}$ ni hisoblang.", "Вычислите $\\log_3 \\frac{1}{9}$.", ["2", "$\\frac{1}{2}$", "−3", "−2"], 3],
+        ["$\\lg 1000$ ni hisoblang.", "Вычислите $\\lg 1000$.", ["3", "10", "100", "2"], 0],
+        ["$\\log_6 2 + \\log_6 3$ ni hisoblang.", "Вычислите $\\log_6 2 + \\log_6 3$.", ["$\\log_6 5$", "5", "1", "6"], 2],
+        ["$\\log_2 48 - \\log_2 3$ ni hisoblang.", "Вычислите $\\log_2 48 - \\log_2 3$.", ["4", "3", "45", "16"], 0],
+        ["$5^{\\log_5 7}$ ni hisoblang.", "Вычислите $5^{\\log_5 7}$.", ["5", "7", "35", "$\\log_5 7$"], 1],
+        ["$\\log_4 x = 2$ tenglamani yeching.", "Решите уравнение $\\log_4 x = 2$.", ["8", "2", "6", "16"], 3],
+        ["$\\log_3 (x-1) = 2$ tenglamani yeching.", "Решите уравнение $\\log_3 (x-1) = 2$.", ["7", "9", "10", "8"], 2],
+        ["$\\log_2 (x+1) < 3$ tengsizlikni yeching.", "Решите неравенство $\\log_2 (x+1) < 3$.", ["$(-1;\\ 7)$", "$(-\\infty;\\ 7)$", "$(0;\\ 8)$", "$(-1;\\ 8)$"], 0],
+        ["$y = \\log_5 (4 - x)$ funksiyaning aniqlanish sohasini toping.", "Найдите область определения функции $y = \\log_5 (4 - x)$.", ["$x>4$", "$x<4$", "$x\\le 4$", "$x\\ne 4$"], 1]
+      ]
+    },
+    {
+      "t": ["Trigonometriya asoslari", "Основы тригонометрии"],
+      "q": [
+        ["$\\sin 30^\\circ$ ni toping.", "Найдите $\\sin 30^\\circ$.", ["$\\frac{1}{2}$", "$\\frac{\\sqrt{3}}{2}$", "$\\frac{\\sqrt{2}}{2}$", "1"], 0],
+        ["$\\cos 60^\\circ + \\sin 90^\\circ$ ni hisoblang.", "Вычислите $\\cos 60^\\circ + \\sin 90^\\circ$.", ["1", "$\\frac{3}{2}$", "$\\frac{1}{2}$", "2"], 1],
+        ["$\\mathrm{tg}\\, 45^\\circ$ ni toping.", "Найдите $\\mathrm{tg}\\, 45^\\circ$.", ["0", "$\\sqrt{3}$", "1", "$\\frac{\\sqrt{3}}{3}$"], 2],
+        ["$\\sin^2\\alpha + \\cos^2\\alpha$ nimaga teng?", "Чему равно $\\sin^2\\alpha + \\cos^2\\alpha$?", ["$\\sin 2\\alpha$", "0", "2", "1"], 3],
+        ["180° necha radianga teng?", "Сколько радиан составляют 180°?", ["$\\pi$", "$2\\pi$", "$\\frac{\\pi}{2}$", "$\\frac{\\pi}{3}$"], 0],
+        ["$\\frac{\\pi}{6}$ radian necha gradusga teng?", "Сколько градусов составляет $\\frac{\\pi}{6}$ радиан?", ["60°", "45°", "30°", "15°"], 2],
+        ["$\\sin\\alpha = \\frac{3}{5}$ va $\\alpha$ I chorak burchagi bo'lsa, $\\cos\\alpha$ ni toping.", "Найдите $\\cos\\alpha$, если $\\sin\\alpha = \\frac{3}{5}$ и $\\alpha$ — угол I четверти.", ["$\\frac{4}{5}$", "$\\frac{3}{4}$", "$-\\frac{4}{5}$", "$\\frac{5}{3}$"], 0],
+        ["$\\sin 2\\alpha$ qaysi ifodaga teng?", "Чему равен $\\sin 2\\alpha$?", ["$\\sin^2\\alpha-\\cos^2\\alpha$", "$2\\sin\\alpha\\cos\\alpha$", "$2\\sin\\alpha$", "$\\cos^2\\alpha-\\sin^2\\alpha$"], 1],
+        ["$\\cos 120^\\circ$ ni toping.", "Найдите $\\cos 120^\\circ$.", ["$\\frac{1}{2}$", "$-\\frac{\\sqrt{3}}{2}$", "$-\\frac{1}{2}$", "$\\frac{\\sqrt{3}}{2}$"], 2],
+        ["$\\sin\\alpha > 0$ va $\\cos\\alpha < 0$ bo'lsa, $\\alpha$ qaysi chorak burchagi?", "В какой четверти лежит угол $\\alpha$, если $\\sin\\alpha > 0$ и $\\cos\\alpha < 0$?", [["I chorak", "I четверть"], ["II chorak", "II четверть"], ["III chorak", "III четверть"], ["IV chorak", "IV четверть"]], 1]
+      ]
+    },
+    {
+      "t": ["Trigonometrik tenglamalar", "Тригонометрические уравнения"],
+      "q": [
+        ["$\\sin x = 0$ tenglamani yeching.", "Решите уравнение $\\sin x = 0$.", ["$x=\\pi k$", "$x=\\frac{\\pi}{2}+\\pi k$", "$x=2\\pi k$", "$x=\\frac{\\pi}{2}+2\\pi k$"], 0],
+        ["$\\cos x = 1$ tenglamani yeching.", "Решите уравнение $\\cos x = 1$.", ["$x=\\pi k$", "$x=2\\pi k$", "$x=\\frac{\\pi}{2}+\\pi k$", "$x=\\pi+2\\pi k$"], 1],
+        ["$\\cos x = 0$ tenglamani yeching.", "Решите уравнение $\\cos x = 0$.", ["$x=\\pi k$", "$x=2\\pi k$", "$x=\\frac{\\pi}{2}+\\pi k$", "$x=\\frac{\\pi}{2}+2\\pi k$"], 2],
+        ["$\\mathrm{tg}\\, x = 1$ tenglamani yeching.", "Решите уравнение $\\mathrm{tg}\\, x = 1$.", ["$x=\\frac{\\pi}{4}+2\\pi k$", "$x=\\frac{\\pi}{3}+\\pi k$", "$x=\\pi k$", "$x=\\frac{\\pi}{4}+\\pi k$"], 3],
+        ["$\\sin x = 2$ tenglamani yeching.", "Решите уравнение $\\sin x = 2$.", [["Yechimi yo'q", "Нет решений"], "$x=\\frac{\\pi}{2}+2\\pi k$", "$x=\\arcsin 2$", "$x=2\\pi k$"], 0],
+        ["$\\sin x = \\frac{1}{2}$ tenglamaning eng kichik musbat ildizini toping.", "Найдите наименьший положительный корень уравнения $\\sin x = \\frac{1}{2}$.", ["$\\frac{\\pi}{3}$", "$\\frac{\\pi}{4}$", "$\\frac{\\pi}{6}$", "$\\frac{5\\pi}{6}$"], 2],
+        ["$\\arccos \\frac{1}{2}$ ni hisoblang.", "Вычислите $\\arccos \\frac{1}{2}$.", ["$\\frac{\\pi}{6}$", "$\\frac{\\pi}{3}$", "$\\frac{2\\pi}{3}$", "$\\frac{\\pi}{4}$"], 1],
+        ["$\\arcsin(-1)$ ni hisoblang.", "Вычислите $\\arcsin(-1)$.", ["$\\frac{\\pi}{2}$", "$\\pi$", "$-\\pi$", "$-\\frac{\\pi}{2}$"], 3],
+        ["$2\\cos^2 x - 1 = 0$ tenglamani yeching.", "Решите уравнение $2\\cos^2 x - 1 = 0$.", ["$x=\\frac{\\pi}{4}+\\frac{\\pi k}{2}$", "$x=\\frac{\\pi}{4}+\\pi k$", "$x=\\frac{\\pi}{2}+\\pi k$", "$x=\\pi k$"], 0],
+        ["$\\sin x = 0$ tenglama $[0;\\ 2\\pi]$ kesmada nechta ildizga ega?", "Сколько корней имеет уравнение $\\sin x = 0$ на отрезке $[0;\\ 2\\pi]$?", ["1", "2", "3", "4"], 2]
+      ]
+    },
+    {
+      "t": ["Arifmetik progressiya", "Арифметическая прогрессия"],
+      "q": [
+        ["Arifmetik progressiyada $a_1 = 3$, $d = 4$. $a_{10}$ ni toping.", "В арифметической прогрессии $a_1 = 3$, $d = 4$. Найдите $a_{10}$.", ["39", "43", "40", "36"], 0],
+        ["2; 5; 8; … arifmetik progressiyaning ayirmasini toping.", "Найдите разность арифметической прогрессии 2; 5; 8; …", ["2", "3", "5", "8"], 1],
+        ["$a_1 = 5$, $d = 2$ bo'lgan arifmetik progressiyaning dastlabki 10 ta hadi yig'indisini toping.", "Найдите сумму первых 10 членов арифметической прогрессии с $a_1 = 5$, $d = 2$.", ["100", "150", "120", "140"], 3],
+        ["Arifmetik progressiyada $a_3 = 10$, $a_7 = 22$. Ayirmasini toping.", "В арифметической прогрессии $a_3 = 10$, $a_7 = 22$. Найдите разность.", ["4", "6", "3", "12"], 2],
+        ["$1 + 2 + 3 + \\ldots + 100$ yig'indini hisoblang.", "Вычислите сумму $1 + 2 + 3 + \\ldots + 100$.", ["5000", "5050", "5100", "10100"], 1],
+        ["Arifmetik progressiyada $a_5 = 17$, $d = 3$. $a_1$ ni toping.", "В арифметической прогрессии $a_5 = 17$, $d = 3$. Найдите $a_1$.", ["8", "2", "14", "5"], 3],
+        ["Quyidagi sonlardan qaysi biri 7; 11; 15; … arifmetik progressiyaning hadi?", "Какое из чисел является членом арифметической прогрессии 7; 11; 15; …?", ["100", "102", "95", "90"], 2],
+        ["Arifmetik progressiyada $a_2 + a_8 = 20$. $a_5$ ni toping.", "В арифметической прогрессии $a_2 + a_8 = 20$. Найдите $a_5$.", ["10", "20", "5", "40"], 0],
+        ["Arifmetik progressiyaning $n$-hadi formulasini ko'rsating.", "Укажите формулу $n$-го члена арифметической прогрессии.", ["$a_n=a_1 q^{n-1}$", "$a_n=a_1+nd$", "$a_n=\\frac{a_1+a_n}{2}n$", "$a_n=a_1+(n-1)d$"], 3],
+        ["$a_1 = 20$, $d = -3$ bo'lgan arifmetik progressiyaning birinchi manfiy hadi nechanchi o'rinda turadi?", "Каким по счёту будет первый отрицательный член арифметической прогрессии с $a_1 = 20$, $d = -3$?", ["7", "9", "8", "6"], 2]
+      ]
+    }
+  ]
+}
