@@ -1,0 +1,83 @@
+{
+  "key": "biologiya",
+  "from": 6,
+  "name": ["Biologiya", "Биология"],
+  "aliases": ["biology"],
+  "topics": [
+    {
+      "t": ["Hujayraning bo'linishi", "Деление клетки"],
+      "q": [
+        ["Mitoz natijasida nechta va qanday hujayra hosil bo'ladi?", "Сколько и каких клеток образуется в результате митоза?", [["2 ta bir xil diploid hujayra", "2 одинаковые диплоидные клетки"], ["4 ta gaploid hujayra", "4 гаплоидные клетки"], ["1 ta hujayra", "1 клетка"], ["8 ta hujayra", "8 клеток"]], 0],
+        ["Meyoz natijasida nechta va qanday hujayra hosil bo'ladi?", "Сколько и каких клеток образуется в результате мейоза?", [["2 ta diploid hujayra", "2 диплоидные клетки"], ["4 ta gaploid hujayra", "4 гаплоидные клетки"], ["2 ta gaploid hujayra", "2 гаплоидные клетки"], ["4 ta diploid hujayra", "4 диплоидные клетки"]], 1],
+        ["Odamning somatik hujayralarida nechta xromosoma bor?", "Сколько хромосом в соматических клетках человека?", ["23", "46", "44", "48"], 1],
+        ["Odamning jinsiy hujayralarida (gametalarida) nechta xromosoma bor?", "Сколько хромосом в половых клетках (гаметах) человека?", ["46", "92", "23", "22"], 2],
+        ["Xromosomalar hujayra ekvatorida joylashadigan faza qaysi?", "В какой фазе хромосомы выстраиваются по экватору клетки?", [["Profaza", "Профаза"], ["Metafaza", "Метафаза"], ["Anafaza", "Анафаза"], ["Telofaza", "Телофаза"]], 1],
+        ["Xromatidalar hujayra qutblariga ajraladigan faza qaysi?", "В какой фазе хроматиды расходятся к полюсам клетки?", [["Profaza", "Профаза"], ["Metafaza", "Метафаза"], ["Anafaza", "Анафаза"], ["Telofaza", "Телофаза"]], 2],
+        ["DNK ning ikki hissa ortishi (replikatsiya) qachon sodir bo'ladi?", "Когда происходит удвоение (репликация) ДНК?", [["Interfazada", "В интерфазе"], ["Profazada", "В профазе"], ["Metafazada", "В метафазе"], ["Telofazada", "В телофазе"]], 0],
+        ["Krossingover qaysi bosqichda sodir bo'ladi?", "На какой стадии происходит кроссинговер?", [["Mitoz anafazasida", "В анафазе митоза"], ["Interfazada", "В интерфазе"], ["Meyoz II telofazasida", "В телофазе мейоза II"], ["Meyoz I profazasida", "В профазе мейоза I"]], 3],
+        ["Meyozning biologik ahamiyati nima?", "Каково биологическое значение мейоза?", [["Hujayralar sonini tez ko'paytirish", "Быстрое увеличение числа клеток"], ["Xromosomalar sonining doimiyligini saqlash va irsiy xilma-xillik", "Сохранение постоянства числа хромосом и наследственное разнообразие"], ["Jarohatni bitkazish", "Заживление ран"], ["O'sishni ta'minlash", "Обеспечение роста"]], 1],
+        ["Hayvonlarda meyoz natijasida qanday hujayralar hosil bo'ladi?", "Какие клетки образуются у животных в результате мейоза?", [["Muskul hujayralari", "Мышечные клетки"], ["Nerv hujayralari", "Нервные клетки"], ["Jinsiy hujayralar (gametalar)", "Половые клетки (гаметы)"], ["Qon hujayralari", "Клетки крови"]], 2]
+      ]
+    },
+    {
+      "t": ["Organizmlarning ko'payishi va rivojlanishi", "Размножение и развитие организмов"],
+      "q": [
+        ["Quyidagilardan qaysi biri jinssiz ko'payishga misol?", "Что из перечисленного является примером бесполого размножения?", [["Gidraning kurtaklanishi", "Почкование гидры"], ["Baliqlarning urug'lanishi", "Оплодотворение у рыб"], ["Qushlarning tuxum qo'yishi", "Откладывание яиц птицами"], ["Gametalar qo'shilishi", "Слияние гамет"]], 0],
+        ["Kartoshka qanday vegetativ ko'payadi?", "Как картофель размножается вегетативно?", [["Urug' orqali", "Семенами"], ["Tuganaklar orqali", "Клубнями"], ["Spora orqali", "Спорами"], ["Kurtaklanish orqali", "Почкованием"]], 1],
+        ["Erkak va urg'ochi gametalarning qo'shilishi qanday ataladi?", "Как называется слияние мужской и женской гамет?", [["Urug'lanish", "Оплодотворение"], ["Mitoz", "Митоз"], ["Kurtaklanish", "Почкование"], ["Regeneratsiya", "Регенерация"]], 0],
+        ["Zigota nima?", "Что такое зигота?", [["Jinsiy hujayra", "Половая клетка"], ["Spora", "Спора"], ["Urug'langan tuxum hujayra", "Оплодотворённая яйцеклетка"], ["Embrion qobig'i", "Оболочка эмбриона"]], 2],
+        ["Gulli o'simliklarda qo'sh urug'lanishni kim kashf etgan?", "Кто открыл двойное оплодотворение у цветковых растений?", [["Ch. Darvin", "Ч. Дарвин"], ["G. Mendel", "Г. Мендель"], ["K. Linney", "К. Линней"], ["S. G. Navashin", "С. Г. Навашин"]], 3],
+        ["Jinsiy ko'payishning asosiy afzalligi nima?", "В чём главное преимущество полового размножения?", [["Avlodlarning irsiy xilma-xilligi", "Наследственное разнообразие потомства"], ["Tez ko'payish", "Быстрое размножение"], ["Juft kerak emasligi", "Не нужна пара"], ["Energiya tejalishi", "Экономия энергии"]], 0],
+        ["Spora orqali ko'payish qaysi o'simliklarga xos?", "Для каких растений характерно размножение спорами?", [["Olma daraxtiga", "Для яблони"], ["Bug'doyga", "Для пшеницы"], ["Qirqquloqlarga", "Для папоротников"], ["G'o'zaga", "Для хлопчатника"]], 2],
+        ["Erkak jinsiy hujayrasi qanday ataladi?", "Как называется мужская половая клетка?", [["Spermatozoid", "Сперматозоид"], ["Tuxum hujayra", "Яйцеклетка"], ["Zigota", "Зигота"], ["Spora", "Спора"]], 0],
+        ["Partenogenez nima?", "Что такое партеногенез?", [["Ikki gametaning qo'shilishi", "Слияние двух гамет"], ["Urug'lanmagan tuxum hujayradan organizm rivojlanishi", "Развитие организма из неоплодотворённой яйцеклетки"], ["Kurtaklanish", "Почкование"], ["Hujayraning bo'linishi", "Деление клетки"]], 1],
+        ["Ontogenez nima?", "Что такое онтогенез?", [["Turlarning tarixiy rivojlanishi", "Историческое развитие видов"], ["Hujayraning bo'linishi", "Деление клетки"], ["Ekotizim almashinuvi", "Смена экосистем"], ["Organizmning individual rivojlanishi", "Индивидуальное развитие организма"]], 3]
+      ]
+    },
+    {
+      "t": ["Genetika asoslari", "Основы генетики"],
+      "q": [
+        ["Genetika fanining asoschisi kim?", "Кто является основоположником генетики?", [["Gregor Mendel", "Грегор Мендель"], ["Charlz Darvin", "Чарльз Дарвин"], ["Karl Linney", "Карл Линней"], ["Lui Paster", "Луи Пастер"]], 0],
+        ["G. Mendel o'z tajribalarini qaysi o'simlikda o'tkazgan?", "На каком растении Г. Мендель проводил свои опыты?", [["Bug'doy", "Пшеница"], ["Ko'k no'xat", "Горох"], ["Makkajo'xori", "Кукуруза"], ["Lovya", "Фасоль"]], 1],
+        ["AA × aa chatishtirilganda F1 da qanday genotip hosil bo'ladi?", "Какой генотип получится в F1 при скрещивании AA × aa?", ["AA", "Aa", "aa", ["AA va aa", "AA и aa"]], 1],
+        ["Monoduragay chatishtirishda (to'liq dominantlik) F2 da fenotip bo'yicha ajralish nisbati qanday?", "Каково расщепление по фенотипу в F2 при моногибридном скрещивании (полное доминирование)?", ["1 : 1", "3 : 1", "9 : 3 : 3 : 1", "1 : 2 : 1"], 1],
+        ["Monoduragay chatishtirishda F2 da genotip bo'yicha ajralish nisbati qanday?", "Каково расщепление по генотипу в F2 при моногибридном скрещивании?", ["3 : 1", "1 : 1", "9 : 3 : 3 : 1", "1 : 2 : 1"], 3],
+        ["Diduragay chatishtirishda F2 da fenotip bo'yicha ajralish nisbati qanday?", "Каково расщепление по фенотипу в F2 при дигибридном скрещивании?", ["3 : 1", "1 : 2 : 1", "9 : 3 : 3 : 1", "1 : 1 : 1 : 1"], 2],
+        ["Tahliliy chatishtirish deganda nima tushuniladi?", "Что понимают под анализирующим скрещиванием?", [["Retsessiv gomozigota bilan chatishtirish", "Скрещивание с рецессивной гомозиготой"], ["Dominant gomozigota bilan chatishtirish", "Скрещивание с доминантной гомозиготой"], ["Ikki geterozigotani chatishtirish", "Скрещивание двух гетерозигот"], ["O'z-o'zidan changlanish", "Самоопыление"]], 0],
+        ["Aa × aa chatishtirilganda avlodlarda qanday nisbat kuzatiladi?", "Какое соотношение получится в потомстве при скрещивании Aa × aa?", ["3 : 1", "1 : 1", "1 : 2 : 1", ["Hammasi Aa", "Все Aa"]], 1],
+        ["Genotip nima?", "Что такое генотип?", [["Organizmning tashqi belgilari", "Внешние признаки организма"], ["Hujayra shakli", "Форма клетки"], ["Organizmning barcha genlari majmui", "Совокупность всех генов организма"], ["Xromosomalar soni", "Число хромосом"]], 2],
+        ["Erkak kishining jinsiy xromosomalari qanday?", "Каковы половые хромосомы мужчины?", ["XX", "XY", "YY", "X0"], 1]
+      ]
+    },
+    {
+      "t": ["O'zgaruvchanlik va mutatsiyalar", "Изменчивость и мутации"],
+      "q": [
+        ["Mutatsiya nima?", "Что такое мутация?", [["Irsiy materialning to'satdan o'zgarishi", "Внезапное изменение наследственного материала"], ["Fenotipning muhit ta'sirida o'zgarishi", "Изменение фенотипа под влиянием среды"], ["Hujayraning bo'linishi", "Деление клетки"], ["Organizmning o'sishi", "Рост организма"]], 0],
+        ["Modifikatsion o'zgaruvchanlikning xususiyati qaysi?", "Какая особенность у модификационной изменчивости?", [["Irsiy bo'ladi", "Наследуется"], ["Avlodga berilmaydi", "Не передаётся потомству"], ["Har doim zararli", "Всегда вредна"], ["Xromosomalar sonini o'zgartiradi", "Меняет число хромосом"]], 1],
+        ["Daun sindromining sababi nima?", "Какова причина синдрома Дауна?", [["Vitamin yetishmasligi", "Нехватка витаминов"], ["Bakterial infeksiya", "Бактериальная инфекция"], ["Jarohat", "Травма"], ["21-xromosomaning ortiqchaligi", "Лишняя 21-я хромосома"]], 3],
+        ["Poliploidiya nima?", "Что такое полиплоидия?", [["Bitta genning o'zgarishi", "Изменение одного гена"], ["Bitta xromosomaning yo'qolishi", "Утрата одной хромосомы"], ["Xromosomalar to'plamining karrali ortishi", "Кратное увеличение числа наборов хромосом"], ["DNK ning qisqarishi", "Укорочение ДНК"]], 2],
+        ["Quyidagilardan qaysi biri mutagen omil?", "Какой из факторов является мутагеном?", [["Radioaktiv nurlanish", "Радиоактивное излучение"], ["Toza suv", "Чистая вода"], ["Kislorod", "Кислород"], ["Osh tuzi", "Поваренная соль"]], 0],
+        ["Reaksiya normasi nima?", "Что такое норма реакции?", [["Mutatsiyalar soni", "Число мутаций"], ["Modifikatsion o'zgaruvchanlik chegarasi", "Пределы модификационной изменчивости"], ["Xromosomalar soni", "Число хромосом"], ["Nasl soni", "Число потомков"]], 1],
+        ["Kombinativ o'zgaruvchanlikning manbalari nima?", "Каковы источники комбинативной изменчивости?", [["Krossingover va gametalarning tasodifiy qo'shilishi", "Кроссинговер и случайное слияние гамет"], ["Faqat ovqatlanish", "Только питание"], ["Faqat harorat", "Только температура"], ["Faqat yorug'lik", "Только свет"]], 0],
+        ["Gen mutatsiyasi nimani o'zgartiradi?", "Что изменяет генная мутация?", [["Xromosomalar sonini", "Число хромосом"], ["Hujayra shaklini", "Форму клетки"], ["Gendagi nukleotidlar ketma-ketligini", "Последовательность нуклеотидов в гене"], ["Organizm hajmini", "Размер организма"]], 2],
+        ["Albinizm qanday o'zgaruvchanlikka misol?", "Примером какой изменчивости является альбинизм?", [["Modifikatsion", "Модификационной"], ["Yoshga bog'liq", "Возрастной"], ["Mavsumiy", "Сезонной"], ["Gen mutatsiyasi", "Генной мутации"]], 3],
+        ["Irsiy o'zgaruvchanlikdagi gomologik qatorlar qonunini kim yaratgan?", "Кто сформулировал закон гомологических рядов в наследственной изменчивости?", [["N. I. Vavilov", "Н. И. Вавилов"], ["G. Mendel", "Г. Мендель"], ["Ch. Darvin", "Ч. Дарвин"], ["T. Morgan", "Т. Морган"]], 0]
+      ]
+    },
+    {
+      "t": ["Viruslar va bakteriyalar", "Вирусы и бактерии"],
+      "q": [
+        ["Viruslar nimadan tuzilgan?", "Из чего состоят вирусы?", [["Nuklein kislota va oqsil qobiqdan", "Из нуклеиновой кислоты и белковой оболочки"], ["Yadro va sitoplazmadan", "Из ядра и цитоплазмы"], ["Hujayra devoridan", "Из клеточной стенки"], ["Xloroplastlardan", "Из хлоропластов"]], 0],
+        ["Viruslar qayerda ko'payadi?", "Где размножаются вирусы?", [["Suvda", "В воде"], ["Faqat tirik hujayralar ichida", "Только внутри живых клеток"], ["Tuproqda", "В почве"], ["Havoda", "В воздухе"]], 1],
+        ["Bakteriofag nimani zararlaydi?", "Кого поражает бактериофаг?", [["O'simliklarni", "Растения"], ["Hayvonlarni", "Животных"], ["Bakteriyalarni", "Бактерии"], ["Zamburug'larni", "Грибы"]], 2],
+        ["Viruslarni kim kashf etgan?", "Кто открыл вирусы?", [["L. Paster", "Л. Пастер"], ["I. I. Mechnikov", "И. И. Мечников"], ["R. Kox", "Р. Кох"], ["D. I. Ivanovskiy", "Д. И. Ивановский"]], 3],
+        ["Bakteriyalar qanday organizmlar?", "Какими организмами являются бактерии?", [["Prokariotlar", "Прокариотами"], ["Eukariotlar", "Эукариотами"], ["Viruslar", "Вирусами"], ["Zamburug'lar", "Грибами"]], 0],
+        ["Kokklar qanday shaklda bo'ladi?", "Какую форму имеют кокки?", [["Tayoqchasimon", "Палочковидную"], ["Sharsimon", "Шаровидную"], ["Spiralsimon", "Спиральную"], ["Vergulsimon", "Форму запятой"]], 1],
+        ["Antibiotiklar qaysi kasallik qo'zg'atuvchilariga qarshi ta'sir qiladi?", "Против каких возбудителей действуют антибиотики?", [["Viruslarga", "Против вирусов"], ["Allergiyaga", "Против аллергии"], ["Bakteriyalarga", "Против бактерий"], ["Irsiy kasalliklarga", "Против наследственных болезней"]], 2],
+        ["Bakteriyalarda spora hosil bo'lishi nima uchun kerak?", "Для чего у бактерий образуются споры?", [["Noqulay sharoitda yashab qolish uchun", "Для переживания неблагоприятных условий"], ["Ko'payish uchun", "Для размножения"], ["Oziqlanish uchun", "Для питания"], ["Harakatlanish uchun", "Для передвижения"]], 0],
+        ["Tuganak bakteriyalar havodan qaysi elementni o'zlashtiradi?", "Какой элемент из воздуха усваивают клубеньковые бактерии?", [["Kislorod", "Кислород"], ["Uglerod", "Углерод"], ["Vodorod", "Водород"], ["Azot", "Азот"]], 3],
+        ["OITS (SPID) ni nima qo'zg'atadi?", "Что вызывает СПИД?", [["Bakteriya", "Бактерия"], ["OIV (VICH) virusi", "Вирус ВИЧ"], ["Zamburug'", "Гриб"], ["Gijja", "Глист"]], 1]
+      ]
+    }
+  ]
+}

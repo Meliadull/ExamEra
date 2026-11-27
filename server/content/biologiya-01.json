@@ -1,0 +1,83 @@
+{
+  "key": "biologiya",
+  "from": 1,
+  "name": ["Biologiya", "Биология"],
+  "aliases": ["biology"],
+  "topics": [
+    {
+      "t": ["Biologiya fani va hayotning xususiyatlari", "Биология как наука и свойства живого"],
+      "q": [
+        ["Biologiya nimani o'rganadi?", "Что изучает биология?", [["Tirik organizmlar va hayot qonuniyatlarini", "Живые организмы и закономерности жизни"], ["Yulduzlar va sayyoralarni", "Звёзды и планеты"], ["Kimyoviy elementlarni", "Химические элементы"], ["Tog' jinslarini", "Горные породы"]], 0],
+        ["Botanika nimani o'rganadi?", "Что изучает ботаника?", [["Hayvonlarni", "Животных"], ["O'simliklarni", "Растения"], ["Zamburug'larni", "Грибы"], ["Bakteriyalarni", "Бактерии"]], 1],
+        ["Zoologiya nimani o'rganadi?", "Что изучает зоология?", [["O'simliklarni", "Растения"], ["Viruslarni", "Вирусы"], ["Hayvonlarni", "Животных"], ["Tuproqni", "Почву"]], 2],
+        ["Zamburug'larni o'rganadigan fan qanday ataladi?", "Как называется наука о грибах?", [["Botanika", "Ботаника"], ["Zoologiya", "Зоология"], ["Virusologiya", "Вирусология"], ["Mikologiya", "Микология"]], 3],
+        ["Quyidagilardan qaysi biri tirik organizmlarga xos xususiyat?", "Какое из свойств присуще живым организмам?", [["Moddalar almashinuvi", "Обмен веществ"], ["Kristallanish", "Кристаллизация"], ["Bug'lanish", "Испарение"], ["Erish", "Плавление"]], 0],
+        ["Tirik organizmlarning tuzilish va funksional birligi nima?", "Что является структурной и функциональной единицей живых организмов?", [["Atom", "Атом"], ["Hujayra", "Клетка"], ["Molekula", "Молекула"], ["To'qima", "Ткань"]], 1],
+        ["Hujayrani birinchi bo'lib kim kashf etgan?", "Кто первым открыл клетку?", [["Charlz Darvin", "Чарльз Дарвин"], ["Gregor Mendel", "Грегор Мендель"], ["Robert Guk", "Роберт Гук"], ["Lui Paster", "Луи Пастер"]], 2],
+        ["Tirik tabiat tuzilish darajalaridan eng yuqorisi qaysi?", "Какой из уровней организации живой природы самый высокий?", [["Biosfera", "Биосфера"], ["Hujayra", "Клетка"], ["Organizm", "Организм"], ["Populyatsiya", "Популяция"]], 0],
+        ["Ikki nomli (binar) nomenklaturani kim joriy etgan?", "Кто ввёл двойную (бинарную) номенклатуру?", [["Darvin", "Дарвин"], ["Mendel", "Мендель"], ["Paster", "Пастер"], ["Karl Linney", "Карл Линней"]], 3],
+        ["Ta'sirlanuvchanlik nima?", "Что такое раздражимость?", [["O'sish qobiliyati", "Способность расти"], ["Tashqi ta'sirlarga javob berish qobiliyati", "Способность реагировать на внешние воздействия"], ["Ko'payish qobiliyati", "Способность размножаться"], ["Nafas olish", "Дыхание"]], 1]
+      ]
+    },
+    {
+      "t": ["Hujayra tuzilishi", "Строение клетки"],
+      "q": [
+        ["Fotosintez hujayraning qaysi organoidida boradi?", "В каком органоиде клетки происходит фотосинтез?", [["Xloroplast", "Хлоропласт"], ["Mitoxondriya", "Митохондрия"], ["Ribosoma", "Рибосома"], ["Lizosoma", "Лизосома"]], 0],
+        ["Hujayrada ATF asosan qaysi organoidda hosil bo'ladi?", "В каком органоиде клетки в основном образуется АТФ?", [["Ribosoma", "Рибосома"], ["Mitoxondriya", "Митохондрия"], ["Vakuola", "Вакуоль"], ["Golji apparati", "Аппарат Гольджи"]], 1],
+        ["Oqsil sintezi qaysi organoidda boradi?", "В каком органоиде происходит синтез белка?", [["Lizosoma", "Лизосома"], ["Vakuola", "Вакуоль"], ["Ribosoma", "Рибосома"], ["Xloroplast", "Хлоропласт"]], 2],
+        ["Eukariot hujayrada irsiy axborot asosan qayerda saqlanadi?", "Где в основном хранится наследственная информация в эукариотической клетке?", [["Sitoplazmada", "В цитоплазме"], ["Membranada", "В мембране"], ["Vakuolada", "В вакуоли"], ["Yadroda", "В ядре"]], 3],
+        ["O'simlik hujayrasining devori asosan qaysi moddadan iborat?", "Из какого вещества в основном состоит клеточная стенка растений?", [["Sellyuloza", "Целлюлоза"], ["Xitin", "Хитин"], ["Oqsil", "Белок"], ["Yog'", "Жир"]], 0],
+        ["Prokariot hujayralarda nima bo'lmaydi?", "Чего нет в клетках прокариот?", [["Ribosoma", "Рибосом"], ["Shakllangan yadro", "Оформленного ядра"], ["Sitoplazma", "Цитоплазмы"], ["Hujayra membranasi", "Клеточной мембраны"]], 1],
+        ["Lizosomalarning vazifasi nima?", "Какова функция лизосом?", [["Fotosintez", "Фотосинтез"], ["Oqsil sintezi", "Синтез белка"], ["Moddalarni parchalash (hazm qilish)", "Расщепление (переваривание) веществ"], ["Irsiy axborotni saqlash", "Хранение наследственной информации"]], 2],
+        ["Hujayra membranasining asosiy xususiyati qaysi?", "Каково основное свойство клеточной мембраны?", [["Tanlab o'tkazuvchanlik", "Избирательная проницаемость"], ["To'liq o'tkazmaslik", "Полная непроницаемость"], ["Fotosintez qilish", "Способность к фотосинтезу"], ["Qattiqlik", "Твёрдость"]], 0],
+        ["Hujayra shirasi bilan to'lgan yirik vakuola qaysi hujayralarga xos?", "Для каких клеток характерна крупная вакуоль с клеточным соком?", [["Hayvon hujayralariga", "Для клеток животных"], ["O'simlik hujayralariga", "Для клеток растений"], ["Bakteriyalarga", "Для бактерий"], ["Viruslarga", "Для вирусов"]], 1],
+        ["Golji apparatining vazifasi nima?", "Какова функция аппарата Гольджи?", [["Fotosintez", "Фотосинтез"], ["ATF hosil qilish", "Образование АТФ"], ["Irsiy axborotni saqlash", "Хранение наследственной информации"], ["Moddalarni to'plash, qadoqlash va tashish", "Накопление, упаковка и транспорт веществ"]], 3]
+      ]
+    },
+    {
+      "t": ["Hujayraning kimyoviy tarkibi", "Химический состав клетки"],
+      "q": [
+        ["Hujayrada eng ko'p uchraydigan modda qaysi?", "Какое вещество преобладает в клетке?", [["Suv", "Вода"], ["Oqsil", "Белок"], ["Yog'", "Жир"], ["Uglevod", "Углевод"]], 0],
+        ["Oqsillarning monomerlari nima?", "Что является мономерами белков?", [["Glyukoza", "Глюкоза"], ["Aminokislotalar", "Аминокислоты"], ["Nukleotidlar", "Нуклеотиды"], ["Yog' kislotalar", "Жирные кислоты"]], 1],
+        ["DNK ning monomerlari nima?", "Что является мономерами ДНК?", [["Aminokislotalar", "Аминокислоты"], ["Glyukoza", "Глюкоза"], ["Nukleotidlar", "Нуклеотиды"], ["Glitserin", "Глицерин"]], 2],
+        ["Oqsillar tarkibiga necha xil aminokislota kiradi?", "Сколько видов аминокислот входит в состав белков?", ["4", "64", "100", "20"], 3],
+        ["Fermentlar qanday moddalar?", "Чем являются ферменты?", [["Oqsillar — biologik katalizatorlar", "Белками — биологическими катализаторами"], ["Uglevodlar", "Углеводами"], ["Mineral tuzlar", "Минеральными солями"], ["Vitaminlar", "Витаминами"]], 0],
+        ["Qaysi azotli asos DNK da bor, lekin RNK da yo'q?", "Какое азотистое основание есть в ДНК, но отсутствует в РНК?", [["Adenin", "Аденин"], ["Timin", "Тимин"], ["Guanin", "Гуанин"], ["Sitozin", "Цитозин"]], 1],
+        ["DNK da adenin (A) qaysi asos bilan komplementar juft hosil qiladi?", "С каким основанием образует комплементарную пару аденин (А) в ДНК?", [["Guanin (G)", "Гуанин (Г)"], ["Sitozin (C)", "Цитозин (Ц)"], ["Timin (T)", "Тимин (Т)"], ["Urasil (U)", "Урацил (У)"]], 2],
+        ["Hujayra uchun asosiy energiya manbai bo'lgan uglevod qaysi?", "Какой углевод является основным источником энергии для клетки?", [["Glyukoza", "Глюкоза"], ["Sellyuloza", "Целлюлоза"], ["Xitin", "Хитин"], ["Riboza", "Рибоза"]], 0],
+        ["ATF hujayrada qanday vazifani bajaradi?", "Какую функцию выполняет АТФ в клетке?", [["Irsiy axborotni saqlaydi", "Хранит наследственную информацию"], ["Universal energiya tashuvchisi", "Универсальный переносчик энергии"], ["Hujayra devorini hosil qiladi", "Образует клеточную стенку"], ["Kislorod tashiydi", "Переносит кислород"]], 1],
+        ["Yog'lar organizmda qanday vazifani bajaradi?", "Какую функцию выполняют жиры в организме?", [["Irsiy axborotni saqlaydi", "Хранят наследственную информацию"], ["Fermentlik vazifasi", "Ферментативную"], ["Kislorod tashiydi", "Переносят кислород"], ["Energiya zaxirasi va issiqlikni saqlash", "Запас энергии и теплоизоляция"]], 3]
+      ]
+    },
+    {
+      "t": ["Moddalar va energiya almashinuvi", "Обмен веществ и энергии"],
+      "q": [
+        ["Moddalar almashinuvi qanday jarayonlardan iborat?", "Из каких процессов состоит обмен веществ?", [["Assimilyatsiya va dissimilyatsiya", "Ассимиляция и диссимиляция"], ["Faqat nafas olish", "Только дыхание"], ["Faqat ovqatlanish", "Только питание"], ["Faqat ko'payish", "Только размножение"]], 0],
+        ["Assimilyatsiya (plastik almashinuv) nima?", "Что такое ассимиляция (пластический обмен)?", [["Murakkab moddalarning parchalanishi", "Расщепление сложных веществ"], ["Oddiy moddalardan murakkab moddalarning sintezi", "Синтез сложных веществ из простых"], ["Suvning bug'lanishi", "Испарение воды"], ["Hujayraning bo'linishi", "Деление клетки"]], 1],
+        ["Dissimilyatsiya (energetik almashinuv) nima?", "Что такое диссимиляция (энергетический обмен)?", [["Oqsil sintezi", "Синтез белка"], ["Fotosintez", "Фотосинтез"], ["Moddalarning energiya ajralishi bilan parchalanishi", "Расщепление веществ с выделением энергии"], ["DNK ning ikki hissa ortishi", "Удвоение ДНК"]], 2],
+        ["Glyukoza to'liq (kislorodli) oksidlanganda qanday oxirgi mahsulotlar hosil bo'ladi?", "Какие конечные продукты образуются при полном (кислородном) окислении глюкозы?", [["CO₂ va H₂O", "CO₂ и H₂O"], ["Sut kislota", "Молочная кислота"], ["Etil spirti", "Этиловый спирт"], ["O₂ va glyukoza", "O₂ и глюкоза"]], 0],
+        ["Glikolizda 1 molekula glyukozadan sof hisobda nechta ATF hosil bo'ladi?", "Сколько молекул АТФ (чистый выход) образуется при гликолизе одной молекулы глюкозы?", ["36", "2", "38", "4"], 1],
+        ["Maktab darsligi bo'yicha 1 molekula glyukoza to'liq parchalanganda jami nechta ATF hosil bo'ladi?", "Сколько всего молекул АТФ, по школьному учебнику, образуется при полном расщеплении одной молекулы глюкозы?", ["2", "38", "10", "100"], 1],
+        ["Muskullarda kislorod yetishmaganda glyukoza parchalanib qanday modda hosil bo'ladi?", "Какое вещество образуется в мышцах при расщеплении глюкозы в условиях нехватки кислорода?", [["Etil spirti", "Этиловый спирт"], ["Glyukoza", "Глюкоза"], ["Sut kislota", "Молочная кислота"], ["Oqsil", "Белок"]], 2],
+        ["Krebs sikli hujayraning qayerida boradi?", "Где в клетке протекает цикл Кребса?", [["Yadroda", "В ядре"], ["Ribosomada", "В рибосоме"], ["Xloroplastda", "В хлоропласте"], ["Mitoxondriyada", "В митохондрии"]], 3],
+        ["Avtotrof organizmlar qanday oziqlanadi?", "Как питаются автотрофные организмы?", [["Anorganik moddalardan organik moddalarni o'zi hosil qiladi", "Сами создают органические вещества из неорганических"], ["Tayyor organik moddalar bilan", "Готовыми органическими веществами"], ["Faqat boshqa hayvonlar bilan", "Только другими животными"], ["Umuman oziqlanmaydi", "Не питаются"]], 0],
+        ["Geterotrof organizmlar qanday oziqlanadi?", "Как питаются гетеротрофные организмы?", [["Fotosintez orqali", "Путём фотосинтеза"], ["Tayyor organik moddalar bilan", "Готовыми органическими веществами"], ["Xemosintez orqali", "Путём хемосинтеза"], ["Faqat suv bilan", "Только водой"]], 1]
+      ]
+    },
+    {
+      "t": ["Fotosintez", "Фотосинтез"],
+      "q": [
+        ["Fotosintez qaysi organoidlarda boradi?", "В каких органоидах протекает фотосинтез?", [["Xloroplastlarda", "В хлоропластах"], ["Mitoxondriyalarda", "В митохондриях"], ["Ribosomalarda", "В рибосомах"], ["Lizosomalarda", "В лизосомах"]], 0],
+        ["Fotosintezda ishtirok etadigan yashil pigment qanday ataladi?", "Как называется зелёный пигмент, участвующий в фотосинтезе?", [["Gemoglobin", "Гемоглобин"], ["Xlorofill", "Хлорофилл"], ["Melanin", "Меланин"], ["Karotin", "Каротин"]], 1],
+        ["Fotosintez jarayonida qaysi gaz ajralib chiqadi?", "Какой газ выделяется в процессе фотосинтеза?", ["CO₂", "O₂", "N₂", "H₂"], 1],
+        ["Fotosintez jarayonida qaysi gaz yutiladi?", "Какой газ поглощается в процессе фотосинтеза?", ["O₂", "N₂", "CO₂", "H₂"], 2],
+        ["Fotosintezda ajraladigan kislorod qaysi moddadan hosil bo'ladi?", "Из какого вещества образуется кислород, выделяющийся при фотосинтезе?", [["CO₂ dan", "Из CO₂"], ["Glyukozadan", "Из глюкозы"], ["Xlorofilldan", "Из хлорофилла"], ["Suvdan (fotoliz)", "Из воды (фотолиз)"]], 3],
+        ["Fotosintezning yorug'lik bosqichi xloroplastning qayerida boradi?", "Где в хлоропласте протекает световая фаза фотосинтеза?", [["Tilakoid membranalarida (granalarda)", "На мембранах тилакоидов (в гранах)"], ["Stromada", "В строме"], ["Tashqi membranada", "На наружной мембране"], ["Yadroda", "В ядре"]], 0],
+        ["Fotosintezning qorong'ilik bosqichi (Kalvin sikli) qayerda boradi?", "Где протекает темновая фаза фотосинтеза (цикл Кальвина)?", [["Granalarda", "В гранах"], ["Stromada", "В строме"], ["Mitoxondriyada", "В митохондрии"], ["Sitoplazmada", "В цитоплазме"]], 1],
+        ["Fotosintezning asosiy organik mahsuloti qaysi?", "Какой основной органический продукт фотосинтеза?", [["Oqsil", "Белок"], ["Yog'", "Жир"], ["Glyukoza", "Глюкоза"], ["DNK", "ДНК"]], 2],
+        ["Fotosintez uchun energiya manbai nima?", "Что является источником энергии для фотосинтеза?", [["Quyosh nuri", "Солнечный свет"], ["Tuproq issiqligi", "Тепло почвы"], ["Kimyoviy reaksiyalar", "Химические реакции"], ["Shamol", "Ветер"]], 0],
+        ["Xemosintezni kim kashf etgan?", "Кто открыл хемосинтез?", [["Charlz Darvin", "Чарльз Дарвин"], ["Gregor Mendel", "Грегор Мендель"], ["I. P. Pavlov", "И. П. Павлов"], ["S. N. Vinogradskiy", "С. Н. Виноградский"]], 3]
+      ]
+    }
+  ]
+}
