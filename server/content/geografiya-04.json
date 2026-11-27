@@ -1,0 +1,83 @@
+{
+  "key": "geografiya",
+  "from": 16,
+  "name": ["Geografiya", "География"],
+  "aliases": ["geography"],
+  "topics": [
+    {
+      "t": ["O'zbekistonning geografik o'rni", "Географическое положение Узбекистана"],
+      "q": [
+        ["O'zbekistonning maydoni qancha?", "Какова площадь Узбекистана?", [["448,9 ming km²", "448,9 тыс. км²"], ["1 mln km²", "1 млн км²"], ["200 ming km²", "200 тыс. км²"], ["2,7 mln km²", "2,7 млн км²"]], 0],
+        ["O'zbekiston nechta davlat bilan chegaradosh?", "Со сколькими государствами граничит Узбекистан?", ["4", "5", "6", "3"], 1],
+        ["Quyidagi davlatlardan qaysi biri O'zbekiston bilan chegaradosh emas?", "Какое из государств не граничит с Узбекистаном?", [["Qozog'iston", "Казахстан"], ["Tojikiston", "Таджикистан"], ["Eron", "Иран"], ["Afg'oniston", "Афганистан"]], 2],
+        ["O'zbekistonning geografik o'rnidagi o'ziga xoslik nima?", "В чём особенность географического положения Узбекистана?", [["Okeanga chiqish yo'li bor", "Имеет выход к океану"], ["Ikki tomondan dengiz bilan o'ralgan", "Омывается двумя морями"], ["Orol davlati", "Островное государство"], ["Ikki karra dengizga chiqa olmaydigan davlat", "Дважды внутриконтинентальное государство"]], 3],
+        ["O'zbekiston eng uzun chegarasi qaysi davlat bilan?", "С каким государством у Узбекистана самая протяжённая граница?", [["Qozog'iston", "Казахстан"], ["Turkmaniston", "Туркменистан"], ["Tojikiston", "Таджикистан"], ["Afg'oniston", "Афганистан"]], 0],
+        ["O'zbekiston eng qisqa chegarasi qaysi davlat bilan?", "С каким государством у Узбекистана самая короткая граница?", [["Qozog'iston", "Казахстан"], ["Afg'oniston", "Афганистан"], ["Qirg'iziston", "Кыргызстан"], ["Tojikiston", "Таджикистан"]], 1],
+        ["O'zbekiston qaysi mintaqada joylashgan?", "В каком регионе расположен Узбекистан?", [["Sharqiy Yevropa", "Восточная Европа"], ["Janubiy Osiyo", "Южная Азия"], ["Markaziy Osiyo", "Центральная Азия"], ["Yaqin Sharq", "Ближний Восток"]], 2],
+        ["O'zbekistonda nechta viloyat bor (Qoraqalpog'iston Respublikasi va Toshkent shahridan tashqari)?", "Сколько областей в Узбекистане (кроме Республики Каракалпакстан и города Ташкента)?", ["12", "14", "10", "13"], 0],
+        ["Qoraqalpog'iston Respublikasining poytaxti qaysi shahar?", "Какой город является столицей Республики Каракалпакстан?", [["Urganch", "Ургенч"], ["Nukus", "Нукус"], ["Xiva", "Хива"], ["Termiz", "Термез"]], 1],
+        ["O'zbekistonning eng janubiy viloyati qaysi?", "Какая область Узбекистана самая южная?", [["Qoraqalpog'iston", "Каракалпакстан"], ["Toshkent viloyati", "Ташкентская область"], ["Andijon viloyati", "Андижанская область"], ["Surxondaryo viloyati", "Сурхандарьинская область"]], 3]
+      ]
+    },
+    {
+      "t": ["O'zbekiston relyefi va foydali qazilmalari", "Рельеф и полезные ископаемые Узбекистана"],
+      "q": [
+        ["O'zbekistonning eng baland nuqtasi qaysi?", "Какая точка Узбекистана самая высокая?", [["Hazrat Sulton cho'qqisi", "Пик Хазрет Султан"], ["Beshtor", "Бештор"], ["Katta Chimyon", "Большой Чимган"], ["Bobotog'", "Бабатаг"]], 0],
+        ["O'zbekistonning eng past nuqtasi qaysi?", "Какая точка Узбекистана самая низкая?", [["Farg'ona vodiysi", "Ферганская долина"], ["Mingbuloq botig'i", "Впадина Мингбулак"], ["Qarshi cho'li", "Каршинская степь"], ["Chirchiq vodiysi", "Чирчикская долина"]], 1],
+        ["O'zbekistondagi eng katta cho'l qaysi?", "Какая пустыня самая большая в Узбекистане?", [["Qoraqum", "Каракумы"], ["Sahroi Kabir", "Сахара"], ["Qizilqum", "Кызылкум"], ["Gobi", "Гоби"]], 2],
+        ["Ustyurt platosi O'zbekistonning qaysi qismida joylashgan?", "В какой части Узбекистана находится плато Устюрт?", [["Sharqida", "На востоке"], ["Farg'ona vodiysida", "В Ферганской долине"], ["Janubida", "На юге"], ["G'arbida (Qoraqalpog'istonda)", "На западе (в Каракалпакстане)"]], 3],
+        ["O'zbekistondagi eng yirik oltin koni qaysi?", "Какое месторождение золота в Узбекистане самое крупное?", [["Muruntov", "Мурунтау"], ["Gazli", "Газли"], ["Olmaliq", "Алмалык"], ["Angren", "Ангрен"]], 0],
+        ["Gazli gaz koni qaysi viloyatda joylashgan?", "В какой области находится газовое месторождение Газли?", [["Toshkent", "Ташкентская"], ["Buxoro", "Бухарская"], ["Farg'ona", "Ферганская"], ["Xorazm", "Хорезмская"]], 1],
+        ["Qo'ng'ir ko'mir koni qaysi shaharda joylashgan?", "Возле какого города находится месторождение бурого угля?", [["Muruntov", "Мурунтау"], ["Gazli", "Газли"], ["Angren", "Ангрен"], ["Ko'kdumaloq", "Кокдумалак"]], 2],
+        ["Mis konlari bilan mashhur shahar qaysi?", "Какой город известен месторождениями меди?", [["Angren", "Ангрен"], ["Gazli", "Газли"], ["Muruntov", "Мурунтау"], ["Olmaliq", "Алмалык"]], 3],
+        ["Farg'ona vodiysi nima bilan o'ralgan?", "Чем окружена Ферганская долина?", [["Tog'lar bilan", "Горами"], ["Dengiz bilan", "Морем"], ["Cho'llar bilan", "Пустынями"], ["Ko'llar bilan", "Озёрами"]], 0],
+        ["O'zbekiston hududining qancha qismini tekisliklar egallaydi?", "Какую часть территории Узбекистана занимают равнины?", [["Taxminan yarmini", "Примерно половину"], ["Taxminan 4/5 qismini", "Примерно 4/5"], ["Taxminan 1/4 qismini", "Примерно 1/4"], ["Taxminan 1/10 qismini", "Примерно 1/10"]], 1]
+      ]
+    },
+    {
+      "t": ["O'zbekiston iqlimi", "Климат Узбекистана"],
+      "q": [
+        ["O'zbekiston iqlimi qanday?", "Каков климат Узбекистана?", [["Keskin kontinental", "Резко континентальный"], ["Dengiz iqlimi", "Морской"], ["Ekvatorial", "Экваториальный"], ["Musson", "Муссонный"]], 0],
+        ["O'zbekistonda yozda eng issiq joy qaysi?", "Какое место в Узбекистане самое жаркое летом?", [["Toshkent", "Ташкент"], ["Termiz", "Термез"], ["Nukus", "Нукус"], ["Farg'ona", "Фергана"]], 1],
+        ["O'zbekistonda eng ko'p yog'in qayerga tushadi?", "Где в Узбекистане выпадает больше всего осадков?", [["Cho'llarda", "В пустынях"], ["Orolbo'yida", "В Приаралье"], ["Tog'li hududlarda", "В горных районах"], ["Tekisliklarda", "На равнинах"]], 2],
+        ["O'zbekiston tekisliklarida yillik yog'in miqdori taxminan qancha?", "Каково примерное годовое количество осадков на равнинах Узбекистана?", [["100–200 mm", "100–200 мм"], ["1000–2000 mm", "1000–2000 мм"], ["500–700 mm", "500–700 мм"], ["3000 mm", "3000 мм"]], 0],
+        ["Janubdan esadigan issiq va quruq shamol qanday ataladi?", "Как называется горячий сухой ветер, дующий с юга?", [["Briz", "Бриз"], ["Musson", "Муссон"], ["Passat", "Пассат"], ["Garmsel", "Гармсель"]], 3],
+        ["«Afg'on shamoli» O'zbekistonning qaysi qismida ko'proq esadi?", "В какой части Узбекистана чаще дует «афганец»?", [["Janubida (Surxondaryoda)", "На юге (в Сурхандарье)"], ["Shimolida", "На севере"], ["Farg'ona vodiysida", "В Ферганской долине"], ["Ustyurtda", "На Устюрте"]], 0],
+        ["O'zbekistonda bir yilda taxminan nechta quyoshli kun bo'ladi?", "Сколько примерно солнечных дней в году в Узбекистане?", [["50 ga yaqin", "Около 50"], ["100 ga yaqin", "Около 100"], ["300 dan ortiq", "Более 300"], ["150 ga yaqin", "Около 150"]], 2],
+        ["O'zbekistonda eng sovuq oy qaysi?", "Какой месяц самый холодный в Узбекистане?", [["Iyul", "Июль"], ["Yanvar", "Январь"], ["Aprel", "Апрель"], ["Oktyabr", "Октябрь"]], 1],
+        ["O'zbekistonda yog'inlarning asosiy qismi qaysi fasllarda tushadi?", "В какие сезоны выпадает основная часть осадков в Узбекистане?", [["Yozda", "Летом"], ["Qish va bahorda", "Зимой и весной"], ["Faqat kuzda", "Только осенью"], ["Yil bo'yi bir tekis", "Равномерно весь год"]], 1],
+        ["O'zbekiston iqlimining quruqligiga asosiy sabab nima?", "Какова главная причина сухости климата Узбекистана?", [["Tog'larning ko'pligi", "Обилие гор"], ["Daryolarning ko'pligi", "Обилие рек"], ["Ekvatorga yaqinligi", "Близость к экватору"], ["Okeanlardan juda uzoqligi", "Большая удалённость от океанов"]], 3]
+      ]
+    },
+    {
+      "t": ["O'zbekiston suvlari", "Воды Узбекистана"],
+      "q": [
+        ["O'zbekistonning eng katta daryolari qaysilar?", "Какие реки самые крупные в Узбекистане?", [["Amudaryo va Sirdaryo", "Амударья и Сырдарья"], ["Chirchiq va Ohangaron", "Чирчик и Ахангаран"], ["Zarafshon va Qashqadaryo", "Зеравшан и Кашкадарья"], ["Norin va Qoradaryo", "Нарын и Карадарья"]], 0],
+        ["Amudaryo qaysi daryolarning qo'shilishidan hosil bo'ladi?", "Слиянием каких рек образуется Амударья?", [["Norin va Qoradaryo", "Нарына и Карадарьи"], ["Panj va Vaxsh", "Пянджа и Вахша"], ["Zarafshon va Qashqadaryo", "Зеравшана и Кашкадарьи"], ["Chirchiq va Ohangaron", "Чирчика и Ахангарана"]], 1],
+        ["Sirdaryo qaysi daryolarning qo'shilishidan hosil bo'ladi?", "Слиянием каких рек образуется Сырдарья?", [["Panj va Vaxsh", "Пянджа и Вахша"], ["Surxon va Sherobod", "Сурхана и Шерабада"], ["Norin va Qoradaryo", "Нарына и Карадарьи"], ["Chirchiq va Ohangaron", "Чирчика и Ахангарана"]], 2],
+        ["Zarafshon daryosi qayerdan boshlanadi?", "Где берёт начало река Зеравшан?", [["Orol dengizidan", "Из Аральского моря"], ["Aydarko'ldan", "Из Айдаркуля"], ["Chorvoq suv omboridan", "Из Чарвакского водохранилища"], ["Zarafshon muzligidan", "Из Зеравшанского ледника"]], 3],
+        ["«Toshkent dengizi» deb ataladigan suv ombori qaysi?", "Какое водохранилище называют «Ташкентским морем»?", [["Tuyabo'g'iz", "Туябугузское"], ["Chorvoq", "Чарвакское"], ["Kattaqo'rg'on", "Каттакурганское"], ["Andijon", "Андижанское"]], 0],
+        ["Chorvoq suv ombori qaysi daryoda qurilgan?", "На какой реке построено Чарвакское водохранилище?", [["Zarafshon", "Зеравшан"], ["Chirchiq", "Чирчик"], ["Amudaryo", "Амударья"], ["Surxondaryo", "Сурхандарья"]], 1],
+        ["Aydar-Arnasoy ko'llar tizimi qachon hosil bo'lgan?", "Когда образовалась Айдар-Арнасайская система озёр?", ["1920-yil", "2000-yil", "1969-yil", "1850-yil"], 2],
+        ["Orol dengiziga qaysi daryolar quyilgan?", "Какие реки впадали в Аральское море?", [["Amudaryo va Sirdaryo", "Амударья и Сырдарья"], ["Zarafshon va Chirchiq", "Зеравшан и Чирчик"], ["Volga va Ural", "Волга и Урал"], ["Norin va Panj", "Нарын и Пяндж"]], 0],
+        ["O'zbekiston daryolari asosan nima hisobiga to'yinadi?", "За счёт чего в основном питаются реки Узбекистана?", [["Yer osti suvlari", "Подземных вод"], ["Qor va muzliklarning erishi", "Таяния снегов и ледников"], ["Yomg'ir suvi", "Дождевых вод"], ["Dengiz suvi", "Морской воды"]], 1],
+        ["O'zbekistonda suv resurslaridan asosan qaysi maqsadda foydalaniladi?", "Для чего в основном используются водные ресурсы Узбекистана?", [["Kema qatnovi uchun", "Для судоходства"], ["Baliq ovlash uchun", "Для рыболовства"], ["Sanoat uchun", "Для промышленности"], ["Ekinlarni sug'orish uchun", "Для орошения посевов"]], 3]
+      ]
+    },
+    {
+      "t": ["O'zbekiston tabiat zonalari va muhofazasi", "Природные зоны Узбекистана и их охрана"],
+      "q": [
+        ["O'zbekistondagi eng qadimgi qo'riqxona qaysi?", "Какой заповедник Узбекистана самый старый?", [["Zomin qo'riqxonasi", "Зааминский"], ["Chotqol qo'riqxonasi", "Чаткальский"], ["Hisor qo'riqxonasi", "Гиссарский"], ["Qizilqum qo'riqxonasi", "Кызылкумский"]], 0],
+        ["Chotqol qo'riqxonasi qaysi viloyatda joylashgan?", "В какой области находится Чаткальский заповедник?", [["Samarqand", "Самаркандской"], ["Toshkent", "Ташкентской"], ["Buxoro", "Бухарской"], ["Xorazm", "Хорезмской"]], 1],
+        ["Qor qoploni (irbis) qayerda yashaydi?", "Где обитает снежный барс (ирбис)?", [["Cho'llarda", "В пустынях"], ["To'qaylarda", "В тугаях"], ["Baland tog'larda", "Высоко в горах"], ["Daryo deltasida", "В дельте реки"]], 2],
+        ["Saksovul qayerda o'sadi?", "Где растёт саксаул?", [["Cho'llarda", "В пустынях"], ["Baland tog'larda", "Высоко в горах"], ["Daryo bo'yida", "По берегам рек"], ["Yaylovlarda", "На альпийских лугах"]], 0],
+        ["To'qay o'rmonlari qayerda tarqalgan?", "Где распространены тугайные леса?", [["Cho'l markazida", "В центре пустыни"], ["Tog' cho'qqilarida", "На горных вершинах"], ["Adirlarda", "На адырах"], ["Daryolar bo'yida", "Вдоль рек"]], 3],
+        ["O'zbekiston «Qizil kitobi» ga nimalar kiritiladi?", "Что заносится в «Красную книгу» Узбекистана?", [["Eng ko'p tarqalgan turlar", "Самые распространённые виды"], ["Kamyob va yo'qolib ketish xavfidagi turlar", "Редкие и исчезающие виды"], ["Uy hayvonlari", "Домашние животные"], ["Madaniy o'simliklar", "Культурные растения"]], 1],
+        ["Tog' oldi tepaliklari zonasi qanday ataladi?", "Как называется пояс предгорных холмов?", [["Cho'l", "Чуль (пустыня)"], ["Yaylov", "Яйлау"], ["Adir", "Адыры"], ["Tog'", "Тау (горы)"]], 2],
+        ["Quyidagilardan qaysi biri cho'l hayvoni?", "Какое из животных обитает в пустыне?", [["Jayron", "Джейран"], ["Irbis", "Ирбис"], ["Qo'ng'ir ayiq", "Бурый медведь"], ["Arxar", "Архар"]], 0],
+        ["Buxoro bug'usi (xongul) qayerda yashaydi?", "Где обитает бухарский олень (хангул)?", [["Cho'lda", "В пустыне"], ["To'qay o'rmonlarida", "В тугайных лесах"], ["Baland tog'larda", "Высоко в горах"], ["Adirlarda", "На адырах"]], 1],
+        ["Orol fojiasining oqibatlaridan biri qaysi?", "Какое из последствий связано с катастрофой Арала?", [["Iqlimning yumshashi", "Смягчение климата"], ["O'rmonlarning ko'payishi", "Рост лесов"], ["Baliqchilikning rivojlanishi", "Развитие рыболовства"], ["Tuzli bo'ronlar va cho'llanish", "Солевые бури и опустынивание"]], 3]
+      ]
+    }
+  ]
+}

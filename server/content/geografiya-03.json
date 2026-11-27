@@ -1,0 +1,83 @@
+{
+  "key": "geografiya",
+  "from": 11,
+  "name": ["Geografiya", "География"],
+  "aliases": ["geography"],
+  "topics": [
+    {
+      "t": ["Yevropa", "Европа"],
+      "q": [
+        ["Alp tog'larining eng baland cho'qqisi qaysi?", "Какая вершина самая высокая в Альпах?", [["Monblan", "Монблан"], ["Elbrus", "Эльбрус"], ["Olimp", "Олимп"], ["Etna", "Этна"]], 0],
+        ["Yevropadagi eng uzun daryo qaysi?", "Какая река самая длинная в Европе?", [["Dunay", "Дунай"], ["Volga", "Волга"], ["Reyn", "Рейн"], ["Dnepr", "Днепр"]], 1],
+        ["Fransiyaning poytaxti qaysi shahar?", "Какой город является столицей Франции?", [["Rim", "Рим"], ["Madrid", "Мадрид"], ["Parij", "Париж"], ["Berlin", "Берлин"]], 2],
+        ["Dunay daryosi qaysi dengizga quyiladi?", "В какое море впадает Дунай?", [["Boltiq dengizi", "Балтийское"], ["Shimoliy dengiz", "Северное"], ["O'rta dengiz", "Средиземное"], ["Qora dengiz", "Чёрное"]], 3],
+        ["Skandinaviya yarimorolida qaysi davlatlar joylashgan?", "Какие государства расположены на Скандинавском полуострове?", [["Norvegiya va Shvetsiya", "Норвегия и Швеция"], ["Ispaniya va Portugaliya", "Испания и Португалия"], ["Italiya va Gretsiya", "Италия и Греция"], ["Fransiya va Belgiya", "Франция и Бельгия"]], 0],
+        ["Italiyadagi mashhur faol vulqon qaysi?", "Какой известный действующий вулкан находится в Италии?", [["Monblan", "Монблан"], ["Vezuviy", "Везувий"], ["Elbrus", "Эльбрус"], ["Kilimanjaro", "Килиманджаро"]], 1],
+        ["Yevropa va Osiyo o'rtasidagi shartli chegara qaysi tog'lar bo'ylab o'tadi?", "По каким горам проводят условную границу между Европой и Азией?", [["Alp", "Альпы"], ["Karpat", "Карпаты"], ["Ural", "Урал"], ["Pireney", "Пиренеи"]], 2],
+        ["G'arbiy Yevropa iqlimiga qaysi iliq oqim kuchli ta'sir qiladi?", "Какое тёплое течение сильно влияет на климат Западной Европы?", [["Golfstrim (Shimoliy Atlantika oqimi)", "Гольфстрим (Северо-Атлантическое течение)"], ["Labrador oqimi", "Лабрадорское"], ["Kanar oqimi", "Канарское"], ["Peru oqimi", "Перуанское"]], 0],
+        ["Germaniyaning poytaxti qaysi shahar?", "Какой город является столицей Германии?", [["Bonn", "Бонн"], ["Myunxen", "Мюнхен"], ["Berlin", "Берлин"], ["Gamburg", "Гамбург"]], 2],
+        ["Yevropadagi eng katta yarimorol qaysi?", "Какой полуостров самый большой в Европе?", [["Pireney", "Пиренейский"], ["Apennin", "Апеннинский"], ["Bolqon", "Балканский"], ["Skandinaviya", "Скандинавский"]], 3]
+      ]
+    },
+    {
+      "t": ["Osiyo", "Азия"],
+      "q": [
+        ["Osiyodagi eng uzun daryo qaysi?", "Какая река самая длинная в Азии?", [["Yangtsi", "Янцзы"], ["Gang", "Ганг"], ["Ob", "Обь"], ["Amudaryo", "Амударья"]], 0],
+        ["Dunyodagi eng baland tog'lar qaysi?", "Какие горы самые высокие в мире?", [["Tyanshan", "Тянь-Шань"], ["Himoloy", "Гималаи"], ["Pomir", "Памир"], ["Kavkaz", "Кавказ"]], 1],
+        ["Dunyodagi eng katta yarimorol qaysi?", "Какой полуостров самый большой в мире?", [["Hindiston", "Индостан"], ["Kamchatka", "Камчатка"], ["Arabiston", "Аравийский"], ["Koreya", "Корейский"]], 2],
+        ["Xitoyning poytaxti qaysi shahar?", "Какой город является столицей Китая?", [["Shanxay", "Шанхай"], ["Pekin", "Пекин"], ["Gonkong", "Гонконг"], ["Tokio", "Токио"]], 1],
+        ["O'lik dengizning o'ziga xos xususiyati nima?", "В чём особенность Мёртвого моря?", [["Eng chuchuk ko'l", "Самое пресное озеро"], ["Eng chuqur ko'l", "Самое глубокое озеро"], ["Eng sovuq dengiz", "Самое холодное море"], ["Quruqlikning eng past nuqtasi va juda sho'r suv", "Самая низкая точка суши и очень солёная вода"]], 3],
+        ["Osiyodagi qaysi davlat eng ko'p orollardan iborat?", "Какая страна Азии состоит из наибольшего числа островов?", [["Indoneziya", "Индонезия"], ["Yaponiya", "Япония"], ["Filippin", "Филиппины"], ["Malayziya", "Малайзия"]], 0],
+        ["Musson iqlimi Osiyoning qaysi qismlariga xos?", "Для каких частей Азии характерен муссонный климат?", [["Markaziy Osiyo", "Центральной Азии"], ["Shimoliy Osiyo", "Северной Азии"], ["Janubiy va Sharqiy Osiyo", "Южной и Восточной Азии"], ["G'arbiy Osiyo cho'llari", "Пустынь Западной Азии"]], 2],
+        ["Baykal ko'li qaysi davlatda joylashgan?", "В какой стране находится озеро Байкал?", [["Mo'g'uliston", "Монголия"], ["Rossiya", "Россия"], ["Qozog'iston", "Казахстан"], ["Xitoy", "Китай"]], 1],
+        ["Gobi cho'li qaysi davlatlar hududida joylashgan?", "На территории каких стран находится пустыня Гоби?", [["Mo'g'uliston va Xitoy", "Монголии и Китая"], ["Hindiston va Pokiston", "Индии и Пакистана"], ["Eron va Iroq", "Ирана и Ирака"], ["Yaponiya va Koreya", "Японии и Кореи"]], 0],
+        ["Hindistonning poytaxti qaysi shahar?", "Какой город является столицей Индии?", [["Mumbay", "Мумбаи"], ["Kalkutta", "Калькутта"], ["Karachi", "Карачи"], ["Nyu-Dehli", "Нью-Дели"]], 3]
+      ]
+    },
+    {
+      "t": ["Afrika", "Африка"],
+      "q": [
+        ["Afrika qaysi okeanlar suvlari bilan yuviladi?", "Водами каких океанов омывается Африка?", [["Atlantika va Hind okeanlari", "Атлантического и Индийского"], ["Tinch va Atlantika okeanlari", "Тихого и Атлантического"], ["Faqat Hind okeani", "Только Индийского"], ["Shimoliy Muz okeani", "Северного Ледовитого"]], 0],
+        ["Afrikaning eng baland cho'qqisi qaysi?", "Какая вершина самая высокая в Африке?", [["Monblan", "Монблан"], ["Kilimanjaro", "Килиманджаро"], ["Akonkagua", "Аконкагуа"], ["Elbrus", "Эльбрус"]], 1],
+        ["Afrikani deyarli teng ikkiga bo'luvchi chiziq qaysi?", "Какая линия делит Африку почти пополам?", [["Shimoliy tropik", "Северный тропик"], ["Bosh meridian", "Нулевой меридиан"], ["Ekvator", "Экватор"], ["Janubiy tropik", "Южный тропик"]], 2],
+        ["Nil daryosi qaysi dengizga quyiladi?", "В какое море впадает Нил?", [["Qizil dengiz", "Красное"], ["Atlantika okeani", "Атлантический океан"], ["Hind okeani", "Индийский океан"], ["O'rta dengiz", "Средиземное"]], 3],
+        ["Afrikadagi eng katta ko'l qaysi?", "Какое озеро самое большое в Африке?", [["Viktoriya", "Виктория"], ["Tanganika", "Танганьика"], ["Chad", "Чад"], ["Nyasa", "Ньяса"]], 0],
+        ["Suvaysh kanali qaysi dengizlarni tutashtiradi?", "Какие моря соединяет Суэцкий канал?", [["Qora va Kaspiy dengizlarini", "Чёрное и Каспийское"], ["O'rta dengiz va Qizil dengizni", "Средиземное и Красное"], ["Boltiq va Shimoliy dengizlarni", "Балтийское и Северное"], ["Arab va Qizil dengizlarni", "Аравийское и Красное"]], 1],
+        ["Misrning poytaxti qaysi shahar?", "Какой город является столицей Египта?", [["Iskandariya", "Александрия"], ["Tripoli", "Триполи"], ["Qohira", "Каир"], ["Tunis", "Тунис"]], 2],
+        ["Maydoni bo'yicha Afrikadagi eng katta davlat qaysi?", "Какое государство Африки самое большое по площади?", [["Jazoir", "Алжир"], ["Misr", "Египет"], ["Nigeriya", "Нигерия"], ["Efiopiya", "Эфиопия"]], 0],
+        ["Afrikada aholisi eng ko'p davlat qaysi?", "Какая страна Африки самая населённая?", [["Misr", "Египет"], ["Nigeriya", "Нигерия"], ["Jazoir", "Алжир"], ["Marokash", "Марокко"]], 1],
+        ["Viktoriya sharsharasi qaysi daryoda joylashgan?", "На какой реке находится водопад Виктория?", [["Nil", "Нил"], ["Kongo", "Конго"], ["Niger", "Нигер"], ["Zambezi", "Замбези"]], 3]
+      ]
+    },
+    {
+      "t": ["Shimoliy va Janubiy Amerika", "Северная и Южная Америка"],
+      "q": [
+        ["Janubiy Amerikaning eng baland cho'qqisi qaysi?", "Какая вершина самая высокая в Южной Америке?", [["Akonkagua", "Аконкагуа"], ["Denali", "Денали"], ["Kilimanjaro", "Килиманджаро"], ["Elbrus", "Эльбрус"]], 0],
+        ["Amazonka daryosi qaysi materikda oqadi?", "На каком материке течёт Амазонка?", [["Shimoliy Amerika", "Северная Америка"], ["Janubiy Amerika", "Южная Америка"], ["Afrika", "Африка"], ["Avstraliya", "Австралия"]], 1],
+        ["Buyuk ko'llar qaysi materikda joylashgan?", "На каком материке расположены Великие озёра?", [["Janubiy Amerika", "Южная Америка"], ["Yevrosiyo", "Евразия"], ["Shimoliy Amerika", "Северная Америка"], ["Afrika", "Африка"]], 2],
+        ["Panama kanali qaysi okeanlarni tutashtiradi?", "Какие океаны соединяет Панамский канал?", [["Hind va Tinch okeanlarini", "Индийский и Тихий"], ["Atlantika va Hind okeanlarini", "Атлантический и Индийский"], ["Shimoliy Muz va Atlantika okeanlarini", "Северный Ледовитый и Атлантический"], ["Atlantika va Tinch okeanlarini", "Атлантический и Тихий"]], 3],
+        ["AQShning poytaxti qaysi shahar?", "Какой город является столицей США?", [["Vashington", "Вашингтон"], ["Nyu-York", "Нью-Йорк"], ["Los-Anjeles", "Лос-Анджелес"], ["Chikago", "Чикаго"]], 0],
+        ["Janubiy Amerikadagi eng katta davlat qaysi?", "Какое государство самое большое в Южной Америке?", [["Argentina", "Аргентина"], ["Braziliya", "Бразилия"], ["Peru", "Перу"], ["Chili", "Чили"]], 1],
+        ["Braziliyada qaysi til davlat tili hisoblanadi?", "Какой язык является государственным в Бразилии?", [["Ispan tili", "Испанский"], ["Ingliz tili", "Английский"], ["Portugal tili", "Португальский"], ["Fransuz tili", "Французский"]], 2],
+        ["Missisipi daryosi qaysi davlatda oqadi?", "В какой стране течёт река Миссисипи?", [["AQSh", "США"], ["Kanada", "Канада"], ["Meksika", "Мексика"], ["Braziliya", "Бразилия"]], 0],
+        ["Dunyodagi eng quruq cho'l qaysi?", "Какая пустыня самая сухая в мире?", [["Sahroi Kabir", "Сахара"], ["Atakama", "Атакама"], ["Gobi", "Гоби"], ["Qizilqum", "Кызылкум"]], 1],
+        ["Xristofor Kolumb Amerikaga qaysi yili yetib kelgan?", "В каком году Христофор Колумб достиг Америки?", ["1519", "1600", "1776", "1492"], 3]
+      ]
+    },
+    {
+      "t": ["Avstraliya va Antarktida", "Австралия и Антарктида"],
+      "q": [
+        ["Eng kichik materik qaysi?", "Какой материк самый маленький?", [["Avstraliya", "Австралия"], ["Antarktida", "Антарктида"], ["Afrika", "Африка"], ["Janubiy Amerika", "Южная Америка"]], 0],
+        ["Avstraliyaning poytaxti qaysi shahar?", "Какой город является столицей Австралии?", [["Sidney", "Сидней"], ["Melburn", "Мельбурн"], ["Kanberra", "Канберра"], ["Pert", "Перт"]], 2],
+        ["Katta To'siq rifi qayerda joylashgan?", "Где находится Большой Барьерный риф?", [["Afrikaning g'arbida", "У западного побережья Африки"], ["Avstraliyaning shimoli-sharqiy qirg'og'ida", "У северо-восточного побережья Австралии"], ["Antarktidada", "В Антарктиде"], ["Yaponiya yaqinida", "Возле Японии"]], 1],
+        ["Quyidagi hayvonlardan qaysi biri faqat Avstraliyada uchraydi?", "Какое из животных встречается только в Австралии?", [["Fil", "Слон"], ["Sher", "Лев"], ["Jirafa", "Жираф"], ["Kenguru", "Кенгуру"]], 3],
+        ["Antarktida qaysi yili kashf etilgan?", "В каком году была открыта Антарктида?", ["1820", "1492", "1911", "1700"], 0],
+        ["Janubiy qutbga birinchi bo'lib kim yetib borgan?", "Кто первым достиг Южного полюса?", [["Robert Skott", "Роберт Скотт"], ["Xristofor Kolumb", "Христофор Колумб"], ["Ruald Amundsen", "Руаль Амундсен"], ["Fernan Magellan", "Фернан Магеллан"]], 2],
+        ["Antarktida yuzasini asosan nima qoplagan?", "Чем в основном покрыта поверхность Антарктиды?", [["O'rmonlar", "Лесами"], ["Muz qatlami", "Ледниковым щитом"], ["Qumli cho'llar", "Песчаными пустынями"], ["Dashtlar", "Степями"]], 1],
+        ["Antarktidaning o'ziga xos xususiyati qaysi?", "Какова особенность Антарктиды?", [["Doimiy aholisi yo'q", "Нет постоянного населения"], ["Eng ko'p aholiga ega", "Самое многочисленное население"], ["Eng issiq materik", "Самый жаркий материк"], ["Eng uzun daryolarga ega", "Имеет самые длинные реки"]], 0],
+        ["Avstraliyadagi eng uzun daryo qaysi?", "Какая река самая длинная в Австралии?", [["Nil", "Нил"], ["Marrey", "Муррей"], ["Missisipi", "Миссисипи"], ["Amazonka", "Амазонка"]], 1],
+        ["Avstraliya qaysi okeanlar suvlari bilan yuviladi?", "Водами каких океанов омывается Австралия?", [["Atlantika va Shimoliy Muz", "Атлантического и Северного Ледовитого"], ["Faqat Atlantika", "Только Атлантического"], ["Faqat Shimoliy Muz", "Только Северного Ледовитого"], ["Hind va Tinch okeanlari", "Индийского и Тихого"]], 3]
+      ]
+    }
+  ]
+}
