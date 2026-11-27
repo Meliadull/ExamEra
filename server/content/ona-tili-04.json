@@ -1,0 +1,83 @@
+{
+  "key": "ona-tili",
+  "from": 16,
+  "name": ["Ona tili va adabiyot", "Родной язык и литература"],
+  "aliases": ["ona tili", "o'zbek tili", "adabiyot", "узбекский язык", "родной язык", "литература"],
+  "topics": [
+    {
+      "t": ["Xalq og'zaki ijodi", "Устное народное творчество"],
+      "q": [
+        ["Quyidagilardan qaysi biri o'zbek xalq qahramonlik dostoni?", "Какое из произведений является узбекским народным героическим эпосом?", [["«Alpomish»", "«Алпамыш»"], ["«O'tkan kunlar»", "«Минувшие дни»"], ["«Xamsa»", "«Хамса»"], ["«Boburnoma»", "«Бабур-наме»"]], 0],
+        ["Quyidagilardan qaysi biri maqol?", "Какой из текстов является пословицей (мақол)?", ["Bor ekan, yo'q ekan…", "Bilagi zo'r birni yiqar, bilimi zo'r mingni yiqar.", "Tagi tosh, usti tosh…", "Alla, bolam, alla…"], 1],
+        ["Topishmoq nima?", "Что такое загадка (топишмоқ)?", [["Qahramonlik dostoni", "Героический эпос"], ["Allaning bir turi", "Вид колыбельной"], ["Narsa yoki hodisani yashirin tasvirlab, topishni talab qiluvchi janr", "Жанр, иносказательно описывающий предмет и требующий отгадать его"], ["Hajviy hikoya", "Сатирический рассказ"]], 2],
+        ["Dostonlarni yod aytib ijro etuvchi xalq san'atkori qanday ataladi?", "Как называется народный сказитель, исполняющий эпос по памяти?", [["Hofiz", "Хафиз"], ["Masxaraboz", "Масхарабоз"], ["Qiziqchi", "Кизикчи"], ["Baxshi", "Бахши"]], 3],
+        ["«Alpomish» dostonining mashhur variantini aytib bergan baxshi kim?", "Какой бахши исполнил известный вариант эпоса «Алпамыш»?", [["Fozil Yo'ldosh o'g'li", "Фазил Юлдаш-оглы"], ["Alisher Navoiy", "Алишер Навои"], ["Abdulla Qodiriy", "Абдулла Кадыри"], ["G'afur G'ulom", "Гафур Гулям"]], 0],
+        ["«Go'ro'g'li» nima?", "Что такое «Гуруглы»?", [["Bitta ertak", "Одна сказка"], ["Dostonlar turkumi", "Цикл эпических поэм (дастанов)"], ["Roman", "Роман"], ["Drama", "Драма"]], 1],
+        ["O'zbek xalq ertaklari ko'pincha qanday so'zlar bilan boshlanadi?", "Какими словами обычно начинаются узбекские народные сказки?", ["Bilagi zo'r birni yiqar…", "Alla, bolam, alla…", "Bor ekan, yo'q ekan…", "Ey, sabo…"], 2],
+        ["Lapar qanday janr?", "Что за жанр «лапар»?", [["Qahramonlik dostoni", "Героический эпос"], ["Afsona", "Легенда"], ["Hikoya", "Рассказ"], ["Savol-javob tarzidagi xalq qo'shig'i", "Народная песня в форме диалога"]], 3],
+        ["«Alpomish» dostonida Alpomishning sevgilisi kim?", "Кто возлюбленная Алпамыша в эпосе «Алпамыш»?", [["Barchin", "Барчин"], ["Kumush", "Кумуш"], ["Shirin", "Ширин"], ["Layli", "Лейли"]], 0],
+        ["Xalq og'zaki ijodining o'ziga xos xususiyati qaysi?", "Какова характерная черта устного народного творчества?", [["Bitta muallifning qo'lyozmasi", "Рукопись одного автора"], ["Og'zaki tarqalishi va jamoaviy mualliflik", "Устная передача и коллективное авторство"], ["Faqat nasrda yozilishi", "Написано только прозой"], ["Faqat XX asrda yaratilgani", "Создано только в XX веке"]], 1]
+      ]
+    },
+    {
+      "t": ["Alisher Navoiy", "Алишер Навои"],
+      "q": [
+        ["Alisher Navoiy qaysi yili tug'ilgan?", "В каком году родился Алишер Навои?", ["1441", "1483", "1370", "1500"], 0],
+        ["Navoiyning «Xamsa» asari nechta dostondan iborat?", "Из скольких поэм состоит «Хамса» Навои?", ["3", "5", "7", "4"], 1],
+        ["Qaysi doston «Xamsa» tarkibiga kiradi?", "Какая поэма входит в состав «Хамсы»?", [["«O'tkan kunlar»", "«Минувшие дни»"], ["«Boburnoma»", "«Бабур-наме»"], ["«Farhod va Shirin»", "«Фархад и Ширин»"], ["«Kecha va kunduz»", "«Ночь и день»"]], 2],
+        ["Turkiy va fors tillarini qiyoslagan asar qaysi?", "В каком произведении сравниваются тюркский и персидский языки?", [["«Mahbub ul-qulub»", "«Махбуб ал-кулуб»"], ["«Hayrat ul-abror»", "«Хайрат ал-абрар»"], ["«Saddi Iskandariy»", "«Садди Искандари»"], ["«Muhokamat ul-lug'atayn»", "«Мухакамат ал-лугатайн»"]], 3],
+        ["Navoiy fors tilidagi she'rlarida qanday taxallus qo'llagan?", "Какой псевдоним использовал Навои в стихах на персидском языке?", [["Foniy", "Фани"], ["Lutfiy", "Лутфи"], ["Bobur", "Бабур"], ["Ogahiy", "Огахи"]], 0],
+        ["Navoiyning to'rt devondan iborat she'rlar majmuasi qanday nomlanadi?", "Как называется собрание стихов Навои из четырёх диванов?", [["«Xamsa»", "«Хамса»"], ["«Xazoyin ul-maoniy»", "«Хазаин ал-маани»"], ["«Lison ut-tayr»", "«Язык птиц»"], ["«Mezon ul-avzon»", "«Мезан ал-авзан»"]], 1],
+        ["Navoiyning do'sti bo'lgan hukmdor kim?", "Какой правитель был другом Навои?", [["Amir Temur", "Амир Темур"], ["Zahiriddin Bobur", "Захириддин Бабур"], ["Husayn Boyqaro", "Хусейн Байкара"], ["Ulug'bek", "Улугбек"]], 2],
+        ["Alisher Navoiy qaysi yili vafot etgan?", "В каком году умер Алишер Навои?", ["1441", "1526", "1469", "1501"], 3],
+        ["«Xamsa» ning birinchi dostoni qaysi?", "Какая поэма является первой в «Хамсе»?", [["«Hayrat ul-abror»", "«Хайрат ал-абрар»"], ["«Layli va Majnun»", "«Лейли и Меджнун»"], ["«Sab'ai sayyor»", "«Семь планет»"], ["«Saddi Iskandariy»", "«Стена Искандара»"]], 0],
+        ["Navoiyning «Mahbub ul-qulub» asari qanday asar?", "Каким произведением является «Махбуб ал-кулуб» Навои?", [["Qahramonlik dostoni", "Героическая поэма"], ["Axloqiy-ta'limiy nasriy asar", "Нравственно-дидактическое прозаическое сочинение"], ["Tarixiy roman", "Исторический роман"], ["Lug'at", "Словарь"]], 1]
+      ]
+    },
+    {
+      "t": ["Zahiriddin Muhammad Bobur", "Захириддин Мухаммад Бабур"],
+      "q": [
+        ["Zahiriddin Muhammad Bobur qaysi yili va qayerda tug'ilgan?", "Когда и где родился Захириддин Мухаммад Бабур?", [["1483-yil, Andijon", "1483 г., Андижан"], ["1441-yil, Hirot", "1441 г., Герат"], ["1526-yil, Agra", "1526 г., Агра"], ["1370-yil, Samarqand", "1370 г., Самарканд"]], 0],
+        ["Boburning asosiy nasriy asari qaysi?", "Какое главное прозаическое произведение Бабура?", [["«Xamsa»", "«Хамса»"], ["«Boburnoma»", "«Бабур-наме»"], ["«Qutadg'u bilig»", "«Кутадгу билиг»"], ["«Devonu lug'otit turk»", "«Диван лугат ат-турк»"]], 1],
+        ["Bobur qaysi mamlakatda saltanat asos solgan?", "В какой стране Бабур основал державу?", [["Eron", "Иран"], ["Turkiya", "Турция"], ["Hindiston", "Индия"], ["Xitoy", "Китай"]], 2],
+        ["Panipat jangi qaysi yili bo'lgan?", "В каком году произошла Панипатская битва?", ["1504", "1530", "1483", "1526"], 3],
+        ["Bobur Farg'ona taxtiga necha yoshida o'tirgan?", "В каком возрасте Бабур занял престол Ферганы?", [["12 yoshida", "В 12 лет"], ["20 yoshida", "В 20 лет"], ["8 yoshida", "В 8 лет"], ["30 yoshida", "В 30 лет"]], 0],
+        ["Boburning aruz vazni haqidagi risolasi qanday nomlanadi?", "Как называется трактат Бабура об аруде?", [["«Mezon ul-avzon»", "«Мезан ал-авзан»"], ["«Muxtasar»", "«Мухтасар»"], ["«Boburnoma»", "«Бабур-наме»"], ["«Mubayyin»", "«Мубайин»"]], 1],
+        ["Bobur qaysi yili vafot etgan?", "В каком году умер Бабур?", ["1483", "1526", "1530", "1501"], 2],
+        ["«Boburnoma» qaysi janrga mansub?", "К какому жанру относится «Бабур-наме»?", [["Doston", "Поэма"], ["Drama", "Драма"], ["Ertak", "Сказка"], ["Memuar (esdalik)", "Мемуары"]], 3],
+        ["Bobur asos solgan sulola qanday ataladi?", "Как называется династия, основанная Бабуром?", [["Boburiylar", "Бабуриды"], ["Temuriylar", "Тимуриды"], ["Somoniylar", "Саманиды"], ["Shayboniylar", "Шейбаниды"]], 0],
+        ["«Humoyunnoma» asarining muallifi, Boburning qizi kim?", "Кто автор «Хумаюн-наме», дочь Бабура?", [["Nodira", "Надира"], ["Gulbadanbegim", "Гульбадан-бегим"], ["Uvaysiy", "Увайси"], ["Zebunniso", "Зебунниса"]], 1]
+      ]
+    },
+    {
+      "t": ["Mumtoz adabiyot vakillari va janrlari", "Классическая литература: авторы и жанры"],
+      "q": [
+        ["«Gul va Navro'z» dostonining muallifi kim?", "Кто автор поэмы «Гуль и Навруз»?", [["Lutfiy", "Лутфи"], ["Navoiy", "Навои"], ["Bobur", "Бабур"], ["Ogahiy", "Огахи"]], 0],
+        ["Qo'qon xonligida davlatni boshqargan shoira kim?", "Какая поэтесса управляла государством в Кокандском ханстве?", [["Uvaysiy", "Увайси"], ["Zebunniso", "Зебунниса"], ["Nodira", "Надира"], ["Gulbadanbegim", "Гульбадан-бегим"]], 2],
+        ["Xorazmlik shoir, tarixchi va tarjimon kim?", "Кто был хорезмским поэтом, историком и переводчиком?", [["Lutfiy", "Лутфи"], ["Ogahiy", "Огахи"], ["Bobur", "Бабур"], ["Furqat", "Фуркат"]], 1],
+        ["«Tanobchilar» hajviy she'rining muallifi kim?", "Кто автор сатирического стихотворения «Танобчилар»?", [["Furqat", "Фуркат"], ["Ogahiy", "Огахи"], ["Lutfiy", "Лутфи"], ["Muqimiy", "Мукими"]], 3],
+        ["«Sayding qo'yaber, sayyod» g'azalining muallifi kim?", "Кто автор газели «Сайдинг қўябер, сайёд»?", [["Muqimiy", "Мукими"], ["Navoiy", "Навои"], ["Furqat", "Фуркат"], ["Bobur", "Бабур"]], 2],
+        ["Ruboiy necha misradan iborat?", "Из скольких строк (мисра) состоит рубаи?", ["4", "2", "5", "14"], 0],
+        ["Masnaviy qanday qofiyalanadi?", "Как рифмуется маснави?", ["aaba", "aa, bb, cc", "abab", "aaaa"], 1],
+        ["Tuyuqning o'ziga xos belgisi qaysi?", "Какова отличительная черта туюга?", [["14 misradan iborat", "Состоит из 14 строк"], ["Faqat nasrda yoziladi", "Пишется прозой"], ["Qofiyasi tajnis (shakldosh so'z) asosida", "Рифма основана на омонимах (таджнис)"], ["Qofiyasiz bo'ladi", "Без рифмы"]], 2],
+        ["G'azalning birinchi bayti qanday ataladi?", "Как называется первый бейт газели?", [["Maqta'", "Макта"], ["Radif", "Редиф"], ["Qofiya", "Кафия"], ["Matla'", "Матла"]], 3],
+        ["G'azalning shoir taxallusi keltiriladigan oxirgi bayti qanday ataladi?", "Как называется последний бейт газели, где приводится псевдоним поэта?", [["Matla'", "Матла"], ["Maqta'", "Макта"], ["Radif", "Редиф"], ["Ruknlar", "Рукны"]], 1]
+      ]
+    },
+    {
+      "t": ["Jadid adabiyoti", "Литература джадидов"],
+      "q": [
+        ["Birinchi o'zbek dramasi «Padarkush» ning muallifi kim?", "Кто автор первой узбекской драмы «Падаркуш» («Отцеубийца»)?", [["Mahmudxo'ja Behbudiy", "Махмудходжа Бехбуди"], ["Abdurauf Fitrat", "Абдурауф Фитрат"], ["Cho'lpon", "Чулпан"], ["Abdulla Qodiriy", "Абдулла Кадыри"]], 0],
+        ["«Kecha va kunduz» romanining muallifi kim?", "Кто автор романа «Ночь и день»?", [["Abdulla Qodiriy", "Абдулла Кадыри"], ["Cho'lpon", "Чулпан"], ["Oybek", "Айбек"], ["Fitrat", "Фитрат"]], 1],
+        ["«Abulfayzxon» tragediyasining muallifi kim?", "Кто автор трагедии «Абулфайз-хан»?", [["Behbudiy", "Бехбуди"], ["Hamza", "Хамза"], ["Fitrat", "Фитрат"], ["Avloniy", "Авлони"]], 2],
+        ["Jadidlar asosan nimani targ'ib qilganlar?", "Что в основном пропагандировали джадиды?", [["Eski tartiblarni saqlashni", "Сохранение старых порядков"], ["Savdoni taqiqlashni", "Запрет торговли"], ["Faqat harbiy ishni", "Только военное дело"], ["Yangi usul maktablari va ma'rifatni", "Школы нового метода и просвещение"]], 3],
+        ["«Turkiy guliston yoxud axloq» asarining muallifi kim?", "Кто автор произведения «Тюркский гулистан, или Нравственность»?", [["Abdulla Avloniy", "Абдулла Авлони"], ["Mahmudxo'ja Behbudiy", "Махмудходжа Бехбуди"], ["Cho'lpon", "Чулпан"], ["Fitrat", "Фитрат"]], 0],
+        ["Cho'lponning asl ismi nima?", "Каково настоящее имя Чулпана?", [["Abdulla Qodiriy", "Абдулла Кадыри"], ["Abdulhamid Sulaymon o'g'li", "Абдулхамид Сулейман-оглы"], ["Muso Toshmuhammad o'g'li", "Муса Ташмухаммад-оглы"], ["Hamza Hakimzoda", "Хамза Хакимзаде"]], 1],
+        ["«Boy ila xizmatchi» dramasining muallifi kim?", "Кто автор драмы «Бай и батрак»?", [["Fitrat", "Фитрат"], ["Behbudiy", "Бехбуди"], ["Hamza Hakimzoda Niyoziy", "Хамза Хакимзаде Ниязи"], ["Cho'lpon", "Чулпан"]], 2],
+        ["Jadidchilik harakati qaysi davrda faoliyat ko'rsatgan?", "В какой период действовало движение джадидов?", [["X–XI asrlarda", "В X–XI веках"], ["XV asrda", "В XV веке"], ["XXI asrda", "В XXI веке"], ["XIX asr oxiri – XX asr boshlarida", "В конце XIX – начале XX века"]], 3],
+        ["Mahmudxo'ja Behbudiy chiqargan jurnal qanday nomlangan?", "Как назывался журнал, издававшийся Махмудходжой Бехбуди?", [["«Xalq so'zi»", "«Халк сузи»"], ["«Oyina»", "«Ойина»"], ["«Ma'rifat»", "«Маърифат»"], ["«Toshkent oqshomi»", "«Ташкент окшоми»"]], 1],
+        ["1938-yilda qatag'on qurboni bo'lgan jadid adiblari kimlar?", "Какие писатели-джадиды стали жертвами репрессий в 1938 году?", [["Cho'lpon, Fitrat, Abdulla Qodiriy", "Чулпан, Фитрат, Абдулла Кадыри"], ["Navoiy va Bobur", "Навои и Бабур"], ["Lutfiy va Ogahiy", "Лутфи и Огахи"], ["Erkin Vohidov va Abdulla Oripov", "Эркин Вахидов и Абдулла Арипов"]], 0]
+      ]
+    }
+  ]
+}

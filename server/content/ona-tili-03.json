@@ -1,0 +1,83 @@
+{
+  "key": "ona-tili",
+  "from": 11,
+  "name": ["Ona tili va adabiyot", "Родной язык и литература"],
+  "aliases": ["ona tili", "o'zbek tili", "adabiyot", "узбекский язык", "родной язык", "литература"],
+  "topics": [
+    {
+      "t": ["Yordamchi so'zlar", "Служебные слова"],
+      "q": [
+        ["Qaysi so'z ko'makchi?", "Какое слово является послелогом?", ["bilan", "va", "faqat", "-mi"], 0],
+        ["Qaysi so'z bog'lovchi?", "Какое слово является союзом?", ["uchun", "lekin", "hatto", "kabi"], 1],
+        ["Qaysi so'z yuklama?", "Какое слово является частицей?", ["va", "bilan", "faqat", "ammo"], 2],
+        ["So'roq yuklamasini ko'rsating.", "Укажите вопросительную частицу.", ["-ni", "-ga", "-da", "-mi"], 3],
+        ["Zidlov bog'lovchisini ko'rsating.", "Укажите противительный союз.", ["ammo", "va", "hamda", "ham"], 0],
+        ["Biriktiruv bog'lovchisini ko'rsating.", "Укажите соединительный союз.", ["lekin", "va", "yoki", "chunki"], 1],
+        ["Ayiruv bog'lovchisini ko'rsating.", "Укажите разделительный союз.", ["va", "ammo", "yoki", "chunki"], 2],
+        ["Ergashtiruvchi bog'lovchini ko'rsating.", "Укажите подчинительный союз.", ["va", "yoki", "ammo", "chunki"], 3],
+        ["Qaysi so'z undov so'z?", "Какое слово является междометием?", ["Voy!", "bilan", "uchun", "va"], 0],
+        ["Qaysi so'z modal so'z?", "Какое слово является модальным?", ["uchun", "albatta", "va", "-mi"], 1]
+      ]
+    },
+    {
+      "t": ["Gap bo'laklari", "Члены предложения"],
+      "q": [
+        ["Gapning bosh bo'laklari qaysilar?", "Какие члены предложения являются главными?", [["Ega va kesim", "Подлежащее и сказуемое"], ["Aniqlovchi va hol", "Определение и обстоятельство"], ["To'ldiruvchi va hol", "Дополнение и обстоятельство"], ["Undalma va kirish so'z", "Обращение и вводное слово"]], 0],
+        ["Ega qanday so'roqlarga javob bo'ladi?", "На какие вопросы отвечает подлежащее?", [["qanday?", "какой? (qanday?)"], ["kim? nima?", "кто? что? (kim? nima?)"], ["qayerda?", "где? (qayerda?)"], ["kimni? nimani?", "кого? что? (kimni? nimani?)"]], 1],
+        ["«Bolalar bog'da o'ynashdi» gapida ega qaysi so'z?", "Какое слово является подлежащим в предложении «Bolalar bog'da o'ynashdi»?", ["bog'da", "o'ynashdi", "Bolalar", "bog'"], 2],
+        ["«Bolalar bog'da o'ynashdi» gapida kesim qaysi so'z?", "Какое слово является сказуемым в предложении «Bolalar bog'da o'ynashdi»?", ["Bolalar", "bog'da", "bog'", "o'ynashdi"], 3],
+        ["«Bolalar bog'da o'ynashdi» gapida hol qaysi so'z?", "Какое слово является обстоятельством в предложении «Bolalar bog'da o'ynashdi»?", ["Bolalar", "bog'da", "o'ynashdi", "Bolalar o'ynashdi"], 1],
+        ["To'ldiruvchi qanday so'roqlarga javob bo'ladi?", "На какие вопросы отвечает дополнение?", [["kimni? nimani? kimga? nimaga?", "кого? что? кому? чему? (kimni? nimani? kimga? nimaga?)"], ["qanday? qaysi?", "какой? который? (qanday? qaysi?)"], ["qachon? qayerda?", "когда? где? (qachon? qayerda?)"], ["nima qildi?", "что сделал? (nima qildi?)"]], 0],
+        ["«Qizil olma pishdi» gapida aniqlovchi qaysi so'z?", "Какое слово является определением в предложении «Qizil olma pishdi»?", ["olma", "pishdi", "Qizil", "olma pishdi"], 2],
+        ["«Do'stim, keling!» gapida undalma qaysi so'z?", "Какое слово является обращением в предложении «Do'stim, keling!»?", ["Do'stim", "keling", "Do'stim, keling", ["Undalma yo'q", "Обращения нет"]], 0],
+        ["«Albatta, u keladi» gapida kirish so'z qaysi?", "Какое слово является вводным в предложении «Albatta, u keladi»?", ["u", "keladi", "u keladi", "Albatta"], 3],
+        ["«Olma, nok, uzum pishdi» gapida qanday bo'laklar bor?", "Какие члены есть в предложении «Olma, nok, uzum pishdi»?", [["Undalmalar", "Обращения"], ["Uyushiq egalar", "Однородные подлежащие"], ["Kirish so'zlar", "Вводные слова"], ["Uyushiq hollar", "Однородные обстоятельства"]], 1]
+      ]
+    },
+    {
+      "t": ["Qo'shma gaplar", "Сложные предложения"],
+      "q": [
+        ["Qo'shma gap nima?", "Что такое сложное предложение?", [["Ikki yoki undan ortiq sodda gapdan tuzilgan gap", "Предложение из двух и более простых"], ["Bitta so'zdan iborat gap", "Предложение из одного слова"], ["Faqat egadan iborat gap", "Предложение только из подлежащего"], ["So'roq gap", "Вопросительное предложение"]], 0],
+        ["Qo'shma gapning turlari qaysilar?", "Каковы виды сложного предложения?", [["Darak va so'roq", "Повествовательное и вопросительное"], ["Bog'langan, ergash gapli va bog'lovchisiz", "Сложносочинённое, сложноподчинённое и бессоюзное"], ["Sodda va murakkab", "Простое и сложное"], ["Yoyiq va yig'iq", "Распространённое и нераспространённое"]], 1],
+        ["«Yomg'ir yog'di va havo salqinladi» qanday qo'shma gap?", "Каким сложным предложением является «Yomg'ir yog'di va havo salqinladi»?", [["Ergash gapli", "Сложноподчинённым"], ["Bog'lovchisiz", "Бессоюзным"], ["Bog'langan", "Сложносочинённым"], ["Sodda gap", "Это простое предложение"]], 2],
+        ["«Agar kelsang, birga boramiz» qanday qo'shma gap?", "Каким сложным предложением является «Agar kelsang, birga boramiz»?", [["Bog'langan", "Сложносочинённым"], ["Shart ergash gapli", "Сложноподчинённым с придаточным условия"], ["Bog'lovchisiz", "Бессоюзным"], ["Sabab ergash gapli", "Сложноподчинённым с придаточным причины"]], 1],
+        ["«Quyosh chiqdi, qushlar sayradi» qanday qo'shma gap?", "Каким сложным предложением является «Quyosh chiqdi, qushlar sayradi»?", [["Ergash gapli", "Сложноподчинённым"], ["Bog'langan", "Сложносочинённым"], ["Bog'lovchisiz", "Бессоюзным"], ["Sodda gap", "Это простое предложение"]], 2],
+        ["Shart ergash gap kesimi odatda qaysi qo'shimchani oladi?", "Какой аффикс обычно принимает сказуемое придаточного условия?", ["-di", "-gan", "-lar", "-sa"], 3],
+        ["Sabab ergash gapli qo'shma gapda qaysi bog'lovchi ishlatiladi?", "Какой союз употребляется в сложноподчинённом предложении с придаточным причины?", ["chunki", "agar", "garchi", "toki"], 0],
+        ["To'siqsiz ergash gap qanday vositalar bilan bog'lanadi?", "Какими средствами присоединяется уступительное придаточное?", [["agar … -sa", "agar … -sa"], ["garchi … -sa ham", "garchi … -sa ham"], ["chunki", "chunki"], ["toki", "toki"]], 1],
+        ["«Men kitob o'qidim, ukam rasm chizdi» gapida nechta sodda gap bor?", "Сколько простых предложений в «Men kitob o'qidim, ukam rasm chizdi»?", ["1", "3", "2", "4"], 2],
+        ["Ergash gapli qo'shma gapda ergash gap qaysi gapga tobe bo'ladi?", "Какому предложению подчиняется придаточное в сложноподчинённом предложении?", [["Boshqa ergash gapga", "Другому придаточному"], ["Undalmaga", "Обращению"], ["Hech qaysi gapga", "Никакому"], ["Bosh gapga", "Главному предложению"]], 3]
+      ]
+    },
+    {
+      "t": ["Tinish belgilari", "Знаки препинания"],
+      "q": [
+        ["Darak gap oxirida qaysi tinish belgisi qo'yiladi?", "Какой знак ставится в конце повествовательного предложения?", [["Nuqta", "Точка"], ["So'roq belgisi", "Вопросительный знак"], ["Vergul", "Запятая"], ["Tire", "Тире"]], 0],
+        ["So'roq gap oxirida qaysi tinish belgisi qo'yiladi?", "Какой знак ставится в конце вопросительного предложения?", [["Nuqta", "Точка"], ["So'roq belgisi", "Вопросительный знак"], ["Undov belgisi", "Восклицательный знак"], ["Ikki nuqta", "Двоеточие"]], 1],
+        ["Undov gap oxirida qaysi tinish belgisi qo'yiladi?", "Какой знак ставится в конце восклицательного предложения?", [["Nuqta", "Точка"], ["Vergul", "Запятая"], ["Undov belgisi", "Восклицательный знак"], ["Qavs", "Скобки"]], 2],
+        ["Bog'lovchisiz uyushiq bo'laklar orasiga qaysi belgi qo'yiladi?", "Какой знак ставится между однородными членами без союзов?", [["Nuqta", "Точка"], ["Ikki nuqta", "Двоеточие"], ["Tire", "Тире"], ["Vergul", "Запятая"]], 3],
+        ["Undalma gapning boshqa bo'laklaridan qanday ajratiladi?", "Как обращение отделяется от других членов предложения?", [["Vergul bilan", "Запятой"], ["Nuqta bilan", "Точкой"], ["Qavs bilan", "Скобками"], ["Ajratilmaydi", "Не отделяется"]], 0],
+        ["Ko'chirma gap qaysi belgilar ichiga olinadi?", "В какие знаки заключается прямая речь?", [["Qavs", "Скобки"], ["Qo'shtirnoq", "Кавычки"], ["Nuqta", "Точки"], ["Ko'p nuqta", "Многоточие"]], 1],
+        ["«Bog'da mevalar bor: olma, nok, uzum» gapida ikki nuqta nima uchun qo'yilgan?", "Почему в предложении «Bog'da mevalar bor: olma, nok, uzum» стоит двоеточие?", [["Gap tugagani uchun", "Предложение закончилось"], ["So'roq bo'lgani uchun", "Это вопрос"], ["Umumlashtiruvchi so'zdan keyin uyushiq bo'laklar kelgani uchun", "После обобщающего слова идут однородные члены"], ["Undalma bo'lgani uchun", "Есть обращение"]], 2],
+        ["«Toshkent — O'zbekiston poytaxti» gapida ega bilan kesim orasida qaysi belgi qo'yilgan?", "Какой знак стоит между подлежащим и сказуемым в «Toshkent — O'zbekiston poytaxti»?", [["Vergul", "Запятая"], ["Nuqta", "Точка"], ["Ikki nuqta", "Двоеточие"], ["Tire", "Тире"]], 3],
+        ["Fikr tugallanmaganini qaysi belgi bildiradi?", "Какой знак показывает незаконченность мысли?", [["Ko'p nuqta", "Многоточие"], ["Nuqta", "Точка"], ["Vergul", "Запятая"], ["Qavs", "Скобки"]], 0],
+        ["Kirish so'zlar gapda qanday ajratiladi?", "Как выделяются вводные слова в предложении?", [["Nuqta bilan", "Точкой"], ["Vergul bilan", "Запятыми"], ["Qo'shtirnoq bilan", "Кавычками"], ["Ajratilmaydi", "Не выделяются"]], 1]
+      ]
+    },
+    {
+      "t": ["Nutq uslublari", "Стили речи"],
+      "q": [
+        ["Rasmiy-idoraviy uslub qayerda qo'llanadi?", "Где применяется официально-деловой стиль?", [["Hujjatlarda (ariza, buyruq, tarjimai hol)", "В документах (заявление, приказ, автобиография)"], ["Do'stlar suhbatida", "В разговоре друзей"], ["She'rlarda", "В стихах"], ["Ertaklarda", "В сказках"]], 0],
+        ["Ilmiy uslubning asosiy belgisi qaysi?", "Каков главный признак научного стиля?", [["Obrazli so'zlar", "Образные слова"], ["Aniq atamalar va ta'riflar", "Точные термины и определения"], ["Sheva so'zlari", "Диалектные слова"], ["Hazil-mutoyiba", "Шутки"]], 1],
+        ["So'zlashuv uslubi qayerda qo'llanadi?", "Где используется разговорный стиль?", [["Ilmiy maqolada", "В научной статье"], ["Qonunda", "В законе"], ["Kundalik muloqotda", "В повседневном общении"], ["Rasmiy xatda", "В официальном письме"]], 2],
+        ["Publitsistik uslub qayerda qo'llanadi?", "Где используется публицистический стиль?", [["Lug'atlarda", "В словарях"], ["Matematika darsligida", "В учебнике математики"], ["Ariza va buyruqlarda", "В заявлениях и приказах"], ["Gazeta, jurnal va ommaviy axborot vositalarida", "В газетах, журналах и СМИ"]], 3],
+        ["Badiiy uslubning o'ziga xos xususiyati qaysi?", "Какова особенность художественного стиля?", [["Obrazlilik va ta'sirchanlik", "Образность и эмоциональность"], ["Faqat raqamlar", "Только цифры"], ["Qolip iboralar", "Шаблонные формулы"], ["Faqat atamalar", "Только термины"]], 0],
+        ["Ariza qaysi uslubda yoziladi?", "В каком стиле пишется заявление?", [["Badiiy", "Художественном"], ["Rasmiy-idoraviy", "Официально-деловом"], ["So'zlashuv", "Разговорном"], ["Publitsistik", "Публицистическом"]], 1],
+        ["Qaysi matn ilmiy uslubga mansub?", "Какой текст относится к научному стилю?", [["Ertak", "Сказка"], ["Do'stga xat", "Письмо другу"], ["Fotosintez jarayonining ta'rifi", "Определение процесса фотосинтеза"], ["She'r", "Стихотворение"]], 2],
+        ["Qaysi janr publitsistik uslubga mansub?", "Какой жанр относится к публицистическому стилю?", [["Ruboiy", "Рубаи"], ["Ertak", "Сказка"], ["Tarjimai hol", "Автобиография"], ["Gazeta maqolasi", "Газетная статья"]], 3],
+        ["Nutq madaniyatining asosiy talablari qaysilar?", "Каковы основные требования культуры речи?", [["To'g'rilik, aniqlik va o'rinlilik", "Правильность, точность и уместность"], ["Faqat tezlik", "Только быстрота"], ["Ko'p sheva so'zi ishlatish", "Обилие диалектных слов"], ["Baland ovozda gapirish", "Громкая речь"]], 0],
+        ["«Sizdan meni ishga qabul qilishingizni so'rayman» jumlasi qanday hujjatga xos?", "Для какого документа характерна фраза «Прошу принять меня на работу»?", [["Buyruq", "Приказ"], ["Ariza", "Заявление"], ["Tilxat", "Расписка"], ["Hisobot", "Отчёт"]], 1]
+      ]
+    }
+  ]
+}
