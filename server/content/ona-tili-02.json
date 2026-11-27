@@ -1,0 +1,83 @@
+{
+  "key": "ona-tili",
+  "from": 6,
+  "name": ["Ona tili va adabiyot", "Родной язык и литература"],
+  "aliases": ["ona tili", "o'zbek tili", "adabiyot", "узбекский язык", "родной язык", "литература"],
+  "topics": [
+    {
+      "t": ["Sifat", "Имя прилагательное"],
+      "q": [
+        ["Sifat qanday so'roqlarga javob bo'ladi?", "На какие вопросы отвечает имя прилагательное?", [["qanday? qanaqa?", "какой? (qanday? qanaqa?)"], ["kim? nima?", "кто? что? (kim? nima?)"], ["nima qildi?", "что сделал? (nima qildi?)"], ["qachon?", "когда? (qachon?)"]], 0],
+        ["Sifatning qiyosiy darajasi qaysi qo'shimcha bilan yasaladi?", "Каким аффиксом образуется сравнительная степень прилагательного?", ["-lar", "-roq", "-chi", "-ni"], 1],
+        ["Qaysi so'z sifatning orttirma darajasida?", "Какое слово стоит в превосходной степени?", ["kattaroq", "katta", "eng katta", "kattalar"], 2],
+        ["Qaysi so'z sifat?", "Какое слово является прилагательным?", ["yugurmoq", "bugun", "besh", "qizil"], 3],
+        ["Sifat gapda ko'pincha qaysi gap bo'lagi vazifasida keladi?", "Каким членом предложения чаще всего бывает прилагательное?", [["Aniqlovchi", "Определением"], ["Ega", "Подлежащим"], ["To'ldiruvchi", "Дополнением"], ["Undalma", "Обращением"]], 0],
+        ["«qizg'ish» so'zi sifatning qaysi darajasida?", "В какой степени стоит прилагательное «qizg'ish»?", [["Orttirma", "Превосходной"], ["Ozaytirma", "Уменьшительной"], ["Qiyosiy", "Сравнительной"], ["Oddiy", "Простой"]], 1],
+        ["«-li» qo'shimchasi bilan yasalgan sifatni toping.", "Найдите прилагательное, образованное аффиксом «-li».", ["aql", "aqlan", "aqlli", "aqlsiz"], 2],
+        ["Quyidagilardan qaysi biri sifat yasovchi qo'shimcha?", "Какой из аффиксов образует прилагательные?", ["-siz", "-lar", "-ning", "-dan"], 0],
+        ["Qaysi so'z birinchi bo'g'inni takrorlash orqali kuchaytirilgan?", "Какое слово усилено повтором первого слога?", ["qizilroq", "qizg'ish", "qizil", "qip-qizil"], 3],
+        ["Qaysi birikmada sifat aniqlovchi vazifasida kelgan?", "В каком сочетании прилагательное выступает определением?", ["tog'ga chiqdi", "baland tog'", "tog' baland", "tog'dagi uy"], 1]
+      ]
+    },
+    {
+      "t": ["Son", "Имя числительное"],
+      "q": [
+        ["Tartib son qaysi qo'shimcha bilan yasaladi?", "Каким аффиксом образуется порядковое числительное?", ["-nchi", "-ta", "-tadan", "-ov"], 0],
+        ["Qaysi so'z taqsim son?", "Какое слово является разделительным числительным?", ["beshinchi", "beshtadan", "beshov", "beshta"], 1],
+        ["Qaysi so'z jamlovchi son?", "Какое слово является собирательным числительным?", ["uchinchi", "uchtadan", "uchov", "uchta"], 2],
+        ["Qaysi so'z chama son?", "Какое слово является приблизительным числительным?", ["o'ninchi", "o'ntadan", "o'nov", "o'ntacha"], 3],
+        ["Qaysi so'z kasr son?", "Какое слово является дробным числительным?", ["uchdan bir", "uchta", "uchinchi", "uchov"], 0],
+        ["Son qanday so'roqlarga javob bo'ladi?", "На какие вопросы отвечает имя числительное?", [["kim? nima?", "кто? что? (kim? nima?)"], ["nechta? qancha? nechanchi?", "сколько? который? (nechta? qancha? nechanchi?)"], ["qanday?", "какой? (qanday?)"], ["nima qildi?", "что сделал? (nima qildi?)"]], 1],
+        ["1991 soni so'z bilan qanday yoziladi?", "Как пишется словами число 1991?", ["bir ming to'qqiz yuz to'qson", "o'n to'qqiz to'qson bir", "bir ming to'qqiz yuz to'qson bir", "ming to'qqiz yuz to'qqiz bir"], 2],
+        ["Raqam bilan yozilgan tartib son qanday yoziladi?", "Как правильно записать порядковое числительное цифрой?", ["5 sinf", "5sinf", "5.sinf", "5-sinf"], 3],
+        ["Qaysi son murakkab son?", "Какое числительное является составным?", ["o'n besh", "besh", "yuz", "ming"], 0],
+        ["XIX rim raqami qaysi songa teng?", "Какому числу соответствует римская цифра XIX?", ["21", "19", "9", "14"], 1]
+      ]
+    },
+    {
+      "t": ["Olmosh", "Местоимение"],
+      "q": [
+        ["Qaysi qatorda kishilik olmoshlari berilgan?", "В каком ряду даны личные местоимения?", ["men, sen, u", "bu, shu, o'sha", "kim, nima, qancha", "hamma, barcha"], 0],
+        ["Qaysi qatorda ko'rsatish olmoshlari berilgan?", "В каком ряду даны указательные местоимения?", ["men, sen, u", "bu, shu, o'sha", "kim, nima, qancha", "hech kim, hech narsa"], 1],
+        ["Qaysi qatorda so'roq olmoshlari berilgan?", "В каком ряду даны вопросительные местоимения?", ["men, sen, u", "bu, shu, o'sha", "kim, nima, qancha", "hamma, barcha"], 2],
+        ["Qaysi so'z o'zlik olmoshi?", "Какое слово является возвратным местоимением?", ["men", "hamma", "hech kim", "o'z"], 3],
+        ["Qaysi so'z belgilash olmoshi?", "Какое слово является определительным местоимением?", ["hamma", "kim", "bu", "men"], 0],
+        ["Qaysi so'z bo'lishsizlik olmoshi?", "Какое слово является отрицательным местоимением?", ["barcha", "hech kim", "o'sha", "nima"], 1],
+        ["Qaysi so'z gumon olmoshi?", "Какое слово является неопределённым местоимением?", ["shu", "biz", "allakim", "hamma"], 2],
+        ["Olmosh qaysi so'z turkumlari o'rnida qo'llanadi?", "Вместо каких частей речи употребляется местоимение?", [["Faqat fe'l o'rnida", "Только вместо глагола"], ["Faqat ravish o'rnida", "Только вместо наречия"], ["Ko'makchi o'rnida", "Вместо послелога"], ["Ot, sifat, son o'rnida", "Вместо существительного, прилагательного, числительного"]], 3],
+        ["«biz» olmoshi qaysi shaxs va sonda?", "В каком лице и числе стоит местоимение «biz»?", [["I shaxs ko'plik", "1-е лицо мн. ч."], ["II shaxs birlik", "2-е лицо ед. ч."], ["III shaxs ko'plik", "3-е лицо мн. ч."], ["I shaxs birlik", "1-е лицо ед. ч."]], 0],
+        ["«ular» olmoshi qaysi shaxs va sonda?", "В каком лице и числе стоит местоимение «ular»?", [["I shaxs birlik", "1-е лицо ед. ч."], ["III shaxs ko'plik", "3-е лицо мн. ч."], ["II shaxs ko'plik", "2-е лицо мн. ч."], ["III shaxs birlik", "3-е лицо ед. ч."]], 1]
+      ]
+    },
+    {
+      "t": ["Fe'l", "Глагол"],
+      "q": [
+        ["Fe'l qanday so'roqlarga javob bo'ladi?", "На какие вопросы отвечает глагол?", [["nima qildi? nima qilyapti?", "что сделал? что делает? (nima qildi? nima qilyapti?)"], ["kim? nima?", "кто? что? (kim? nima?)"], ["qanday?", "какой? (qanday?)"], ["nechta?", "сколько? (nechta?)"]], 0],
+        ["Shart mayli qaysi qo'shimcha bilan ifodalanadi?", "Каким аффиксом выражается условное наклонение?", ["-di", "-sa", "-gan", "-moqda"], 1],
+        ["Qaysi fe'l buyruq-istak maylida?", "Какой глагол стоит в повелительном наклонении?", ["o'qidi", "o'qi", "o'qisa", "o'qigan"], 1],
+        ["Majhul nisbat qaysi qo'shimcha bilan yasaladi?", "Каким аффиксом образуется страдательный залог?", ["-tir", "-sh", "-il", "-dir"], 2],
+        ["Qaysi fe'l orttirma nisbatda?", "Какой глагол стоит в понудительном залоге?", ["yozildi", "yozishdi", "yozindi", "yozdirdi"], 3],
+        ["Qaysi fe'l birgalik nisbatida?", "Какой глагол стоит во взаимно-совместном залоге?", ["yozishdi", "yozildi", "yozdirdi", "yozdi"], 0],
+        ["Qaysi so'z harakat nomi (masdar)?", "Какое слово является инфинитивом (именем действия)?", ["o'qidi", "o'qimoq", "o'qigan", "o'qib"], 1],
+        ["Qaysi so'z sifatdosh?", "Какое слово является причастием?", ["o'qib", "o'qimoq", "o'qigan", "o'qisa"], 2],
+        ["Qaysi so'z ravishdosh?", "Какое слово является деепричастием?", ["o'qib", "o'qigan", "o'qimoq", "o'qiydigan"], 0],
+        ["Fe'lning bo'lishsiz shakli qaysi qo'shimcha bilan yasaladi?", "Каким аффиксом образуется отрицательная форма глагола?", ["-la", "-gan", "-sa", "-ma"], 3]
+      ]
+    },
+    {
+      "t": ["Ravish", "Наречие"],
+      "q": [
+        ["Qaysi so'z payt ravishi?", "Какое слово является наречием времени?", ["bugun", "tez", "yuqorida", "ko'p"], 0],
+        ["Qaysi so'z o'rin ravishi?", "Какое слово является наречием места?", ["bugun", "yuqorida", "tez", "oz"], 1],
+        ["Qaysi so'z holat ravishi?", "Какое слово является наречием образа действия?", ["kecha", "pastda", "tez", "ancha"], 2],
+        ["Qaysi so'z miqdor-daraja ravishi?", "Какое слово является наречием меры и степени?", ["erta", "orqada", "sekin", "ko'p"], 3],
+        ["Ravish qanday so'roqlarga javob bo'ladi?", "На какие вопросы отвечает наречие?", [["qanday? qachon? qayerda? qancha?", "как? когда? где? сколько?"], ["kim? nima?", "кто? что?"], ["nechanchi?", "который по счёту?"], ["kimning?", "чей?"]], 0],
+        ["Ravish gapda ko'pincha qaysi gap bo'lagi vazifasida keladi?", "Каким членом предложения чаще всего бывает наречие?", [["Ega", "Подлежащим"], ["Hol", "Обстоятельством"], ["Aniqlovchi", "Определением"], ["To'ldiruvchi", "Дополнением"]], 1],
+        ["«-larcha» qo'shimchasi bilan yasalgan ravishni toping.", "Найдите наречие, образованное аффиксом «-larcha».", ["do'stlar", "do'stim", "do'stlarcha", "do'stga"], 2],
+        ["«U tez yugurdi» gapida ravish qaysi?", "Какое слово является наречием в предложении «U tez yugurdi»?", ["U", "tez", "yugurdi", "U tez"], 1],
+        ["Ravishning o'ziga xos grammatik xususiyati qaysi?", "Какова грамматическая особенность наречия?", [["Kelishik bilan turlanadi", "Склоняется по падежам"], ["Shaxs-son bilan tuslanadi", "Спрягается по лицам"], ["Ko'plik qo'shimchasini oladi", "Принимает аффикс множественного числа"], ["Odatda kelishik va egalik qo'shimchalarini olmaydi", "Обычно не принимает падежных и притяжательных аффиксов"]], 3],
+        ["Qaysi so'z maqsad ravishi?", "Какое слово является наречием цели?", ["ataylab", "bugun", "yuqorida", "ko'p"], 0]
+      ]
+    }
+  ]
+}

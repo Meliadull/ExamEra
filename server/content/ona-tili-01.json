@@ -1,0 +1,83 @@
+{
+  "key": "ona-tili",
+  "from": 1,
+  "name": ["Ona tili va adabiyot", "Родной язык и литература"],
+  "aliases": ["ona tili", "o'zbek tili", "adabiyot", "узбекский язык", "родной язык", "литература"],
+  "topics": [
+    {
+      "t": ["Fonetika", "Фонетика"],
+      "q": [
+        ["O'zbek tilida nechta unli tovush bor?", "Сколько гласных звуков в узбекском языке?", ["6", "9", "5", "10"], 0],
+        ["Quyidagilardan qaysi biri unli tovush?", "Какой из звуков является гласным?", ["g'", "o'", "sh", "ng"], 1],
+        ["Quyidagilardan qaysi biri jarangli undosh?", "Какой из согласных является звонким?", ["p", "k", "b", "s"], 2],
+        ["«d» jarangli undoshining jarangsiz jufti qaysi?", "Какой глухой согласный является парой звонкого «d»?", ["b", "z", "g", "t"], 3],
+        ["«kitobxona» so'zi necha bo'g'indan iborat?", "Из скольких слогов состоит слово «kitobxona»?", ["3", "4", "5", "2"], 1],
+        ["O'zbek tilida urg'u odatda qaysi bo'g'inga tushadi?", "На какой слог обычно падает ударение в узбекском языке?", [["Oxirgi bo'g'inga", "На последний"], ["Birinchi bo'g'inga", "На первый"], ["Ikkinchi bo'g'inga", "На второй"], ["Urg'u bo'lmaydi", "Ударения нет"]], 0],
+        ["Qaysi tovush ikki harf bilan ifodalanadi?", "Какой звук обозначается двумя буквами?", ["s", "h", "sh", "x"], 2],
+        ["Qaysi so'zda tutuq belgisi (’) ishlatilgan?", "В каком слове используется знак тутук (’)?", ["maktab", "olma", "kitob", "ma’no"], 3],
+        ["Lablangan unlilar qaysilar?", "Какие гласные являются огублёнными?", ["a, e, i", "o, u, o'", "a, o", "i, e"], 1],
+        ["Tovushlarni o'rganadigan tilshunoslik bo'limi qanday ataladi?", "Как называется раздел языкознания, изучающий звуки?", [["Fonetika", "Фонетика"], ["Leksikologiya", "Лексикология"], ["Morfologiya", "Морфология"], ["Sintaksis", "Синтаксис"]], 0]
+      ]
+    },
+    {
+      "t": ["Imlo qoidalari", "Правила орфографии"],
+      "q": [
+        ["Qaysi so'z to'g'ri yozilgan?", "Какое слово написано правильно?", ["maktab", "maqtab", "maktap", "mektab"], 0],
+        ["Qaysi so'z bosh harf bilan yoziladi?", "Какое слово пишется с прописной буквы?", ["shahar", "Toshkent", "daryo", "tog'"], 1],
+        ["Qaysi so'z to'g'ri yozilgan?", "Какое слово написано правильно?", ["kitob xona", "kitob-xona", "kitobxona", "kitobhona"], 2],
+        ["Juft so'z qaysi qatorda to'g'ri yozilgan?", "В каком ряду парное слово написано правильно?", ["otaona", "ota ona", "ota – ona", "ota-ona"], 3],
+        ["Qaysi so'z to'g'ri yozilgan?", "Какое слово написано правильно?", ["o'qituvchi", "oqituvchi", "o'qtuvchi", "o'qituvchiy"], 0],
+        ["Qaysi qatorda ko'makchi fe'lli birikma to'g'ri yozilgan?", "В каком ряду сочетание со вспомогательным глаголом написано правильно?", ["o'qibchiqdi", "o'qib chiqdi", "o'qib-chiqdi", "o'qibchiqti"], 1],
+        ["Qaysi so'z to'g'ri yozilgan?", "Какое слово написано правильно?", ["gisht", "g'ish", "g'isht", "g'ishit"], 2],
+        ["Qaysi so'z to'g'ri yozilgan?", "Какое слово написано правильно?", ["aql", "aqil", "aqal", "akl"], 0],
+        ["Qaysi so'z to'g'ri yozilgan?", "Какое слово написано правильно?", ["yigrma", "yigirima", "yegirma", "yigirma"], 3],
+        ["«qishloq» so'ziga jo'nalish kelishigi qo'shimchasi qo'shilganda qanday yoziladi?", "Как пишется слово «qishloq» с окончанием направительного падежа?", ["qishloqga", "qishloqqa", "qishloqka", "qishloqg'a"], 1]
+      ]
+    },
+    {
+      "t": ["Leksikologiya", "Лексикология"],
+      "q": [
+        ["Qaysi qatorda sinonimlar (ma'nodosh so'zlar) berilgan?", "В каком ряду даны синонимы?", ["chiroyli – go'zal", "katta – kichik", "ot (hayvon) – ot (ism)", "issiq – sovuq"], 0],
+        ["Qaysi qatorda antonimlar (zid ma'noli so'zlar) berilgan?", "В каком ряду даны антонимы?", ["chiroyli – go'zal", "katta – kichik", "ot (hayvon) – ot (ism)", "dovyurak – jasur"], 1],
+        ["Qaysi qatorda omonimlar (shakldosh so'zlar) berilgan?", "В каком ряду даны омонимы?", ["chiroyli – go'zal", "katta – kichik", "ot (hayvon) – ot (ism)", "tez – sekin"], 2],
+        ["Ko'p ma'noli so'zga misol keltiring.", "Приведите пример многозначного слова.", ["daftar", "kompyuter", "fotosintez", "ko'z (odam ko'zi, buloq ko'zi, igna ko'zi)"], 3],
+        ["Qaysi so'z neologizm (yangi so'z)?", "Какое слово является неологизмом (новым словом)?", ["smartfon", "ota", "non", "suv"], 0],
+        ["«Qo'li gul» iborasi qanday ma'noni bildiradi?", "Что означает фразеологизм «qo'li gul»?", [["Qo'lida gul bor", "Держит в руках цветок"], ["Hunarmand, mohir", "Мастер, умелец"], ["Dangasa", "Ленивый"], ["Kasal", "Больной"]], 1],
+        ["Faqat ma'lum bir shevaga xos so'zlar qanday ataladi?", "Как называются слова, свойственные только определённому говору?", [["Neologizmlar", "Неологизмы"], ["Arxaizmlar", "Архаизмы"], ["Dialektizmlar", "Диалектизмы"], ["Terminlar", "Термины"]], 2],
+        ["Qaysi so'z ilmiy termin?", "Какое слово является научным термином?", ["ona", "daraxt", "kulgi", "fotosintez"], 3],
+        ["Qaysi qatorda paronimlar (talaffuzi yaqin, ma'nosi har xil so'zlar) berilgan?", "В каком ряду даны паронимы (близкие по звучанию, разные по смыслу)?", ["asr – asir", "katta – kichik", "yaxshi – yomon", "tez – sekin"], 0],
+        ["Leksikologiya nimani o'rganadi?", "Что изучает лексикология?", [["Tovushlarni", "Звуки"], ["So'zlar va ularning ma'nolarini", "Слова и их значения"], ["Gap tuzilishini", "Строение предложения"], ["Tinish belgilarini", "Знаки препинания"]], 1]
+      ]
+    },
+    {
+      "t": ["So'z tarkibi va so'z yasalishi", "Состав слова и словообразование"],
+      "q": [
+        ["«kitobxonlar» so'zining o'zagi qaysi?", "Какой корень у слова «kitobxonlar»?", ["kitob", "kitobxon", "xon", "lar"], 0],
+        ["«paxtakor» so'zida qaysi qo'shimcha yangi so'z yasagan?", "Какой аффикс образовал новое слово в слове «paxtakor»?", ["-lar", "-kor", "-ning", "-ni"], 1],
+        ["Quyidagilardan qaysi biri shakl yasovchi qo'shimcha?", "Какой из аффиксов является формообразующим?", ["-chi", "-kor", "-lar", "-dosh"], 2],
+        ["Qaysi so'z qo'shma so'z?", "Какое слово является сложным?", ["maktab", "ishchi", "kitoblar", "toshbaqa"], 3],
+        ["Qaysi so'z juft so'z?", "Какое слово является парным?", ["aka-uka", "akalar", "akam", "akaga"], 0],
+        ["«ishchi» so'zidagi «-chi» qo'shimchasi nimani bildiradi?", "Что обозначает аффикс «-chi» в слове «ishchi»?", [["Ko'plikni", "Множественное число"], ["Kasb-hunar egasini", "Лицо по роду занятий"], ["Kelishikni", "Падеж"], ["Egalikni", "Принадлежность"]], 1],
+        ["«bebaxt» so'zida so'z yasovchi qism qaysi?", "Какая словообразующая часть в слове «bebaxt»?", ["-li", "-siz", "be-", "-lik"], 2],
+        ["«mehnatkash» so'zida qaysi qo'shimcha yangi so'z yasagan?", "Какой аффикс образовал новое слово в слове «mehnatkash»?", ["-kash", "-at", "-ka", "-sh"], 0],
+        ["Qaysi so'z takroriy so'z?", "Какое слово является повторным?", ["kattalik", "kattaroq", "eng katta", "katta-katta"], 3],
+        ["Qaysi so'z qisqartma so'z?", "Какое слово является аббревиатурой?", ["bilim", "BMT", "maktab", "tez"], 1]
+      ]
+    },
+    {
+      "t": ["Ot so'z turkumi", "Имя существительное"],
+      "q": [
+        ["Ot qanday so'roqlarga javob bo'ladi?", "На какие вопросы отвечает имя существительное?", [["kim? nima? qayer?", "кто? что? где? (kim? nima? qayer?)"], ["qanday? qanaqa?", "какой? (qanday? qanaqa?)"], ["nima qildi?", "что сделал? (nima qildi?)"], ["qachon? qancha?", "когда? сколько? (qachon? qancha?)"]], 0],
+        ["O'zbek tilida nechta kelishik bor?", "Сколько падежей в узбекском языке?", ["4", "6", "7", "8"], 1],
+        ["Qaratqich kelishigining qo'shimchasi qaysi?", "Какое окончание у родительного падежа (qaratqich)?", ["-ni", "-ga", "-ning", "-dan"], 2],
+        ["Tushum kelishigining qo'shimchasi qaysi?", "Какое окончание у винительного падежа (tushum)?", ["-ga", "-da", "-dan", "-ni"], 3],
+        ["Jo'nalish kelishigining qo'shimchasi qaysi?", "Какое окончание у направительного падежа (jo'nalish)?", ["-ga", "-ni", "-da", "-ning"], 0],
+        ["O'rin-payt kelishigining qo'shimchasi qaysi?", "Какое окончание у местно-временного падежа (o'rin-payt)?", ["-ga", "-da", "-ni", "-ning"], 1],
+        ["Chiqish kelishigining qo'shimchasi qaysi?", "Какое окончание у исходного падежа (chiqish)?", ["-ga", "-da", "-dan", "-ni"], 2],
+        ["Qaysi so'z atoqli ot?", "Какое слово является именем собственным?", ["shahar", "daryo", "tog'", "Samarqand"], 3],
+        ["Otlarda ko'plik qaysi qo'shimcha bilan ifodalanadi?", "Каким аффиксом выражается множественное число существительных?", ["-lar", "-chi", "-li", "-lik"], 0],
+        ["Qaysi so'zda I shaxs birlikdagi egalik qo'shimchasi bor?", "В каком слове есть аффикс принадлежности 1-го лица единственного числа?", ["kitobing", "kitobim", "kitobi", "kitobimiz"], 1]
+      ]
+    }
+  ]
+}
