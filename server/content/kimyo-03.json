@@ -1,0 +1,83 @@
+{
+  "key": "kimyo",
+  "from": 11,
+  "name": ["Kimyo", "Химия"],
+  "aliases": ["chemistry"],
+  "topics": [
+    {
+      "t": ["Tuzlar", "Соли"],
+      "q": [
+        ["Quyidagilardan qaysi biri tuz?", "Какое из веществ является солью?", ["Na₂SO₄", "NaOH", "H₂SO₄", "Na₂O"], 0],
+        ["KNO₃ ning nomini ko'rsating.", "Укажите название KNO₃.", [["Kaliy nitrit", "Нитрит калия"], ["Kaliy nitrat", "Нитрат калия"], ["Kaliy nitrid", "Нитрид калия"], ["Kaliy karbonat", "Карбонат калия"]], 1],
+        ["Quyidagilardan qaysi biri nordon tuz?", "Какая из солей является кислой?", ["Na₂CO₃", "NaCl", "NaHCO₃", "Na₂SO₄"], 2],
+        ["Kalsiy fosfatning formulasini ko'rsating.", "Укажите формулу фосфата кальция.", ["CaPO₄", "Ca₂(PO₄)₃", "Ca(PO₄)₂", "Ca₃(PO₄)₂"], 3],
+        ["Quyidagi tuzlardan qaysi biri suvda erimaydi?", "Какая из солей нерастворима в воде?", ["BaSO₄", "NaCl", "KNO₃", "Na₂SO₄"], 0],
+        ["Na₂CO₃ ga xlorid kislota ta'sir ettirilganda qanday gaz ajraladi?", "Какой газ выделяется при действии соляной кислоты на Na₂CO₃?", ["H₂", "CO₂", "O₂", "Cl₂"], 1],
+        ["Ichimlik sodasining formulasini ko'rsating.", "Укажите формулу питьевой соды.", ["Na₂CO₃", "NaHCO₃", "NaOH", "NaCl"], 1],
+        ["Bo'r, marmar va ohaktoshning asosiy tarkibiy qismi qaysi?", "Какое вещество является основой мела, мрамора и известняка?", ["CaO", "Ca(OH)₂", "CaSO₄", "CaCO₃"], 3],
+        ["Vodorod sulfid kislota (H₂S) ning tuzlari qanday ataladi?", "Как называются соли сероводородной кислоты (H₂S)?", [["Sulfidlar", "Сульфиды"], ["Sulfatlar", "Сульфаты"], ["Sulfitlar", "Сульфиты"], ["Tiosulfatlar", "Тиосульфаты"]], 0],
+        ["CuSO₄ + Fe → FeSO₄ + Cu reaksiyasi nimani ko'rsatadi?", "Что показывает реакция CuSO₄ + Fe → FeSO₄ + Cu?", [["Mis temirdan faolroq", "Медь активнее железа"], ["Ikkalasining faolligi bir xil", "Их активность одинакова"], ["Temir misdan faolroq", "Железо активнее меди"], ["Sulfat ioni reaksiyaga kirishadi", "В реакцию вступает сульфат-ион"]], 2]
+      ]
+    },
+    {
+      "t": ["Eritmalar va konsentratsiya", "Растворы и концентрация"],
+      "q": [
+        ["180 g suvda 20 g tuz eritildi. Tuzning massa ulushini toping.", "В 180 г воды растворили 20 г соли. Найдите массовую долю соли.", ["10%", "11,1%", "20%", "9%"], 0],
+        ["200 g 5% li eritmada necha gramm tuz bor?", "Сколько граммов соли в 200 г 5%-го раствора?", [["5 g", "5 г"], ["20 g", "20 г"], ["10 g", "10 г"], ["40 g", "40 г"]], 2],
+        ["0,5 L eritmada 0,2 mol modda bor. Molyar konsentratsiyani toping.", "В 0,5 л раствора содержится 0,2 моль вещества. Найдите молярную концентрацию.", [["0,1 mol/L", "0,1 моль/л"], ["0,4 mol/L", "0,4 моль/л"], ["2,5 mol/L", "2,5 моль/л"], ["1 mol/L", "1 моль/л"]], 1],
+        ["Temperatura ortishi bilan ko'pchilik qattiq moddalarning suvda eruvchanligi qanday o'zgaradi?", "Как меняется растворимость большинства твёрдых веществ в воде при повышении температуры?", [["Ortadi", "Увеличивается"], ["Kamayadi", "Уменьшается"], ["O'zgarmaydi", "Не изменяется"], ["Nolga teng bo'ladi", "Становится нулевой"]], 0],
+        ["Temperatura ortishi bilan gazlarning suvda eruvchanligi qanday o'zgaradi?", "Как меняется растворимость газов в воде при повышении температуры?", [["Ortadi", "Увеличивается"], ["Kamayadi", "Уменьшается"], ["O'zgarmaydi", "Не изменяется"], ["Avval ortib, keyin kamayadi", "Сначала растёт, затем падает"]], 1],
+        ["To'yingan eritma nima?", "Что такое насыщенный раствор?", [["Juda ko'p suv bor eritma", "Раствор с большим количеством воды"], ["Rangli eritma", "Окрашенный раствор"], ["Issiq eritma", "Горячий раствор"], ["Berilgan temperaturada moddani boshqa erita olmaydigan eritma", "Раствор, в котором при данной температуре вещество больше не растворяется"]], 3],
+        ["100 g 20% li eritmaga 100 g suv qo'shildi. Yangi massa ulushini toping.", "К 100 г 20%-го раствора добавили 100 г воды. Найдите новую массовую долю.", ["20%", "5%", "10%", "40%"], 2],
+        ["Qaysi modda «universal erituvchi» deb ataladi?", "Какое вещество называют «универсальным растворителем»?", [["Suv", "Вода"], ["Spirt", "Спирт"], ["Benzin", "Бензин"], ["Atseton", "Ацетон"]], 0],
+        ["500 mL 0,1 M li NaOH eritmasini tayyorlash uchun necha gramm NaOH kerak?", "Сколько граммов NaOH нужно для приготовления 500 мл 0,1 М раствора NaOH?", [["4 g", "4 г"], ["20 g", "20 г"], ["0,2 g", "0,2 г"], ["2 g", "2 г"]], 3],
+        ["Quyidagilardan qaysi biri suspenziyaga misol bo'ladi?", "Что из перечисленного является суспензией?", [["Osh tuzining suvdagi eritmasi", "Раствор поваренной соли в воде"], ["Loyning suvdagi aralashmasi", "Смесь глины с водой"], ["Shakarning suvdagi eritmasi", "Раствор сахара в воде"], ["Spirtning suvdagi eritmasi", "Раствор спирта в воде"]], 1]
+      ]
+    },
+    {
+      "t": ["Elektrolitik dissotsilanish", "Электролитическая диссоциация"],
+      "q": [
+        ["Quyidagi moddalardan qaysi biri elektrolit?", "Какое из веществ является электролитом?", ["NaCl", ["C₁₂H₂₂O₁₁ (shakar)", "C₁₂H₂₂O₁₁ (сахар)"], "O₂", ["C₂H₅OH (spirt)", "C₂H₅OH (спирт)"]], 0],
+        ["Sulfat kislota dissotsilanganda qanday ionlar hosil bo'ladi?", "Какие ионы образуются при диссоциации серной кислоты?", ["H₂⁺ + SO₄⁻", "H⁺ + HSO₄⁻ + S", "2H⁺ + SO₄²⁻", "2H + SO₄"], 2],
+        ["Kislotalar dissotsilanganda qanday kationlar hosil bo'ladi?", "Какие катионы образуются при диссоциации кислот?", ["OH⁻", "H⁺", "Na⁺", "Cl⁻"], 1],
+        ["Ishqorlar dissotsilanganda qanday anionlar hosil bo'ladi?", "Какие анионы образуются при диссоциации щелочей?", ["H⁺", "Cl⁻", "OH⁻", "O²⁻"], 2],
+        ["Neytral eritmaning pH qiymati qancha?", "Чему равен pH нейтрального раствора?", ["0", "7", "14", "1"], 1],
+        ["pH = 3 bo'lgan eritma muhiti qanday?", "Какова среда раствора с pH = 3?", [["Kislotali", "Кислая"], ["Ishqoriy", "Щелочная"], ["Neytral", "Нейтральная"], ["Aniqlab bo'lmaydi", "Определить нельзя"]], 0],
+        ["H⁺ + OH⁻ → H₂O qisqa ionli tenglamaga qaysi moddalar reaksiyasi mos keladi?", "Реакции каких веществ соответствует сокращённое ионное уравнение H⁺ + OH⁻ → H₂O?", ["H₂S + Cu(OH)₂", "H₂CO₃ + Fe(OH)₂", "HNO₃ + Cu(OH)₂", "HCl + NaOH"], 3],
+        ["Ion almashinish reaksiyalari qachon oxirigacha boradi?", "Когда реакции ионного обмена идут до конца?", [["Har doim", "Всегда"], ["Cho'kma, gaz yoki suv hosil bo'lganda", "Если образуется осадок, газ или вода"], ["Faqat qizdirilganda", "Только при нагревании"], ["Hech qachon", "Никогда"]], 1],
+        ["Al₂(SO₄)₃ ning bir formula birligi to'liq dissotsilanganda nechta ion hosil bo'ladi?", "Сколько ионов образуется при полной диссоциации одной формульной единицы Al₂(SO₄)₃?", ["2", "3", "5", "7"], 2],
+        ["Quyidagilardan qaysi biri kuchsiz elektrolit?", "Какое из веществ является слабым электролитом?", ["CH₃COOH", "HCl", "NaOH", "KNO₃"], 0]
+      ]
+    },
+    {
+      "t": ["Oksidlanish-qaytarilish reaksiyalari", "Окислительно-восстановительные реакции"],
+      "q": [
+        ["Oksidlanish nima?", "Что такое окисление?", [["Elektron berish", "Отдача электронов"], ["Elektron qabul qilish", "Присоединение электронов"], ["Proton berish", "Отдача протонов"], ["Neytron yo'qotish", "Потеря нейтронов"]], 0],
+        ["Oksidlovchi nima qiladi?", "Что делает окислитель?", [["Elektron beradi", "Отдаёт электроны"], ["Elektron qabul qiladi", "Принимает электроны"], ["Proton beradi", "Отдаёт протоны"], ["Hech narsa", "Ничего"]], 1],
+        ["Zn + CuSO₄ → ZnSO₄ + Cu reaksiyasida qaytaruvchi qaysi?", "Какой элемент является восстановителем в реакции Zn + CuSO₄ → ZnSO₄ + Cu?", ["Cu²⁺", "SO₄²⁻", "Zn", "Cu"], 2],
+        ["2Na + Cl₂ → 2NaCl reaksiyasida oksidlovchi qaysi?", "Какое вещество является окислителем в реакции 2Na + Cl₂ → 2NaCl?", ["Na", "Cl₂", "NaCl", "Na⁺"], 1],
+        ["Fe⁰ → Fe³⁺ o'tishda temir nechta elektron beradi?", "Сколько электронов отдаёт железо при переходе Fe⁰ → Fe³⁺?", ["2", "1", "0", "3"], 3],
+        ["Quyidagilardan qaysi biri oksidlanish-qaytarilish reaksiyasi?", "Какая из реакций является окислительно-восстановительной?", ["NaOH + HCl → NaCl + H₂O", "Fe + S → FeS", "CaCO₃ → CaO + CO₂", "BaCl₂ + Na₂SO₄ → BaSO₄ + 2NaCl"], 1],
+        ["Quyidagilardan qaysi biri kuchli oksidlovchi?", "Какое из веществ является сильным окислителем?", ["H₂", "C", "Na", "KMnO₄"], 3],
+        ["Quyidagilardan qaysi biri qaytaruvchi?", "Какое из веществ является восстановителем?", ["F₂", "O₂", "H₂", "KMnO₄"], 2],
+        ["Mn⁺⁷ → Mn⁺² jarayoni qanday ataladi?", "Как называется процесс Mn⁺⁷ → Mn⁺²?", [["Oksidlanish", "Окисление"], ["Qaytarilish", "Восстановление"], ["Dissotsilanish", "Диссоциация"], ["Gidroliz", "Гидролиз"]], 1],
+        ["2H₂ + O₂ → 2H₂O reaksiyasida vodorodning oksidlanish darajasi 0 dan qanchaga o'zgaradi?", "До какого значения меняется степень окисления водорода (от 0) в реакции 2H₂ + O₂ → 2H₂O?", ["+1", "−1", "+2", "−2"], 0]
+      ]
+    },
+    {
+      "t": ["Kimyoviy reaksiya tezligi va muvozanat", "Скорость химической реакции и химическое равновесие"],
+      "q": [
+        ["Temperatura oshirilsa, kimyoviy reaksiya tezligi qanday o'zgaradi?", "Как изменится скорость химической реакции при повышении температуры?", [["Ortadi", "Увеличится"], ["Kamayadi", "Уменьшится"], ["O'zgarmaydi", "Не изменится"], ["Reaksiya to'xtaydi", "Реакция прекратится"]], 0],
+        ["Reaksiyaning temperatura koeffitsiyenti 2 ga teng. Temperatura 30 °C ga oshirilsa, tezlik necha marta ortadi?", "Температурный коэффициент реакции равен 2. Во сколько раз возрастёт скорость при повышении температуры на 30 °C?", ["6", "8", "9", "3"], 1],
+        ["Katalizator nimaga ta'sir qiladi?", "На что влияет катализатор?", [["Muvozanat holatini siljitadi", "Смещает равновесие"], ["Reaksiya mahsulotini o'zgartiradi", "Меняет продукты реакции"], ["Reaksiya tezligiga, lekin muvozanatni siljitmaydi", "На скорость реакции, но не смещает равновесие"], ["Hech narsaga", "Ни на что"]], 2],
+        ["Reaksiyaga kirishuvchi moddalar konsentratsiyasi oshirilsa, reaksiya tezligi qanday o'zgaradi?", "Как изменится скорость реакции при увеличении концентрации реагентов?", [["Kamayadi", "Уменьшится"], ["O'zgarmaydi", "Не изменится"], ["Nolga teng bo'ladi", "Станет нулевой"], ["Ortadi", "Увеличится"]], 3],
+        ["N₂ + 3H₂ ⇄ 2NH₃ sistemada bosim oshirilsa, muvozanat qayerga siljiydi?", "Куда сместится равновесие в системе N₂ + 3H₂ ⇄ 2NH₃ при повышении давления?", [["O'ngga (NH₃ hosil bo'lish tomonga)", "Вправо (в сторону образования NH₃)"], ["Chapga", "Влево"], ["Siljimaydi", "Не сместится"], ["Avval o'ngga, keyin chapga", "Сначала вправо, затем влево"]], 0],
+        ["To'g'ri reaksiya ekzotermik. Temperatura oshirilsa, muvozanat qayerga siljiydi?", "Прямая реакция экзотермическая. Куда сместится равновесие при повышении температуры?", [["O'ngga", "Вправо"], ["Chapga", "Влево"], ["Siljimaydi", "Не сместится"], ["Reaksiya to'xtaydi", "Реакция прекратится"]], 1],
+        ["Muvozanatdagi sistemadan reaksiya mahsuloti chiqarib olinsa, muvozanat qayerga siljiydi?", "Куда сместится равновесие, если из системы удалять продукт реакции?", [["Boshlang'ich moddalar tomonga", "В сторону исходных веществ"], ["Siljimaydi", "Не сместится"], ["Mahsulotlar hosil bo'lish tomonga", "В сторону образования продуктов"], ["Reaksiya to'xtaydi", "Реакция прекратится"]], 2],
+        ["Qattiq moddani maydalash reaksiya tezligini nima uchun oshiradi?", "Почему измельчение твёрдого вещества увеличивает скорость реакции?", [["Massasi ortadi", "Увеличивается масса"], ["Sirt yuzasi ortadi", "Увеличивается площадь поверхности"], ["Temperatura pasayadi", "Понижается температура"], ["Katalizator hosil bo'ladi", "Образуется катализатор"]], 1],
+        ["H₂ + I₂ ⇄ 2HI sistemada bosim oshirilsa, muvozanat qanday o'zgaradi?", "Как изменится равновесие в системе H₂ + I₂ ⇄ 2HI при повышении давления?", [["O'ngga siljiydi", "Сместится вправо"], ["Chapga siljiydi", "Сместится влево"], ["Siljimaydi", "Не сместится"], ["Reaksiya to'xtaydi", "Реакция прекратится"]], 2],
+        ["Kimyoviy reaksiya tezligining birligi qaysi?", "Какова единица скорости химической реакции?", [["mol·L", "моль·л"], ["L/s", "л/с"], ["g/mol", "г/моль"], ["mol/(L·s)", "моль/(л·с)"]], 3]
+      ]
+    }
+  ]
+}

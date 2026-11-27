@@ -1,0 +1,83 @@
+{
+  "key": "kimyo",
+  "from": 1,
+  "name": ["Kimyo", "Химия"],
+  "aliases": ["chemistry"],
+  "topics": [
+    {
+      "t": ["Kimyoning asosiy tushunchalari", "Основные понятия химии"],
+      "q": [
+        ["Quyidagilardan qaysi biri kimyoviy hodisa?", "Какое из явлений является химическим?", [["Muzning erishi", "Таяние льда"], ["Suvning qaynashi", "Кипение воды"], ["Yog'ochning yonishi", "Горение древесины"], ["Shishaning sinishi", "Разбивание стекла"]], 2],
+        ["Quyidagilardan qaysi biri oddiy modda?", "Какое из веществ является простым?", ["H₂O", "O₂", "NaCl", "CO₂"], 1],
+        ["Quyidagilardan qaysi biri aralashma?", "Что из перечисленного является смесью?", [["Havo", "Воздух"], ["Distillangan suv", "Дистиллированная вода"], ["Kislorod", "Кислород"], ["Osh tuzi", "Поваренная соль"]], 0],
+        ["Moddaning kimyoviy jihatdan bo'linmaydigan eng kichik zarrasi qaysi?", "Какая наименьшая химически неделимая частица вещества?", [["Molekula", "Молекула"], ["Ion", "Ион"], ["Kristall", "Кристалл"], ["Atom", "Атом"]], 3],
+        ["Moddalar massasining saqlanish qonunini kimlar kashf etgan?", "Кто открыл закон сохранения массы веществ?", [["Lomonosov va Lavuaze", "Ломоносов и Лавуазье"], ["Mendeleyev", "Менделеев"], ["Avogadro", "Авогадро"], ["Dalton", "Дальтон"]], 0],
+        ["Suv (H₂O) ning nisbiy molekulyar massasini toping.", "Найдите относительную молекулярную массу воды (H₂O).", ["16", "10", "18", "20"], 2],
+        ["CO₂ ning nisbiy molekulyar massasini toping.", "Найдите относительную молекулярную массу CO₂.", ["28", "44", "32", "22"], 1],
+        ["Qum va osh tuzi aralashmasini qanday ajratish mumkin?", "Как разделить смесь песка и поваренной соли?", [["Magnit yordamida", "С помощью магнита"], ["Faqat filtrlash bilan", "Только фильтрованием"], ["Distillash bilan", "Перегонкой"], ["Suvda eritish, filtrlash va bug'latish bilan", "Растворением в воде, фильтрованием и выпариванием"]], 3],
+        ["Kimyoviy element nima?", "Что такое химический элемент?", [["Bir xil molekulalar to'plami", "Совокупность одинаковых молекул"], ["Yadro zaryadi bir xil bo'lgan atomlar turi", "Вид атомов с одинаковым зарядом ядра"], ["Har qanday modda", "Любое вещество"], ["Ikki xil atom birikmasi", "Соединение двух разных атомов"]], 1],
+        ["Quyidagilardan qaysi biri murakkab modda?", "Какое из веществ является сложным?", ["N₂", "Fe", "H₂SO₄", "O₃"], 2]
+      ]
+    },
+    {
+      "t": ["Atom tuzilishi", "Строение атома"],
+      "q": [
+        ["Natriy (tartib raqami 11) atomida nechta proton bor?", "Сколько протонов в атоме натрия (порядковый номер 11)?", ["11", "23", "12", "1"], 0],
+        ["²³Na atomida nechta neytron bor?", "Сколько нейтронов в атоме ²³Na?", ["11", "23", "12", "34"], 2],
+        ["Xlorid ioni Cl⁻ da (Z = 17) nechta elektron bor?", "Сколько электронов в хлорид-ионе Cl⁻ (Z = 17)?", ["17", "18", "35", "16"], 1],
+        ["Uglerod (Z = 6) atomining elektron konfiguratsiyasini ko'rsating.", "Укажите электронную конфигурацию атома углерода (Z = 6).", ["1s²2s²2p⁴", "1s²2s²", "1s²2s²2p²", "1s²2p⁴"], 2],
+        ["Ikkinchi energetik pog'onada maksimal nechta elektron bo'lishi mumkin?", "Какое максимальное число электронов может быть на втором энергетическом уровне?", ["2", "8", "18", "32"], 1],
+        ["s-pog'onachada maksimal nechta elektron bo'lishi mumkin?", "Какое максимальное число электронов может быть на s-подуровне?", ["6", "10", "2", "14"], 2],
+        ["Kislorod (Z = 8) atomining tashqi pog'onasida nechta elektron bor?", "Сколько электронов на внешнем уровне атома кислорода (Z = 8)?", ["8", "2", "4", "6"], 3],
+        ["Qaysi zarra elektr zaryadiga ega emas?", "Какая частица не имеет электрического заряда?", [["Neytron", "Нейтрон"], ["Proton", "Протон"], ["Elektron", "Электрон"], ["Pozitron", "Позитрон"]], 0],
+        ["Atomning massa soni nimaga teng?", "Чему равно массовое число атома?", [["Protonlar soniga", "Числу протонов"], ["Protonlar va neytronlar soni yig'indisiga", "Сумме чисел протонов и нейтронов"], ["Elektronlar soniga", "Числу электронов"], ["Neytronlar soniga", "Числу нейтронов"]], 1],
+        ["Atomdagi energetik pog'onalar soni nimaga teng?", "Чему равно число энергетических уровней в атоме?", [["Davr raqamiga", "Номеру периода"], ["Guruh raqamiga", "Номеру группы"], ["Tartib raqamiga", "Порядковому номеру"], ["Valentligiga", "Валентности"]], 0]
+      ]
+    },
+    {
+      "t": ["Davriy qonun va davriy sistema", "Периодический закон и периодическая система"],
+      "q": [
+        ["Kimyoviy elementlar davriy qonunini kim kashf etgan?", "Кто открыл периодический закон химических элементов?", [["D. I. Mendeleyev", "Д. И. Менделеев"], ["M. V. Lomonosov", "М. В. Ломоносов"], ["A. Lavuaze", "А. Лавуазье"], ["E. Rezerford", "Э. Резерфорд"]], 0],
+        ["Zamonaviy ta'rifga ko'ra elementlarning xossalari nimaga davriy bog'liq?", "Согласно современной формулировке, свойства элементов периодически зависят от…", [["Atom massasiga", "атомной массы"], ["Atom yadrosining zaryadiga", "заряда ядра атома"], ["Neytronlar soniga", "числа нейтронов"], ["Zichligiga", "плотности"]], 1],
+        ["Bosh guruhcha elementlari uchun guruh raqami nimaga teng?", "Чему равен номер группы для элементов главных подгрупп?", [["Energetik pog'onalar soniga", "Числу энергетических уровней"], ["Neytronlar soniga", "Числу нейтронов"], ["Tashqi pog'onadagi elektronlar soniga", "Числу электронов на внешнем уровне"], ["Massa soniga", "Массовому числу"]], 2],
+        ["Quyidagi metallardan qaysi biri eng faol?", "Какой из металлов наиболее активен?", ["Na", "Mg", "Al", "K"], 3],
+        ["Davrda chapdan o'ngga elementlarning metallik xossalari qanday o'zgaradi?", "Как изменяются металлические свойства элементов в периоде слева направо?", [["Kuchayadi", "Усиливаются"], ["Susayadi", "Ослабевают"], ["O'zgarmaydi", "Не изменяются"], ["Avval kuchayib, keyin susayadi", "Сначала усиливаются, затем ослабевают"]], 1],
+        ["3-davr VII guruhda joylashgan element qaysi?", "Какой элемент находится в 3-м периоде, VII группе?", ["S", "Ar", "P", "Cl"], 3],
+        ["Inert (nodir) gazlar qaysi guruhda joylashgan?", "В какой группе находятся инертные (благородные) газы?", ["I", "VII", "VIII", "II"], 2],
+        ["Eng elektromanfiy element qaysi?", "Какой элемент самый электроотрицательный?", ["F", "O", "Cl", "N"], 0],
+        ["Davriy sistemada nechta davr bor?", "Сколько периодов в периодической системе?", ["8", "7", "18", "10"], 1],
+        ["Bosh guruhchada yuqoridan pastga atom radiusi qanday o'zgaradi?", "Как изменяется радиус атома в главной подгруппе сверху вниз?", [["Ortadi", "Увеличивается"], ["Kamayadi", "Уменьшается"], ["O'zgarmaydi", "Не изменяется"], ["Avval ortib, keyin kamayadi", "Сначала растёт, затем уменьшается"]], 0]
+      ]
+    },
+    {
+      "t": ["Kimyoviy bog'lanish", "Химическая связь"],
+      "q": [
+        ["NaCl da qanday kimyoviy bog'lanish bor?", "Какая химическая связь в NaCl?", [["Ion", "Ионная"], ["Kovalent qutbsiz", "Ковалентная неполярная"], ["Metall", "Металлическая"], ["Vodorod", "Водородная"]], 0],
+        ["H₂ molekulasida qanday bog'lanish bor?", "Какая связь в молекуле H₂?", [["Ion", "Ионная"], ["Kovalent qutbsiz", "Ковалентная неполярная"], ["Kovalent qutbli", "Ковалентная полярная"], ["Metall", "Металлическая"]], 1],
+        ["HCl molekulasida qanday bog'lanish bor?", "Какая связь в молекуле HCl?", [["Ion", "Ионная"], ["Kovalent qutbsiz", "Ковалентная неполярная"], ["Kovalent qutbli", "Ковалентная полярная"], ["Metall", "Металлическая"]], 2],
+        ["Metallarda qanday bog'lanish mavjud?", "Какая связь существует в металлах?", [["Ion", "Ионная"], ["Kovalent", "Ковалентная"], ["Vodorod", "Водородная"], ["Metall", "Металлическая"]], 3],
+        ["N₂ molekulasida atomlar orasida nechta kovalent bog' bor?", "Сколько ковалентных связей между атомами в молекуле N₂?", ["1", "2", "3", "4"], 2],
+        ["Suvning qaynash temperaturasi nisbatan yuqori bo'lishi nima bilan tushuntiriladi?", "Чем объясняется сравнительно высокая температура кипения воды?", [["Ion bog'lanish bilan", "Ионной связью"], ["Molekulalar orasidagi vodorod bog'lar bilan", "Водородными связями между молекулами"], ["Metall bog'lanish bilan", "Металлической связью"], ["Suvning katta massasi bilan", "Большой массой воды"]], 1],
+        ["Quyidagi moddalardan qaysi birida ion bog'lanish bor?", "В каком из веществ ионная связь?", ["CO₂", "CaF₂", "CH₄", "H₂O"], 1],
+        ["Olmosning kristall panjarasi qanday tipda?", "Какой тип кристаллической решётки у алмаза?", [["Ion", "Ионная"], ["Molekulyar", "Молекулярная"], ["Atom", "Атомная"], ["Metall", "Металлическая"]], 2],
+        ["Kovalent bog'ning qutbliligi nimaga bog'liq?", "От чего зависит полярность ковалентной связи?", [["Atomlar massasiga", "От массы атомов"], ["Molekula hajmiga", "От объёма молекулы"], ["Temperaturaga", "От температуры"], ["Atomlarning elektromanfiyliklari farqiga", "От разности электроотрицательностей атомов"]], 3],
+        ["Quyidagi molekulalardan qaysi biri qutbsiz?", "Какая из молекул неполярна?", ["CO₂", "H₂O", "NH₃", "HCl"], 0]
+      ]
+    },
+    {
+      "t": ["Valentlik va oksidlanish darajasi", "Валентность и степень окисления"],
+      "q": [
+        ["H₂SO₄ da oltingugurtning oksidlanish darajasini toping.", "Найдите степень окисления серы в H₂SO₄.", ["+4", "+6", "−2", "+2"], 1],
+        ["NH₃ da azotning oksidlanish darajasini toping.", "Найдите степень окисления азота в NH₃.", ["+3", "+5", "0", "−3"], 3],
+        ["KMnO₄ da marganesning oksidlanish darajasini toping.", "Найдите степень окисления марганца в KMnO₄.", ["+7", "+4", "+6", "+2"], 0],
+        ["Oddiy moddalarda elementlarning oksidlanish darajasi nimaga teng?", "Чему равна степень окисления элементов в простых веществах?", ["+1", "−1", "0", "+2"], 2],
+        ["CO₂ da uglerodning valentligini toping.", "Найдите валентность углерода в CO₂.", ["II", "IV", "III", "I"], 1],
+        ["K₂Cr₂O₇ da xromning oksidlanish darajasini toping.", "Найдите степень окисления хрома в K₂Cr₂O₇.", ["+3", "+7", "+6", "+2"], 2],
+        ["Temir(III) oksidining formulasini ko'rsating.", "Укажите формулу оксида железа(III).", ["FeO", "Fe₃O₄", "FeO₃", "Fe₂O₃"], 3],
+        ["H₂O₂ da kislorodning oksidlanish darajasini toping.", "Найдите степень окисления кислорода в H₂O₂.", ["−2", "−1", "+2", "0"], 1],
+        ["Alyuminiy sulfatning formulasini ko'rsating.", "Укажите формулу сульфата алюминия.", ["Al₂(SO₄)₃", "AlSO₄", "Al₃(SO₄)₂", "Al(SO₄)₃"], 0],
+        ["H₃PO₄ da fosforning oksidlanish darajasini toping.", "Найдите степень окисления фосфора в H₃PO₄.", ["+5", "+3", "−3", "+1"], 0]
+      ]
+    }
+  ]
+}

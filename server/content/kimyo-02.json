@@ -1,0 +1,83 @@
+{
+  "key": "kimyo",
+  "from": 6,
+  "name": ["Kimyo", "Химия"],
+  "aliases": ["chemistry"],
+  "topics": [
+    {
+      "t": ["Mol, molyar massa va molyar hajm", "Моль, молярная масса и молярный объём"],
+      "q": [
+        ["64 g kislorod (O₂) da necha mol modda bor?", "Сколько молей вещества в 64 г кислорода (O₂)?", [["2 mol", "2 моль"], ["4 mol", "4 моль"], ["1 mol", "1 моль"], ["0,5 mol", "0,5 моль"]], 0],
+        ["0,5 mol NaOH ning massasini toping.", "Найдите массу 0,5 моль NaOH.", [["40 g", "40 г"], ["80 g", "80 г"], ["20 g", "20 г"], ["10 g", "10 г"]], 2],
+        ["Normal sharoitda 2 mol gaz qancha hajmni egallaydi?", "Какой объём займут 2 моль газа при нормальных условиях?", [["22,4 L", "22,4 л"], ["44,8 L", "44,8 л"], ["11,2 L", "11,2 л"], ["2 L", "2 л"]], 1],
+        ["Sulfat kislota H₂SO₄ ning molyar massasini toping.", "Найдите молярную массу серной кислоты H₂SO₄.", [["96 g/mol", "96 г/моль"], ["49 g/mol", "49 г/моль"], ["100 g/mol", "100 г/моль"], ["98 g/mol", "98 г/моль"]], 3],
+        ["0,5 mol moddada nechta molekula bor?", "Сколько молекул содержится в 0,5 моль вещества?", ["$3{,}01\\cdot10^{23}$", "$6{,}02\\cdot10^{23}$", "$1{,}2\\cdot10^{24}$", "$0{,}5\\cdot10^{23}$"], 0],
+        ["Normal sharoitda 11,2 L CO₂ ning massasini toping.", "Найдите массу 11,2 л CO₂ при нормальных условиях.", [["44 g", "44 г"], ["22 g", "22 г"], ["11 g", "11 г"], ["88 g", "88 г"]], 1],
+        ["Suvdagi kislorodning massa ulushini toping.", "Найдите массовую долю кислорода в воде.", ["11,1%", "50%", "88,9%", "66,7%"], 2],
+        ["Gazning vodorodga nisbatan zichligi 16 ga teng. Uning molyar massasini toping.", "Плотность газа по водороду равна 16. Найдите его молярную массу.", [["16 g/mol", "16 г/моль"], ["32 g/mol", "32 г/моль"], ["8 g/mol", "8 г/моль"], ["64 g/mol", "64 г/моль"]], 1],
+        ["Avogadro qonuni nimani ta'kidlaydi?", "Что утверждает закон Авогадро?", [["Gaz hajmi temperaturaga bog'liq emas", "Объём газа не зависит от температуры"], ["Barcha gazlarning massasi bir xil", "Массы всех газов одинаковы"], ["Gaz bosimi hajmga bog'liq emas", "Давление газа не зависит от объёма"], ["Bir xil sharoitda teng hajmdagi gazlarda molekulalar soni teng", "В равных объёмах газов при одинаковых условиях содержится одинаковое число молекул"]], 3],
+        ["Normal sharoitda 5,6 L azotda necha mol modda bor?", "Сколько молей вещества в 5,6 л азота при нормальных условиях?", [["0,25 mol", "0,25 моль"], ["0,5 mol", "0,5 моль"], ["2,5 mol", "2,5 моль"], ["4 mol", "4 моль"]], 0]
+      ]
+    },
+    {
+      "t": ["Kimyoviy reaksiyalar turlari", "Типы химических реакций"],
+      "q": [
+        ["2H₂ + O₂ → 2H₂O reaksiyasi qaysi turga kiradi?", "К какому типу относится реакция 2H₂ + O₂ → 2H₂O?", [["Birikish", "Соединения"], ["Parchalanish", "Разложения"], ["O'rin olish", "Замещения"], ["Almashinish", "Обмена"]], 0],
+        ["CaCO₃ → CaO + CO₂ reaksiyasi qaysi turga kiradi?", "К какому типу относится реакция CaCO₃ → CaO + CO₂?", [["Birikish", "Соединения"], ["Parchalanish", "Разложения"], ["O'rin olish", "Замещения"], ["Almashinish", "Обмена"]], 1],
+        ["Zn + 2HCl → ZnCl₂ + H₂ reaksiyasi qaysi turga kiradi?", "К какому типу относится реакция Zn + 2HCl → ZnCl₂ + H₂?", [["Birikish", "Соединения"], ["Parchalanish", "Разложения"], ["O'rin olish", "Замещения"], ["Almashinish", "Обмена"]], 2],
+        ["NaOH + HCl → NaCl + H₂O reaksiyasi qaysi turga kiradi?", "К какому типу относится реакция NaOH + HCl → NaCl + H₂O?", [["Birikish", "Соединения"], ["Parchalanish", "Разложения"], ["O'rin olish", "Замещения"], ["Almashinish (neytrallanish)", "Обмена (нейтрализации)"]], 3],
+        ["Ekzotermik reaksiyada nima sodir bo'ladi?", "Что происходит при экзотермической реакции?", [["Issiqlik yutiladi", "Поглощается теплота"], ["Issiqlik ajraladi", "Выделяется теплота"], ["Faqat gaz ajraladi", "Выделяется только газ"], ["Faqat cho'kma tushadi", "Выпадает только осадок"]], 1],
+        ["CH₄ + __O₂ → CO₂ + 2H₂O tenglamada O₂ oldidagi koeffitsiyentni toping.", "Найдите коэффициент перед O₂ в уравнении CH₄ + __O₂ → CO₂ + 2H₂O.", ["1", "3", "2", "4"], 2],
+        ["Katalizator nima?", "Что такое катализатор?", [["Reaksiyani to'xtatuvchi modda", "Вещество, останавливающее реакцию"], ["Reaksiya mahsuloti", "Продукт реакции"], ["Reaksiyada to'liq sarflanadigan modda", "Вещество, полностью расходуемое в реакции"], ["Reaksiyani tezlashtiradigan, o'zi sarflanmaydigan modda", "Вещество, ускоряющее реакцию и не расходующееся в ней"]], 3],
+        ["Qaysi moddalar o'zaro ta'sirlashganda cho'kma hosil bo'ladi?", "При взаимодействии каких веществ образуется осадок?", ["AgNO₃ + NaCl", "NaOH + HCl", "KNO₃ + NaCl", "HNO₃ + KOH"], 0],
+        ["Al + O₂ → Al₂O₃ tenglamasini tenglang. Koeffitsiyentlar yig'indisini toping.", "Уравняйте Al + O₂ → Al₂O₃. Найдите сумму коэффициентов.", ["5", "7", "9", "11"], 2],
+        ["Qaytar reaksiya qanday belgi bilan ko'rsatiladi?", "Каким знаком обозначают обратимую реакцию?", ["→", "⇄", "↑", "↓"], 1]
+      ]
+    },
+    {
+      "t": ["Oksidlar", "Оксиды"],
+      "q": [
+        ["Quyidagilardan qaysi biri asosli oksid?", "Какой из оксидов является основным?", ["SO₃", "CaO", "CO₂", "P₂O₅"], 1],
+        ["Quyidagilardan qaysi biri kislotali oksid?", "Какой из оксидов является кислотным?", ["Na₂O", "MgO", "SO₂", "CuO"], 2],
+        ["Quyidagilardan qaysi biri amfoter oksid?", "Какой из оксидов является амфотерным?", ["Al₂O₃", "Na₂O", "SO₃", "CaO"], 0],
+        ["Quyidagilardan qaysi biri tuz hosil qilmaydigan oksid?", "Какой из оксидов несолеобразующий?", ["CO₂", "SO₂", "Na₂O", "CO"], 3],
+        ["CaO + H₂O → ? reaksiya mahsulotini toping.", "Найдите продукт реакции CaO + H₂O → ?", ["Ca(OH)₂", "CaH₂", "CaO₂", "CaCO₃"], 0],
+        ["SO₃ + H₂O → ? reaksiya mahsulotini toping.", "Найдите продукт реакции SO₃ + H₂O → ?", ["H₂SO₃", "H₂SO₄", "H₂S", "SO₂"], 1],
+        ["CO₂ ning ortiqcha NaOH bilan reaksiyasi mahsulotlarini ko'rsating.", "Укажите продукты реакции CO₂ с избытком NaOH.", ["NaHCO₃ + H₂", "Na₂O + H₂CO₃", "Na₂CO₃ + H₂O", "NaCO₃ + H₂O"], 2],
+        ["N₂O₅ ning nomini ko'rsating.", "Укажите название N₂O₅.", [["Azot(V) oksidi", "Оксид азота(V)"], ["Azot(II) oksidi", "Оксид азота(II)"], ["Azot(IV) oksidi", "Оксид азота(IV)"], ["Azot(I) oksidi", "Оксид азота(I)"]], 0],
+        ["Quyidagi oksidlardan qaysi biri ham kislotalar, ham ishqorlar bilan reaksiyaga kirishadi?", "Какой из оксидов реагирует и с кислотами, и со щелочами?", ["K₂O", "P₂O₅", "CO₂", "ZnO"], 3],
+        ["Fe₂O₃ dagi temirning massa ulushini toping.", "Найдите массовую долю железа в Fe₂O₃.", ["30%", "70%", "56%", "35%"], 1]
+      ]
+    },
+    {
+      "t": ["Kislotalar", "Кислоты"],
+      "q": [
+        ["Quyidagilardan qaysi biri kislota?", "Какое из веществ является кислотой?", ["NaOH", "HNO₃", "KCl", "CaO"], 1],
+        ["Quyidagilardan qaysi biri kislorodsiz kislota?", "Какая из кислот бескислородная?", ["H₂SO₄", "HNO₃", "HCl", "H₃PO₄"], 2],
+        ["Kislotali muhitda lakmus qanday rangga kiradi?", "Какой цвет приобретает лакмус в кислой среде?", [["Qizil", "Красный"], ["Ko'k", "Синий"], ["Binafsha", "Фиолетовый"], ["Rangsiz", "Бесцветный"]], 0],
+        ["Fosfat kislota H₃PO₄ necha negizli?", "Какова основность фосфорной кислоты H₃PO₄?", ["1", "3", "2", "4"], 1],
+        ["Rux suyultirilgan sulfat kislota bilan reaksiyaga kirishganda qanday mahsulotlar hosil bo'ladi?", "Какие продукты образуются при реакции цинка с разбавленной серной кислотой?", ["ZnO + SO₂", "ZnS + H₂O", "Zn(OH)₂ + SO₃", "ZnSO₄ + H₂"], 3],
+        ["Qaysi metall xlorid kislota bilan reaksiyaga kirishmaydi?", "Какой металл не реагирует с соляной кислотой?", ["Zn", "Fe", "Mg", "Cu"], 3],
+        ["H₂SO₃ ning nomini ko'rsating.", "Укажите название H₂SO₃.", [["Sulfat kislota", "Серная кислота"], ["Sulfit kislota", "Сернистая кислота"], ["Sulfid kislota", "Сероводородная кислота"], ["Tiosulfat kislota", "Тиосерная кислота"]], 1],
+        ["Nitrat kislotaning tuzlari qanday ataladi?", "Как называются соли азотной кислоты?", [["Nitritlar", "Нитриты"], ["Nitridlar", "Нитриды"], ["Nitratlar", "Нитраты"], ["Sulfatlar", "Сульфаты"]], 2],
+        ["Quyidagilardan qaysi biri kuchli kislota?", "Какая из кислот является сильной?", ["H₂SO₄", "H₂CO₃", "H₂S", "H₂SiO₃"], 0],
+        ["Kislotali muhitda fenolftalein qanday rangda bo'ladi?", "Какой цвет имеет фенолфталеин в кислой среде?", [["Malina rang", "Малиновый"], ["Sariq", "Жёлтый"], ["Ko'k", "Синий"], ["Rangsiz", "Бесцветный"]], 3]
+      ]
+    },
+    {
+      "t": ["Asoslar", "Основания"],
+      "q": [
+        ["Quyidagilardan qaysi biri asos?", "Какое из веществ является основанием?", ["KOH", "HCl", "K₂O", "KCl"], 0],
+        ["Quyidagilardan qaysi biri ishqor (suvda eriydigan asos)?", "Какое из оснований является щёлочью (растворимым)?", ["Cu(OH)₂", "NaOH", "Fe(OH)₃", "Al(OH)₃"], 1],
+        ["Ishqoriy muhitda fenolftalein qanday rangga kiradi?", "Какой цвет приобретает фенолфталеин в щелочной среде?", [["Rangsiz", "Бесцветный"], ["Ko'k", "Синий"], ["Malina rang", "Малиновый"], ["Sariq", "Жёлтый"]], 2],
+        ["Neytrallanish reaksiyasi nima?", "Что такое реакция нейтрализации?", [["Metallning kislota bilan reaksiyasi", "Реакция металла с кислотой"], ["Oksidning suv bilan reaksiyasi", "Реакция оксида с водой"], ["Moddaning parchalanishi", "Разложение вещества"], ["Kislota va asosdan tuz va suv hosil bo'lishi", "Образование соли и воды из кислоты и основания"]], 3],
+        ["Cu(OH)₂ qizdirilganda qanday moddalar hosil bo'ladi?", "Какие вещества образуются при нагревании Cu(OH)₂?", ["CuO + H₂O", "Cu + H₂O", "Cu₂O + H₂", "CuO₂ + H₂"], 0],
+        ["Quyidagilardan qaysi biri amfoter gidroksid?", "Какой из гидроксидов является амфотерным?", ["NaOH", "Zn(OH)₂", "Ca(OH)₂", "KOH"], 1],
+        ["Ca(OH)₂ necha kislotali asos?", "Какова кислотность основания Ca(OH)₂?", ["1", "3", "2", "4"], 2],
+        ["Fe(OH)₂ ning nomini ko'rsating.", "Укажите название Fe(OH)₂.", [["Temir(II) gidroksidi", "Гидроксид железа(II)"], ["Temir(III) gidroksidi", "Гидроксид железа(III)"], ["Temir oksidi", "Оксид железа"], ["Temir gidridi", "Гидрид железа"]], 0],
+        ["1 mol HCl ni to'liq neytrallash uchun necha gramm NaOH kerak?", "Сколько граммов NaOH нужно для полной нейтрализации 1 моль HCl?", [["20 g", "20 г"], ["80 g", "80 г"], ["36,5 g", "36,5 г"], ["40 g", "40 г"]], 3],
+        ["Cu(OH)₂ ni olish uchun qaysi moddalarni o'zaro ta'sirlashtirish kerak?", "Какие вещества нужно взять, чтобы получить Cu(OH)₂?", ["Cu + H₂O", "CuSO₄ + NaOH", "CuO + H₂O", "Cu + NaOH"], 1]
+      ]
+    }
+  ]
+}
