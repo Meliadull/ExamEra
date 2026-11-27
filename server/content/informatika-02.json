@@ -1,0 +1,83 @@
+{
+  "key": "informatika",
+  "from": 6,
+  "name": ["Informatika", "Информатика"],
+  "aliases": ["computer science", "informatics", "информатика и ИКТ"],
+  "topics": [
+    {
+      "t": ["Algoritmlar va ularning xossalari", "Алгоритмы и их свойства"],
+      "q": [
+        ["Algoritmning qaysi xossasi uning alohida qadamlardan iboratligini bildiradi?", "Какое свойство алгоритма означает, что он состоит из отдельных шагов?", [["Diskretlik", "Дискретность"], ["Aniqlik", "Определённость"], ["Ommaviylik", "Массовость"], ["Natijaviylik", "Результативность"]], 0],
+        ["Algoritmning har bir qadami bir xil tushunilishi qaysi xossa?", "Какое свойство означает, что каждый шаг алгоритма понимается однозначно?", [["Diskretlik", "Дискретность"], ["Aniqlik", "Определённость"], ["Ommaviylik", "Массовость"], ["Natijaviylik", "Результативность"]], 1],
+        ["Algoritmning bir turdagi masalalar sinfiga qo'llanilishi qaysi xossa?", "Какое свойство означает применимость алгоритма к целому классу однотипных задач?", [["Diskretlik", "Дискретность"], ["Aniqlik", "Определённость"], ["Ommaviylik", "Массовость"], ["Natijaviylik", "Результативность"]], 2],
+        ["Algoritmning chekli qadamdan so'ng natija berishi qaysi xossa?", "Какое свойство означает, что алгоритм за конечное число шагов приводит к результату?", [["Diskretlik", "Дискретность"], ["Aniqlik", "Определённость"], ["Ommaviylik", "Массовость"], ["Natijaviylik", "Результативность"]], 3],
+        ["Blok-sxemada shart qanday shakl bilan tasvirlanadi?", "Какой фигурой обозначается условие на блок-схеме?", [["Romb", "Ромб"], ["To'g'ri to'rtburchak", "Прямоугольник"], ["Parallelogramm", "Параллелограмм"], ["Oval", "Овал"]], 0],
+        ["Blok-sxemada ma'lumot kiritish va chiqarish qanday shakl bilan tasvirlanadi?", "Какой фигурой обозначаются ввод и вывод данных на блок-схеме?", [["Romb", "Ромб"], ["Parallelogramm", "Параллелограмм"], ["To'g'ri to'rtburchak", "Прямоугольник"], ["Doira", "Круг"]], 1],
+        ["Tarmoqlanuvchi algoritm nima?", "Что такое разветвляющийся алгоритм?", [["Buyruqlar ketma-ket bajariladigan algoritm", "Алгоритм, в котором команды выполняются подряд"], ["Takrorlanuvchi algoritm", "Повторяющийся алгоритм"], ["Shartga qarab turli yo'ldan boradigan algoritm", "Алгоритм, в котором в зависимости от условия выбирается путь"], ["Natijasiz algoritm", "Алгоритм без результата"]], 2],
+        ["x = 5; x = x * 2; x = x − 3 algoritmidan keyin x ning qiymati qancha bo'ladi?", "Каким будет значение x после выполнения алгоритма x = 5; x = x * 2; x = x − 3?", ["7", "10", "2", "13"], 0],
+        ["Evklid algoritmi nimani topish uchun qo'llaniladi?", "Для чего применяется алгоритм Евклида?", [["EKUK", "НОК"], ["Tub sonlarni", "Простых чисел"], ["Kvadrat ildizni", "Квадратного корня"], ["Ikki sonning EKUBini", "НОД двух чисел"]], 3],
+        ["Algoritmni qanday usullarda tasvirlash mumkin?", "Какими способами можно представить алгоритм?", [["Faqat so'zlar bilan", "Только словами"], ["So'zli, blok-sxema va dastur ko'rinishida", "Словесно, блок-схемой и в виде программы"], ["Faqat formula bilan", "Только формулой"], ["Faqat rasm bilan", "Только рисунком"]], 1]
+      ]
+    },
+    {
+      "t": ["O'zgaruvchilar va ma'lumot turlari (Python)", "Переменные и типы данных (Python)"],
+      "q": [
+        ["Python tilida 3.14 qiymati qaysi turga tegishli?", "К какому типу относится значение 3.14 в Python?", ["int", "float", "str", "bool"], 1],
+        ["Python tilida \"salom\" qiymati qaysi turga tegishli?", "К какому типу относится значение \"привет\" в Python?", ["int", "float", "str", "list"], 2],
+        ["Python tilida 7 // 2 ifodaning natijasini toping.", "Найдите результат выражения 7 // 2 в Python.", ["3", "3.5", "4", "1"], 0],
+        ["Python tilida 7 % 3 ifodaning natijasini toping.", "Найдите результат выражения 7 % 3 в Python.", ["2", "0", "2.33", "1"], 3],
+        ["Python tilida 2 ** 3 ifodaning natijasini toping.", "Найдите результат выражения 2 ** 3 в Python.", ["6", "8", "9", "5"], 1],
+        ["Python tilida qaysi o'zgaruvchi nomi to'g'ri?", "Какое имя переменной допустимо в Python?", ["2age", "my-age", "my_age", "my age"], 2],
+        ["x = 5, so'ng x += 3 bajarildi. x ning qiymati qancha?", "x = 5, затем выполнили x += 3. Чему равно x?", ["8", "5", "3", "53"], 0],
+        ["Python tilida \"3\" + \"4\" ifodaning natijasi nima?", "Каков результат выражения \"3\" + \"4\" в Python?", ["\"7\"", "\"34\"", "12", ["Xato", "Ошибка"]], 1],
+        ["Python tilida int(\"12\") + 3 ifodaning natijasini toping.", "Найдите результат выражения int(\"12\") + 3 в Python.", ["15", "123", ["Xato", "Ошибка"], "12"], 0],
+        ["bool turidagi o'zgaruvchi qanday qiymatlarni qabul qiladi?", "Какие значения может принимать переменная типа bool?", ["0 … 255", ["Istalgan son", "Любое число"], ["Istalgan matn", "Любой текст"], "True, False"], 3]
+      ]
+    },
+    {
+      "t": ["Shart operatori", "Условный оператор"],
+      "q": [
+        ["Python tilida shart operatori qaysi kalit so'z bilan yoziladi?", "Каким ключевым словом записывается условный оператор в Python?", ["if", "for", "while", "def"], 0],
+        ["x = 7 bo'lsa, «if x > 5: print(\"A\") else: print(\"B\")» kodi nimani chiqaradi?", "Что выведет код «if x > 5: print(\"A\") else: print(\"B\")» при x = 7?", ["B", "A", "AB", ["Hech narsa", "Ничего"]], 1],
+        ["Python tilida tenglikni tekshirish operatori qaysi?", "Какой оператор в Python проверяет равенство?", ["=", "==", "!=", "=>"], 1],
+        ["Python tilida «teng emas» operatori qaysi?", "Какой оператор в Python означает «не равно»?", ["<>", "=!", "!=", "=="], 2],
+        ["x = 0 bo'lsa, «if x: print(\"ha\") else: print(\"yo'q\")» kodi nimani chiqaradi?", "Что выведет код «if x: print(\"да\") else: print(\"нет\")» при x = 0?", [["ha", "да"], ["yo'q", "нет"], ["0", "0"], ["Xato", "Ошибка"]], 1],
+        ["Python tilidagi elif kalit so'zi nimani bildiradi?", "Что означает ключевое слово elif в Python?", [["«aks holda, agar» — qo'shimcha shart", "«иначе, если» — дополнительное условие"], ["Siklni tugatish", "Завершение цикла"], ["Funksiya e'lon qilish", "Объявление функции"], ["Xatoni ushlash", "Перехват ошибки"]], 0],
+        ["a = 3, b = 8. «if a > b: m = a else: m = b» bajarilgandan keyin m qancha?", "a = 3, b = 8. Чему равно m после «if a > b: m = a else: m = b»?", ["3", "8", "11", "5"], 1],
+        ["10 <= x <= 20 shart x ning qaysi qiymatida rost?", "При каком значении x условие 10 <= x <= 20 истинно?", ["5", "25", "15", "21"], 2],
+        ["Python tilida not (5 > 3) ifodaning qiymati nima?", "Каково значение выражения not (5 > 3) в Python?", ["True", "False", "None", "5"], 1],
+        ["(x > 0) and (x % 2 == 0) shart x ning qaysi qiymatida rost?", "При каком x истинно условие (x > 0) and (x % 2 == 0)?", ["−2", "3", "4", "0"], 2]
+      ]
+    },
+    {
+      "t": ["Sikllar", "Циклы"],
+      "q": [
+        ["«for i in range(5): print(i)» kodi necha marta bajariladi?", "Сколько раз выполнится тело цикла «for i in range(5): print(i)»?", ["4", "5", "6", "0"], 1],
+        ["range(2, 10, 3) qaysi qiymatlarni beradi?", "Какие значения даёт range(2, 10, 3)?", ["2, 5, 8", "2, 4, 6, 8", "3, 6, 9", "2, 5, 8, 11"], 0],
+        ["s = 0; for i in range(1, 5): s += i — bajarilgandan keyin s qancha?", "Чему равно s после s = 0; for i in range(1, 5): s += i?", ["15", "5", "10", "4"], 2],
+        ["while sikli qachongacha bajariladi?", "Пока что выполняется цикл while?", [["Shart yolg'on bo'lguncha (shart rost ekan)", "Пока условие истинно"], ["Faqat bir marta", "Только один раз"], ["Har doim 10 marta", "Всегда 10 раз"], ["Shart yolg'on ekan", "Пока условие ложно"]], 0],
+        ["break operatori nima qiladi?", "Что делает оператор break?", [["Sikldan chiqadi", "Выходит из цикла"], ["Keyingi takrorga o'tadi", "Переходит к следующей итерации"], ["Dasturni qayta boshlaydi", "Перезапускает программу"], ["Hech narsa qilmaydi", "Ничего не делает"]], 0],
+        ["continue operatori nima qiladi?", "Что делает оператор continue?", [["Sikldan chiqadi", "Выходит из цикла"], ["Joriy takrorning qolganini o'tkazib, keyingisiga o'tadi", "Пропускает остаток текущей итерации и переходит к следующей"], ["Dasturni to'xtatadi", "Останавливает программу"], ["Xato chiqaradi", "Вызывает ошибку"]], 1],
+        ["i = 10; while i > 0: i −= 3 — sikl tanasi necha marta bajariladi?", "Сколько раз выполнится тело цикла i = 10; while i > 0: i −= 3?", ["3", "4", "10", ["Cheksiz", "Бесконечно"]], 1],
+        ["Quyidagilardan qaysi biri cheksiz siklga olib keladi?", "Что из перечисленного приводит к бесконечному циклу?", ["for i in range(10)", "while False", "for i in []", ["while True (break bo'lmasa)", "while True (без break)"]], 3],
+        ["p = 1; for i in range(1, 5): p *= i — bajarilgandan keyin p qancha?", "Чему равно p после p = 1; for i in range(1, 5): p *= i?", ["24", "10", "120", "4"], 0],
+        ["«for i in range(3): for j in range(2): k += 1» — ichki sikl tanasi necha marta bajariladi?", "Сколько раз выполнится тело внутреннего цикла «for i in range(3): for j in range(2): k += 1»?", ["5", "3", "6", "9"], 2]
+      ]
+    },
+    {
+      "t": ["Massivlar (ro'yxatlar)", "Массивы (списки)"],
+      "q": [
+        ["a = [3, 7, 1, 9] bo'lsa, a[0] nimaga teng?", "Чему равно a[0], если a = [3, 7, 1, 9]?", ["3", "7", "1", "9"], 0],
+        ["a = [3, 7, 1, 9] bo'lsa, a[−1] nimaga teng?", "Чему равно a[−1], если a = [3, 7, 1, 9]?", ["3", "9", "1", ["Xato", "Ошибка"]], 1],
+        ["a = [3, 7, 1, 9] bo'lsa, len(a) nimaga teng?", "Чему равно len(a), если a = [3, 7, 1, 9]?", ["3", "5", "9", "4"], 3],
+        ["a.append(5) buyrug'i nima qiladi?", "Что делает команда a.append(5)?", [["Ro'yxat oxiriga 5 ni qo'shadi", "Добавляет 5 в конец списка"], ["Ro'yxat boshiga 5 ni qo'shadi", "Добавляет 5 в начало списка"], ["5-elementni o'chiradi", "Удаляет 5-й элемент"], ["Ro'yxatni 5 marta takrorlaydi", "Повторяет список 5 раз"]], 0],
+        ["sum([2, 4, 6]) nimaga teng?", "Чему равно sum([2, 4, 6])?", ["6", "3", "12", "246"], 2],
+        ["max([4, 9, 2]) nimaga teng?", "Чему равно max([4, 9, 2])?", ["4", "9", "2", "15"], 1],
+        ["a = [1, 2, 3]; a[1] = 10 — bajarilgandan keyin a qanday?", "Каким будет a после a = [1, 2, 3]; a[1] = 10?", ["[1, 10, 3]", "[10, 2, 3]", "[1, 2, 10]", "[1, 10, 2, 3]"], 0],
+        ["[5, 6, 7, 8][1:3] nimaga teng?", "Чему равно [5, 6, 7, 8][1:3]?", ["[5, 6, 7]", "[6, 7]", "[6, 7, 8]", "[5, 6]"], 1],
+        ["Python ro'yxatida birinchi elementning indeksi qancha?", "Каков индекс первого элемента списка в Python?", ["1", "−1", "0", ["Ixtiyoriy", "Любой"]], 2],
+        ["sorted([3, 1, 2]) nimaga teng?", "Чему равно sorted([3, 1, 2])?", ["[3, 2, 1]", "[3, 1, 2]", "[1, 3, 2]", "[1, 2, 3]"], 3]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "key": "informatika",
+  "from": 1,
+  "name": ["Informatika", "Информатика"],
+  "aliases": ["computer science", "informatics", "информатика и ИКТ"],
+  "topics": [
+    {
+      "t": ["Axborot va uning o'lchov birliklari", "Информация и единицы её измерения"],
+      "q": [
+        ["1 bayt necha bitga teng?", "Сколько бит в 1 байте?", ["8", "4", "16", "1024"], 0],
+        ["1 kilobayt necha baytga teng?", "Сколько байт в 1 килобайте?", ["1000", "1024", "512", "2048"], 1],
+        ["2 KB necha bitga teng?", "Сколько бит в 2 КБ?", ["2048", "16000", "16384", "8192"], 2],
+        ["3 bit yordamida nechta turli qiymatni kodlash mumkin?", "Сколько различных значений можно закодировать 3 битами?", ["3", "6", "8", "9"], 2],
+        ["Har bir belgi 8 bit bilan kodlangan 100 belgili matn qancha joy egallaydi?", "Сколько места занимает текст из 100 символов, если каждый символ кодируется 8 битами?", [["800 bayt", "800 байт"], ["100 bayt", "100 байт"], ["100 bit", "100 бит"], ["12,5 bayt", "12,5 байт"]], 1],
+        ["Axborotning eng kichik o'lchov birligi qaysi?", "Какова наименьшая единица измерения информации?", [["Bit", "Бит"], ["Bayt", "Байт"], ["Kilobayt", "Килобайт"], ["Belgi", "Символ"]], 0],
+        ["1 megabayt necha kilobaytga teng?", "Сколько килобайт в 1 мегабайте?", [["1000 KB", "1000 КБ"], ["512 KB", "512 КБ"], ["8 KB", "8 КБ"], ["1024 KB", "1024 КБ"]], 3],
+        ["UTF-16 kodlashda bitta belgi odatda necha bayt egallaydi?", "Сколько байт обычно занимает один символ в кодировке UTF-16?", [["1 bayt", "1 байт"], ["2 bayt", "2 байта"], ["4 bit", "4 бита"], ["8 bayt", "8 байт"]], 1],
+        ["64 xil belgini kodlash uchun kamida necha bit kerak?", "Сколько бит минимум нужно для кодирования 64 различных символов?", ["6", "8", "64", "5"], 0],
+        ["Quyidagilardan qaysi biri eng katta o'lchov birligi?", "Какая из единиц самая большая?", [["Gigabayt", "Гигабайт"], ["Megabayt", "Мегабайт"], ["Terabayt", "Терабайт"], ["Kilobayt", "Килобайт"]], 2]
+      ]
+    },
+    {
+      "t": ["Sanoq sistemalari", "Системы счисления"],
+      "q": [
+        ["1010₂ sonini o'nlik sanoq sistemasiga o'tkazing.", "Переведите число 1010₂ в десятичную систему.", ["10", "8", "12", "5"], 0],
+        ["25 sonini ikkilik sanoq sistemasiga o'tkazing.", "Переведите число 25 в двоичную систему.", ["10101", "11010", "11001", "10011"], 2],
+        ["17₈ sonini o'nlik sanoq sistemasiga o'tkazing.", "Переведите число 17₈ в десятичную систему.", ["17", "15", "13", "19"], 1],
+        ["FF₁₆ sonini o'nlik sanoq sistemasiga o'tkazing.", "Переведите число FF₁₆ в десятичную систему.", ["256", "240", "15", "255"], 3],
+        ["1011₂ + 110₂ yig'indini ikkilik sistemada toping.", "Найдите сумму 1011₂ + 110₂ в двоичной системе.", ["10001", "11101", "10011", "11001"], 0],
+        ["O'n oltilik sanoq sistemasida qanday raqamlar ishlatiladi?", "Какие цифры используются в шестнадцатеричной системе?", [["Faqat 0–9", "Только 0–9"], ["0–9 va A–F", "0–9 и A–F"], ["0–7", "0–7"], ["Faqat 0 va 1", "Только 0 и 1"]], 1],
+        ["Ikkilik sanoq sistemasida nechta raqam bor?", "Сколько цифр в двоичной системе счисления?", ["10", "1", "2", "8"], 2],
+        ["255 sonini o'n oltilik sistemada yozing.", "Запишите число 255 в шестнадцатеричной системе.", ["EF", "FF", "F0", "FE"], 1],
+        ["12 sonini sakkizlik sanoq sistemasiga o'tkazing.", "Переведите число 12 в восьмеричную систему.", ["12", "10", "16", "14"], 3],
+        ["4 xonali ikkilik son bilan ifodalanadigan eng katta manfiy bo'lmagan son qaysi?", "Какое наибольшее неотрицательное число можно записать 4-разрядным двоичным числом?", ["16", "15", "8", "31"], 1]
+      ]
+    },
+    {
+      "t": ["Kompyuter arxitekturasi", "Архитектура компьютера"],
+      "q": [
+        ["Kompyuterda ma'lumotlarni qayta ishlovchi asosiy qurilma qaysi?", "Какое устройство компьютера является основным для обработки данных?", [["Protsessor", "Процессор"], ["Monitor", "Монитор"], ["Klaviatura", "Клавиатура"], ["Printer", "Принтер"]], 0],
+        ["Kompyuter o'chirilganda ma'lumotlar qaysi xotiradan o'chib ketadi?", "Из какой памяти стираются данные при выключении компьютера?", [["Qattiq disk", "Жёсткий диск"], ["Operativ xotira (RAM)", "Оперативная память (ОЗУ)"], ["Fleshka", "Флешка"], ["Doimiy xotira (ROM)", "Постоянная память (ПЗУ)"]], 1],
+        ["Quyidagilardan qaysi biri kiritish qurilmasi?", "Какое из устройств является устройством ввода?", [["Monitor", "Монитор"], ["Printer", "Принтер"], ["Klaviatura", "Клавиатура"], ["Karnay", "Динамик"]], 2],
+        ["Quyidagilardan qaysi biri chiqarish qurilmasi?", "Какое из устройств является устройством вывода?", [["Sichqoncha", "Мышь"], ["Skaner", "Сканер"], ["Mikrofon", "Микрофон"], ["Printer", "Принтер"]], 3],
+        ["Fon Neyman tamoyillaridan biri qaysi?", "Какой из принципов относится к принципам фон Неймана?", [["Dastur va ma'lumotlar bitta xotirada saqlanadi", "Программа и данные хранятся в одной памяти"], ["Kompyuter faqat analog signal bilan ishlaydi", "Компьютер работает только с аналоговыми сигналами"], ["Xotira faqat o'qish uchun", "Память только для чтения"], ["Protsessor bo'lmaydi", "Процессор отсутствует"]], 0],
+        ["Protsessorning takt chastotasi qanday birlikda o'lchanadi?", "В каких единицах измеряется тактовая частота процессора?", [["Gigabayt", "Гигабайт"], ["Gigagers", "Гигагерц"], ["Vatt", "Ватт"], ["Piksel", "Пиксель"]], 1],
+        ["BIOS dasturi qaysi xotirada saqlanadi?", "В какой памяти хранится программа BIOS?", [["Operativ xotirada", "В оперативной памяти"], ["Kesh xotirada", "В кэш-памяти"], ["Doimiy xotirada (ROM/flash)", "В постоянной памяти (ПЗУ/флеш)"], ["Monitor xotirasida", "В памяти монитора"]], 2],
+        ["Ma'lumotlarni uzoq muddat saqlash uchun qaysi qurilma ishlatiladi?", "Какое устройство используют для долговременного хранения данных?", [["Protsessor", "Процессор"], ["Operativ xotira", "Оперативная память"], ["Videokarta", "Видеокарта"], ["Qattiq disk yoki SSD", "Жёсткий диск или SSD"]], 3],
+        ["Kompyuterning barcha qismlarini o'zaro bog'lovchi plata qanday ataladi?", "Как называется плата, соединяющая все части компьютера?", [["Ona plata", "Материнская плата"], ["Tarmoq kartasi", "Сетевая карта"], ["Tovush kartasi", "Звуковая карта"], ["Quvvat bloki", "Блок питания"]], 0],
+        ["GPU nima?", "Что такое GPU?", [["Markaziy protsessor", "Центральный процессор"], ["Grafik protsessor", "Графический процессор"], ["Quvvat bloki", "Блок питания"], ["Qattiq disk", "Жёсткий диск"]], 1]
+      ]
+    },
+    {
+      "t": ["Operatsion tizimlar va fayllar", "Операционные системы и файлы"],
+      "q": [
+        ["Quyidagilardan qaysi biri operatsion tizim?", "Что из перечисленного является операционной системой?", ["Windows", "Microsoft Word", "Google Chrome", "Excel"], 0],
+        [".docx kengaytmali fayl qanday fayl?", "Какой файл имеет расширение .docx?", [["Rasm", "Изображение"], ["Word hujjati", "Документ Word"], ["Musiqa", "Музыка"], ["Dastur", "Программа"]], 1],
+        ["Windowsda bajariladigan dastur fayli odatda qanday kengaytmaga ega?", "Какое расширение обычно имеет исполняемый файл программы в Windows?", [".txt", ".jpg", ".exe", ".mp3"], 2],
+        ["C:\\Hujjatlar\\hisobot.txt faylining kengaytmasini ko'rsating.", "Укажите расширение файла C:\\Документы\\отчёт.txt.", [["Hujjatlar", "Документы"], "C", ["hisobot", "отчёт"], "txt"], 3],
+        ["Belgilangan ob'ektni nusxalash uchun qaysi tugmalar birikmasi ishlatiladi?", "Какое сочетание клавиш копирует выделенный объект?", ["Ctrl+C", "Ctrl+V", "Ctrl+X", "Ctrl+Z"], 0],
+        ["Nusxalangan ob'ektni joylashtirish uchun qaysi tugmalar birikmasi ishlatiladi?", "Какое сочетание клавиш вставляет скопированный объект?", ["Ctrl+C", "Ctrl+V", "Ctrl+X", "Ctrl+A"], 1],
+        ["Oxirgi amalni bekor qilish uchun qaysi tugmalar birikmasi ishlatiladi?", "Какое сочетание клавиш отменяет последнее действие?", ["Ctrl+Y", "Ctrl+S", "Ctrl+Z", "Ctrl+P"], 2],
+        ["Quyidagilardan qaysi biri ochiq kodli operatsion tizim?", "Какая из операционных систем имеет открытый исходный код?", ["Windows", "Linux", "macOS", "iOS"], 1],
+        ["Quyidagilardan qaysi biri arxiv fayl formati?", "Какой из форматов является архивным?", [".png", ".exe", ".html", ".zip"], 3],
+        ["Operatsion tizimning asosiy vazifasi nima?", "Какова основная функция операционной системы?", [["Kompyuter qurilmalari va dasturlar ishini boshqarish", "Управление устройствами компьютера и работой программ"], ["Faqat matn yozish", "Только набор текста"], ["Faqat internetga ulanish", "Только подключение к интернету"], ["Rasmlarni chizish", "Рисование изображений"]], 0]
+      ]
+    },
+    {
+      "t": ["Mantiq asoslari", "Основы логики"],
+      "q": [
+        ["«A VA B» (konyunksiya) qachon rost bo'ladi?", "Когда истинно «A И B» (конъюнкция)?", [["A va B ikkalasi ham rost bo'lganda", "Когда A и B оба истинны"], ["Kamida bittasi rost bo'lganda", "Когда истинно хотя бы одно"], ["Ikkalasi ham yolg'on bo'lganda", "Когда оба ложны"], ["Hech qachon", "Никогда"]], 0],
+        ["«A YOKI B» (dizyunksiya) qachon yolg'on bo'ladi?", "Когда ложно «A ИЛИ B» (дизъюнкция)?", [["A rost bo'lganda", "Когда A истинно"], ["A va B ikkalasi ham yolg'on bo'lganda", "Когда A и B оба ложны"], ["B rost bo'lganda", "Когда B истинно"], ["Har doim", "Всегда"]], 1],
+        ["«EMAS (rost)» ning qiymati nima?", "Каково значение «НЕ (истина)»?", [["Rost", "Истина"], ["Yolg'on", "Ложь"], ["Aniqlanmagan", "Не определено"], ["Ikkalasi ham", "И то и другое"]], 1],
+        ["(1 VA 0) YOKI 1 ifodaning qiymatini toping.", "Найдите значение выражения (1 И 0) ИЛИ 1.", ["0", "1", ["Aniqlab bo'lmaydi", "Нельзя определить"], "2"], 1],
+        ["3 ta o'zgaruvchili mantiqiy ifodaning rostlik jadvali necha qatordan iborat (sarlavhasiz)?", "Сколько строк (без заголовка) в таблице истинности логического выражения с 3 переменными?", ["3", "6", "8", "9"], 2],
+        ["«A XOR B» (istisno qiluvchi YOKI) qachon rost bo'ladi?", "Когда истинно «A XOR B» (исключающее ИЛИ)?", [["Ikkalasi ham rost bo'lganda", "Когда оба истинны"], ["Ikkalasi ham yolg'on bo'lganda", "Когда оба ложны"], ["Har doim", "Всегда"], ["A va B ning qiymatlari har xil bo'lganda", "Когда значения A и B различны"]], 3],
+        ["De Morgan qonuniga ko'ra «EMAS (A VA B)» nimaga teng?", "Согласно закону де Моргана, «НЕ (A И B)» равно…", [["EMAS A YOKI EMAS B", "НЕ A ИЛИ НЕ B"], ["EMAS A VA EMAS B", "НЕ A И НЕ B"], ["A YOKI B", "A ИЛИ B"], ["A VA B", "A И B"]], 0],
+        ["«2 + 2 = 5» mulohazasi qanday?", "Каким является высказывание «2 + 2 = 5»?", [["Rost mulohaza", "Истинное высказывание"], ["Yolg'on mulohaza", "Ложное высказывание"], ["Mulohaza emas", "Не является высказыванием"], ["Ham rost, ham yolg'on", "И истинное, и ложное"]], 1],
+        ["Quyidagilardan qaysi biri mulohaza emas?", "Что из перечисленного не является высказыванием?", [["Toshkent — O'zbekiston poytaxti", "Ташкент — столица Узбекистана"], ["5 > 3", "5 > 3"], ["Soat necha bo'ldi?", "Который час?"], ["Qor oq rangda", "Снег белый"]], 2],
+        ["«A → B» (implikatsiya) qachon yolg'on bo'ladi?", "Когда ложна импликация «A → B»?", [["A yolg'on, B rost bo'lganda", "Когда A ложно, B истинно"], ["Ikkalasi ham rost bo'lganda", "Когда оба истинны"], ["Ikkalasi ham yolg'on bo'lganda", "Когда оба ложны"], ["A rost, B yolg'on bo'lganda", "Когда A истинно, B ложно"]], 3]
+      ]
+    }
+  ]
+}

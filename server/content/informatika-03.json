@@ -1,0 +1,83 @@
+{
+  "key": "informatika",
+  "from": 11,
+  "name": ["Informatika", "Информатика"],
+  "aliases": ["computer science", "informatics", "информатика и ИКТ"],
+  "topics": [
+    {
+      "t": ["Funksiyalar", "Функции"],
+      "q": [
+        ["Python tilida funksiya qaysi kalit so'z bilan e'lon qilinadi?", "Каким ключевым словом объявляется функция в Python?", ["def", "func", "function", "fn"], 0],
+        ["return operatori nima qiladi?", "Что делает оператор return?", [["Siklni takrorlaydi", "Повторяет цикл"], ["Funksiyadan qiymat qaytaradi", "Возвращает значение из функции"], ["Ekranga chiqaradi", "Выводит на экран"], ["O'zgaruvchi e'lon qiladi", "Объявляет переменную"]], 1],
+        ["def f(x): return x * 2 bo'lsa, f(5) nimaga teng?", "Чему равно f(5), если def f(x): return x * 2?", ["5", "10", "25", "7"], 1],
+        ["def f(a, b=3): return a + b bo'lsa, f(2) nimaga teng?", "Чему равно f(2), если def f(a, b=3): return a + b?", ["2", "3", "5", ["Xato", "Ошибка"]], 2],
+        ["Python tilida ro'yxat yoki satr uzunligini qaysi funksiya qaytaradi?", "Какая функция Python возвращает длину списка или строки?", ["size", "count", "length", "len"], 3],
+        ["abs(−7) nimaga teng?", "Чему равно abs(−7)?", ["−7", "7", "0", "49"], 1],
+        ["def f(n): return n if n < 2 else f(n−1) + f(n−2). f(6) nimaga teng?", "def f(n): return n if n < 2 else f(n−1) + f(n−2). Чему равно f(6)?", ["5", "13", "8", "6"], 2],
+        ["Rekursiv funksiya nima?", "Что такое рекурсивная функция?", [["O'zini o'zi chaqiradigan funksiya", "Функция, вызывающая саму себя"], ["Hech narsa qaytarmaydigan funksiya", "Функция, ничего не возвращающая"], ["Parametrsiz funksiya", "Функция без параметров"], ["Faqat bir marta chaqiriladigan funksiya", "Функция, вызываемая один раз"]], 0],
+        ["round(3.7) nimaga teng?", "Чему равно round(3.7)?", ["3", "3.7", "4.0", "4"], 3],
+        ["Lokal o'zgaruvchi nima?", "Что такое локальная переменная?", [["Faqat funksiya ichida ko'rinadigan o'zgaruvchi", "Переменная, видимая только внутри функции"], ["Butun dasturda ko'rinadigan o'zgaruvchi", "Переменная, видимая во всей программе"], ["O'zgarmas qiymat", "Константа"], ["Faylda saqlangan o'zgaruvchi", "Переменная, хранящаяся в файле"]], 0]
+      ]
+    },
+    {
+      "t": ["Satrlar bilan ishlash", "Работа со строками"],
+      "q": [
+        ["s = \"Python\" bo'lsa, len(s) nimaga teng?", "Чему равно len(s), если s = \"Python\"?", ["5", "6", "7", "1"], 1],
+        ["s = \"Python\" bo'lsa, s[0] nimaga teng?", "Чему равно s[0], если s = \"Python\"?", ["\"P\"", "\"y\"", "\"n\"", ["Xato", "Ошибка"]], 0],
+        ["\"abc\".upper() nimaga teng?", "Чему равно \"abc\".upper()?", ["\"abc\"", "\"Abc\"", "\"ABC\"", "\"aBC\""], 2],
+        ["\"ab\" * 3 nimaga teng?", "Чему равно \"ab\" * 3?", ["\"ab3\"", "\"ababab\"", "\"aaabbb\"", ["Xato", "Ошибка"]], 1],
+        ["\"salom dunyo\".split() natijasida nechta element hosil bo'ladi?", "Сколько элементов получится в результате \"привет мир\".split()?", ["1", "2", "11", "10"], 1],
+        ["\"Python\"[1:4] nimaga teng?", "Чему равно \"Python\"[1:4]?", ["\"Pyt\"", "\"ytho\"", "\"tho\"", "\"yth\""], 3],
+        ["\"hello\".find(\"l\") nimaga teng?", "Чему равно \"hello\".find(\"l\")?", ["2", "3", "1", "−1"], 0],
+        ["\"a,b,c\".replace(\",\", \"\") nimaga teng?", "Чему равно \"a,b,c\".replace(\",\", \"\")?", ["\"a b c\"", "\"a,b,c\"", "\"abc\"", "[\"a\", \"b\", \"c\"]"], 2],
+        ["str(25) + \"5\" nimaga teng?", "Чему равно str(25) + \"5\"?", ["\"255\"", "30", "\"30\"", ["Xato", "Ошибка"]], 0],
+        ["\"Hello\".lower() == \"hello\" ifodaning qiymati nima?", "Каково значение выражения \"Hello\".lower() == \"hello\"?", ["False", "True", "None", ["Xato", "Ошибка"]], 1]
+      ]
+    },
+    {
+      "t": ["Saralash va qidirish algoritmlari", "Алгоритмы сортировки и поиска"],
+      "q": [
+        ["Ikkilik (binar) qidiruv uchun massiv qanday bo'lishi kerak?", "Каким должен быть массив для двоичного (бинарного) поиска?", [["Tartiblangan", "Упорядоченным"], ["Bo'sh", "Пустым"], ["Faqat musbat sonlardan iborat", "Только из положительных чисел"], ["Takrorlanuvchi elementlarsiz", "Без повторяющихся элементов"]], 0],
+        ["n ta elementli massivda chiziqli qidiruv eng yomon holatda nechta solishtirish qiladi?", "Сколько сравнений в худшем случае делает линейный поиск в массиве из n элементов?", ["log₂n", "n", "n²", "1"], 1],
+        ["1024 ta elementli tartiblangan massivda ikkilik qidiruv taxminan nechta qadamda elementni topadi?", "Примерно за сколько шагов двоичный поиск находит элемент в упорядоченном массиве из 1024 элементов?", ["10", "512", "1024", "100"], 0],
+        ["Pufakchali saralash (bubble sort) qaysi elementlarni solishtiradi?", "Какие элементы сравнивает сортировка пузырьком?", [["Birinchi va oxirgi elementlarni", "Первый и последний"], ["Tasodifiy elementlarni", "Случайные элементы"], ["Qo'shni elementlarni", "Соседние элементы"], ["Faqat eng kattasini", "Только наибольший"]], 2],
+        ["Pufakchali saralashning murakkabligi qanday?", "Какова сложность сортировки пузырьком?", ["O(n)", "O(n²)", "O(log n)", "O(1)"], 1],
+        ["Tez saralash (quicksort) ning o'rtacha murakkabligi qanday?", "Какова средняя сложность быстрой сортировки (quicksort)?", ["O(n²)", "O(1)", "O(n log n)", "O(2ⁿ)"], 2],
+        ["[5, 1, 4, 2] massivi o'sish tartibida pufakchali saralashning birinchi o'tishidan keyin qanday bo'ladi?", "Каким станет массив [5, 1, 4, 2] после первого прохода сортировки пузырьком по возрастанию?", ["[1, 4, 2, 5]", "[1, 2, 4, 5]", "[5, 4, 2, 1]", "[1, 5, 4, 2]"], 0],
+        ["Tanlash orqali saralash (selection sort) g'oyasi qanday?", "В чём идея сортировки выбором (selection sort)?", [["Qo'shni elementlarni almashtirish", "Обмен соседних элементов"], ["Eng kichik elementni topib, boshiga qo'yish", "Найти минимальный элемент и поставить его в начало"], ["Massivni ikkiga bo'lish", "Деление массива пополам"], ["Elementlarni tasodifiy aralashtirish", "Случайное перемешивание элементов"]], 1],
+        ["Python tilida ro'yxatni joyida (o'zini) saralash qanday yoziladi?", "Как в Python отсортировать список на месте?", ["sort(a)", "a.order()", "a.sorted()", "a.sort()"], 3],
+        ["Python tilida a ro'yxatni kamayish tartibida saralangan nusxasini qanday olish mumkin?", "Как в Python получить копию списка a, отсортированную по убыванию?", ["sorted(a, reverse=True)", "sorted(a)", "a.reverse()", "max(a)"], 0]
+      ]
+    },
+    {
+      "t": ["Matn muharrirlari", "Текстовые редакторы"],
+      "q": [
+        ["Quyidagilardan qaysi biri matn protsessori?", "Что из перечисленного является текстовым процессором?", ["Microsoft Word", "Microsoft Excel", "Paint", "Windows Explorer"], 0],
+        ["Hujjatni saqlash uchun qaysi tugmalar birikmasi ishlatiladi?", "Какое сочетание клавиш сохраняет документ?", ["Ctrl+P", "Ctrl+S", "Ctrl+O", "Ctrl+N"], 1],
+        ["Matnni qalin (yarim qalin) qilish uchun qaysi tugmalar birikmasi ishlatiladi?", "Какое сочетание клавиш делает текст полужирным?", ["Ctrl+I", "Ctrl+B", "Ctrl+U", "Ctrl+E"], 1],
+        ["Matnni kursiv qilish uchun qaysi tugmalar birikmasi ishlatiladi?", "Какое сочетание клавиш делает текст курсивом?", ["Ctrl+B", "Ctrl+U", "Ctrl+I", "Ctrl+K"], 2],
+        ["Butun matnni belgilash uchun qaysi tugmalar birikmasi ishlatiladi?", "Какое сочетание клавиш выделяет весь текст?", ["Ctrl+C", "Ctrl+X", "Ctrl+L", "Ctrl+A"], 3],
+        ["Xatboshini «kenglik bo'yicha» tekislash nimani bildiradi?", "Что означает выравнивание абзаца «по ширине»?", [["Faqat chap chet bo'yicha", "Только по левому краю"], ["Ham chap, ham o'ng chet bo'yicha", "И по левому, и по правому краю"], ["Markaz bo'yicha", "По центру"], ["Faqat o'ng chet bo'yicha", "Только по правому краю"]], 1],
+        ["Shrift o'lchami odatda qanday birlikda o'lchanadi?", "В каких единицах обычно измеряется размер шрифта?", [["Punkt", "Пункты"], ["Bayt", "Байты"], ["Gers", "Герцы"], ["Vatt", "Ватты"]], 0],
+        ["Har bir sahifaning yuqori yoki pastki qismida takrorlanadigan matn qanday ataladi?", "Как называется текст, повторяющийся вверху или внизу каждой страницы?", [["Xatboshi", "Абзац"], ["Sarlavha", "Заголовок"], ["Kolontitul", "Колонтитул"], ["Izoh", "Сноска"]], 2],
+        ["Oddiy matn fayli qanday kengaytmaga ega?", "Какое расширение имеет простой текстовый файл?", [".txt", ".docx", ".xlsx", ".pptx"], 0],
+        ["Microsoft Word da «Topish va almashtirish» oynasini qaysi tugmalar birikmasi ochadi?", "Какое сочетание клавиш открывает окно «Найти и заменить» в Microsoft Word?", ["Ctrl+F", "Ctrl+H", "Ctrl+R", "Ctrl+G"], 1]
+      ]
+    },
+    {
+      "t": ["Elektron jadvallar", "Электронные таблицы"],
+      "q": [
+        ["Quyidagilardan qaysi biri elektron jadval dasturi?", "Какая из программ является электронной таблицей?", ["Microsoft Excel", "Microsoft Word", "Paint", "Notepad"], 0],
+        ["Elektron jadvalda katak manzili qanday yoziladi?", "Как записывается адрес ячейки в электронной таблице?", [["Faqat raqam bilan", "Только числом"], ["Ustun harfi va qator raqami bilan (masalan, B3)", "Буквой столбца и номером строки (например, B3)"], ["Faqat harf bilan", "Только буквой"], ["Qator raqami va ustun raqami bilan", "Номером строки и номером столбца"]], 1],
+        ["Elektron jadvalda formula qaysi belgidan boshlanadi?", "С какого знака начинается формула в электронной таблице?", ["=", "+", "#", "$"], 0],
+        ["A1 = 2, A2 = 4, A3 = 6 bo'lsa, =SUM(A1:A3) ning natijasi qancha?", "Если A1 = 2, A2 = 4, A3 = 6, то каков результат =SUM(A1:A3)?", ["6", "3", "12", "246"], 2],
+        ["=AVERAGE(2; 4; 6) ning natijasi qancha?", "Каков результат =AVERAGE(2; 4; 6)?", ["12", "6", "3", "4"], 3],
+        ["Qaysi yozuv absolyut havola?", "Какая запись является абсолютной ссылкой?", ["A1", "$A$1", "A$1", "&A1"], 1],
+        ["A1:B2 diapazonida nechta katak bor?", "Сколько ячеек в диапазоне A1:B2?", ["2", "4", "3", "6"], 1],
+        ["=MAX(3; 9; 5) ning natijasi qancha?", "Каков результат =MAX(3; 9; 5)?", ["3", "5", "9", "17"], 2],
+        ["=IF(5>3; \"Ha\"; \"Yo'q\") formulasining natijasi nima?", "Каков результат формулы =IF(5>3; \"Да\"; \"Нет\")?", [["Ha", "Да"], ["Yo'q", "Нет"], ["5", "5"], ["Xato", "Ошибка"]], 0],
+        ["Elektron jadvalda diagramma nima uchun ishlatiladi?", "Для чего в электронной таблице используют диаграммы?", [["Matnni tahrirlash uchun", "Для редактирования текста"], ["Ma'lumotlarni ko'rgazmali tasvirlash uchun", "Для наглядного представления данных"], ["Faylni arxivlash uchun", "Для архивации файла"], ["Internetga ulanish uchun", "Для подключения к интернету"]], 1]
+      ]
+    }
+  ]
+}
