@@ -1,0 +1,83 @@
+{
+  "key": "informatika",
+  "from": 21,
+  "name": ["Informatika", "Информатика"],
+  "aliases": ["computer science", "informatics", "информатика и ИКТ"],
+  "topics": [
+    {
+      "t": ["Axborot xavfsizligi", "Информационная безопасность"],
+      "q": [
+        ["Quyidagi parollardan qaysi biri eng ishonchli?", "Какой из паролей самый надёжный?", ["123456", "qwerty", "Q7#mVz!2pL", ["parol", "пароль"]], 2],
+        ["Fishing nima?", "Что такое фишинг?", [["Soxta sayt yoki xatlar orqali shaxsiy ma'lumotlarni o'g'irlashga urinish", "Попытка выманить личные данные через поддельные сайты или письма"], ["Kompyuterni tozalash", "Очистка компьютера"], ["Fayllarni arxivlash", "Архивация файлов"], ["Tarmoq tezligini oshirish", "Ускорение сети"]], 0],
+        ["Antivirus dasturi nima uchun kerak?", "Для чего нужна антивирусная программа?", [["Matn yozish uchun", "Для набора текста"], ["Zararli dasturlarni aniqlash va yo'q qilish uchun", "Для обнаружения и удаления вредоносных программ"], ["Internet tezligini oshirish uchun", "Для ускорения интернета"], ["Rasm chizish uchun", "Для рисования"]], 1],
+        ["Ikki bosqichli autentifikatsiya nima?", "Что такое двухфакторная аутентификация?", [["Ikkita parol yozish", "Ввод двух паролей подряд"], ["Ikki kompyuterdan kirish", "Вход с двух компьютеров"], ["Parolni ikki marta o'zgartirish", "Двойная смена пароля"], ["Parol va qo'shimcha tasdiqlash kodi orqali kirish", "Вход по паролю и дополнительному коду подтверждения"]], 3],
+        ["Zaxira nusxa (backup) nima uchun kerak?", "Для чего нужна резервная копия (backup)?", [["Ma'lumot yo'qolganda uni tiklash uchun", "Для восстановления данных при их потере"], ["Kompyuterni tezlashtirish uchun", "Для ускорения компьютера"], ["Virus yuqtirish uchun", "Для заражения вирусом"], ["Disk joyini tejash uchun", "Для экономии места на диске"]], 0],
+        ["Troyan dasturi nima?", "Что такое троянская программа?", [["Foydali antivirus", "Полезный антивирус"], ["Foydali dastur niqobidagi zararli dastur", "Вредоносная программа под видом полезной"], ["Matn muharriri", "Текстовый редактор"], ["Tarmoq kabeli", "Сетевой кабель"]], 1],
+        ["Tarmoqlararo ekran (firewall) nima qiladi?", "Что делает межсетевой экран (firewall)?", [["Ekranni yoritadi", "Подсвечивает экран"], ["Fayllarni chop etadi", "Печатает файлы"], ["Tarmoq trafigini nazorat qiladi va filtrlaydi", "Контролирует и фильтрует сетевой трафик"], ["Parol yaratadi", "Создаёт пароли"]], 2],
+        ["Quyidagi harakatlardan qaysi biri xavfli?", "Какое из действий опасно?", [["Dasturlarni yangilab turish", "Регулярно обновлять программы"], ["Parolni boshqalarga aytish", "Сообщать пароль другим людям"], ["Zaxira nusxa olish", "Делать резервные копии"], ["Antivirusdan foydalanish", "Пользоваться антивирусом"]], 1],
+        ["Shifrlash nimadan iborat?", "В чём суть шифрования?", [["Ma'lumotni kalitsiz o'qib bo'lmaydigan ko'rinishga keltirish", "Преобразование данных в вид, нечитаемый без ключа"], ["Ma'lumotni o'chirish", "Удаление данных"], ["Faylni siqish", "Сжатие файла"], ["Faylni nusxalash", "Копирование файла"]], 0],
+        ["Dasturlarni muntazam yangilab turish nimaga yordam beradi?", "Чему помогает регулярное обновление программ?", [["Monitorni yorqinroq qilishga", "Сделать монитор ярче"], ["Internetni bepul qilishga", "Сделать интернет бесплатным"], ["Fayllarni o'chirishga", "Удалить файлы"], ["Xavfsizlikdagi zaifliklarni bartaraf etishga", "Устранить уязвимости безопасности"]], 3]
+      ]
+    },
+    {
+      "t": ["Kompyuter grafikasi", "Компьютерная графика"],
+      "q": [
+        ["Rastrli tasvir nimalardan tashkil topgan?", "Из чего состоит растровое изображение?", [["Piksellardan", "Из пикселей"], ["Vektorlardan", "Из векторов"], ["Formulalardan", "Из формул"], ["Harflardan", "Из букв"]], 0],
+        ["Vektorli grafikaning asosiy afzalligi nima?", "В чём главное преимущество векторной графики?", [["Fotosuratlar uchun eng yaxshi", "Лучше всего для фотографий"], ["Sifatni yo'qotmasdan kattalashtiriladi", "Масштабируется без потери качества"], ["Har doim kichik hajmli emas", "Всегда большой объём"], ["Faqat oq-qora bo'ladi", "Только чёрно-белая"]], 1],
+        ["Ekranda ranglarni tasvirlash uchun qaysi rang modeli ishlatiladi?", "Какая цветовая модель используется для вывода на экран?", ["CMYK", "HSV", "RGB", "BMP"], 2],
+        ["Chop etishda qaysi rang modeli ishlatiladi?", "Какая цветовая модель используется в полиграфии?", ["RGB", "CMYK", "PNG", "GIF"], 1],
+        ["O'lchami 100×100 piksel, har bir piksel 24 bit bilan kodlangan tasvir qancha joy egallaydi?", "Сколько места занимает изображение 100×100 пикселей при 24 битах на пиксель?", [["30 000 bayt", "30 000 байт"], ["10 000 bayt", "10 000 байт"], ["240 000 bayt", "240 000 байт"], ["2400 bayt", "2400 байт"]], 0],
+        ["8 bit yordamida nechta turli rangni kodlash mumkin?", "Сколько различных цветов можно закодировать 8 битами?", ["8", "16", "256", "1024"], 2],
+        ["Qaysi format shaffoflikni qo'llab-quvvatlaydi va sifat yo'qotmaydi?", "Какой формат поддерживает прозрачность и сжимает без потерь?", ["JPEG", "BMP", "TXT", "PNG"], 3],
+        ["Quyidagilardan qaysi biri vektorli grafik muharriri?", "Какая из программ является векторным графическим редактором?", ["CorelDRAW", "Paint", "Notepad", "Excel"], 0],
+        ["Tasvir ruxsati (aniqligi) qanday birlikda o'lchanadi?", "В каких единицах измеряется разрешение изображения?", ["Hz", "dpi", "bit/s", "W"], 1],
+        ["RGB modelida oq rang qanday yoziladi?", "Как записывается белый цвет в модели RGB?", ["(0, 0, 0)", "(255, 0, 0)", "(255, 255, 255)", "(128, 128, 128)"], 2]
+      ]
+    },
+    {
+      "t": ["Obyektga yo'naltirilgan dasturlash", "Объектно-ориентированное программирование"],
+      "q": [
+        ["OYD da sinf (class) nima?", "Что такое класс в ООП?", [["Obyektlar uchun andoza (shablon)", "Шаблон (описание) для создания объектов"], ["O'zgaruvchi qiymati", "Значение переменной"], ["Sikl turi", "Вид цикла"], ["Xato turi", "Тип ошибки"]], 0],
+        ["Obyekt nima?", "Что такое объект?", [["Dastur nomi", "Имя программы"], ["Sinfning nusxasi (ekzemplyari)", "Экземпляр класса"], ["Fayl kengaytmasi", "Расширение файла"], ["Sharh", "Комментарий"]], 1],
+        ["Inkapsulyatsiya nima?", "Что такое инкапсуляция?", [["Bir sinfdan boshqasini hosil qilish", "Создание одного класса из другого"], ["Bir xil nomli metodlarning turlicha ishlashi", "Разное поведение одноимённых методов"], ["Ichki ma'lumotlarni yashirib, ularga metodlar orqali kirish", "Сокрытие внутренних данных с доступом через методы"], ["Dasturni o'chirish", "Удаление программы"]], 2],
+        ["Vorislik (meros) nima?", "Что такое наследование?", [["Ma'lumotlarni yashirish", "Сокрытие данных"], ["Xatoni ushlash", "Перехват ошибки"], ["Siklni takrorlash", "Повтор цикла"], ["Bir sinfning boshqa sinf xossa va metodlarini olishi", "Получение классом свойств и методов другого класса"]], 3],
+        ["Polimorfizm nima?", "Что такое полиморфизм?", [["Bir xil interfeysning turli sinflarda turlicha bajarilishi", "Разная реализация одного интерфейса в разных классах"], ["Faqat bitta sinf yaratish", "Создание только одного класса"], ["O'zgaruvchilarni o'chirish", "Удаление переменных"], ["Dasturni tezlashtirish", "Ускорение программы"]], 0],
+        ["Python tilida sinf qaysi kalit so'z bilan yaratiladi?", "Каким ключевым словом создаётся класс в Python?", ["def", "class", "object", "new"], 1],
+        ["Python tilida konstruktor metodi qanday nomlanadi?", "Как называется метод-конструктор в Python?", ["__init__", "__main__", "__str__", "constructor"], 0],
+        ["Python sinfi metodlaridagi self nimani bildiradi?", "Что обозначает self в методах класса Python?", [["Sinf nomini", "Имя класса"], ["Joriy obyektni", "Текущий объект"], ["Global o'zgaruvchini", "Глобальную переменную"], ["Modulni", "Модуль"]], 1],
+        ["class Dog(Animal): yozuvi nimani bildiradi?", "Что означает запись class Dog(Animal):?", [["Animal sinfi Dog dan meros oladi", "Класс Animal наследует от Dog"], ["Ikkala sinf bog'liq emas", "Классы не связаны"], ["Dog sinfi Animal sinfidan meros oladi", "Класс Dog наследует от класса Animal"], ["Dog — funksiya", "Dog — это функция"]], 2],
+        ["Metod nima?", "Что такое метод?", [["Sinfning o'zgaruvchisi", "Переменная класса"], ["Modul nomi", "Имя модуля"], ["Ma'lumotlar turi", "Тип данных"], ["Sinf ichida e'lon qilingan funksiya", "Функция, объявленная внутри класса"]], 3]
+      ]
+    },
+    {
+      "t": ["Python dasturlash tili", "Язык программирования Python"],
+      "q": [
+        ["print(\"Salom\") buyrug'i ekranga nimani chiqaradi?", "Что выведет команда print(\"Привет\")?", [["Salom", "Привет"], "print", ["Xato", "Ошибка"], ["Hech narsa", "Ничего"]], 0],
+        ["Python tilida foydalanuvchidan ma'lumot qaysi funksiya bilan kiritiladi?", "Какой функцией в Python вводятся данные от пользователя?", ["read()", "input()", "scan()", "get()"], 1],
+        ["Python tilida bir qatorli izoh qaysi belgi bilan boshlanadi?", "С какого символа начинается однострочный комментарий в Python?", ["#", "//", "/*", "--"], 0],
+        ["Python tilida kod bloklari nima yordamida ajratiladi?", "Чем выделяются блоки кода в Python?", [["Figurali qavslar bilan", "Фигурными скобками"], ["Chekinish (bo'sh joylar) bilan", "Отступами"], ["Nuqta-vergul bilan", "Точкой с запятой"], ["begin … end so'zlari bilan", "Словами begin … end"]], 1],
+        ["type(10) qaysi turni qaytaradi?", "Какой тип возвращает type(10)?", ["float", "str", "int", "number"], 2],
+        ["d = {\"a\": 1} bo'lsa, d[\"a\"] nimaga teng?", "Чему равно d[\"a\"], если d = {\"a\": 1}?", ["1", "\"a\"", "{\"a\": 1}", ["Xato", "Ошибка"]], 0],
+        ["Python tilidagi kortej (tuple) qanday xususiyatga ega?", "Каким свойством обладает кортеж (tuple) в Python?", [["Elementlarini o'zgartirish mumkin", "Его элементы можно менять"], ["Faqat sonlardan iborat", "Состоит только из чисел"], ["Cheksiz uzun", "Бесконечно длинный"], ["Yaratilgandan keyin o'zgartirib bo'lmaydi", "Его нельзя изменить после создания"]], 3],
+        ["len({1, 2, 2, 3}) nimaga teng?", "Чему равно len({1, 2, 2, 3})?", ["4", "3", "2", "1"], 1],
+        ["[x * x for x in range(4)] nimaga teng?", "Чему равно [x * x for x in range(4)]?", ["[0, 1, 4, 9]", "[1, 4, 9, 16]", "[0, 1, 2, 3]", "[0, 2, 4, 6]"], 0],
+        ["Python tilida xatolarni ushlash uchun qaysi konstruksiya ishlatiladi?", "Какая конструкция Python используется для перехвата ошибок?", ["if … else", "try … except", "for … in", "def … return"], 1]
+      ]
+    },
+    {
+      "t": ["Sun'iy intellekt asoslari", "Основы искусственного интеллекта"],
+      "q": [
+        ["Sun'iy intellekt (SI) nima?", "Что такое искусственный интеллект (ИИ)?", [["Odatda inson aqlini talab qiladigan vazifalarni bajaradigan tizimlarni yaratish sohasi", "Область создания систем, решающих задачи, обычно требующие человеческого интеллекта"], ["Kompyuter qurilmasi", "Устройство компьютера"], ["Dasturlash tili", "Язык программирования"], ["Antivirus turi", "Вид антивируса"]], 0],
+        ["Mashinali o'qitish nima?", "Что такое машинное обучение?", [["Kompyuterni yig'ish", "Сборка компьютера"], ["Tizimning ma'lumotlar asosida o'rganib, natijani yaxshilashi", "Способность системы обучаться на данных и улучшать результат"], ["Matnni chop etish", "Печать текста"], ["Klaviaturada yozishni o'rganish", "Обучение печати на клавиатуре"]], 1],
+        ["Sun'iy neyron tarmoqlar nimadan ilhomlanib yaratilgan?", "Чем вдохновлены искусственные нейронные сети?", [["Kompyuter tarmog'idan", "Компьютерной сетью"], ["Elektr zanjiridan", "Электрической цепью"], ["Inson miyasining tuzilishidan", "Устройством человеческого мозга"], ["Quyosh sistemasidan", "Солнечной системой"]], 2],
+        ["O'qituvchili o'qitish (supervised learning) qanday ma'lumotlardan foydalanadi?", "Какие данные использует обучение с учителем (supervised learning)?", [["To'g'ri javoblari belgilangan ma'lumotlardan", "Размеченные данные с правильными ответами"], ["Javobsiz ma'lumotlardan", "Неразмеченные данные"], ["Faqat rasmlardan", "Только изображения"], ["Hech qanday ma'lumotsiz", "Никаких данных"]], 0],
+        ["Tyuring testi nimani tekshiradi?", "Что проверяет тест Тьюринга?", [["Kompyuter tezligini", "Скорость компьютера"], ["Xotira hajmini", "Объём памяти"], ["Internet tezligini", "Скорость интернета"], ["Mashina xulqini insonnikidan ajratib bo'lmasligini", "Неотличимость поведения машины от человека"]], 3],
+        ["Chat-bot nima?", "Что такое чат-бот?", [["Kompyuter virusi", "Компьютерный вирус"], ["Tabiiy tilda muloqot qiluvchi dastur", "Программа, общающаяся на естественном языке"], ["Printer turi", "Вид принтера"], ["Elektron jadval", "Электронная таблица"]], 1],
+        ["Kompyuter ko'rishi (computer vision) qanday vazifani hal qiladi?", "Какую задачу решает компьютерное зрение?", [["Tasvirlardagi obyektlarni tanish", "Распознавание объектов на изображениях"], ["Musiqa yozish", "Запись музыки"], ["Elektr ta'minoti", "Электропитание"], ["Fayllarni arxivlash", "Архивация файлов"]], 0],
+        ["O'quv to'plami (training dataset) nima?", "Что такое обучающая выборка (training dataset)?", [["Dastur kodi", "Код программы"], ["Model natijasi", "Результат модели"], ["Modelni o'qitish uchun ishlatiladigan ma'lumotlar", "Данные, на которых обучают модель"], ["Kompyuter xotirasi", "Память компьютера"]], 2],
+        ["Klassifikatsiya masalasiga misol keltiring.", "Приведите пример задачи классификации.", [["Ikki sonni qo'shish", "Сложение двух чисел"], ["Xatni «spam» yoki «spam emas»ga ajratish", "Определение письма как «спам» или «не спам»"], ["Faylni nusxalash", "Копирование файла"], ["Ekranni o'chirish", "Выключение экрана"]], 1],
+        ["Sun'iy intellektdan foydalanishdagi muhim axloqiy muammo qaysi?", "Какая важная этическая проблема связана с использованием ИИ?", [["Klaviatura tugmalari soni", "Число клавиш на клавиатуре"], ["Monitor o'lchami", "Размер монитора"], ["Elektr narxi", "Цена электричества"], ["Ma'lumotlar maxfiyligi va qarorlardagi xolislik", "Конфиденциальность данных и непредвзятость решений"]], 3]
+      ]
+    }
+  ]
+}

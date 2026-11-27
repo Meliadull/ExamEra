@@ -1,0 +1,83 @@
+{
+  "key": "informatika",
+  "from": 16,
+  "name": ["Informatika", "Информатика"],
+  "aliases": ["computer science", "informatics", "информатика и ИКТ"],
+  "topics": [
+    {
+      "t": ["Ma'lumotlar bazalari", "Базы данных"],
+      "q": [
+        ["Quyidagilardan qaysi biri ma'lumotlar bazasini boshqarish tizimi (MBBT)?", "Что из перечисленного является системой управления базами данных (СУБД)?", ["MySQL", "Photoshop", "Microsoft Word", "Google Chrome"], 0],
+        ["Relyatsion ma'lumotlar bazasida ma'lumotlar qanday shaklda saqlanadi?", "В каком виде хранятся данные в реляционной базе данных?", [["Daraxt shaklida", "В виде дерева"], ["Jadvallar shaklida", "В виде таблиц"], ["Rasmlar shaklida", "В виде изображений"], ["Bitta matn sifatida", "Одним текстом"]], 1],
+        ["Jadvalning bitta qatori qanday ataladi?", "Как называется одна строка таблицы базы данных?", [["Yozuv", "Запись"], ["Maydon", "Поле"], ["Kalit", "Ключ"], ["Indeks", "Индекс"]], 0],
+        ["Jadvalning ustuni qanday ataladi?", "Как называется столбец таблицы базы данных?", [["Yozuv", "Запись"], ["Maydon", "Поле"], ["Jadval", "Таблица"], ["So'rov", "Запрос"]], 1],
+        ["Birlamchi kalit (primary key) nima?", "Что такое первичный ключ (primary key)?", [["Jadvaldagi birinchi ustun", "Первый столбец таблицы"], ["Parol", "Пароль"], ["Har bir yozuvni yagona aniqlovchi maydon", "Поле, однозначно определяющее каждую запись"], ["Eng katta qiymat", "Наибольшее значение"]], 2],
+        ["Bitta o'qituvchining ko'p o'quvchisi bor. Bu qanday bog'lanish?", "У одного учителя много учеников. Какой это тип связи?", [["Birga-bir", "Один к одному"], ["Birga-ko'p", "Один ко многим"], ["Ko'pga-ko'p", "Многие ко многим"], ["Bog'lanish yo'q", "Связи нет"]], 1],
+        ["Ma'lumotlar bazasida so'rov (query) nima uchun ishlatiladi?", "Для чего используется запрос (query) в базе данных?", [["Kompyuterni o'chirish uchun", "Для выключения компьютера"], ["Jadvalni chop etish uchun", "Для печати таблицы"], ["Shriftni o'zgartirish uchun", "Для изменения шрифта"], ["Shartlar bo'yicha ma'lumotlarni tanlash uchun", "Для выборки данных по условиям"]], 3],
+        ["Tashqi kalit (foreign key) nima?", "Что такое внешний ключ (foreign key)?", [["Boshqa jadvalning birlamchi kalitiga havola qiluvchi maydon", "Поле, ссылающееся на первичный ключ другой таблицы"], ["Jadvalning oxirgi ustuni", "Последний столбец таблицы"], ["Ma'lumotlar bazasi paroli", "Пароль базы данных"], ["Jadval nomi", "Имя таблицы"]], 0],
+        ["Quyidagilardan qaysi biri MBBT emas?", "Что из перечисленного не является СУБД?", ["PostgreSQL", "SQLite", "Microsoft Paint", "Oracle"], 2],
+        ["Ma'lumotlar bazasini normallashtirishdan maqsad nima?", "Какова цель нормализации базы данных?", [["Ma'lumotlarni o'chirish", "Удаление данных"], ["Ortiqcha takrorlanishni kamaytirish", "Уменьшение избыточности данных"], ["Jadvallarni ko'paytirish", "Увеличение числа таблиц"], ["Parolni o'rnatish", "Установка пароля"]], 1]
+      ]
+    },
+    {
+      "t": ["SQL asoslari", "Основы SQL"],
+      "q": [
+        ["students jadvalidan barcha ustunlarni tanlash so'rovini ko'rsating.", "Укажите запрос, выбирающий все столбцы из таблицы students.", ["SELECT * FROM students", "GET ALL students", "SHOW students *", "SELECT students"], 0],
+        ["SQL da yozuvlarni shart bo'yicha filtrlash uchun qaysi kalit so'z ishlatiladi?", "Какое ключевое слово SQL фильтрует записи по условию?", ["ORDER BY", "WHERE", "GROUP BY", "FROM"], 1],
+        ["SQL da natijani saralash uchun qaysi kalit so'z ishlatiladi?", "Какое ключевое слово SQL сортирует результат?", ["SORT BY", "ORDER BY", "GROUP BY", "WHERE"], 1],
+        ["SQL da qatorlar sonini qaysi funksiya hisoblaydi?", "Какая функция SQL считает количество строк?", ["SUM(*)", "MAX(*)", "COUNT(*)", "LEN(*)"], 2],
+        ["Jadvalga yangi yozuv qo'shish qaysi buyruq bilan bajariladi?", "Какой командой добавляют новую запись в таблицу?", ["ADD", "INSERT INTO", "UPDATE", "PUT"], 1],
+        ["Jadvaldan yozuvlarni o'chirish qaysi buyruq bilan bajariladi?", "Какой командой удаляют записи из таблицы?", ["REMOVE", "ERASE", "DELETE FROM", "CLEAR"], 2],
+        ["Mavjud yozuvlarni o'zgartirish qaysi buyruq bilan bajariladi?", "Какой командой изменяют существующие записи?", ["CHANGE", "MODIFY", "INSERT", "UPDATE … SET"], 3],
+        ["SELECT name FROM people WHERE age > 18 so'rovi nimani qaytaradi?", "Что возвращает запрос SELECT name FROM people WHERE age > 18?", [["18 yoshdan katta odamlarning ismlarini", "Имена людей старше 18 лет"], ["Barcha odamlarning yoshini", "Возраст всех людей"], ["18 yoshli odamlar sonini", "Число людей в возрасте 18 лет"], ["Jadval nomini", "Имя таблицы"]], 0],
+        ["SQL da takrorlanuvchi qiymatlarni chiqarib tashlash uchun qaysi kalit so'z ishlatiladi?", "Какое ключевое слово SQL исключает повторяющиеся значения?", ["UNIQUE", "DISTINCT", "DIFFERENT", "ONLY"], 1],
+        ["SQL da ikki jadvalni bog'lab so'rov yozish uchun qaysi kalit so'z ishlatiladi?", "Какое ключевое слово SQL соединяет две таблицы в запросе?", ["LINK", "MERGE", "CONNECT", "JOIN"], 3]
+      ]
+    },
+    {
+      "t": ["Kompyuter tarmoqlari", "Компьютерные сети"],
+      "q": [
+        ["LAN qanday tarmoq?", "Что такое LAN?", [["Lokal (mahalliy) tarmoq", "Локальная сеть"], ["Global tarmoq", "Глобальная сеть"], ["Mintaqaviy tarmoq", "Региональная сеть"], ["Sun'iy yo'ldosh aloqasi", "Спутниковая связь"]], 0],
+        ["Dunyodagi eng katta global kompyuter tarmog'i qaysi?", "Какая компьютерная сеть самая большая в мире?", [["Lokal tarmoq", "Локальная сеть"], ["Internet", "Интернет"], ["Intranet", "Интранет"], ["Bluetooth", "Bluetooth"]], 1],
+        ["Tarmoqlarni bog'lab, ma'lumot paketlarini yo'naltiruvchi qurilma qanday ataladi?", "Как называется устройство, соединяющее сети и направляющее пакеты данных?", [["Monitor", "Монитор"], ["Printer", "Принтер"], ["Marshrutizator (router)", "Маршрутизатор (роутер)"], ["Skaner", "Сканер"]], 2],
+        ["Quyidagilardan qaysi biri to'g'ri IPv4 manzil?", "Какой из адресов является правильным IPv4-адресом?", ["192.168.1.1", "256.300.1.1", "192.168.1", "abc.def.gh.ij"], 0],
+        ["IPv4 manzil necha bitdan iborat?", "Сколько бит в IPv4-адресе?", ["64", "128", "16", "32"], 3],
+        ["«Yulduz» topologiyasida kompyuterlar qanday ulanadi?", "Как соединены компьютеры в топологии «звезда»?", [["Ketma-ket halqa bo'ylab", "Последовательно по кольцу"], ["Hammasi markaziy tugunga", "Все к центральному узлу"], ["Bitta umumiy kabelga", "К одному общему кабелю"], ["Umuman ulanmaydi", "Не соединены"]], 1],
+        ["Ma'lumot uzatish tezligi qanday birlikda o'lchanadi?", "В каких единицах измеряется скорость передачи данных?", [["bit/s", "бит/с"], ["Gers", "Герцы"], ["Vatt", "Ватты"], ["Piksel", "Пиксели"]], 0],
+        ["Wi-Fi nima?", "Что такое Wi-Fi?", [["Dasturlash tili", "Язык программирования"], ["Operatsion tizim", "Операционная система"], ["Simsiz tarmoq texnologiyasi", "Технология беспроводной сети"], ["Antivirus", "Антивирус"]], 2],
+        ["MAC-manzil nima?", "Что такое MAC-адрес?", [["Tarmoq adapterining yagona apparat manzili", "Уникальный аппаратный адрес сетевого адаптера"], ["Sayt manzili", "Адрес сайта"], ["Elektron pochta manzili", "Адрес электронной почты"], ["Uy manzili", "Домашний адрес"]], 0],
+        ["Tarmoq protokoli nima?", "Что такое сетевой протокол?", [["Kabel turi", "Тип кабеля"], ["Ma'lumot almashish qoidalari to'plami", "Набор правил обмена данными"], ["Kompyuter nomi", "Имя компьютера"], ["Antivirus dasturi", "Антивирусная программа"]], 1]
+      ]
+    },
+    {
+      "t": ["Internet va veb-texnologiyalar", "Интернет и веб-технологии"],
+      "q": [
+        ["Butunjahon o'rgimchak to'ri (WWW) ni kim yaratgan?", "Кто создал Всемирную паутину (WWW)?", [["Tim Berners-Li", "Тим Бернерс-Ли"], ["Bill Geyts", "Билл Гейтс"], ["Stiv Jobs", "Стив Джобс"], ["Mark Sukerberg", "Марк Цукерберг"]], 0],
+        ["Veb-sahifalarni uzatish uchun qaysi protokol ishlatiladi?", "Какой протокол используется для передачи веб-страниц?", ["FTP", "HTTP", "SMTP", "POP3"], 1],
+        ["HTTPS ning HTTP dan farqi nima?", "Чем HTTPS отличается от HTTP?", [["Tezroq ishlaydi", "Работает быстрее"], ["Faqat rasmlar uchun", "Только для изображений"], ["Ma'lumotlar shifrlangan holda uzatiladi", "Данные передаются в зашифрованном виде"], ["Farqi yo'q", "Ничем"]], 2],
+        ["DNS nima qiladi?", "Что делает DNS?", [["Domen nomlarini IP-manzillarga aylantiradi", "Преобразует доменные имена в IP-адреса"], ["Fayllarni arxivlaydi", "Архивирует файлы"], ["Viruslarni o'chiradi", "Удаляет вирусы"], ["Xat yuboradi", "Отправляет письма"]], 0],
+        ["Quyidagilardan qaysi biri to'g'ri URL manzil?", "Какой из вариантов является правильным URL-адресом?", ["example", "192", "@mail", "https://example.uz/page"], 3],
+        ["Elektron pochta xatlarini yuborish uchun qaysi protokol ishlatiladi?", "Какой протокол используется для отправки электронных писем?", ["SMTP", "HTTP", "FTP", "DNS"], 0],
+        ["Quyidagilardan qaysi biri brauzer?", "Что из перечисленного является браузером?", ["Windows", "Excel", "Google Chrome", "Python"], 2],
+        [".uz domeni qaysi davlatga tegishli?", "Какой стране принадлежит домен .uz?", [["O'zbekiston", "Узбекистан"], ["Ukraina", "Украина"], ["Urugvay", "Уругвай"], ["AQSh", "США"]], 0],
+        ["Qidiruv tizimiga misol keltiring.", "Приведите пример поисковой системы.", ["Microsoft Word", "Google", "Windows", "Photoshop"], 1],
+        ["Cookie (kuki) nima?", "Что такое cookie?", [["Virus turi", "Вид вируса"], ["Dasturlash tili", "Язык программирования"], ["Tarmoq kabeli", "Сетевой кабель"], ["Sayt brauzerda saqlaydigan kichik ma'lumot", "Небольшие данные, которые сайт сохраняет в браузере"]], 3]
+      ]
+    },
+    {
+      "t": ["HTML va CSS asoslari", "Основы HTML и CSS"],
+      "q": [
+        ["HTML nima?", "Что такое HTML?", [["Gipermatnni belgilash tili", "Язык гипертекстовой разметки"], ["Dasturlash tili", "Язык программирования"], ["Ma'lumotlar bazasi", "База данных"], ["Operatsion tizim", "Операционная система"]], 0],
+        ["Eng katta sarlavha qaysi teg bilan yoziladi?", "Каким тегом обозначается самый крупный заголовок?", ["<h6>", "<h1>", "<head>", "<title>"], 1],
+        ["Havola (giperhavola) qaysi teg bilan yaratiladi?", "Каким тегом создаётся гиперссылка?", ["<a>", "<link>", "<href>", "<url>"], 0],
+        ["Rasm qaysi teg bilan joylashtiriladi?", "Каким тегом вставляется изображение?", ["<image>", "<img>", "<pic>", "<src>"], 1],
+        ["Xatboshi (paragraf) qaysi teg bilan yoziladi?", "Каким тегом обозначается абзац?", ["<par>", "<pg>", "<p>", "<text>"], 2],
+        ["CSS nima uchun ishlatiladi?", "Для чего используется CSS?", [["Ma'lumotlar bazasi uchun", "Для баз данных"], ["Server dasturlash uchun", "Для серверного программирования"], ["Hisob-kitob uchun", "Для вычислений"], ["Sahifa ko'rinishini (dizaynini) bezash uchun", "Для оформления внешнего вида страницы"]], 3],
+        ["CSS da matn rangi qaysi xossa bilan beriladi?", "Каким свойством CSS задаётся цвет текста?", ["color", "font-color", "text-color", "fg"], 0],
+        ["CSS da sinf (class) selektori qaysi belgi bilan boshlanadi?", "С какого символа начинается селектор класса в CSS?", ["#", ".", "*", "@"], 1],
+        ["CSS da identifikator (id) selektori qaysi belgi bilan boshlanadi?", "С какого символа начинается селектор идентификатора (id) в CSS?", [".", "#", "&", "%"], 1],
+        ["Tartiblanmagan (belgili) ro'yxat qaysi teg bilan yaratiladi?", "Каким тегом создаётся маркированный (неупорядоченный) список?", ["<ol>", "<li>", "<ul>", "<list>"], 2]
+      ]
+    }
+  ]
+}
