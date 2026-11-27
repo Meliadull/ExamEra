@@ -1,0 +1,83 @@
+{
+  "key": "kimyo",
+  "from": 21,
+  "name": ["Kimyo", "Химия"],
+  "aliases": ["chemistry"],
+  "topics": [
+    {
+      "t": ["Azot, fosfor va ularning birikmalari", "Азот, фосфор и их соединения"],
+      "q": [
+        ["Havo tarkibida hajm bo'yicha taxminan necha foiz azot bor?", "Сколько примерно процентов азота по объёму в воздухе?", ["21%", "78%", "1%", "50%"], 1],
+        ["Ammiakning formulasini ko'rsating.", "Укажите формулу аммиака.", ["NH₃", "N₂O", "HNO₃", "NH₄Cl"], 0],
+        ["Sanoatda ammiak sintezida qaysi katalizatordan foydalaniladi?", "Какой катализатор используют при синтезе аммиака в промышленности?", [["Platina", "Платину"], ["Nikel", "Никель"], ["Temir", "Железо"], ["Mis", "Медь"]], 2],
+        ["Ammoniy ionining formulasini ko'rsating.", "Укажите формулу иона аммония.", ["NH₃", "NH₄⁺", "NO₃⁻", "NO₂⁻"], 1],
+        ["Mis konsentrlangan nitrat kislota bilan reaksiyaga kirishganda qanday qo'ng'ir gaz ajraladi?", "Какой бурый газ выделяется при реакции меди с концентрированной азотной кислотой?", ["H₂", "N₂", "NH₃", "NO₂"], 3],
+        ["Fosforning eng muhim allotropik shakllari qaysilar?", "Какие основные аллотропные модификации фосфора?", [["Oq va qizil fosfor", "Белый и красный фосфор"], ["Olmos va grafit", "Алмаз и графит"], ["O₂ va O₃", "O₂ и O₃"], ["Rombik va monoklinik", "Ромбическая и моноклинная"]], 0],
+        ["Fosforning qaysi shakli juda zaharli va qorong'ida shu'lalanadi?", "Какая модификация фосфора очень ядовита и светится в темноте?", [["Qizil fosfor", "Красный фосфор"], ["Oq fosfor", "Белый фосфор"], ["Qora fosfor", "Чёрный фосфор"], ["Kalsiy fosfat", "Фосфат кальция"]], 1],
+        ["Quyidagilardan qaysi biri azotli o'g'it?", "Какое из веществ является азотным удобрением?", ["Ca₃(PO₄)₂", "KCl", "NH₄NO₃", "CaCO₃"], 2],
+        ["Ortofosfat kislotaning formulasini ko'rsating.", "Укажите формулу ортофосфорной кислоты.", ["HPO₃", "H₃PO₄", "H₃PO₃", "P₂O₅"], 1],
+        ["Azot molekulasi nima uchun juda barqaror?", "Почему молекула азота очень устойчива?", [["Unda ion bog' bor", "В ней ионная связь"], ["U og'ir molekula", "Это тяжёлая молекула"], ["Unda vodorod bog' bor", "В ней водородная связь"], ["Atomlari orasida uch karrali bog' bor", "Между атомами тройная связь"]], 3]
+      ]
+    },
+    {
+      "t": ["Uglerod va kremniy", "Углерод и кремний"],
+      "q": [
+        ["Uglerodning allotropik shakllari qaysilar?", "Какие аллотропные модификации образует углерод?", [["Olmos va grafit", "Алмаз и графит"], ["Kvars va qum", "Кварц и песок"], ["Ozon va kislorod", "Озон и кислород"], ["Oq va qizil fosfor", "Белый и красный фосфор"]], 0],
+        ["Grafit elektr tokini o'tkazadimi?", "Проводит ли графит электрический ток?", [["Yo'q", "Нет"], ["Ha, o'tkazadi", "Да, проводит"], ["Faqat qizdirilganda", "Только при нагревании"], ["Faqat suvda", "Только в воде"]], 1],
+        ["Is gazi (CO) qanday modda?", "Что представляет собой угарный газ (CO)?", [["Zararsiz gaz", "Безвредный газ"], ["Kislota", "Кислоту"], ["Zaharli gaz", "Ядовитый газ"], ["Inert gaz", "Инертный газ"]], 2],
+        ["Karbonat angidrid (CO₂) qanday aniqlanadi?", "Как обнаруживают углекислый газ (CO₂)?", [["Lakmus qizaradi", "Лакмус краснеет"], ["Alanga ko'karadi", "Пламя синеет"], ["O'tkir hid bilan", "По резкому запаху"], ["Ohakli suv loyqalanadi", "Известковая вода мутнеет"]], 3],
+        ["Kvars va qumning asosiy tarkibiy qismi qaysi?", "Что является основой кварца и песка?", ["SiO₂", "SiC", "Si", "H₂SiO₃"], 0],
+        ["Laboratoriyada CO₂ qanday olinadi?", "Как получают CO₂ в лаборатории?", [["Ko'mirni suvda eritib", "Растворением угля в воде"], ["Marmarga xlorid kislota ta'sir ettirib", "Действием соляной кислоты на мрамор"], ["Kislorodni qizdirib", "Нагреванием кислорода"], ["Suvni elektroliz qilib", "Электролизом воды"]], 1],
+        ["Kremniy asosan qayerda qo'llaniladi?", "Где в основном применяется кремний?", [["Oziq-ovqatda", "В пище"], ["Dori sifatida", "Как лекарство"], ["Yarimo'tkazgichlar ishlab chiqarishda", "В производстве полупроводников"], ["Yoqilg'i sifatida", "Как топливо"]], 2],
+        ["Shishaning asosiy tarkibiy qismi qaysi?", "Что является основным компонентом стекла?", ["CaCO₃", "SiO₂", "NaCl", "Al₂O₃"], 1],
+        ["Faollashtirilgan ko'mir nima uchun ishlatiladi?", "Для чего используют активированный уголь?", [["Moddalarni yutish (adsorbsiya) uchun", "Для поглощения веществ (адсорбции)"], ["Oksidlash uchun", "Для окисления"], ["Bo'yash uchun", "Для окрашивания"], ["Eritish uchun", "Для плавления"]], 0],
+        ["Metan (CH₄) da uglerodning oksidlanish darajasini toping.", "Найдите степень окисления углерода в метане (CH₄).", ["+4", "−4", "0", "+2"], 1]
+      ]
+    },
+    {
+      "t": ["Uglevodorodlar", "Углеводороды"],
+      "q": [
+        ["Alkanlarning umumiy formulasini ko'rsating.", "Укажите общую формулу алканов.", ["CₙH₂ₙ₊₂", "CₙH₂ₙ", "CₙH₂ₙ₋₂", "CₙHₙ"], 0],
+        ["Eng oddiy alkan qaysi?", "Какой алкан самый простой?", ["C₂H₆", "CH₄", "C₂H₄", "C₂H₂"], 1],
+        ["Etilenning formulasini ko'rsating.", "Укажите формулу этилена.", ["C₂H₆", "C₂H₂", "C₂H₄", "C₆H₆"], 2],
+        ["Atsetilen (C₂H₂) qaysi sinfga kiradi?", "К какому классу относится ацетилен (C₂H₂)?", [["Alkanlar", "Алканы"], ["Alkenlar", "Алкены"], ["Arenlar", "Арены"], ["Alkinlar", "Алкины"]], 3],
+        ["Benzolning formulasini ko'rsating.", "Укажите формулу бензола.", ["C₆H₁₂", "C₆H₆", "C₆H₁₄", "C₅H₅"], 1],
+        ["Alkenlar uchun qaysi reaksiya xarakterli?", "Какая реакция характерна для алкенов?", [["Birikish", "Присоединение"], ["O'rin olish", "Замещение"], ["Parchalanish", "Разложение"], ["Neytrallanish", "Нейтрализация"]], 0],
+        ["Izomerlar nima?", "Что такое изомеры?", [["Bir xil tuzilishli, har xil formulali moddalar", "Вещества с одинаковым строением, но разными формулами"], ["Bir xil moddalar", "Одинаковые вещества"], ["Molekulyar formulasi bir xil, tuzilishi har xil moddalar", "Вещества с одинаковой молекулярной формулой, но разным строением"], ["Bir xil massali atomlar", "Атомы с одинаковой массой"]], 2],
+        ["C₃H₈ qanday ataladi?", "Как называется C₃H₈?", [["Butan", "Бутан"], ["Propan", "Пропан"], ["Etan", "Этан"], ["Metan", "Метан"]], 1],
+        ["Tabiiy gazning asosiy tarkibiy qismi qaysi?", "Что является основным компонентом природного газа?", [["Metan", "Метан"], ["Etan", "Этан"], ["Propan", "Пропан"], ["Butan", "Бутан"]], 0],
+        ["Polietilen qaysi moddani polimerlab olinadi?", "Полимеризацией какого вещества получают полиэтилен?", [["Metan", "Метана"], ["Benzol", "Бензола"], ["Atsetilen", "Ацетилена"], ["Etilen", "Этилена"]], 3]
+      ]
+    },
+    {
+      "t": ["Spirtlar, fenollar va karbon kislotalar", "Спирты, фенолы и карбоновые кислоты"],
+      "q": [
+        ["Spirtlarning funksional guruhi qaysi?", "Какова функциональная группа спиртов?", ["−OH", "−COOH", "−CHO", "−NH₂"], 0],
+        ["Etil spirtining formulasini ko'rsating.", "Укажите формулу этилового спирта.", ["CH₃OH", "C₂H₅OH", "C₃H₇OH", "C₆H₅OH"], 1],
+        ["Karboksil guruhni ko'rsating.", "Укажите карбоксильную группу.", ["−OH", "−CHO", "−COOH", "−NH₂"], 2],
+        ["Sirka kislotaning formulasini ko'rsating.", "Укажите формулу уксусной кислоты.", ["HCOOH", "C₂H₅OH", "CH₃CHO", "CH₃COOH"], 3],
+        ["Metil spirti (metanol) qanday xususiyatga ega?", "Чем опасен метиловый спирт (метанол)?", [["Juda zaharli", "Он очень ядовит"], ["Zararsiz", "Безвреден"], ["Oziq-ovqat mahsuloti", "Это пищевой продукт"], ["Yonmaydi", "Не горит"]], 0],
+        ["Fenolning formulasini ko'rsating.", "Укажите формулу фенола.", ["C₆H₆", "C₆H₅OH", "C₆H₁₂O₆", "CH₃OH"], 1],
+        ["Eterifikatsiya reaksiyasi nima?", "Что такое реакция этерификации?", [["Spirtning yonishi", "Горение спирта"], ["Kislotaning neytrallanishi", "Нейтрализация кислоты"], ["Kislota va spirtdan murakkab efir va suv hosil bo'lishi", "Образование сложного эфира и воды из кислоты и спирта"], ["Spirtning parchalanishi", "Разложение спирта"]], 2],
+        ["Glitserin qanday modda?", "Что представляет собой глицерин?", [["Bir atomli spirt", "Одноатомный спирт"], ["Uch atomli spirt", "Трёхатомный спирт"], ["Karbon kislota", "Карбоновую кислоту"], ["Fenol", "Фенол"]], 1],
+        ["Aldegidlarning funksional guruhi qaysi?", "Какова функциональная группа альдегидов?", ["−OH", "−COOH", "−CO−", "−CHO"], 3],
+        ["Etil spirti qaysi moddaning bijg'ishidan olinadi?", "Брожением какого вещества получают этиловый спирт?", [["Glyukoza", "Глюкозы"], ["Oqsil", "Белка"], ["Yog'", "Жира"], ["Polietilen", "Полиэтилена"]], 0]
+      ]
+    },
+    {
+      "t": ["Uglevodlar, oqsillar va polimerlar", "Углеводы, белки и полимеры"],
+      "q": [
+        ["Glyukozaning formulasini ko'rsating.", "Укажите формулу глюкозы.", ["C₆H₁₂O₆", "C₁₂H₂₂O₁₁", "(C₆H₁₀O₅)ₙ", "C₆H₆"], 0],
+        ["Saxarozaning formulasini ko'rsating.", "Укажите формулу сахарозы.", ["C₆H₁₂O₆", "C₁₂H₂₂O₁₁", "(C₆H₁₀O₅)ₙ", "C₂H₅OH"], 1],
+        ["Kraxmal va sellyulozaning umumiy formulasini ko'rsating.", "Укажите общую формулу крахмала и целлюлозы.", ["C₆H₁₂O₆", "C₁₂H₂₂O₁₁", "(C₆H₁₀O₅)ₙ", "CₙH₂ₙ"], 2],
+        ["Oqsillar qanday birikmalardan tashkil topgan?", "Из каких соединений состоят белки?", [["Glyukozadan", "Из глюкозы"], ["Yog' kislotalardan", "Из жирных кислот"], ["Nukleotidlardan", "Из нуклеотидов"], ["Aminokislotalardan", "Из аминокислот"]], 3],
+        ["Yog'lar glitserin va qanday moddalarning murakkab efirlari?", "Жиры — это сложные эфиры глицерина и каких веществ?", [["Yuqori yog' kislotalarining", "Высших жирных кислот"], ["Aminokislotalarning", "Аминокислот"], ["Spirtlarning", "Спиртов"], ["Mineral kislotalarning", "Минеральных кислот"]], 0],
+        ["Fotosintez natijasida qanday moddalar hosil bo'ladi?", "Какие вещества образуются в результате фотосинтеза?", [["CO₂ va suv", "CO₂ и вода"], ["Glyukoza va kislorod", "Глюкоза и кислород"], ["Oqsil va azot", "Белок и азот"], ["Spirt va CO₂", "Спирт и CO₂"]], 1],
+        ["Biuret reaksiyasida oqsil qanday rang beradi?", "Какую окраску даёт белок в биуретовой реакции?", [["Ko'k", "Синюю"], ["Qizil", "Красную"], ["Binafsha", "Фиолетовую"], ["Sariq", "Жёлтую"]], 2],
+        ["Quyidagilardan qaysi biri tabiiy polimer?", "Какой из полимеров природный?", [["Sellyuloza", "Целлюлоза"], ["Polietilen", "Полиэтилен"], ["Kapron", "Капрон"], ["Polivinilxlorid", "Поливинилхлорид"]], 0],
+        ["Polivinilxloridning monomeri qaysi?", "Какой мономер у поливинилхлорида?", ["CH₂=CH₂", "CH₂=CHCl", "C₆H₅CH=CH₂", "CF₂=CF₂"], 1],
+        ["Kraxmal gidrolizlanganda qanday modda hosil bo'ladi?", "Какое вещество образуется при гидролизе крахмала?", [["Saxaroza", "Сахароза"], ["Etanol", "Этанол"], ["Aminokislotalar", "Аминокислоты"], ["Glyukoza", "Глюкоза"]], 3]
+      ]
+    }
+  ]
+}
