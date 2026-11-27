@@ -160,7 +160,7 @@ reportsRouter.get('/summary', requireRole('admin', 'auditor'), async (req, res) 
   const rows = all<any>(
     `SELECT s.name AS subject, COUNT(DISTINCT t.id) AS tests, COUNT(at.id) AS attempts, COUNT(DISTINCT at.user_id) AS students,
        ROUND(AVG(at.percentage), 1) AS avg, SUM(at.passed) AS passed
-     FROM subjects s LEFT JOIN tests t ON t.subject_id = s.id
+     FROM subjects s LEFT JOIN tests t ON t.subject_id = s.id AND t.is_sample = 0
      LEFT JOIN attempts at ON at.test_id = t.id AND at.status = 'completed'
      GROUP BY s.id ORDER BY s.name`,
   );

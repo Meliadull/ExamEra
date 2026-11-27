@@ -24,6 +24,10 @@ export interface TestRow {
   created_at: string;
   updated_at: string;
   published_at: string | null;
+  title_ru: string | null;
+  topic_ru: string | null;
+  is_sample: number;
+  sample_key: string | null;
 }
 
 export const isAdmin = (u: AuthUser) => u.role === 'admin';
@@ -42,21 +46,27 @@ export function loadTest(id: number): TestRow {
 export function assertCanViewTest(u: AuthUser, t: TestRow) {
   if (seesEverything(u)) return;
   if (u.role === 'teacher' && t.teacher_id === u.id) return;
+  // The sample bank is open to the teachers of the subject.
+  if (u.role === 'teacher' && t.is_sample && teachesSubject(u.id, t.subject_id)) return;
   throw forbidden();
 }
 
+/** Sample tests are a shared, read-only bank: they are copied, never edited, assigned or deleted. */
 export function assertCanEditTest(u: AuthUser, t: TestRow) {
+  if (t.is_sample) throw forbidden('sample_readonly');
   if (u.role === 'admin') return;
   if (u.role === 'teacher' && t.teacher_id === u.id) return;
   throw forbidden();
 }
 
+export function teachesSubject(userId: number, subjectId: number): boolean {
+  return !!get('SELECT 1 FROM subject_teachers WHERE subject_id = ? AND user_id = ?', subjectId, userId);
+}
+
 /** Teachers may only work with subjects an administrator assigned to them. */
 export function assertTeachesSubject(u: AuthUser, subjectId: number) {
   if (u.role !== 'teacher') return;
-  if (!get('SELECT 1 FROM subject_teachers WHERE subject_id = ? AND user_id = ?', subjectId, u.id)) {
-    throw forbidden('subject_not_assigned');
-  }
+  if (!teachesSubject(u.id, subjectId)) throw forbidden('subject_not_assigned');
 }
 
 /*

@@ -43,5 +43,7 @@ if (files.length) {
 
 const { migrate } = await import('./db.js');
 const { seedDemo } = await import('./seed.js');
+const { syncSamples } = await import('./services/samples.js');
 migrate();
 await seedDemo();
+syncSamples();

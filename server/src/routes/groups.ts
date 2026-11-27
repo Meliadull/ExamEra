@@ -154,13 +154,19 @@ const subjectBody = z.object({
 });
 const topicsBody = z.object({ topics: z.array(z.string().trim().min(1).max(120)).max(100) });
 
+/** Subject names in both languages, for every signed-in user (students included): the client localizes labels. */
+subjectsRouter.get('/names', (_req, res) => {
+  res.json(all('SELECT name, name_uz, name_ru FROM subjects WHERE name_uz IS NOT NULL OR name_ru IS NOT NULL'));
+});
+
 subjectsRouter.get('/', (req, res) => {
   const me = user(req);
   // ?mine=1 — only subjects assigned to the current teacher by an administrator
   const mine = req.query.mine === '1' && me.role === 'teacher';
   const rows = all<any>(
     `SELECT s.*,
-       (SELECT COUNT(*) FROM tests t WHERE t.subject_id = s.id AND t.status != 'archived') AS test_count,
+       (SELECT COUNT(*) FROM tests t WHERE t.subject_id = s.id AND t.status != 'archived' AND t.is_sample = 0) AS test_count,
+       (SELECT COUNT(*) FROM tests t WHERE t.subject_id = s.id AND t.is_sample = 1) AS sample_count,
        (SELECT GROUP_CONCAT(u.first_name || ' ' || u.last_name, ', ') FROM subject_teachers st JOIN users u ON u.id = st.user_id WHERE st.subject_id = s.id) AS teachers,
        (SELECT GROUP_CONCAT(g.name, ', ') FROM group_subjects gs JOIN study_groups g ON g.id = gs.group_id WHERE gs.subject_id = s.id) AS groups,
        (SELECT ROUND(AVG(a.percentage), 1) FROM attempts a JOIN tests t ON t.id = a.test_id WHERE t.subject_id = s.id AND a.status = 'completed') AS avg_percentage

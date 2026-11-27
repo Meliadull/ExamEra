@@ -3,9 +3,11 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { api, ApiError } from '../api';
 import { OptionText } from '../components/common';
+import { LangSwitch } from '../components/Layout';
 import { RichText } from '../components/RichText';
 import { Button, Card, ErrorBox, Input, Modal, Progress, Spinner } from '../components/ui';
 import { useI18n } from '../i18n';
+import { useLoc, useSubjectName } from '../localize';
 import { ThemeToggle } from '../theme';
 import type { Question } from '../types';
 
@@ -26,6 +28,8 @@ const isAnswered = (a: Answer | undefined) =>
 export function TakeTest() {
   const { id } = useParams();
   const { t } = useI18n();
+  const tr = useLoc();
+  const sn = useSubjectName();
   const nav = useNavigate();
   const storageKey = `ee_attempt_${id}`;
 
@@ -214,10 +218,10 @@ export function TakeTest() {
   return (
     <div className="take">
       <header className="take-head">
-        <div className="subj">{data.test.subject.slice(0, 1)}</div>
+        <div className="subj">{sn(data.test.subject).slice(0, 1)}</div>
         <div className="grow">
           <h2 className="ellipsis">
-            {data.test.subject} — {data.test.title}
+            {sn(data.test.subject)} — {tr(data.test, 'title')}
           </h2>
           <div className="save-state">
             {saveState === 'saved' && (
@@ -237,7 +241,10 @@ export function TakeTest() {
             )}
           </div>
         </div>
-        <ThemeToggle />
+        <span className="take-theme">
+          <ThemeToggle />
+        </span>
+        <LangSwitch />
         <div className={`timer ${remaining != null && remaining < 60 ? 'warn' : ''}`} title={t('take.timeLeft')} style={{ marginLeft: 8 }}>
           <Timer /> {timeText}
         </div>
@@ -282,7 +289,7 @@ export function TakeTest() {
           </div>
           <Progress value={(answeredCount / total) * 100} />
           <div className="row between" style={{ alignItems: 'flex-start', marginTop: 20 }}>
-            <RichText text={q.text} className="q-text grow" />
+            <RichText text={tr(q)} className="q-text grow" />
             <span className="badge gray" style={{ marginTop: 8 }}>
               {t('take.points', { n: q.score })}
             </span>
@@ -319,7 +326,7 @@ export function TakeTest() {
                       } else setAnswer(q.id, o.id);
                     }}
                   />
-                  <OptionText type={q.type} text={o.text} />
+                  <OptionText type={q.type} text={tr(o)} />
                 </label>
               );
             })

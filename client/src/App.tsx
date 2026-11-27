@@ -20,6 +20,7 @@ import { Reports } from './pages/Reports';
 import { Results } from './pages/Results';
 import { History, MyResults, MyTests, StudentDashboard } from './pages/student';
 import { StudentCard, Students } from './pages/students';
+import { Samples } from './pages/Samples';
 import { Subjects } from './pages/Subjects';
 import { TakeTest } from './pages/TakeTest';
 import { TeacherDashboard } from './pages/TeacherDashboard';
@@ -83,6 +84,7 @@ export function App() {
         <Route path="tests/new" element={<Only roles={EDITORS}><TestBuilder /></Only>} />
         <Route path="tests/:id/edit" element={<Only roles={EDITORS}><TestBuilder /></Only>} />
         <Route path="tests/:id" element={<Only roles={STAFF}><TestDetail /></Only>} />
+        <Route path="samples" element={<Only roles={STAFF}><Samples /></Only>} />
         <Route path="questions" element={<Only roles={STAFF}><Questions /></Only>} />
         <Route path="assignments" element={<Only roles={STAFF}><Assignments /></Only>} />
         <Route path="groups" element={<Only roles={STAFF}><Groups /></Only>} />

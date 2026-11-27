@@ -2,6 +2,7 @@ import { X } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { useApi } from '../api';
 import { useI18n, type TFn } from '../i18n';
+import { useSubjectName } from '../localize';
 import type { Group, QuestionType, Subject, TestStatus } from '../types';
 import { RichText } from './RichText';
 import { Badge, Select, type Tone } from './ui';
@@ -37,13 +38,14 @@ export function useGroups() {
 
 export function SubjectSelect({ value, onChange, allLabel }: { value: string; onChange: (v: string) => void; allLabel?: string }) {
   const { t } = useI18n();
+  const sn = useSubjectName();
   const { data } = useSubjects();
   return (
     <Select value={value} onChange={(e) => onChange(e.target.value)}>
       <option value="">{allLabel ?? t('filters.allSubjects')}</option>
       {data?.map((s) => (
         <option key={s.id} value={s.id}>
-          {s.name}
+          {sn(s.name)}
         </option>
       ))}
     </Select>

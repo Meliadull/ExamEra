@@ -18,12 +18,14 @@ import { profileRouter, usersRouter } from './routes/users.js';
 import { runPeriodicJobs } from './services/attempts.js';
 import { runScheduledBackup } from './services/backup.js';
 import { auditorReadOnly, authenticate } from './services/auth.js';
+import { syncSamples } from './services/samples.js';
 import { seedDemo } from './seed.js';
 
 migrate();
 if (config.seedDemo && get<{ c: number }>('SELECT COUNT(*) AS c FROM users')!.c === 0) {
   await seedDemo();
 }
+syncSamples();
 
 const app = express();
 app.set('trust proxy', config.trustProxy ? 1 : false);

@@ -3,8 +3,12 @@ import { all, get, inList, run, tx } from '../db.js';
 import { badRequest } from '../http.js';
 import { QUESTION_TYPES, type QuestionType } from '../types.js';
 
+const ruText = (max: number) => z.string().trim().max(max).nullable().optional();
+
 export const optionInput = z.object({
   text: z.string().trim().max(1000),
+  /** Optional Russian translation of the option. */
+  textRu: ruText(1000),
   isCorrect: z.boolean(),
 });
 
@@ -17,6 +21,9 @@ export const questionInput = z.object({
     .nullable()
     .optional(),
   explanation: z.string().trim().max(5000).optional().default(''),
+  /** Optional Russian translations; the main fields hold the original text. */
+  textRu: ruText(5000),
+  explanationRu: ruText(5000),
   score: z.number().positive().max(100),
   options: z.array(optionInput).max(12).default([]),
 });
@@ -53,26 +60,48 @@ export function validateQuestions(questions: QuestionInput[]) {
   if (problems.length) throw badRequest('invalid_questions', problems);
 }
 
+/**
+ * Translations the caller did not send are carried over from the current questions when the original text is
+ * unchanged (the builder edits only the original language); edited text drops its now-stale translation.
+ */
+function keepTranslations(testId: number, questions: QuestionInput[]) {
+  const old = loadQuestions(testId);
+  if (!old.some((q) => q.text_ru || q.options.some((o) => o.text_ru))) return;
+  for (const q of questions) {
+    const prev = old.find((o) => o.text === q.text);
+    if (!prev) continue;
+    if (q.textRu === undefined) q.textRu = prev.text_ru;
+    if (q.explanationRu === undefined && prev.explanation === (q.explanation ?? '')) q.explanationRu = prev.explanation_ru;
+    for (const o of q.options) {
+      if (o.textRu === undefined) o.textRu = prev.options.find((po) => po.text === o.text)?.text_ru ?? null;
+    }
+  }
+}
+
 export function replaceQuestions(testId: number, questions: QuestionInput[]) {
   validateQuestions(questions);
   tx(() => {
+    keepTranslations(testId, questions);
     run('DELETE FROM questions WHERE test_id = ?', testId);
     questions.forEach((q, i) => {
       const { id } = run(
-        'INSERT INTO questions (test_id, type, text, image_url, explanation, score, position) VALUES (?, ?, ?, ?, ?, ?, ?)',
+        'INSERT INTO questions (test_id, type, text, text_ru, image_url, explanation, explanation_ru, score, position) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
         testId,
         q.type,
         q.text,
+        q.textRu || null,
         q.imageUrl ?? null,
         q.explanation ?? '',
+        q.explanationRu || null,
         q.score,
         i + 1,
       );
       q.options.forEach((o, j) =>
         run(
-          'INSERT INTO answer_options (question_id, text, is_correct, position) VALUES (?, ?, ?, ?)',
+          'INSERT INTO answer_options (question_id, text, text_ru, is_correct, position) VALUES (?, ?, ?, ?, ?)',
           id,
           o.text,
+          o.textRu || null,
           o.isCorrect,
           j + 1,
         ),
@@ -81,10 +110,25 @@ export function replaceQuestions(testId: number, questions: QuestionInput[]) {
   });
 }
 
+/** Questions in the shape replaceQuestions accepts, translations included (used when copying a test). */
+export function questionsForCopy(testId: number): QuestionInput[] {
+  return loadQuestions(testId).map((q) => ({
+    type: q.type,
+    text: q.text,
+    textRu: q.text_ru,
+    imageUrl: q.image_url,
+    explanation: q.explanation,
+    explanationRu: q.explanation_ru,
+    score: q.score,
+    options: q.options.map((o) => ({ text: o.text, textRu: o.text_ru, isCorrect: !!o.is_correct })),
+  }));
+}
+
 export interface OptionRow {
   id: number;
   question_id: number;
   text: string;
+  text_ru: string | null;
   is_correct: number;
   position: number;
 }
@@ -94,8 +138,10 @@ export interface QuestionRow {
   test_id: number;
   type: QuestionType;
   text: string;
+  text_ru: string | null;
   image_url: string | null;
   explanation: string;
+  explanation_ru: string | null;
   score: number;
   position: number;
   options: OptionRow[];

@@ -343,6 +343,26 @@ export function migrate() {
     run("UPDATE settings SET value = ? WHERE key = 'platform_name' AND value = 'ExamEra'", 'ImtihonchiSI');
     db.exec('PRAGMA user_version = 3');
   }
+  if (user_version < 4) {
+    // Bilingual content: the main fields keep the original text, *_ru hold an optional Russian translation.
+    // Sample tests (is_sample) form a read-only bank that teachers copy from; sample_key/sample_hash let the
+    // bundled bank be re-synced without touching anyone's own tests.
+    db.exec(`
+      ALTER TABLE questions ADD COLUMN text_ru TEXT;
+      ALTER TABLE questions ADD COLUMN explanation_ru TEXT;
+      ALTER TABLE answer_options ADD COLUMN text_ru TEXT;
+      ALTER TABLE tests ADD COLUMN title_ru TEXT;
+      ALTER TABLE tests ADD COLUMN topic_ru TEXT;
+      ALTER TABLE tests ADD COLUMN is_sample INTEGER NOT NULL DEFAULT 0;
+      ALTER TABLE tests ADD COLUMN sample_key TEXT;
+      ALTER TABLE tests ADD COLUMN sample_hash TEXT;
+      CREATE UNIQUE INDEX idx_tests_sample_key ON tests(sample_key) WHERE sample_key IS NOT NULL;
+      CREATE INDEX idx_tests_sample ON tests(is_sample, subject_id);
+      ALTER TABLE subjects ADD COLUMN name_uz TEXT;
+      ALTER TABLE subjects ADD COLUMN name_ru TEXT;
+      PRAGMA user_version = 4;
+    `);
+  }
   for (const [key, value] of Object.entries(DEFAULT_SETTINGS)) {
     run('INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)', key, value);
   }

@@ -5,7 +5,7 @@ import { all, get, getSetting, now, run, tx, Where } from '../db.js';
 import { badRequest, conflict, forbidden, int, notFound, parse, qstr, requireAuth, requireRole, user } from '../http.js';
 import { assertCanEditTest, assertCanViewTest, assertTeachesSubject, loadTest, seesEverything } from '../services/access.js';
 import { audit } from '../services/audit.js';
-import { loadQuestions, questionInput, replaceQuestions, testHasAttempts, validateQuestion, type QuestionInput } from '../services/tests.js';
+import { loadQuestions, questionInput, questionsForCopy, replaceQuestions, testHasAttempts, validateQuestion, type QuestionInput } from '../services/tests.js';
 import { decodeBase64, isXlsx, saveImage } from '../services/uploads.js';
 
 export const testsRouter = Router();
@@ -62,7 +62,7 @@ testsRouter.get('/', (req, res) => {
   const me = user(req);
   if (me.role === 'student') throw forbidden();
   const q = req.query as Record<string, string>;
-  const w = new Where();
+  const w = new Where().add('t.is_sample = 0');
   if (!seesEverything(me)) w.add('t.teacher_id = ?', me.id);
   const search = qstr(q.search);
   if (search) w.add('(LOWER(t.title) LIKE ? OR LOWER(t.topic) LIKE ?)', `%${search.toLowerCase()}%`, `%${search.toLowerCase()}%`);
@@ -71,7 +71,7 @@ testsRouter.get('/', (req, res) => {
   else w.add("t.status != 'archived'");
   if (q.teacherId) w.add('t.teacher_id = ?', int(q.teacherId));
   const rows = all(
-    `SELECT t.id, t.title, t.topic, t.status, t.created_at, t.updated_at, t.duration_min, t.attempts_limit,
+    `SELECT t.id, t.title, t.title_ru, t.topic, t.topic_ru, t.status, t.created_at, t.updated_at, t.duration_min, t.attempts_limit,
        s.name AS subject_name, t.subject_id, u.first_name || ' ' || u.last_name AS teacher_name,
        (SELECT COUNT(*) FROM questions q WHERE q.test_id = t.id) AS question_count,
        (SELECT COALESCE(SUM(score), 0) FROM questions q WHERE q.test_id = t.id) AS max_score,
@@ -83,6 +83,31 @@ testsRouter.get('/', (req, res) => {
     ...w.params,
   );
   res.json(rows);
+});
+
+/** The read-only sample bank: teachers see the subjects assigned to them, administrators and auditors all. */
+testsRouter.get('/samples', (req, res) => {
+  const me = user(req);
+  if (me.role === 'student') throw forbidden();
+  const q = req.query as Record<string, string>;
+  const w = new Where().add('t.is_sample = 1');
+  if (!seesEverything(me)) w.add('t.subject_id IN (SELECT subject_id FROM subject_teachers WHERE user_id = ?)', me.id);
+  if (q.subjectId) w.add('t.subject_id = ?', int(q.subjectId));
+  const search = qstr(q.search);
+  if (search) {
+    const like = `%${search.toLowerCase()}%`;
+    w.add('(LOWER(t.title) LIKE ? OR LOWER(COALESCE(t.title_ru, \'\')) LIKE ?)', like, like);
+  }
+  res.json(
+    all(
+      `SELECT t.id, t.title, t.title_ru, t.topic, t.topic_ru, t.subject_id, t.sample_key, s.name AS subject_name,
+         (SELECT COUNT(*) FROM questions qq WHERE qq.test_id = t.id) AS question_count,
+         (SELECT COUNT(*) FROM tests c WHERE c.is_sample = 0 AND c.teacher_id = ? AND c.title = t.title AND c.subject_id = t.subject_id) AS copied
+       FROM tests t JOIN subjects s ON s.id = t.subject_id ${w.sql} ORDER BY s.name, t.sample_key`,
+      me.id,
+      ...w.params,
+    ),
+  );
 });
 
 testsRouter.post('/', requireRole('teacher', 'admin'), (req, res) => {
@@ -244,7 +269,7 @@ testsRouter.get('/:id', (req, res) => {
     ...extra,
     questions: loadQuestions(t.id),
     has_attempts: testHasAttempts(t.id),
-    can_edit: me.role === 'admin' || (me.role === 'teacher' && t.teacher_id === me.id),
+    can_edit: !t.is_sample && (me.role === 'admin' || (me.role === 'teacher' && t.teacher_id === me.id)),
   });
 });
 
@@ -319,35 +344,30 @@ testsRouter.post('/:id/copy', requireRole('teacher', 'admin'), (req, res) => {
   const me = user(req);
   const t = loadTest(int(req.params.id));
   assertCanViewTest(me, t);
-  if (me.role === 'teacher' && t.teacher_id !== me.id) throw forbidden();
+  if (me.role === 'teacher' && t.teacher_id !== me.id && !t.is_sample) throw forbidden();
   assertTeachesSubject(me, t.subject_id);
-  const qs = loadQuestions(t.id);
+  const qs = questionsForCopy(t.id);
   const ts = now();
+  // A copy of a sample keeps its name; a copy of one's own test is marked as such.
+  const suffix = t.is_sample ? '' : ' (копия)';
   const id = tx(() => {
     const { id } = run(
-      `INSERT INTO tests (title, subject_id, teacher_id, topic, description, instruction, duration_min, attempts_limit, pass_score,
-         shuffle_questions, shuffle_options, show_result, show_answers, multiple_scoring, status, created_at, updated_at)
-       SELECT title || ' (копия)', subject_id, ?, topic, description, instruction, duration_min, attempts_limit, pass_score,
-         shuffle_questions, shuffle_options, show_result, show_answers, multiple_scoring, 'draft', ?, ? FROM tests WHERE id = ?`,
+      `INSERT INTO tests (title, title_ru, subject_id, teacher_id, topic, topic_ru, description, instruction, duration_min, attempts_limit,
+         pass_score, shuffle_questions, shuffle_options, show_result, show_answers, multiple_scoring, status, created_at, updated_at)
+       SELECT title || ?, CASE WHEN title_ru IS NULL THEN NULL ELSE title_ru || ? END, subject_id, ?, topic, topic_ru, description,
+         instruction, duration_min, attempts_limit, pass_score, shuffle_questions, shuffle_options, show_result, show_answers,
+         multiple_scoring, 'draft', ?, ? FROM tests WHERE id = ?`,
+      suffix,
+      suffix,
       me.id,
       ts,
       ts,
       t.id,
     );
-    replaceQuestions(
-      id,
-      qs.map((q) => ({
-        type: q.type,
-        text: q.text,
-        imageUrl: q.image_url,
-        explanation: q.explanation,
-        score: q.score,
-        options: q.options.map((o) => ({ text: o.text, isCorrect: !!o.is_correct })),
-      })),
-    );
+    replaceQuestions(id, qs);
     return id;
   });
-  audit(req, 'test.copy', { entityType: 'test', entityId: id, metadata: { sourceId: t.id } });
+  audit(req, t.is_sample ? 'test.copy_sample' : 'test.copy', { entityType: 'test', entityId: id, metadata: { sourceId: t.id, title: t.title } });
   res.status(201).json({ id });
 });
 
@@ -372,7 +392,7 @@ questionsRouter.get('/', (req, res) => {
   const me = user(req);
   if (me.role === 'student') throw forbidden();
   const q = req.query as Record<string, string>;
-  const w = new Where();
+  const w = new Where().add('t.is_sample = 0');
   if (!seesEverything(me)) w.add('t.teacher_id = ?', me.id);
   const search = qstr(q.search);
   if (search) w.add('LOWER(q.text) LIKE ?', `%${search.toLowerCase()}%`);

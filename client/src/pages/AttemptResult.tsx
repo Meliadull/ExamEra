@@ -8,9 +8,11 @@ import { OptionText } from '../components/common';
 import { RichText } from '../components/RichText';
 import { Badge, Button, Card, Field, Input, Loader, Modal, PageHead, Textarea, useAction } from '../components/ui';
 import { useFormat, useI18n } from '../i18n';
+import { useLoc, useSubjectName } from '../localize';
 
 function ReviewItem({ q, n }: { q: any; n: number }) {
   const { t } = useI18n();
+  const tr = useLoc();
   const chosen = (id: number) => (Array.isArray(q.answer) ? q.answer.includes(id) : q.answer === id);
   const icon = q.is_correct === 1 ? <CheckCircle2 color="var(--green)" /> : q.is_correct === 0 ? <XCircle color="var(--red)" /> : <MinusCircle color="var(--faint)" />;
   return (
@@ -20,7 +22,7 @@ function ReviewItem({ q, n }: { q: any; n: number }) {
           {icon}
           <div>
             <div className="small muted">{t('result.questionN', { n })}</div>
-            <RichText text={q.text} className="bold" />
+            <RichText text={tr(q)} className="bold" />
           </div>
         </div>
         <Badge tone={q.is_correct === 1 ? 'green' : q.is_correct === 0 ? 'red' : 'gray'}>
@@ -35,7 +37,7 @@ function ReviewItem({ q, n }: { q: any; n: number }) {
               <span className="muted small">{t('result.yourAnswer')}:</span> <b>{q.answer ?? '—'}</b>
             </div>
             <div className="small">
-              <span className="muted">{t('result.acceptedAnswers')}:</span> {q.options.map((o: any) => o.text).join('; ')}
+              <span className="muted">{t('result.acceptedAnswers')}:</span> {q.options.map((o: any) => tr(o)).join('; ')}
             </div>
           </div>
         ) : (
@@ -43,7 +45,7 @@ function ReviewItem({ q, n }: { q: any; n: number }) {
             <div key={o.id} className={`answer-opt ${o.is_correct ? 'correct' : chosen(o.id) ? 'wrong' : ''}`} style={{ cursor: 'default' }}>
               <input type={q.type === 'multiple' ? 'checkbox' : 'radio'} readOnly checked={chosen(o.id)} />
               <span className="grow">
-                <OptionText type={q.type} text={o.text} />
+                <OptionText type={q.type} text={tr(o)} />
               </span>
               {o.is_correct && <Badge tone="green">{t('result.correctAnswer')}</Badge>}
             </div>
@@ -53,7 +55,7 @@ function ReviewItem({ q, n }: { q: any; n: number }) {
       {q.explanation && (
         <div className="alert info" style={{ marginTop: 10 }}>
           <Info />
-          <RichText text={q.explanation} />
+          <RichText text={tr(q, 'explanation')} />
         </div>
       )}
     </Card>
@@ -104,6 +106,8 @@ export function AttemptResult() {
   const { t } = useI18n();
   const f = useFormat();
   const loc = useLocation() as { state?: { auto?: boolean } };
+  const tr = useLoc();
+  const sn = useSubjectName();
   const state = useApi(`/attempts/${id}/result`);
   const [review, setReview] = useState(me.role !== 'student');
   const [adjust, setAdjust] = useState(false);
@@ -114,7 +118,7 @@ export function AttemptResult() {
         <>
           {me.role !== 'student' && (
             <PageHead
-              title={r.test.title}
+              title={tr(r.test, 'title')}
               subtitle={`${r.student.last_name} ${r.student.first_name} · ${f.dateTime(r.completed_at)}`}
               back={{ to: r.can_open_test ? `/app/tests/${r.test.id}` : `/app/students/${r.student.id}`, label: t('common.back') }}
               actions={
@@ -130,7 +134,7 @@ export function AttemptResult() {
                 <div style={{ fontSize: 44 }}>{r.show_result ? (r.passed ? '🏆' : '📘') : '✅'}</div>
                 <h1>{t('result.finished')}</h1>
                 <p className="muted" style={{ marginTop: 6 }}>
-                  {r.test.subject} — {r.test.title}
+                  {sn(r.test.subject)} — {tr(r.test, 'title')}
                 </p>
                 {loc.state?.auto && <div className="alert warning" style={{ justifyContent: 'center' }}>{t('result.autoFinished')}</div>}
               </>

@@ -8,6 +8,7 @@ import { distinct, matchesSearch, OptionText, ResetFilters, SubjectSelect, Teach
 import { RichText } from '../components/RichText';
 import { Badge, Button, Card, Confirm, Empty, Input, Loader, PageHead, PctBadge, Progress, Select, Stat, Tabs, useAction } from '../components/ui';
 import { useFormat, useI18n } from '../i18n';
+import { useLoc, useSubjectName } from '../localize';
 import type { TestStatus } from '../types';
 import { AssignModal, AssignmentsTable } from './Assignments';
 import { ImportModal } from './TestBuilder';
@@ -61,6 +62,8 @@ export function useTestActions(reload: () => void) {
 
 export function TestsList() {
   const { t } = useI18n();
+  const tr = useLoc();
+  const sn = useSubjectName();
   const f = useFormat();
   const me = useMe();
   const nav = useNavigate();
@@ -136,13 +139,13 @@ export function TestsList() {
                     {items.map((x) => (
                       <tr key={x.id} className="click" onClick={() => nav(`/app/tests/${x.id}`)}>
                         <td>
-                          <div className="bold">{x.title}</div>
+                          <div className="bold">{tr(x, 'title')}</div>
                           <div className="tiny muted">
-                            {x.topic}
+                            {tr(x, 'topic')}
                             {me.role !== 'teacher' ? ` · ${x.teacher_name}` : ''}
                           </div>
                         </td>
-                        <td>{x.subject_name}</td>
+                        <td>{sn(x.subject_name)}</td>
                         <td>{x.question_count}</td>
                         <td>{x.participants}</td>
                         <td>{x.avg_percentage != null ? <PctBadge value={x.avg_percentage} /> : '—'}</td>
@@ -273,6 +276,8 @@ function QuestionAnalysis({ questions }: { questions: any[] }) {
 export function TestDetail() {
   const { id } = useParams();
   const { t, lang } = useI18n();
+  const tr = useLoc();
+  const sn = useSubjectName();
   const f = useFormat();
   const me = useMe();
   const nav = useNavigate();
@@ -298,10 +303,10 @@ export function TestDetail() {
               back={{ to: '/app/tests', label: t('nav.tests') }}
               title={
                 <span className="row wrap">
-                  {x.title} <TestStatusBadge status={x.status} />
+                  {tr(x, 'title')} <TestStatusBadge status={x.status} />
                 </span>
               }
-              subtitle={`${x.subject_name}${x.topic ? ` · ${x.topic}` : ''} · ${x.teacher_name}`}
+              subtitle={`${sn(x.subject_name)}${x.topic ? ` · ${tr(x, 'topic')}` : ''} · ${x.teacher_name}`}
               actions={
                 <>
                   <Button onClick={() => downloadUrl(`/reports/test/${x.id}`, { format: 'xlsx', lang })}>
@@ -446,7 +451,7 @@ export function TestDetail() {
                         <div className="small muted">
                           {t('result.questionN', { n: i + 1 })} · {t(`qtype.${q.type}`)}
                         </div>
-                        <RichText text={q.text} className="bold" />
+                        <RichText text={tr(q)} className="bold" />
                       </div>
                       <Badge>{t('take.points', { n: q.score })}</Badge>
                     </div>
@@ -455,11 +460,11 @@ export function TestDetail() {
                       {q.options.map((o: any) => (
                         <div key={o.id} className="row gap-sm small" style={{ padding: '3px 0' }}>
                           {o.is_correct ? <CheckCircle2 size={15} color="var(--green)" /> : <span style={{ width: 15 }} />}
-                          <OptionText type={q.type} text={o.text} />
+                          <OptionText type={q.type} text={tr(o)} />
                         </div>
                       ))}
                     </div>
-                    {q.explanation && <div className="alert info mt-sm"><RichText text={q.explanation} /></div>}
+                    {q.explanation && <div className="alert info mt-sm"><RichText text={tr(q, 'explanation')} /></div>}
                   </Card>
                 ))}
               </div>

@@ -5,6 +5,7 @@ import { useMe } from '../auth';
 import { matchesSearch, ResetFilters, useSubjects } from '../components/common';
 import { Button, Card, Check, Confirm, Empty, Field, Input, Loader, Modal, PageHead, PctBadge, Select, Textarea, useAction } from '../components/ui';
 import { useI18n } from '../i18n';
+import { useSubjectName } from '../localize';
 import type { Subject } from '../types';
 
 function SubjectForm({ subject, onClose, onDone }: { subject?: Subject; onClose: () => void; onDone: () => void }) {
@@ -131,6 +132,7 @@ function TopicsForm({ subject, onClose, onDone }: { subject: Subject; onClose: (
 
 export function Subjects() {
   const { t } = useI18n();
+  const sn = useSubjectName();
   const me = useMe();
   const list = useSubjects(me.role === 'teacher');
   const [editing, setEditing] = useState<Subject | 'new' | null>(null);
@@ -178,7 +180,7 @@ export function Subjects() {
           const items = all.filter(
             (s) =>
               (!staffing || (staffing === 'with') === !!s.teachers) &&
-              matchesSearch(search, s.name, s.description, ...s.topics),
+              matchesSearch(search, s.name, sn(s.name), s.description, ...s.topics),
           );
           return items.length ? (
             <div className="grid g3">
@@ -191,8 +193,11 @@ export function Subjects() {
                           <BookOpen />
                         </div>
                         <div>
-                          <h3>{s.name}</h3>
-                          <div className="small muted">{t('subjects.testsN', { n: s.test_count })}</div>
+                          <h3>{sn(s.name)}</h3>
+                          <div className="small muted">
+                            {t('subjects.testsN', { n: s.test_count })}
+                            {(s as any).sample_count ? ` · ${t('subjects.samplesN', { n: (s as any).sample_count })}` : ''}
+                          </div>
                         </div>
                       </div>
                       {s.avg_percentage != null && <PctBadge value={s.avg_percentage} />}

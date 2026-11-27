@@ -3,6 +3,8 @@ import type { QuestionType } from '../types.js';
 export interface ScoredOption {
   id: number;
   text: string;
+  /** Russian translation; accepted as an equally correct short answer. */
+  text_ru?: string | null;
   is_correct: number;
 }
 
@@ -41,7 +43,7 @@ export function scoreAnswer(q: ScoredQuestion, answer: unknown, mode: 'strict' |
 
   if (q.type === 'short_text') {
     const given = normalizeText(String(answer));
-    const ok = q.options.some((o) => normalizeText(o.text) === given);
+    const ok = q.options.some((o) => normalizeText(o.text) === given || (!!o.text_ru && normalizeText(o.text_ru) === given));
     return { answered: true, isCorrect: ok, score: ok ? q.score : 0 };
   }
 

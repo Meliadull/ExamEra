@@ -68,7 +68,7 @@ export function studentIsTargeted(a: AssignmentRow, userId: number) {
 }
 
 export const STUDENT_ASSIGNMENTS_SQL = `
-  SELECT asg.*, t.title, t.topic, t.description, t.instruction, t.status AS test_status,
+  SELECT asg.*, t.title, t.title_ru, t.topic, t.topic_ru, t.description, t.instruction, t.status AS test_status,
          s.name AS subject_name, s.id AS subject_id,
          g.name AS group_name,
          (SELECT COUNT(*) FROM questions q WHERE q.test_id = t.id) AS question_count,

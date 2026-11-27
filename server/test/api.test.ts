@@ -279,3 +279,53 @@ describe('excel import', () => {
     );
   });
 });
+
+describe('sample bank', () => {
+  it('teachers see samples only for their subjects; samples stay out of normal lists', async () => {
+    const t = await login('teacher');
+    const samples = (await call('GET', '/tests/samples', { cookie: t })).data as any[];
+    assert.ok(samples.length >= 5, 'math samples are loaded');
+    assert.ok(samples.every((s) => s.subject_name === 'Математика' || s.subject_name === 'Физика' || s.subject_name === 'Информатика'));
+    assert.ok(samples[0].title_ru, 'samples carry a Russian title');
+    const t2 = await login('teacher2'); // teaches history and English, not mathematics
+    const other = (await call('GET', '/tests/samples', { cookie: t2 })).data as any[];
+    assert.ok(!other.some((s) => s.subject_name === 'Математика'));
+    const own = (await call('GET', '/tests', { cookie: await login('admin') })).data as any[];
+    assert.ok(!own.some((x) => samples.some((s) => s.id === x.id)), 'samples are not in the tests list');
+  });
+
+  it('a sample can be copied with its translations but never edited, assigned or opened by others', async () => {
+    const t = await login('teacher');
+    const [sample] = (await call('GET', '/tests/samples', { cookie: t })).data as any[];
+    assert.equal((await call('GET', `/tests/${sample.id}`, { cookie: await login('teacher2') })).status, 403);
+    const detail = (await call('GET', `/tests/${sample.id}`, { cookie: t })).data;
+    assert.equal(detail.can_edit, false);
+    assert.ok(detail.questions[0].text_ru, 'questions carry a Russian text');
+    assert.equal((await call('POST', `/tests/${sample.id}/status`, { cookie: await login('admin'), body: { status: 'archived' } })).status, 403);
+
+    const copy = await call('POST', `/tests/${sample.id}/copy`, { cookie: t });
+    assert.equal(copy.status, 201);
+    const mine = (await call('GET', `/tests/${copy.data.id}`, { cookie: t })).data;
+    assert.equal(mine.is_sample, 0);
+    assert.equal(mine.status, 'draft');
+    assert.equal(mine.can_edit, true);
+    assert.equal(mine.title, detail.title);
+    assert.equal(mine.title_ru, detail.title_ru);
+    assert.equal(mine.questions.length, detail.questions.length);
+    assert.equal(mine.questions[0].text_ru, detail.questions[0].text_ru);
+    assert.equal(mine.questions[0].options[0].text_ru, detail.questions[0].options[0].text_ru);
+
+    // Re-saving the questions from the builder (original text only) keeps the translations.
+    const questions = mine.questions.map((q: any) => ({
+      type: q.type,
+      text: q.text,
+      score: q.score,
+      explanation: q.explanation,
+      options: q.options.map((o: any) => ({ text: o.text, isCorrect: !!o.is_correct })),
+    }));
+    questions[1].text = questions[1].text + ' (o‘zgartirildi)';
+    const saved = (await call('PUT', `/tests/${copy.data.id}/questions`, { cookie: t, body: { questions } })).data.questions;
+    assert.equal(saved[0].text_ru, detail.questions[0].text_ru, 'unchanged question keeps its translation');
+    assert.equal(saved[1].text_ru, null, 'edited question drops the stale translation');
+  });
+});

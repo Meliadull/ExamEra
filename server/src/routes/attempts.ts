@@ -112,10 +112,11 @@ attemptsRouter.get('/:id', (req, res) => {
         id: q.id,
         type: q.type,
         text: q.text,
+        text_ru: q.text_ru,
         image_url: q.image_url,
         score: q.score,
         // Correctness is never sent while the attempt is running; short-text accepted answers are hidden entirely.
-        options: q.type === 'short_text' ? [] : opts.map((o) => ({ id: o.id, text: o.text })),
+        options: q.type === 'short_text' ? [] : opts.map((o) => ({ id: o.id, text: o.text, text_ru: o.text_ru })),
       };
     });
   const answers = Object.fromEntries(
@@ -130,7 +131,7 @@ attemptsRouter.get('/:id', (req, res) => {
     started_at: a.started_at,
     deadline_at: a.deadline_at,
     server_now: now(),
-    test: { id: test.id, title: test.title, subject: subject.name, instruction: test.instruction, topic: test.topic },
+    test: { id: test.id, title: test.title, title_ru: test.title_ru, subject: subject.name, instruction: test.instruction, topic: test.topic, topic_ru: test.topic_ru },
     questions: ordered,
     answers,
   });
@@ -208,7 +209,7 @@ attemptsRouter.get('/:id/result', (req, res) => {
   const base = {
     id: a.id,
     status: a.status,
-    test: { id: test.id, title: test.title, subject: subject.name },
+    test: { id: test.id, title: test.title, title_ru: test.title_ru, subject: subject.name },
     student,
     started_at: a.started_at,
     completed_at: a.completed_at,
@@ -251,13 +252,15 @@ attemptsRouter.get('/:id/result', (req, res) => {
         id: q.id,
         type: q.type,
         text: q.text,
+        text_ru: q.text_ru,
         image_url: q.image_url,
         explanation: q.explanation,
+        explanation_ru: q.explanation_ru,
         max_score: q.score,
         score: ans?.score ?? 0,
         is_correct: ans?.is_correct ?? null,
         answer: ans?.answer ? JSON.parse(ans.answer) : null,
-        options: q.options.map((o) => ({ id: o.id, text: o.text, is_correct: !!o.is_correct })),
+        options: q.options.map((o) => ({ id: o.id, text: o.text, text_ru: o.text_ru, is_correct: !!o.is_correct })),
       };
     });
   res.json({ ...base, ...summary, review });
@@ -319,7 +322,7 @@ studentRouter.get('/dashboard', (req, res) => {
     me.id,
   );
   const recent = all(
-    `SELECT at.id, at.percentage, at.score, at.max_score, at.completed_at, at.passed, t.title, s.name AS subject_name, asg.show_result
+    `SELECT at.id, at.percentage, at.score, at.max_score, at.completed_at, at.passed, t.title, t.title_ru, s.name AS subject_name, asg.show_result
      FROM attempts at JOIN tests t ON t.id = at.test_id JOIN subjects s ON s.id = t.subject_id JOIN assignments asg ON asg.id = at.assignment_id
      WHERE at.user_id = ? AND at.status = 'completed' ORDER BY at.completed_at DESC LIMIT 5`,
     me.id,
@@ -344,7 +347,7 @@ studentRouter.get('/attempts', (req, res) => {
   const rows = all<any>(
     `SELECT at.id, at.status, at.started_at, at.completed_at, at.duration_sec, at.score, at.max_score, at.percentage,
        at.correct_count, at.wrong_count, at.skipped_count, at.passed, at.finish_reason, at.assignment_id,
-       t.title, t.id AS test_id, s.name AS subject_name, asg.show_result
+       t.title, t.title_ru, t.id AS test_id, s.name AS subject_name, asg.show_result
      FROM attempts at JOIN tests t ON t.id = at.test_id JOIN subjects s ON s.id = t.subject_id JOIN assignments asg ON asg.id = at.assignment_id
      WHERE at.user_id = ? ORDER BY at.started_at DESC`,
     me.id,

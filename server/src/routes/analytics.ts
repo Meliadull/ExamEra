@@ -51,7 +51,7 @@ analyticsRouter.get('/dashboard', staffOnly, (req, res) => {
   const me = user(req);
   const f = readFilters(req.query as Record<string, unknown>);
   const w = attemptWhere(me, f);
-  const tw = new Where();
+  const tw = new Where().add('t.is_sample = 0');
   if (!seesEverything(me)) tw.add('t.teacher_id = ?', me.id);
   const t = now();
   const testCounts = get<any>(
@@ -336,7 +336,7 @@ analyticsRouter.get('/admin', requireRole('admin', 'auditor'), async (_req, res)
   );
   const tests = get<any>(
     `SELECT SUM(status = 'published') AS active, SUM(status = 'completed') AS completed, SUM(status = 'draft') AS drafts,
-       SUM(status = 'archived') AS archived, COUNT(*) AS total FROM tests`,
+       SUM(status = 'archived') AS archived, COUNT(*) AS total FROM tests WHERE is_sample = 0`,
   );
   const attempts = get<any>(
     `SELECT COUNT(*) AS total, SUM(status = 'completed') AS completed, SUM(status = 'in_progress') AS in_progress,
@@ -370,7 +370,7 @@ analyticsRouter.get('/admin', requireRole('admin', 'auditor'), async (_req, res)
   if (teacherRequests) alerts.push({ type: 'teacher_requests', params: { count: teacherRequests }, level: 'warning' });
   if (users?.blocked) alerts.push({ type: 'blocked_users', params: { count: users.blocked }, level: 'warning' });
   const emptyPublished = get<{ c: number }>(
-    "SELECT COUNT(*) AS c FROM tests t WHERE t.status = 'published' AND NOT EXISTS (SELECT 1 FROM assignments a WHERE a.test_id = t.id)",
+    "SELECT COUNT(*) AS c FROM tests t WHERE t.status = 'published' AND t.is_sample = 0 AND NOT EXISTS (SELECT 1 FROM assignments a WHERE a.test_id = t.id)",
   )!.c;
   if (emptyPublished) alerts.push({ type: 'unassigned_tests', params: { count: emptyPublished }, level: 'info' });
   const noTeacherGroups = get<{ c: number }>(

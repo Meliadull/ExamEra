@@ -7,12 +7,15 @@ import { TrendChart } from '../components/charts';
 import { distinct, matchesSearch, ResetFilters, ValueSelect } from '../components/common';
 import { Badge, Button, Card, Empty, ErrorBox, Input, Loader, Modal, PageHead, PctBadge, Select, Stat, Tabs, type Tone } from '../components/ui';
 import { useFormat, useI18n } from '../i18n';
+import { useLoc, useSubjectName } from '../localize';
 
 export interface MyAssignment {
   id: number;
   test_id: number;
   title: string;
+  title_ru?: string | null;
   topic: string;
+  topic_ru?: string | null;
   description: string;
   instruction: string;
   subject_name: string;
@@ -35,6 +38,7 @@ const STATUS_TONE: Record<MyAssignment['status'], Tone> = { available: 'blue', s
 
 export function StartTestModal({ a, onClose }: { a: MyAssignment; onClose: () => void }) {
   const { t } = useI18n();
+  const tr = useLoc();
   const f = useFormat();
   const nav = useNavigate();
   const [busy, setBusy] = useState(false);
@@ -51,7 +55,7 @@ export function StartTestModal({ a, onClose }: { a: MyAssignment; onClose: () =>
   };
   return (
     <Modal
-      title={a.title}
+      title={tr(a, 'title')}
       onClose={onClose}
       footer={
         <>
@@ -89,6 +93,8 @@ export function StartTestModal({ a, onClose }: { a: MyAssignment; onClose: () =>
 
 export function AssignmentCard({ a, onStart }: { a: MyAssignment; onStart: (a: MyAssignment) => void }) {
   const { t } = useI18n();
+  const tr = useLoc();
+  const sn = useSubjectName();
   const f = useFormat();
   return (
     <div className="card">
@@ -98,10 +104,10 @@ export function AssignmentCard({ a, onStart }: { a: MyAssignment; onStart: (a: M
             <Badge tone={STATUS_TONE[a.status]}>{t(`student.status.${a.status}`)}</Badge>
             {a.active_attempt_id && <Badge tone="purple">{t('student.inProgress')}</Badge>}
           </div>
-          <h3 style={{ marginTop: 10 }}>{a.title}</h3>
+          <h3 style={{ marginTop: 10 }}>{tr(a, 'title')}</h3>
           <div className="small muted">
-            {a.subject_name}
-            {a.topic ? ` · ${a.topic}` : ''}
+            {sn(a.subject_name)}
+            {a.topic ? ` · ${tr(a, 'topic')}` : ''}
           </div>
         </div>
         {a.best_percentage != null && <PctBadge value={a.best_percentage} />}
@@ -143,6 +149,8 @@ export function AssignmentCard({ a, onStart }: { a: MyAssignment; onStart: (a: M
 export function StudentDashboard() {
   const me = useMe();
   const { t } = useI18n();
+  const tr = useLoc();
+  const sn = useSubjectName();
   const f = useFormat();
   const state = useApi('/student/dashboard');
   const [starting, setStarting] = useState<MyAssignment | null>(null);
@@ -169,9 +177,9 @@ export function StudentDashboard() {
                           <FileText />
                         </div>
                         <div className="grow">
-                          <div className="bold ellipsis">{a.title}</div>
+                          <div className="bold ellipsis">{tr(a, 'title')}</div>
                           <div className="small muted">
-                            {a.subject_name} ·{' '}
+                            {sn(a.subject_name)} ·{' '}
                             {a.status === 'scheduled' ? t('student.opens', { date: f.dateTime(a.starts_at) }) : t('student.until', { date: f.dateTime(a.ends_at) })}
                           </div>
                         </div>
@@ -194,9 +202,9 @@ export function StudentDashboard() {
                   d.recent.map((r: any) => (
                     <Link to={`/app/attempts/${r.id}/result`} className="list-item" key={r.id} style={{ color: 'inherit', textDecoration: 'none' }}>
                       <div className="grow">
-                        <div className="bold ellipsis">{r.title}</div>
+                        <div className="bold ellipsis">{tr(r, 'title')}</div>
                         <div className="small muted">
-                          {r.subject_name} · {f.date(r.completed_at)}
+                          {sn(r.subject_name)} · {f.date(r.completed_at)}
                         </div>
                       </div>
                       {r.show_result ? <PctBadge value={r.percentage} /> : <Badge>{t('student.resultHidden')}</Badge>}
@@ -231,7 +239,7 @@ export function MyTests() {
       <PageHead title={t('student.myTests')} subtitle={t('student.myTestsSubtitle')} />
       <Loader state={state}>
         {(all) => {
-          const list = all.filter((a) => (!subject || a.subject_name === subject) && matchesSearch(search, a.title, a.topic, a.subject_name));
+          const list = all.filter((a) => (!subject || a.subject_name === subject) && matchesSearch(search, a.title, a.title_ru, a.topic, a.topic_ru, a.subject_name));
           const count = (s: string) => list.filter((a) => a.status === s).length;
           const shown = list.filter((a) => a.status === tab);
           return (
@@ -292,6 +300,8 @@ interface MyAttempt {
 
 export function MyResults() {
   const { t } = useI18n();
+  const tr = useLoc();
+  const sn = useSubjectName();
   const f = useFormat();
   const state = useApi<MyAttempt[]>('/student/attempts');
   const [search, setSearch] = useState('');
@@ -345,9 +355,9 @@ export function MyResults() {
                     <Link key={a.id} to={`/app/attempts/${a.id}/result`} className="card" style={{ color: 'inherit', textDecoration: 'none' }}>
                       <div className="row between">
                         <div className="grow">
-                          <h3 className="ellipsis">{a.title}</h3>
+                          <h3 className="ellipsis">{tr(a, 'title')}</h3>
                           <div className="small muted">
-                            {a.subject_name} · {f.dateTime(a.completed_at)}
+                            {sn(a.subject_name)} · {f.dateTime(a.completed_at)}
                           </div>
                         </div>
                         {a.show_result ? <PctBadge value={a.percentage} /> : <Badge>{t('student.resultHidden')}</Badge>}
@@ -384,6 +394,8 @@ export function MyResults() {
 
 export function History() {
   const { t } = useI18n();
+  const tr = useLoc();
+  const sn = useSubjectName();
   const f = useFormat();
   const state = useApi<MyAttempt[]>('/student/attempts');
   const [search, setSearch] = useState('');
@@ -441,9 +453,9 @@ export function History() {
                         {list.map((a) => (
                           <tr key={a.id}>
                             <td className="bold">
-                              {a.status === 'completed' ? <Link to={`/app/attempts/${a.id}/result`}>{a.title}</Link> : <Link to={`/app/attempt/${a.id}`}>{a.title}</Link>}
+                              {a.status === 'completed' ? <Link to={`/app/attempts/${a.id}/result`}>{tr(a, 'title')}</Link> : <Link to={`/app/attempt/${a.id}`}>{tr(a, 'title')}</Link>}
                             </td>
-                            <td>{a.subject_name}</td>
+                            <td>{sn(a.subject_name)}</td>
                             <td className="nowrap">{f.dateTime(a.started_at)}</td>
                             <td className="nowrap">{f.dateTime(a.completed_at)}</td>
                             <td>{f.duration(a.duration_sec)}</td>

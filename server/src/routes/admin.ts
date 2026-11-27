@@ -224,7 +224,7 @@ searchRouter.get('/', (req, res) => {
   if (seesEverything(me)) {
     result.users = all(`SELECT u.id, u.first_name, u.last_name, u.role FROM users u WHERE ${nameMatch} LIMIT 8`, like, like, like, like);
     result.groups = all('SELECT id, name, academic_year FROM study_groups WHERE LOWER(name) LIKE ? LIMIT 5', like);
-    result.tests = all('SELECT t.id, t.title, s.name AS subject_name FROM tests t JOIN subjects s ON s.id = t.subject_id WHERE LOWER(t.title) LIKE ? LIMIT 8', like);
+    result.tests = all('SELECT t.id, t.title, s.name AS subject_name FROM tests t JOIN subjects s ON s.id = t.subject_id WHERE t.is_sample = 0 AND LOWER(t.title) LIKE ? LIMIT 8', like);
   } else {
     result.users = all(`SELECT u.id, u.first_name, u.last_name, u.role FROM users u WHERE u.role = 'student' AND ${nameMatch} LIMIT 8`, like, like, like, like);
     result.groups = all('SELECT id, name, academic_year FROM study_groups WHERE LOWER(name) LIKE ? LIMIT 5', like);
