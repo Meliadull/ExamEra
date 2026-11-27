@@ -1,0 +1,83 @@
+{
+  "key": "fizika",
+  "from": 16,
+  "name": ["Fizika", "Физика"],
+  "aliases": ["physics"],
+  "topics": [
+    {
+      "t": ["Elektr tokining ishi va quvvati", "Работа и мощность электрического тока"],
+      "q": [
+        ["220 V kuchlanishda 2 A tok o'tayotgan asbobning quvvatini toping.", "Найдите мощность прибора, через который при напряжении 220 В идёт ток 2 А.", [["440 W", "440 Вт"], ["110 W", "110 Вт"], ["222 W", "222 Вт"], ["880 W", "880 Вт"]], 0],
+        ["Quvvati 100 W bo'lgan lampa 5 soat yondi. U qancha energiya sarfladi?", "Лампа мощностью 100 Вт горела 5 ч. Сколько энергии она израсходовала?", [["500 kW·soat", "500 кВт·ч"], ["20 kW·soat", "20 кВт·ч"], ["0,5 kW·soat", "0,5 кВт·ч"], ["5 kW·soat", "5 кВт·ч"]], 2],
+        ["Qarshiligi 10 Om bo'lgan o'tkazgichdan 1 minut davomida 2 A tok o'tdi. Ajralgan issiqlikni toping.", "Через проводник сопротивлением 10 Ом в течение 1 мин шёл ток 2 А. Найдите выделившееся количество теплоты.", [["1200 J", "1200 Дж"], ["2400 J", "2400 Дж"], ["400 J", "400 Дж"], ["40 J", "40 Дж"]], 1],
+        ["Qarshiligi 6 Om bo'lgan rezistorga 12 V kuchlanish berildi. Ajraladigan quvvatni toping.", "На резистор сопротивлением 6 Ом подано напряжение 12 В. Найдите выделяемую мощность.", [["2 W", "2 Вт"], ["24 W", "24 Вт"], ["72 W", "72 Вт"], ["12 W", "12 Вт"]], 1],
+        ["Uy-ro'zg'orda sarflangan elektr energiyasi qanday birlikda hisoblanadi?", "В каких единицах учитывают электроэнергию, израсходованную в быту?", [["kW", "кВт"], ["J/s", "Дж/с"], ["A·soat", "А·ч"], ["kW·soat", "кВт·ч"]], 3],
+        ["Har birining quvvati 60 W bo'lgan ikki lampa nominal kuchlanishga parallel ulangan. Umumiy quvvatni toping.", "Две лампы мощностью по 60 Вт включены параллельно под номинальное напряжение. Найдите общую мощность.", [["60 W", "60 Вт"], ["30 W", "30 Вт"], ["120 W", "120 Вт"], ["240 W", "240 Вт"]], 2],
+        ["Quvvati 2 kW bo'lgan elektr choynak 3 minut ishladi. U qancha energiya sarfladi?", "Электрочайник мощностью 2 кВт работал 3 мин. Сколько энергии он израсходовал?", [["0,1 kW·soat", "0,1 кВт·ч"], ["6 kW·soat", "6 кВт·ч"], ["0,6 kW·soat", "0,6 кВт·ч"], ["1 kW·soat", "1 кВт·ч"]], 0],
+        ["Quvvati 1100 W bo'lgan isitgich 220 V tarmoqqa ulangan. Undagi tok kuchini toping.", "Нагреватель мощностью 1100 Вт включён в сеть 220 В. Найдите силу тока в нём.", [["0,2 A", "0,2 А"], ["10 A", "10 А"], ["242 000 A", "242 000 А"], ["5 A", "5 А"]], 3],
+        ["Qisqa tutashuvda zanjirdagi tok kuchi qanday bo'ladi?", "Какой становится сила тока при коротком замыкании?", [["Nolga teng bo'ladi", "Становится равной нулю"], ["Juda katta bo'ladi", "Становится очень большой"], ["O'zgarmaydi", "Не изменяется"], ["Biroz kamayadi", "Немного уменьшается"]], 1],
+        ["Saqlagich (predoxranitel) nima uchun kerak?", "Для чего нужен предохранитель?", [["Kuchlanishni oshirish uchun", "Для повышения напряжения"], ["Tokni o'zgaruvchanga aylantirish uchun", "Для превращения тока в переменный"], ["Zanjirni o'ta yuklanishdan himoya qilish uchun", "Для защиты цепи от перегрузки"], ["Energiyani to'plash uchun", "Для накопления энергии"]], 2]
+      ]
+    },
+    {
+      "t": ["Magnit maydon", "Магнитное поле"],
+      "q": [
+        ["Magnit induksiyasining SI dagi birligi qaysi?", "Какова единица магнитной индукции в СИ?", [["Wb", "Вб"], ["Tl", "Тл"], ["Gn", "Гн"], ["A/m", "А/м"]], 1],
+        ["Induksiyasi 0,5 Tl bo'lgan maydonda induksiya chiziqlariga perpendikulyar joylashgan 0,2 m uzunlikdagi o'tkazgichdan 4 A tok o'tmoqda. Amper kuchini toping.", "В поле с индукцией 0,5 Тл перпендикулярно линиям индукции расположен проводник длиной 0,2 м с током 4 А. Найдите силу Ампера.", [["0,4 N", "0,4 Н"], ["4 N", "4 Н"], ["0,1 N", "0,1 Н"], ["1,6 N", "1,6 Н"]], 0],
+        ["Lorens kuchi nimaga ta'sir qiladi?", "На что действует сила Лоренца?", [["Tinch turgan zaryadga", "На покоящийся заряд"], ["Neytral atomga", "На нейтральный атом"], ["Magnit maydonda harakatlanayotgan zaryadga", "На заряд, движущийся в магнитном поле"], ["Faqat magnitga", "Только на магнит"]], 2],
+        ["Polosali magnitning tashqarisida magnit induksiya chiziqlari qanday yo'nalgan?", "Как направлены линии магнитной индукции снаружи полосового магнита?", [["Janubiy qutbdan shimoliy qutbga", "От южного полюса к северному"], ["Shimoliy qutbdan janubiy qutbga", "От северного полюса к южному"], ["Magnit o'rtasidan qutblarga", "От середины магнита к полюсам"], ["Ular yopiq emas", "Они не замкнуты"]], 1],
+        ["Amper kuchining yo'nalishi qaysi qoida bilan aniqlanadi?", "По какому правилу определяют направление силы Ампера?", [["O'ng qo'l qoidasi", "Правило правой руки"], ["Parma qoidasi", "Правило буравчика"], ["Lens qoidasi", "Правило Ленца"], ["Chap qo'l qoidasi", "Правило левой руки"]], 3],
+        ["Elektron ($q = 1{,}6\\cdot10^{-19}$ C) induksiyasi 0,5 Tl bo'lgan maydonga perpendikulyar $10^6$ m/s tezlik bilan uchib kirdi. Lorens kuchini toping.", "Электрон ($q = 1{,}6\\cdot10^{-19}$ Кл) влетает в поле с индукцией 0,5 Тл перпендикулярно линиям со скоростью $10^6$ м/с. Найдите силу Лоренца.", [["$8\\cdot10^{-14}$ N", "$8\\cdot10^{-14}$ Н"], ["$3{,}2\\cdot10^{-13}$ N", "$3{,}2\\cdot10^{-13}$ Н"], ["$8\\cdot10^{-20}$ N", "$8\\cdot10^{-20}$ Н"], ["$1{,}6\\cdot10^{-14}$ N", "$1{,}6\\cdot10^{-14}$ Н"]], 0],
+        ["Magnit maydonni nima hosil qiladi?", "Что создаёт магнитное поле?", [["Tinch turgan zaryadlar", "Неподвижные заряды"], ["Harakatlanayotgan zaryadlar (elektr toki)", "Движущиеся заряды (электрический ток)"], ["Faqat neytronlar", "Только нейтроны"], ["Gravitatsiya", "Гравитация"]], 1],
+        ["Bir xil yo'nalishdagi toklar o'tayotgan ikki parallel o'tkazgich o'zaro qanday ta'sirlashadi?", "Как взаимодействуют два параллельных проводника с токами одного направления?", [["Itarishadi", "Отталкиваются"], ["Ta'sirlashmaydi", "Не взаимодействуют"], ["Tortishadi", "Притягиваются"], ["Aylanadi", "Вращаются"]], 2],
+        ["Zaryad magnit induksiya chiziqlariga parallel harakatlanmoqda. Unga ta'sir qiluvchi Lorens kuchi nimaga teng?", "Заряд движется параллельно линиям магнитной индукции. Чему равна действующая на него сила Лоренца?", ["$qvB$", "0", "$2qvB$", "$\\frac{qB}{v}$"], 1],
+        ["Yerning janubiy magnit qutbi qaysi geografik qutb yaqinida joylashgan?", "Вблизи какого географического полюса находится южный магнитный полюс Земли?", [["Shimoliy geografik qutb yaqinida", "Вблизи Северного географического полюса"], ["Janubiy geografik qutb yaqinida", "Вблизи Южного географического полюса"], ["Ekvatorda", "На экваторе"], ["Yer markazida", "В центре Земли"]], 0]
+      ]
+    },
+    {
+      "t": ["Elektromagnit induksiya", "Электромагнитная индукция"],
+      "q": [
+        ["Elektromagnit induksiya hodisasini kim kashf etgan?", "Кто открыл явление электромагнитной индукции?", [["Faradey", "Фарадей"], ["Nyuton", "Ньютон"], ["Om", "Ом"], ["Kulon", "Кулон"]], 0],
+        ["Induksiyasi 0,2 Tl bo'lgan maydonda yuzi 0,5 m² bo'lgan kontur induksiya chiziqlariga perpendikulyar joylashgan. Magnit oqimini toping.", "Контур площадью 0,5 м² расположен перпендикулярно линиям поля с индукцией 0,2 Тл. Найдите магнитный поток.", [["1 Wb", "1 Вб"], ["0,4 Wb", "0,4 Вб"], ["0,1 Wb", "0,1 Вб"], ["2,5 Wb", "2,5 Вб"]], 2],
+        ["Konturdan o'tuvchi magnit oqimi 0,2 s da 0,6 Wb ga o'zgardi. Induksiya EYuK ni toping.", "Магнитный поток через контур за 0,2 с изменился на 0,6 Вб. Найдите ЭДС индукции.", [["0,12 V", "0,12 В"], ["3 V", "3 В"], ["0,8 V", "0,8 В"], ["30 V", "30 В"]], 1],
+        ["Magnit oqimining SI dagi birligi qaysi?", "Какова единица магнитного потока в СИ?", [["Tl", "Тл"], ["Gn", "Гн"], ["V", "В"], ["Wb", "Вб"]], 3],
+        ["Lens qoidasi nimani ta'kidlaydi?", "Что утверждает правило Ленца?", [["Induksion tok o'zini vujudga keltirgan magnit oqimi o'zgarishiga qarshilik ko'rsatadi", "Индукционный ток противодействует изменению магнитного потока, которое его вызвало"], ["Induksion tok har doim kuchayadi", "Индукционный ток всегда усиливается"], ["Magnit oqimi har doim o'zgarmas", "Магнитный поток всегда постоянен"], ["Tok faqat soat strelkasi bo'yicha oqadi", "Ток течёт только по часовой стрелке"]], 0],
+        ["Induktivlikning SI dagi birligi qaysi?", "Какова единица индуктивности в СИ?", [["Wb", "Вб"], ["Tl", "Тл"], ["Gn", "Гн"], ["F", "Ф"]], 2],
+        ["Uzunligi 0,5 m bo'lgan o'tkazgich induksiyasi 0,5 Tl maydonda 4 m/s tezlik bilan chiziqlarga perpendikulyar harakatlanmoqda. EYuK ni toping.", "Проводник длиной 0,5 м движется в поле с индукцией 0,5 Тл перпендикулярно линиям со скоростью 4 м/с. Найдите ЭДС.", [["4 V", "4 В"], ["1 V", "1 В"], ["0,25 V", "0,25 В"], ["2 V", "2 В"]], 1],
+        ["Transformator qanday tokda ishlaydi?", "На каком токе работает трансформатор?", [["Faqat o'zgarmas tokda", "Только на постоянном"], ["Ikkala tokda ham", "На обоих"], ["Faqat o'zgaruvchan tokda", "Только на переменном"], ["Hech birida", "Ни на каком"]], 2],
+        ["Transformatorning birlamchi chulg'amida 100 ta, ikkilamchisida 1000 ta o'ram bor. Birlamchi kuchlanish 22 V. Ikkilamchi kuchlanishni toping.", "В первичной обмотке трансформатора 100 витков, во вторичной — 1000. Первичное напряжение 22 В. Найдите вторичное напряжение.", [["220 V", "220 В"], ["2,2 V", "2,2 В"], ["22 V", "22 В"], ["2200 V", "2200 В"]], 0],
+        ["Induktivligi 0,4 Gn bo'lgan g'altakdan 5 A tok o'tmoqda. Magnit maydon energiyasini toping.", "Через катушку индуктивностью 0,4 Гн идёт ток 5 А. Найдите энергию магнитного поля.", [["1 J", "1 Дж"], ["10 J", "10 Дж"], ["2 J", "2 Дж"], ["5 J", "5 Дж"]], 3]
+      ]
+    },
+    {
+      "t": ["Mexanik tebranishlar va to'lqinlar", "Механические колебания и волны"],
+      "q": [
+        ["Matematik mayatnikning tebranish davri formulasini ko'rsating.", "Укажите формулу периода колебаний математического маятника.", ["$T=2\\pi\\sqrt{\\frac{l}{g}}$", "$T=2\\pi\\sqrt{\\frac{g}{l}}$", "$T=2\\pi\\sqrt{\\frac{m}{k}}$", "$T=\\frac{l}{g}$"], 0],
+        ["Prujinali mayatnikning tebranish davri formulasini ko'rsating.", "Укажите формулу периода колебаний пружинного маятника.", ["$T=2\\pi\\sqrt{\\frac{l}{g}}$", "$T=2\\pi\\sqrt{\\frac{k}{m}}$", "$T=2\\pi\\sqrt{\\frac{m}{k}}$", "$T=2\\pi mk$"], 2],
+        ["To'lqin uzunligi 2 m, chastotasi 5 Hz. To'lqinning tarqalish tezligini toping.", "Длина волны 2 м, частота 5 Гц. Найдите скорость распространения волны.", [["2,5 m/s", "2,5 м/с"], ["10 m/s", "10 м/с"], ["0,4 m/s", "0,4 м/с"], ["7 m/s", "7 м/с"]], 1],
+        ["Tebranish davri 0,2 s. Chastotasini toping.", "Период колебаний 0,2 с. Найдите частоту.", [["5 Hz", "5 Гц"], ["0,2 Hz", "0,2 Гц"], ["2 Hz", "2 Гц"], ["20 Hz", "20 Гц"]], 0],
+        ["Tovush qaysi muhitda tarqalmaydi?", "В какой среде звук не распространяется?", [["Havoda", "В воздухе"], ["Suvda", "В воде"], ["Po'latda", "В стали"], ["Vakuumda", "В вакууме"]], 3],
+        ["Matematik mayatnik ipining uzunligi 4 marta oshirilsa, tebranish davri qanday o'zgaradi?", "Как изменится период колебаний математического маятника, если длину нити увеличить в 4 раза?", [["2 marta oshadi", "Увеличится в 2 раза"], ["4 marta oshadi", "Увеличится в 4 раза"], ["2 marta kamayadi", "Уменьшится в 2 раза"], ["O'zgarmaydi", "Не изменится"]], 0],
+        ["Tebranish amplitudasi nima?", "Что такое амплитуда колебаний?", [["Bir to'liq tebranish vaqti", "Время одного полного колебания"], ["Muvozanat holatidan eng katta chetlanish", "Наибольшее отклонение от положения равновесия"], ["1 s dagi tebranishlar soni", "Число колебаний за 1 с"], ["To'lqin uzunligi", "Длина волны"]], 1],
+        ["Havoda tovush tezligi taxminan qancha?", "Чему примерно равна скорость звука в воздухе?", [["$3\\cdot10^8$ m/s", "$3\\cdot10^8$ м/с"], ["1500 m/s", "1500 м/с"], ["340 m/s", "340 м/с"], ["34 m/s", "34 м/с"]], 2],
+        ["Rezonans qachon kuzatiladi?", "Когда наблюдается резонанс?", [["Majburlovchi kuch chastotasi tizimning xususiy chastotasiga teng bo'lganda", "Когда частота вынуждающей силы равна собственной частоте системы"], ["Amplituda nolga teng bo'lganda", "Когда амплитуда равна нулю"], ["Ishqalanish juda katta bo'lganda", "Когда трение очень велико"], ["Chastota cheksiz katta bo'lganda", "Когда частота бесконечно велика"]], 0],
+        ["Bo'ylama to'lqinda muhit zarralari qanday tebranadi?", "Как колеблются частицы среды в продольной волне?", [["To'lqin tarqalish yo'nalishiga perpendikulyar", "Перпендикулярно направлению распространения"], ["Aylana bo'ylab", "По окружности"], ["Umuman tebranmaydi", "Не колеблются"], ["To'lqin tarqalish yo'nalishi bo'ylab", "Вдоль направления распространения волны"]], 3]
+      ]
+    },
+    {
+      "t": ["Elektromagnit tebranishlar va to'lqinlar", "Электромагнитные колебания и волны"],
+      "q": [
+        ["Tebranish konturining davri uchun Tomson formulasini ko'rsating.", "Укажите формулу Томсона для периода колебательного контура.", ["$T=2\\pi\\sqrt{LC}$", "$T=2\\pi\\sqrt{\\frac{L}{C}}$", "$T=\\frac{2\\pi}{LC}$", "$T=2\\pi LC$"], 0],
+        ["Elektromagnit to'lqinlarning vakuumdagi tezligi qancha?", "Какова скорость электромагнитных волн в вакууме?", [["340 m/s", "340 м/с"], ["$3\\cdot10^8$ m/s", "$3\\cdot10^8$ м/с"], ["$3\\cdot10^5$ m/s", "$3\\cdot10^5$ м/с"], ["$1{,}5\\cdot10^8$ m/s", "$1{,}5\\cdot10^8$ м/с"]], 1],
+        ["Chastotasi 100 MHz bo'lgan radioto'lqinning uzunligini toping.", "Найдите длину радиоволны частотой 100 МГц.", [["30 m", "30 м"], ["0,3 m", "0,3 м"], ["3 m", "3 м"], ["300 m", "300 м"]], 2],
+        ["O'zbekistonda maishiy elektr tarmog'idagi o'zgaruvchan tok chastotasi qancha?", "Какова частота переменного тока в бытовой сети Узбекистана?", [["50 Hz", "50 Гц"], ["60 Hz", "60 Гц"], ["100 Hz", "100 Гц"], ["220 Hz", "220 Гц"]], 0],
+        ["Tarmoqdagi kuchlanishning ta'sir etuvchi qiymati 220 V. Uning amplituda qiymati taxminan qancha?", "Действующее значение напряжения в сети 220 В. Чему примерно равно его амплитудное значение?", [["220 V", "220 В"], ["311 V", "311 В"], ["156 V", "156 В"], ["440 V", "440 В"]], 1],
+        ["Quyidagilardan qaysi birining to'lqin uzunligi eng katta?", "У каких из перечисленных волн наибольшая длина волны?", [["Ko'rinadigan yorug'lik", "Видимый свет"], ["Rentgen nurlari", "Рентгеновские лучи"], ["Gamma nurlar", "Гамма-лучи"], ["Radioto'lqinlar", "Радиоволны"]], 3],
+        ["Elektromagnit to'lqinlar mavjudligini nazariy jihatdan kim bashorat qilgan?", "Кто теоретически предсказал существование электромагнитных волн?", [["Maksvell", "Максвелл"], ["Gers", "Герц"], ["Popov", "Попов"], ["Faradey", "Фарадей"]], 0],
+        ["Elektromagnit to'lqinlarni birinchi bo'lib tajribada kim hosil qilgan?", "Кто первым получил электромагнитные волны на опыте?", [["Maksvell", "Максвелл"], ["Gers", "Герц"], ["Edison", "Эдисон"], ["Om", "Ом"]], 1],
+        ["Tebranish konturidagi kondensator sig'imi 4 marta oshirilsa, tebranish davri qanday o'zgaradi?", "Как изменится период колебаний в контуре, если ёмкость конденсатора увеличить в 4 раза?", [["4 marta oshadi", "Увеличится в 4 раза"], ["2 marta kamayadi", "Уменьшится в 2 раза"], ["2 marta oshadi", "Увеличится в 2 раза"], ["O'zgarmaydi", "Не изменится"]], 2],
+        ["Elektromagnit to'lqinlar qanday to'lqinlar?", "Какими являются электромагнитные волны?", [["Ko'ndalang", "Поперечными"], ["Bo'ylama", "Продольными"], ["Ham bo'ylama, ham ko'ndalang", "И продольными, и поперечными"], ["Faqat muhitda tarqaladigan", "Распространяющимися только в среде"]], 0]
+      ]
+    }
+  ]
+}

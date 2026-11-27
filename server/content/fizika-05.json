@@ -1,0 +1,83 @@
+{
+  "key": "fizika",
+  "from": 21,
+  "name": ["Fizika", "Физика"],
+  "aliases": ["physics"],
+  "topics": [
+    {
+      "t": ["Geometrik optika", "Геометрическая оптика"],
+      "q": [
+        ["Yorug'likning tushish burchagi 30°. Qaytish burchagini toping.", "Угол падения света 30°. Найдите угол отражения.", ["30°", "60°", "90°", "15°"], 0],
+        ["Muhitda yorug'lik tezligi $2\\cdot10^8$ m/s. Muhitning sindirish ko'rsatkichini toping.", "Скорость света в среде $2\\cdot10^8$ м/с. Найдите показатель преломления среды.", ["0,67", "2", "1,5", "3"], 2],
+        ["Fokus masofasi 0,5 m bo'lgan linzaning optik kuchini toping.", "Найдите оптическую силу линзы с фокусным расстоянием 0,5 м.", [["0,5 dptr", "0,5 дптр"], ["2 dptr", "2 дптр"], ["5 dptr", "5 дптр"], ["20 dptr", "20 дптр"]], 1],
+        ["Yassi ko'zguda buyumning tasviri qanday bo'ladi?", "Каким получается изображение предмета в плоском зеркале?", [["Haqiqiy, kattalashgan", "Действительным, увеличенным"], ["Haqiqiy, teskari", "Действительным, перевёрнутым"], ["Mavhum, kichraygan", "Мнимым, уменьшенным"], ["Mavhum, buyum bilan bir xil o'lchamda", "Мнимым, равным по размеру предмету"]], 3],
+        ["To'la ichki qaytish yorug'lik qaysi muhitdan qaysi muhitga o'tganda kuzatiladi?", "При переходе света из какой среды в какую наблюдается полное внутреннее отражение?", [["Optik zichligi kichik muhitdan kattasiga", "Из оптически менее плотной в более плотную"], ["Optik zichligi katta muhitdan kichigiga", "Из оптически более плотной в менее плотную"], ["Vakuumdan havoga", "Из вакуума в воздух"], ["Har qanday o'tishda", "При любом переходе"]], 1],
+        ["Yig'uvchi linzaning fokus masofasi 10 sm, buyum linzadan 20 sm uzoqlikda. Tasvir linzadan qanday masofada hosil bo'ladi?", "Фокусное расстояние собирающей линзы 10 см, предмет находится в 20 см от линзы. На каком расстоянии от линзы получится изображение?", [["20 sm", "20 см"], ["10 sm", "10 см"], ["40 sm", "40 см"], ["5 sm", "5 см"]], 0],
+        ["Yig'uvchi linzaning fokusidan o'tgan nur sinishdan keyin qanday yo'naladi?", "Как идёт луч, прошедший через фокус собирающей линзы, после преломления?", [["Fokusga qaytadi", "Возвращается в фокус"], ["Optik markaz orqali", "Через оптический центр"], ["Bosh optik o'qqa parallel", "Параллельно главной оптической оси"], ["Sinmaydi", "Не преломляется"]], 2],
+        ["Yaqindan ko'rish (miopiya) qanday linza yordamida tuzatiladi?", "С помощью какой линзы исправляют близорукость?", [["Yig'uvchi linza", "Собирающей линзы"], ["Sochuvchi linza", "Рассеивающей линзы"], ["Yassi ko'zgu", "Плоского зеркала"], ["Prizma", "Призмы"]], 1],
+        ["Buyum linzadan 10 sm, tasviri 30 sm uzoqlikda. Linzaning chiziqli kattalashtirishini toping.", "Предмет находится в 10 см от линзы, изображение — в 30 см. Найдите линейное увеличение линзы.", ["0,33", "20", "3", "300"], 2],
+        ["Kamalak qaysi hodisa tufayli hosil bo'ladi?", "Благодаря какому явлению образуется радуга?", [["Yorug'lik dispersiyasi", "Дисперсия света"], ["Qutblanish", "Поляризация"], ["Fotoeffekt", "Фотоэффект"], ["Radioaktivlik", "Радиоактивность"]], 0]
+      ]
+    },
+    {
+      "t": ["To'lqin optikasi", "Волновая оптика"],
+      "q": [
+        ["Yorug'lik interferensiyasi nima?", "Что такое интерференция света?", [["Kogerent to'lqinlar qo'shilib, yorug'likning kuchayishi va susayishi", "Сложение когерентных волн с усилением и ослаблением света"], ["Yorug'likning to'siqni aylanib o'tishi", "Огибание светом препятствий"], ["Yorug'likning ranglarga ajralishi", "Разложение света на цвета"], ["Yorug'likning yutilishi", "Поглощение света"]], 0],
+        ["Yorug'lik difraksiyasi nima?", "Что такое дифракция света?", [["Yorug'likning qaytishi", "Отражение света"], ["Yorug'likning to'siqlarni aylanib o'tishi", "Огибание светом препятствий"], ["Yorug'lik tezligining o'zgarishi", "Изменение скорости света"], ["Yorug'likning qutblanishi", "Поляризация света"]], 1],
+        ["Yorug'likning qutblanishi yorug'lik to'lqinlari haqida nimani isbotlaydi?", "Что доказывает поляризация света о световых волнах?", [["Ular bo'ylama", "Они продольные"], ["Ular tovush to'lqinlari", "Они звуковые"], ["Ular ko'ndalang", "Они поперечные"], ["Ular zarralar oqimi", "Это поток частиц"]], 2],
+        ["Difraksion panjara davri $2\\cdot10^{-6}$ m, to'lqin uzunligi $5\\cdot10^{-7}$ m. Birinchi tartibli maksimum uchun $\\sin\\varphi$ ni toping.", "Период дифракционной решётки $2\\cdot10^{-6}$ м, длина волны $5\\cdot10^{-7}$ м. Найдите $\\sin\\varphi$ для максимума первого порядка.", ["0,25", "0,5", "4", "0,1"], 0],
+        ["Qanday to'lqinlar kogerent deyiladi?", "Какие волны называют когерентными?", [["Amplitudasi har xil", "С разными амплитудами"], ["Faqat yorug'lik to'lqinlari", "Только световые волны"], ["Turli muhitda tarqaladigan", "Распространяющиеся в разных средах"], ["Chastotasi bir xil va fazalar farqi o'zgarmas", "С одинаковой частотой и постоянной разностью фаз"]], 3],
+        ["Ko'rinadigan spektrda qaysi rangning to'lqin uzunligi eng katta?", "У какого цвета видимого спектра наибольшая длина волны?", [["Qizil", "Красный"], ["Binafsha", "Фиолетовый"], ["Yashil", "Зелёный"], ["Ko'k", "Синий"]], 0],
+        ["Yorug'lik dispersiyasi nima?", "Что такое дисперсия света?", [["Yorug'likning qaytishi", "Отражение света"], ["Sindirish ko'rsatkichining to'lqin uzunligiga bog'liqligi", "Зависимость показателя преломления от длины волны"], ["Yorug'likning yutilishi", "Поглощение света"], ["Yorug'likning qutblanishi", "Поляризация света"]], 1],
+        ["Sovun pufagining kamalak rangda tovlanishi qaysi hodisa bilan tushuntiriladi?", "Каким явлением объясняется радужная окраска мыльного пузыря?", [["Qutblanish", "Поляризацией"], ["Fotoeffekt", "Фотоэффектом"], ["Yupqa pardalarda interferensiya", "Интерференцией в тонких плёнках"], ["To'la ichki qaytish", "Полным внутренним отражением"]], 2],
+        ["Ko'rinadigan yorug'likning to'lqin uzunliklari oralig'i taxminan qancha?", "Каков примерно диапазон длин волн видимого света?", [["380–760 nm", "380–760 нм"], ["1–10 nm", "1–10 нм"], ["1–10 mm", "1–10 мм"], ["10–100 m", "10–100 м"]], 0],
+        ["Difraksion panjarada 1 mm da 100 ta shtrix bor. Panjara davrini toping.", "На 1 мм дифракционной решётки нанесено 100 штрихов. Найдите период решётки.", [["$10^{-2}$ m", "$10^{-2}$ м"], ["$10^{-5}$ m", "$10^{-5}$ м"], ["$10^{-3}$ m", "$10^{-3}$ м"], ["$10^{-7}$ m", "$10^{-7}$ м"]], 1]
+      ]
+    },
+    {
+      "t": ["Kvant fizikasi. Fotoeffekt", "Квантовая физика. Фотоэффект"],
+      "q": [
+        ["Foton energiyasining formulasini ko'rsating.", "Укажите формулу энергии фотона.", ["$E=h\\nu$", "$E=mc$", "$E=\\frac{h}{\\nu}$", "$E=h\\lambda$"], 0],
+        ["Plank doimiysining qiymati qancha?", "Чему равна постоянная Планка?", [["$1{,}6\\cdot10^{-19}$ J·s", "$1{,}6\\cdot10^{-19}$ Дж·с"], ["$3\\cdot10^{8}$ J·s", "$3\\cdot10^{8}$ Дж·с"], ["$6{,}63\\cdot10^{-34}$ J·s", "$6{,}63\\cdot10^{-34}$ Дж·с"], ["$9{,}1\\cdot10^{-31}$ J·s", "$9{,}1\\cdot10^{-31}$ Дж·с"]], 2],
+        ["Fotoeffekt uchun Eynshteyn tenglamasini ko'rsating.", "Укажите уравнение Эйнштейна для фотоэффекта.", ["$h\\nu=A-\\frac{mv^2}{2}$", "$h\\nu=A+\\frac{mv^2}{2}$", "$h\\nu=\\frac{mv^2}{2}$", "$A=h\\nu+\\frac{mv^2}{2}$"], 1],
+        ["Fotoeffekt qonunlarini kim tushuntirib bergan?", "Кто объяснил законы фотоэффекта?", [["Eynshteyn", "Эйнштейн"], ["Nyuton", "Ньютон"], ["Maksvell", "Максвелл"], ["Faradey", "Фарадей"]], 0],
+        ["Fotoeffektning «qizil chegarasi» nima?", "Что такое «красная граница» фотоэффекта?", [["Eng katta to'lqin chastotasi", "Наибольшая частота волны"], ["Qizil rangning to'lqin uzunligi", "Длина волны красного света"], ["Elektronning maksimal tezligi", "Максимальная скорость электрона"], ["Fotoeffekt yuz beradigan eng kichik chastota", "Наименьшая частота, при которой возможен фотоэффект"]], 3],
+        ["Chastota o'zgarmay, yorug'lik intensivligi oshirilsa nima o'zgaradi?", "Что изменится, если увеличить интенсивность света при неизменной частоте?", [["Fotoelektronlarning maksimal energiyasi oshadi", "Увеличится максимальная энергия фотоэлектронов"], ["Urib chiqarilgan elektronlar soni oshadi", "Увеличится число вырванных электронов"], ["Qizil chegara o'zgaradi", "Изменится красная граница"], ["Hech narsa o'zgarmaydi", "Ничего не изменится"]], 1],
+        ["Energiyasi 4 eV bo'lgan foton chiqish ishi 2,5 eV bo'lgan metalldan elektron urib chiqardi. Elektronning maksimal kinetik energiyasini toping.", "Фотон с энергией 4 эВ выбивает электрон из металла с работой выхода 2,5 эВ. Найдите максимальную кинетическую энергию электрона.", [["6,5 eV", "6,5 эВ"], ["10 eV", "10 эВ"], ["1,5 eV", "1,5 эВ"], ["2,5 eV", "2,5 эВ"]], 2],
+        ["Fotonning tinchlikdagi massasi nimaga teng?", "Чему равна масса покоя фотона?", [["Nolga", "Нулю"], ["Elektron massasiga", "Массе электрона"], ["Proton massasiga", "Массе протона"], ["1 kg ga", "1 кг"]], 0],
+        ["1 eV necha joulga teng?", "Сколько джоулей составляет 1 эВ?", [["$6{,}63\\cdot10^{-34}$ J", "$6{,}63\\cdot10^{-34}$ Дж"], ["$1{,}6\\cdot10^{-19}$ J", "$1{,}6\\cdot10^{-19}$ Дж"], ["$9\\cdot10^{16}$ J", "$9\\cdot10^{16}$ Дж"], ["1 J", "1 Дж"]], 1],
+        ["Yorug'lik qanday xususiyatlarni namoyon qiladi?", "Какие свойства проявляет свет?", [["Faqat to'lqin xususiyatlarini", "Только волновые"], ["Faqat zarra xususiyatlarini", "Только корпускулярные"], ["Ham to'lqin, ham zarra xususiyatlarini", "И волновые, и корпускулярные"], ["Hech qanday", "Никаких"]], 2]
+      ]
+    },
+    {
+      "t": ["Atom va yadro fizikasi", "Атомная и ядерная физика"],
+      "q": [
+        ["Rezerford tajribasi nimani ko'rsatdi?", "Что показал опыт Резерфорда?", [["Atom markazida kichik, massiv, musbat zaryadli yadro bor", "В центре атома есть малое массивное положительно заряженное ядро"], ["Atom bo'linmaydi", "Атом неделим"], ["Elektronlar yadroda joylashgan", "Электроны находятся в ядре"], ["Atom zaryadsiz shar", "Атом — незаряженный шар"]], 0],
+        ["Atom yadrosi qanday zarralardan tashkil topgan?", "Из каких частиц состоит атомное ядро?", [["Elektron va protonlardan", "Из электронов и протонов"], ["Proton va neytronlardan", "Из протонов и нейтронов"], ["Faqat neytronlardan", "Только из нейтронов"], ["Fotonlardan", "Из фотонов"]], 1],
+        ["Alfa-zarra nima?", "Что такое альфа-частица?", [["Elektron", "Электрон"], ["Foton", "Фотон"], ["Geliy atomining yadrosi", "Ядро атома гелия"], ["Neytron", "Нейтрон"]], 2],
+        ["Beta-minus zarra nima?", "Что такое бета-минус частица?", [["Proton", "Протон"], ["Elektron", "Электрон"], ["Neytron", "Нейтрон"], ["Pozitron", "Позитрон"]], 1],
+        ["Gamma-nurlanish nima?", "Что такое гамма-излучение?", [["Geliy yadrolari oqimi", "Поток ядер гелия"], ["Elektronlar oqimi", "Поток электронов"], ["Neytronlar oqimi", "Поток нейтронов"], ["Yuqori energiyali elektromagnit nurlanish (fotonlar)", "Электромагнитное излучение высокой энергии (фотоны)"]], 3],
+        ["Yarim yemirilish davri 2 kun bo'lgan 100 g radioaktiv moddadan 6 kundan keyin qancha qoladi?", "Сколько останется от 100 г радиоактивного вещества с периодом полураспада 2 суток через 6 суток?", [["12,5 g", "12,5 г"], ["25 g", "25 г"], ["50 g", "50 г"], ["33 g", "33 г"]], 0],
+        ["Bitta elementning izotoplari nimasi bilan farq qiladi?", "Чем отличаются изотопы одного элемента?", [["Protonlar soni bilan", "Числом протонов"], ["Neytronlar soni bilan", "Числом нейтронов"], ["Elektron zaryadi bilan", "Зарядом электрона"], ["Kimyoviy xossalari bilan", "Химическими свойствами"]], 1],
+        ["Uran-238 yadrosida 92 ta proton bor. Unda nechta neytron bor?", "В ядре урана-238 92 протона. Сколько в нём нейтронов?", ["92", "238", "146", "330"], 2],
+        ["Atom elektr stansiyasi reaktorida qanday jarayondan foydalaniladi?", "Какой процесс используется в реакторе атомной электростанции?", [["Og'ir yadrolarning bo'linishi", "Деление тяжёлых ядер"], ["Termoyadro sintezi", "Термоядерный синтез"], ["Kimyoviy yonish", "Химическое горение"], ["Fotoeffekt", "Фотоэффект"]], 0],
+        ["Quyosh energiyasining manbai nima?", "Что является источником энергии Солнца?", [["Uran bo'linishi", "Деление урана"], ["Kimyoviy yonish", "Химическое горение"], ["Radioaktiv yemirilish", "Радиоактивный распад"], ["Termoyadro sintezi", "Термоядерный синтез"]], 3]
+      ]
+    },
+    {
+      "t": ["Maxsus nisbiylik nazariyasi elementlari", "Элементы специальной теории относительности"],
+      "q": [
+        ["Maxsus nisbiylik nazariyasining muallifi kim?", "Кто автор специальной теории относительности?", [["Eynshteyn", "Эйнштейн"], ["Nyuton", "Ньютон"], ["Galiley", "Галилей"], ["Bor", "Бор"]], 0],
+        ["Maxsus nisbiylik nazariyasining postulatlaridan biri qaysi?", "Какое утверждение является постулатом специальной теории относительности?", [["Vaqt hamma joyda bir xil o'tadi", "Время везде течёт одинаково"], ["Massa har doim o'zgarmas", "Масса всегда постоянна"], ["Vakuumda yorug'lik tezligi barcha inersial sistemalarda bir xil", "Скорость света в вакууме одинакова во всех инерциальных системах"], ["Tezliklar har doim oddiy qo'shiladi", "Скорости всегда складываются обычным образом"]], 2],
+        ["Massa va energiyaning o'zaro bog'liqlik formulasini ko'rsating.", "Укажите формулу взаимосвязи массы и энергии.", ["$E=mc^2$", "$E=mc$", "$E=\\frac{mc^2}{2}$", "$E=m^2c$"], 0],
+        ["Massasi 1 kg bo'lgan jismning tinchlikdagi energiyasini toping.", "Найдите энергию покоя тела массой 1 кг.", [["$3\\cdot10^{8}$ J", "$3\\cdot10^{8}$ Дж"], ["$9\\cdot10^{16}$ J", "$9\\cdot10^{16}$ Дж"], ["$9\\cdot10^{8}$ J", "$9\\cdot10^{8}$ Дж"], ["$3\\cdot10^{16}$ J", "$3\\cdot10^{16}$ Дж"]], 1],
+        ["Nisbiylik nazariyasiga ko'ra harakatlanayotgan sistemada vaqt qanday o'tadi?", "Как, согласно теории относительности, течёт время в движущейся системе?", [["Tezroq", "Быстрее"], ["Xuddi tinch sistemadagidek", "Так же, как в покоящейся"], ["To'xtab qoladi", "Останавливается"], ["Sekinroq", "Медленнее"]], 3],
+        ["Jism harakat yo'nalishidagi uzunligi yorug'lik tezligiga yaqin tezlikda qanday o'zgaradi?", "Как меняется длина тела вдоль направления движения при скорости, близкой к скорости света?", [["Oshadi", "Увеличивается"], ["Qisqaradi", "Сокращается"], ["O'zgarmaydi", "Не меняется"], ["Nolga teng bo'ladi", "Становится равной нулю"]], 1],
+        ["Massaga ega jism yorug'lik tezligiga erisha oladimi?", "Может ли тело, имеющее массу, достичь скорости света?", [["Yo'q", "Нет"], ["Ha", "Да"], ["Faqat elektron", "Только электрон"], ["Faqat vakuumda", "Только в вакууме"]], 0],
+        ["Relyativistik effektlar qanday tezliklarda sezilarli bo'ladi?", "При каких скоростях релятивистские эффекты становятся заметными?", [["Tovush tezligidan kichik tezliklarda", "При скоростях меньше скорости звука"], ["Faqat tinch holatda", "Только в покое"], ["Yorug'lik tezligiga yaqin tezliklarda", "При скоростях, близких к скорости света"], ["Har qanday tezlikda bir xil", "Одинаково при любых скоростях"]], 2],
+        ["Vakuumdagi yorug'lik tezligi taxminan qancha?", "Чему примерно равна скорость света в вакууме?", [["$3\\cdot10^5$ km/s", "$3\\cdot10^5$ км/с"], ["340 km/s", "340 км/с"], ["$3\\cdot10^8$ km/s", "$3\\cdot10^8$ км/с"], ["$1{,}5\\cdot10^5$ km/s", "$1{,}5\\cdot10^5$ км/с"]], 0],
+        ["Jism $0{,}6c$ tezlik bilan harakatlanmoqda. Lorens ko'paytuvchisi $\\frac{1}{\\sqrt{1-v^2/c^2}}$ ni toping.", "Тело движется со скоростью $0{,}6c$. Найдите лоренцев множитель $\\frac{1}{\\sqrt{1-v^2/c^2}}$.", ["0,8", "1,25", "1,6", "0,6"], 1]
+      ]
+    }
+  ]
+}
